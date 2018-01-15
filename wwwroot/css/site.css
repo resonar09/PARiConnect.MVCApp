@@ -1,0 +1,53 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+}
+
+.table-header {
+    max-height: 50px;
+    font-size: small;
+    background: #e9ecef;
+    /* background: #005596;
+    color: white; */
+}
+
+    .table-header th {
+        padding: 4px 5px;
+    }
+
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.table-row {
+    background: #fafafa;
+}
+
+.table-row-start {
+    border-left: 1px solid #e9ecef;
+}
+
+.table-row-end {
+    border-right: 1px solid #e9ecef;
+}
+
+/* Hide/rearrange for smaller screens 
+@media screen and (max-width: 767px) {
+
+}
+*/
