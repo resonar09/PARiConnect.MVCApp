@@ -1,15 +1,14 @@
 ﻿using PARiConnect.MVCApp.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace PARiConnect.MVCApp.Services
 {
-    public class InMemoryAssessmentReviewData : IAssessmentReviewData
+    public class AssessmentReviewData : IAssessmentReviewData
     {
         List<AssessmentReview> _assessmentReviews;
-        public InMemoryAssessmentReviewData()
+        public AssessmentReviewData()
         {
             _assessmentReviews = new List<AssessmentReview>
             {
@@ -33,14 +32,25 @@ namespace PARiConnect.MVCApp.Services
                 }
             };
         }
-        public IEnumerable<AssessmentReview> GetAll()
-        {
-            return  _assessmentReviews.OrderBy(x => x.Assessment);
-        }
-
         public async Task<IEnumerable<AssessmentReview>> GetAllAsync()
         {
-            return await Task.Run(() => _assessmentReviews);
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, 54338, null, null);
+
+            var clientAssesReviews = clientAssessmentReviews
+                .Select(x => new AssessmentReview
+                {
+                    Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
+                    ClientName = x.Client.FirstName + " " + x.Client.LastName,
+                    Updated = x.TestDate.ToString(),
+                    Status = "Completed"
+                });
+            return clientAssesReviews.OrderBy(x => x.Assessment);
+        }
+
+        IEnumerable<AssessmentReview> IAssessmentReviewData.GetAll()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

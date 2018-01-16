@@ -22,7 +22,19 @@ namespace PARiConnect.MVCApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IAssessmentReviewData,InMemoryAssessmentReviewData>();
+            //App Services
+            //if (env.IsDevelopment())
+            //{
+            //    services.AddScoped<IAssessmentReviewData,InMemoryAssessmentReviewData>();
+            //}
+            //else
+            //{
+            //    services.AddScoped<IAssessmentReviewData, InMemoryAssessmentReviewData>();
+            //}
+            
+
+            services.AddScoped<IAssessmentReviewData, InMemoryAssessmentReviewData>();
+
             services.AddMvc();
         }
 

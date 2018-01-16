@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IEnumerable<PARiConnect.MVCApp.Models.AssessmentReview>
+@model PARiConnect.MVCApp.ViewModels.HomeIndexViewModel
 <div class="row">
     <div class="col-lg-9 col-md-12">
         <div class="col my-4 clearfix">
@@ -27,7 +27,7 @@
             <div class="tab-pane active" id="pending" role="tabpanel">
                 <div class="mt-2">
                     <table>
-                        @foreach(var assessmentReview in Model)
+                        @foreach(var assessmentReview in Model.AssessmentReview)
                         {
                         <tr>
                             <td>@assessmentReview.ClientName</td>
@@ -38,7 +38,7 @@
             </div>
             <div class="tab-pane" id="completed" role="tabpanel">
                 <div class="mt-2">
-                    @Html.Partial("_AssessmentReviews")
+                    @Html.Partial("_AssessmentReviews", Model)
                 </div>
             </div>
         </div>

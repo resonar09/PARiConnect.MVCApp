@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PARiConnect.MVCApp.Models;
 using PARiConnect.MVCApp.Services;
+using PARiConnect.MVCApp.ViewModels;
 
 namespace PARiConnect.MVCApp.Controllers
 {
@@ -17,10 +18,11 @@ namespace PARiConnect.MVCApp.Controllers
         {
             _assessmentReviewData = assessmentReviewData;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
 
-            var model = _assessmentReviewData.GetAll();
+            var model = new HomeIndexViewModel();
+            model.AssessmentReview = await _assessmentReviewData.GetAllAsync();
             return View(model);
         }
 
