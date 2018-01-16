@@ -17,7 +17,7 @@ namespace PARiConnect.MVCApp.Services
                     Assessment = "CAB Parent Form",
                     Updated = "12/12/2016",
                     Status = "Completed"
-                },
+                }, 
                 new AssessmentReview {
                     ClientName ="Liz Evins",
                     Assessment = "CAD Self Form",
@@ -25,7 +25,7 @@ namespace PARiConnect.MVCApp.Services
                     Status = "Completed"
                 },
                 new AssessmentReview {
-                    ClientName ="Sam Smith",
+                    ClientName ="Mike Smith",
                     Assessment = "Brief Student Form",
                     Updated = "12/22/2017",
                     Status = "Completed"
