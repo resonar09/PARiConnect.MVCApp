@@ -16,19 +16,19 @@ namespace PARiConnect.MVCApp.Services
                     ClientName ="Sam Smith",
                     Assessment = "CAB Parent Form",
                     Updated = "12/12/2016",
-                    Status = "Completed"
+                    StatusKey = 6
                 }, 
                 new AssessmentReview {
                     ClientName ="Liz Evins",
                     Assessment = "CAD Self Form",
                     Updated = "12/08/2017",
-                    Status = "Completed"
+                     StatusKey = 6
                 },
                 new AssessmentReview {
                     ClientName ="Mike Smith",
                     Assessment = "Brief Student Form",
                     Updated = "12/22/2017",
-                    Status = "Completed"
+                    StatusKey = 6
                 }
             };
         }
@@ -43,7 +43,7 @@ namespace PARiConnect.MVCApp.Services
                     Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
                     ClientName = x.Client.FirstName + " " + x.Client.LastName,
                     Updated = x.TestDate.ToString(),
-                    Status = "Completed"
+                    StatusKey = x.StatusKey
                 });
             return clientAssesReviews.OrderBy(x => x.Assessment);
         }
