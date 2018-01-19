@@ -10,9 +10,10 @@
     padding-right: 15px;
 }
 
-.nav-link{
+.nav-link {
     font-weight: 600;
 }
+
 .table {
     border-collapse: separate;
     border-spacing: 0px 20px;
@@ -28,6 +29,16 @@
 
     .table-header th {
         padding: 4px 5px;
+        /* background-image: url(../images/black-unsorted.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        font-weight: bold;
+        
+        background-position: center right;
+        padding-left: 20px;
+        border-right: 1px solid #dad9c7;
+        margin-left: -1px;*/
     }
 
 .table td {
@@ -40,20 +51,22 @@
 .table-row {
     background: #fafafa;
 }
-.table-row-header{
+
+.table-row-header {
     font-weight: 600;
     color: #007bff;
-
 }
+
 .table-row-start {
     border-left: 1px solid #e9ecef;
 }
 
 
-.table-row-start-completed{
+.table-row-start-completed {
     border-left: solid 8px #a8ffa8;
 }
-.table-row-start-notcompleted{
+
+.table-row-start-notcompleted {
     border-left: solid 8px #ffa8a8;
 }
 
@@ -61,8 +74,26 @@
     border-right: 1px solid #e9ecef;
 }
 
-/* Hide/rearrange for smaller screens 
-@media screen and (max-width: 767px) {
+/*Table Sort Styling*/
 
+th.header {
+    background-image: url(../img/small.gif);
+    cursor: pointer;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding-left: 20px;
+    border-right: 1px solid #dad9c7;
+    margin-left: -1px;
 }
-*/
+
+    .tablesorter-headerDesc .tablesorter-header-inner:after {
+        content: "  \f107"; /* this is your text. You can also use UTF-8 character codes as I do here */
+        font-family: FontAwesome;
+    }
+
+    .tablesorter-headerAsc .tablesorter-header-inner:after {
+        content: "  \f106"; /* this is your text. You can also use UTF-8 character codes as I do here */
+        font-family: FontAwesome;
+    }
+

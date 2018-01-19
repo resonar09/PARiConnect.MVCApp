@@ -1,5 +1,6 @@
 @model PARiConnect.MVCApp.ViewModels.HomeIndexViewModel
-    <table class="table table-hover sortable w-100">
+
+    <table id="myTable" class="table table-hover sortable w-100 tablesorter">
         <thead class="table-header">
             <tr class="table-row">
                 <th class="table-row-start">Client</th>
@@ -10,20 +11,23 @@
             </tr>
 
         </thead>
-         @foreach(var assessmentReview in Model.AssessmentReview) {
-        <tr class="table-row">
-            <td class="@(assessmentReview.Completed ? "table-row-start-completed" : "table-row-start-notcompleted")">
-               <span class="table-row-header">@assessmentReview.ClientName</span>
-            </td>
-            <td>@assessmentReview.Assessment</td>
-            <td>@assessmentReview.Updated</td>
-            <td>@assessmentReview.Status</td>
-            <td class="table-row-end">
-                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+        @foreach (var assessmentReview in Model.AssessmentReview)
+        {
+            <tr class="table-row">
+                <td class="@(assessmentReview.Completed ? "table-row-start-completed" : "table-row-start-notcompleted")">
+                    <span class="table-row-header">@assessmentReview.ClientName</span>
+                </td>
+                <td>@assessmentReview.Assessment</td>
+                <td>@assessmentReview.Updated</td>
+                <td>@assessmentReview.Status</td>
+                <td class="table-row-end">
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
                     <span class="par-command-text">Run Report</span>
                     <i class="fa fa-search ml-2" aria-hidden="true"></i>
                     <span class="par-command-text">View Responses</span>
-            </td>
-        </tr>
+                </td>
+            </tr>
         }
     </table>
+
+

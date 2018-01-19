@@ -26,19 +26,12 @@
         <div class="tab-content">
             <div class="tab-pane active" id="pending" role="tabpanel">
                 <div class="mt-2">
-                    <table>
-                        @foreach(var assessmentReview in Model.AssessmentReview)
-                        {
-                        <tr>
-                            <td>@assessmentReview.ClientName</td>
-                        </tr>
-                        }
-                    </table>
+                    @await Component.InvokeAsync("AssessmentReview", new { completed = false })
                 </div>
             </div>
             <div class="tab-pane" id="completed" role="tabpanel">
                 <div class="mt-2">
-                    @Html.Partial("_AssessmentReviews", Model)
+                    @await Component.InvokeAsync("AssessmentReview", new { completed = true })
                 </div>
             </div>
         </div>
@@ -48,3 +41,30 @@
         <app-recent-accessed></app-recent-accessed>
     </div>
 </div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Selectors for future use
+
+            $(".sortable").tablesorter();
+
+            $(".search-input").keyup(function () {
+
+                var value = this.value;
+                $(".searchable").find("tr").each(function (index) {
+                    if (index === 0) return;
+                    //var id = $(this).find("td").first().text();
+                    var rowMatch = false;
+
+                    $(this).find("td").each(function (index) {
+                        if ($(this).text().indexOf(value) !== -1)
+                            rowMatch = true;
+                        //console.log($(this).text());
+                    });
+                    $(this).toggle(rowMatch);
+                });
+            });
+        }
+        );
+    </script>
+}
