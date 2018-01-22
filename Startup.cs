@@ -33,21 +33,25 @@ namespace PARiConnect.MVCApp
             var appSettingsSection = Configuration.GetSection("AppSettings");
             var appSettings = appSettingsSection.Get<AppSettings>();
 
+            var users = new Dictionary<string,string> {{"dperez@parinc.com","password"}};
+
             //App Services
             if (Environment.IsDevelopment() && appSettings.Offline)
             {
                 services.AddScoped<IAssessmentReviewData, InMemoryAssessmentReviewData>();
+                services.AddSingleton<IUserService>(new UserServiceMock(users));
             }
             else
             {
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewData>();
+                services.AddSingleton<IUserService>(new UserService(users));
             }
 
 
             services.AddMvc();
 
-            var users = new Dictionary<string,string> {{"dperez@parinc.com","password"}};
-            services.AddSingleton<IUserService>(new UserServiceMock(users));
+
+
             services.AddAuthentication(options => {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;

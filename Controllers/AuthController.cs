@@ -35,7 +35,7 @@ namespace PARiConnect.MVCApp.Controllers
             if (ModelState.IsValid)
             {
                 User user;
-                if(await _userService.ValidateCredentials(model.Email, model.Password, out user)){
+                if(await _userService.ValidateCredentialsAsync(model.Email, model.Password, out user)){
                         await LoginUser(user.Email);
                         return RedirectToAction("Index","Home");
                 }

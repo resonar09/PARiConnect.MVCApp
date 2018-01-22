@@ -5,7 +5,7 @@ namespace PARiConnect.MVCApp.Services
 {
     public interface IUserService
     {
-        Task<bool> ValidateCredentials(string email, string password, out User user);
+        Task<bool> ValidateCredentialsAsync(string email, string password, out User user);
     }
     
 }
