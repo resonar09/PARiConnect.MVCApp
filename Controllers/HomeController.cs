@@ -20,10 +20,17 @@ namespace PARiConnect.MVCApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-
-            var model = new HomeIndexViewModel();
-            model.AssessmentReview = await _assessmentReviewData.GetAllAsync();
-            return View(model);
+            if (User.Identity.IsAuthenticated)
+            {
+                var model = new HomeIndexViewModel();
+                model.AssessmentReview = await _assessmentReviewData.GetAllAsync();
+                return View(model);
+            }
+            else
+            {
+                var loginModel = new Login();
+                return View("Login", loginModel);
+            }
         }
 
         public IActionResult About()
