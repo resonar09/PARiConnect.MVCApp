@@ -75,6 +75,7 @@ namespace PARiConnect.MVCApp
                 app.UseExceptionHandler("/Home/Error");
             }
 
+
             app.UseStaticFiles();
 
             app.UseAuthentication();

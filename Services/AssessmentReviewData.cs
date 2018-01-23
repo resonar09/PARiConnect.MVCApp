@@ -34,6 +34,7 @@ namespace PARiConnect.MVCApp.Services
         }
         public async Task<IEnumerable<AssessmentReview>> GetAllAsync()
         {
+        
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
             var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, 54338, null, null);
 

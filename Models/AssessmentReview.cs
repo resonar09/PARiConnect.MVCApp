@@ -9,6 +9,7 @@ namespace PARiConnect.MVCApp.Models
         public string ClientName { get; set; }
         public string Assessment { get; set; }
         public string Updated { get; set; }
+
         public string Status
         {
             get

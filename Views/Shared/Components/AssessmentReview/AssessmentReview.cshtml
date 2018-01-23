@@ -1,6 +1,5 @@
 ﻿@model PARiConnect.MVCApp.ViewModels.HomeIndexViewModel
-<div class="mt-4"><input type="text" class="search-input form-control" id="search" placeholder="Search..."></div>
-<table class="table table-hover sortable w-100 sortable tablesorter searchable">
+<table class="table table-hover sortable w-100 tablesorter">
     <thead class="table-header">
         <tr class="table-row">
             <th class="table-row-start client">Client</th>
@@ -9,8 +8,8 @@
             <th class="status">Status</th>
             <th class="table-row-end"></th>
         </tr>
-
     </thead>
+    <tbody class="searchable">
     @foreach (var assessmentReview in Model.AssessmentReview)
     {
         <tr class="table-row">
@@ -28,4 +27,5 @@
             </td>
         </tr>
     }
+    </tbody>
 </table>
