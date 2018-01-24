@@ -42,6 +42,14 @@ namespace PARiConnect.MVCApp.Controllers
             }
             return View(model);
         }
+        
+        [Route("logout")]
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index","Home");
+        }
 
         private async Task LoginUser(string email)
         {

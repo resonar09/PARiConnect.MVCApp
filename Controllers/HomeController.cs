@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PARiConnect.MVCApp.Models;
 using PARiConnect.MVCApp.Services;
@@ -10,9 +11,11 @@ using PARiConnect.MVCApp.ViewModels;
 
 namespace PARiConnect.MVCApp.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IAssessmentReviewData _assessmentReviewData;
+
 
         public HomeController(IAssessmentReviewData assessmentReviewData)
         {
@@ -20,17 +23,10 @@ namespace PARiConnect.MVCApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
                 var model = new HomeIndexViewModel();
                 model.AssessmentReview = await _assessmentReviewData.GetAllAsync();
                 return View(model);
-            }
-            else
-            {
-                var loginModel = new Login();
-                return View("Login", loginModel);
-            }
+
         }
 
         public IActionResult About()
