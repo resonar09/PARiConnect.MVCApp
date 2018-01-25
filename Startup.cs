@@ -26,7 +26,6 @@ namespace PARiConnect.MVCApp
             Environment = environment;
         }
 
-        
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -40,7 +39,7 @@ namespace PARiConnect.MVCApp
             //App Services
             if (Environment.IsDevelopment() && appSettings.Offline)
             {
-                services.AddScoped<IAssessmentReviewData, InMemoryAssessmentReviewData>();
+                services.AddScoped<IAssessmentReviewData, AssessmentReviewDataMock>();
                 services.AddSingleton<IUserService>(new UserServiceMock(users));
             }
             else

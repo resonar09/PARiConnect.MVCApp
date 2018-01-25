@@ -60,6 +60,7 @@ namespace PARiConnect.MVCApp.Controllers
                 new Claim(ClaimTypes.Name, user.FullName),
                 new Claim(ClaimTypes.Email,user.Email),
                 new Claim(ClaimTypes.Sid,user.OrgUserMappingKey), 
+                new Claim("name",user.FullName),  
                 new Claim("contactid",user.ContactId)             
             };
             var identity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme, "name", null);

@@ -37,8 +37,12 @@
         </div>
     </div>
     <div class="col-lg-3 par-bg-2 p-2">
-        <alerts></alerts>
-        <app-recent-accessed></app-recent-accessed>
+        <div>
+            @await Component.InvokeAsync("Notifications", new { completed = true })
+        </div>
+        <div>
+            @await Component.InvokeAsync("RecentlyAccessed", new { completed = true })
+        </div>
     </div>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PARiConnect.MVCApp.Services
 {
-    public class InMemoryAssessmentReviewData : IAssessmentReviewData
+    public class AssessmentReviewDataMock : IAssessmentReviewData
     {
         List<AssessmentReview> _assessmentReviews;
-        public InMemoryAssessmentReviewData()
+        public AssessmentReviewDataMock()
         {
             _assessmentReviews = new List<AssessmentReview>
             {
@@ -30,6 +30,18 @@ namespace PARiConnect.MVCApp.Services
                     Assessment = "Brief Student Form",
                     Updated = "12/22/2017",
                      StatusKey = 6
+                },
+                new AssessmentReview {
+                    ClientName ="Tab Johnson",
+                    Assessment = "Spectra Form",
+                    Updated = "1/12/2018",
+                     StatusKey = 5
+                },
+                new AssessmentReview {
+                    ClientName ="Chris Peterson",
+                    Assessment = "Spectra Form",
+                    Updated = "1/22/2018",
+                     StatusKey = 5
                 }
             };
         }

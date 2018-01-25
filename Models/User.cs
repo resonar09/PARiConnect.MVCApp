@@ -5,8 +5,13 @@ namespace PARiConnect.MVCApp.Models
         public User(string email)
         {
             this.Email = email;
-            //this.Password = password;
-
+        }
+        public User(string email, string fullname, string contactid, string orgusermappingkey)
+        {
+            this.Email = email;
+            this.FullName = fullname;
+            this.ContactId = contactid;
+            this.OrgUserMappingKey = orgusermappingkey;
         }
         public string Email { get; set; }
         public string FullName { get; set; }

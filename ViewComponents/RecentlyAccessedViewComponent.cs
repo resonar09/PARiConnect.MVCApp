@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace PARiConnect.MVCApp.ViewComponents
 {
-    public class AssessmentReviewViewComponent : ViewComponent
+    public class RecentlyAccessedViewComponent : ViewComponent
     {
         private IAssessmentReviewData _assessmentReviewData;
 
-        public AssessmentReviewViewComponent(IAssessmentReviewData assessmentReviewData)
+        public RecentlyAccessedViewComponent(IAssessmentReviewData assessmentReviewData)
         {
             _assessmentReviewData = assessmentReviewData;
         }
@@ -18,7 +18,7 @@ namespace PARiConnect.MVCApp.ViewComponents
             var model = new HomeIndexViewModel();
             var assessmentReviews = _assessmentReviewData.GetAllAsync().Result;
             model.AssessmentReview = assessmentReviews.Where(x => x.Completed == completed);
-            return View("AssessmentReview", model);
+            return View("RecentlyAccessed", model);
         }
     }
 }
