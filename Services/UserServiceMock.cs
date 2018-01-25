@@ -25,7 +25,9 @@ namespace PARiConnect.MVCApp.Services
                 var hash = _users[key].PasswordHash;
                 if(password == hash)
                 {
-                    user = _users[key].User;
+                 User loggedInUser = new User(key,"Test Name", "12345", "37");
+                    user = loggedInUser;
+                    //user = _users[key].User;
                     return Task.FromResult(true);
                 }
                 

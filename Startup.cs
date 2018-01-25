@@ -40,7 +40,7 @@ namespace PARiConnect.MVCApp
             //App Services
             if (Environment.IsDevelopment() && appSettings.Offline)
             {
-                services.AddScoped<IAssessmentReviewData, InMemoryAssessmentReviewData>();
+                services.AddScoped<IAssessmentReviewData, AssessmentReviewDataMock>();
                 services.AddSingleton<IUserService>(new UserServiceMock(users));
             }
             else
