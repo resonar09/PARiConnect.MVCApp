@@ -1,19 +1,26 @@
-﻿body {
+﻿
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
+/*Nav Styling*/
 .nav-link {
     font-weight: 600;
 }
+#nav-dropdown-menu{
+    left:-100px;
 
+}
+
+/*Table Styling*/
 .table {
     border-collapse: separate;
     border-spacing: 0px 20px;
@@ -97,3 +104,9 @@ th.header {
         font-family: FontAwesome;
     }
 
+
+/*Forms Styling*/
+
+.input-validation-error{
+    border: red 1px solid;
+}

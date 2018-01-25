@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Claims;
+using System.Threading;
+using Microsoft.AspNetCore.Http;
 
 namespace PARiConnect.MVCApp.Services
 {
     public class AssessmentReviewData : IAssessmentReviewData
     {
         List<AssessmentReview> _assessmentReviews;
-        public AssessmentReviewData()
+        private IHttpContextAccessor _httpAccessor;
+        public AssessmentReviewData(IHttpContextAccessor httpAccessor)
         {
+            _httpAccessor = httpAccessor;
+
+
             _assessmentReviews = new List<AssessmentReview>
             {
                 new AssessmentReview {
@@ -17,7 +24,7 @@ namespace PARiConnect.MVCApp.Services
                     Assessment = "CAB Parent Form",
                     Updated = "12/12/2016",
                     StatusKey = 6
-                }, 
+                },
                 new AssessmentReview {
                     ClientName ="Liz Evins",
                     Assessment = "CAD Self Form",
@@ -34,9 +41,15 @@ namespace PARiConnect.MVCApp.Services
         }
         public async Task<IEnumerable<AssessmentReview>> GetAllAsync()
         {
-        
+            var loggedInUser = _httpAccessor.HttpContext.User;
+            var loggedInUserName = loggedInUser.Identity.Name;
+            var loggedInUserID = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Sid).Value;
+
+            //IEnumerable<Claim> claims = identity.Claims;
+            // Get the claims values
+            // var name = identity.Claims.Where(c => c.Type == ClaimTypes.Email).Select(c => c.Value).Single(); 
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, 54338, null, null);
+            var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, int.Parse(loggedInUserID), null, null);
 
             var clientAssesReviews = clientAssessmentReviews
                 .Select(x => new AssessmentReview

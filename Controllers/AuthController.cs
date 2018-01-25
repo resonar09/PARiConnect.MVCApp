@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -36,7 +37,8 @@ namespace PARiConnect.MVCApp.Controllers
             {
                 User user;
                 if(await _userService.ValidateCredentialsAsync(model.Email, model.Password, out user)){
-                        await LoginUser(user.Email);
+                        await LoginUser(user);
+                        
                         return RedirectToAction("Index","Home");
                 }
             }
@@ -44,21 +46,25 @@ namespace PARiConnect.MVCApp.Controllers
         }
         
         [Route("logout")]
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index","Home");
         }
 
-        private async Task LoginUser(string email)
+        private async Task LoginUser(User user)
         {
             var claims = new List<Claim> {
-                new Claim(ClaimTypes.NameIdentifier, email),
-                new Claim("name", email)
+                new Claim(ClaimTypes.NameIdentifier, user.Email),
+                new Claim(ClaimTypes.Name, user.FullName),
+                new Claim(ClaimTypes.Email,user.Email),
+                new Claim(ClaimTypes.Sid,user.OrgUserMappingKey), 
+                new Claim("contactid",user.ContactId)             
             };
             var identity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme, "name", null);
             var principal = new ClaimsPrincipal(identity);
+            Thread.CurrentPrincipal = principal;
             await HttpContext.SignInAsync(principal);
         }
 

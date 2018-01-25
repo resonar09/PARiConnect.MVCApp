@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using PARiConnect.MVCApp.Helpers;
 using PARiConnect.MVCApp.Services;
 
@@ -47,7 +49,7 @@ namespace PARiConnect.MVCApp
                 services.AddSingleton<IUserService>(new UserService(users));
             }
 
-
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();
 
 

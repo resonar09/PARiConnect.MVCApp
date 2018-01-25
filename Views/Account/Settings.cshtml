@@ -1,0 +1,17 @@
+@model PARiConnect.MVCApp.Models.User
+@{
+    ViewData["Title"] = "Settings Page";
+}
+
+<h1>Account Settings Page</h1>
+
+<h2>Welcome @User.Identity.Name</h2>
+    <ul>
+        @foreach(var claim in User.Claims)
+        {
+        <li>
+            <em>@claim.Type</em>: @claim.Value
+        </li>
+        }
+
+    </ul>

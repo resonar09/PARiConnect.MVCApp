@@ -29,8 +29,12 @@ namespace PARiConnect.MVCApp.Services
             var userAuth = orgUserServiceClient.AuthenticateCorpSvcsAsync(authenticateCorpSvcsRequest);
             if (userAuth.Result.AuthenticateCorpSvcsResult.IsValid)
             {
+                
                 User loggedInUser = new User(key);
                 user = loggedInUser;
+                user.FullName = userAuth.Result.identities[0].UserData.FullName;
+                user.ContactId = userAuth.Result.identities[0].UserData.ContactID;
+                user.OrgUserMappingKey = userAuth.Result.identities[0].OrgUserMapping.OrgUserMappingKey.ToString();
                 return Task.FromResult(true);
             }
             return Task.FromResult(false);
