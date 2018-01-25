@@ -12,6 +12,7 @@ namespace PARiConnect.MVCApp.Models
             this.FullName = fullname;
             this.ContactId = contactid;
             this.OrgUserMappingKey = orgusermappingkey;
+            
         }
         public string Email { get; set; }
         public string FullName { get; set; }
