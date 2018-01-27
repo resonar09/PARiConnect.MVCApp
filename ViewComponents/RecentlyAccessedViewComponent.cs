@@ -7,17 +7,16 @@ namespace PARiConnect.MVCApp.ViewComponents
 {
     public class RecentlyAccessedViewComponent : ViewComponent
     {
-        private IAssessmentReviewData _assessmentReviewData;
+        private IRecentlyAccessedData _recentlyAccessedData;
 
-        public RecentlyAccessedViewComponent(IAssessmentReviewData assessmentReviewData)
+        public RecentlyAccessedViewComponent(IRecentlyAccessedData recentlyAccessedData)
         {
-            _assessmentReviewData = assessmentReviewData;
+            _recentlyAccessedData = recentlyAccessedData;
         }
         public IViewComponentResult Invoke(bool completed)
         {
-            var model = new HomeIndexViewModel();
-            var assessmentReviews = _assessmentReviewData.GetAllAsync().Result;
-            model.AssessmentReview = assessmentReviews.Where(x => x.Completed == completed);
+            var model = new RecentlyAccessedViewModel();
+            model.RecentlyAccessed = _recentlyAccessedData.GetRecentlyAccessedAsync().Result;
             return View("RecentlyAccessed", model);
         }
     }

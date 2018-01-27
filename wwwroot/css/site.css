@@ -11,6 +11,18 @@ body {
     padding-right: 15px;
 }
 
+/* Backgrounds */
+.bg-header {
+    background: #f1f1f1;
+}
+
+/* Borders */
+.border-bottom {
+    border-bottom: 1px solid lightgrey;
+}
+
+
+
 /*Nav Styling*/
 .nav-link {
     font-weight: 600;

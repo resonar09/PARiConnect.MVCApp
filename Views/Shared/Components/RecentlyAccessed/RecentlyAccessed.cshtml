@@ -1,1 +1,27 @@
-﻿<h6>Recently Accessed Clients and Groups</h6>
+﻿<div class="card small ">
+  <div class="card-block p-2">
+    <span class="card-title font-weight-bold">Recently Accessed Clients and Groups</span>
+    <div class="card-body">
+    <div class="d-flex flex-column">
+        @foreach (var recentlyAccessed in Model.RecentlyAccessed)
+        {
+        <div class="m-1 border-bottom">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a href="" class="ml-2">@recentlyAccessed.ClientName</a>
+        </div>
+        }
+<!--         <div class="m-1 border-bottom">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a href="" class="ml-2">Ron Smith</a>
+        </div>
+        <div class="m-1 border-bottom">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a href="" class="ml-2">Ron Smith</a>
+            <i class="fa fa-pencil float-right" aria-hidden="true"></i>
+        </div> -->
+    </div>
+
+    </div>
+
+  </div>
+</div>

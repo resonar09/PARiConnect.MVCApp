@@ -8,39 +8,40 @@ using Microsoft.AspNetCore.Http;
 
 namespace PARiConnect.MVCApp.Services
 {
-    public class AssessmentReviewData : IAssessmentReviewData
+    public class RecentlyAccessedData : IRecentlyAccessedData
     {
         private IHttpContextAccessor _httpAccessor;
-        public AssessmentReviewData(IHttpContextAccessor httpAccessor)
+        public RecentlyAccessedData(IHttpContextAccessor httpAccessor)
         {
             _httpAccessor = httpAccessor;
         }
-        public async Task<IEnumerable<AssessmentReview>> GetAllAsync()
+
+        public IEnumerable<RecentlyAccessed> GetRecentlyAccessed()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task<IEnumerable<RecentlyAccessed>> GetRecentlyAccessedAsync()
         {
             var loggedInUser = _httpAccessor.HttpContext.User;
             var loggedInUserName = loggedInUser.Identity.Name;
             var loggedInUserID = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Sid).Value;
 
-            //IEnumerable<Claim> claims = identity.Claims;
-            // Get the claims values
-            // var name = identity.Claims.Where(c => c.Type == ClaimTypes.Email).Select(c => c.Value).Single(); 
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
             var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, int.Parse(loggedInUserID), null, null);
 
             var clientAssesReviews = clientAssessmentReviews
-                .Select(x => new AssessmentReview
+                .Select(x => new RecentlyAccessed
                 {
                     Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
                     ClientName = x.Client.FirstName + " " + x.Client.LastName,
-                    Updated = x.TestDate.ToString(),
-                    StatusKey = x.StatusKey
-                });
-            return clientAssesReviews.OrderBy(x => x.Assessment);
+                    Updated = x.TestDate.ToString()
+                }).OrderByDescending(x => x.Updated);
+            return clientAssesReviews.GroupBy(c => c.ClientId, c => c.ClientName).Select(x=> new RecentlyAccessed{
+                ClientId = x.Key,
+                ClientName = x.First()
+            });
         }
 
-        IEnumerable<AssessmentReview> IAssessmentReviewData.GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
