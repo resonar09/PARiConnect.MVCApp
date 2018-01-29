@@ -10,6 +10,12 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+/* Titles */
+.title-1{
+    color: #B9B9B9;
+    font-size: 2em;
+}
+
 
 /* Backgrounds */
 .bg-header {

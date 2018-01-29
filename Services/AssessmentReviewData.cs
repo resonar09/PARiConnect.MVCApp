@@ -1,4 +1,5 @@
 ﻿using PARiConnect.MVCApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace PARiConnect.MVCApp.Services
                 {
                     Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
                     ClientName = x.Client.FirstName + " " + x.Client.LastName,
-                    Updated = x.TestDate.ToString(),
+                    Updated = x.ModifiedDateTime??DateTime.MinValue,// : x.ModifiedDateTime,
                     StatusKey = x.StatusKey
                 });
             return clientAssesReviews.OrderBy(x => x.Assessment);

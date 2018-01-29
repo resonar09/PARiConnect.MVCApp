@@ -14,33 +14,80 @@ namespace PARiConnect.MVCApp.Services
             _assessmentReviews = new List<AssessmentReview>
             {
                 new AssessmentReview {
+                    ClientId = 1,
                     ClientName ="Sam Smith",
                     Assessment = "CAB Parent Form",
-                    Updated = "12/12/2016",
+                    Updated = DateTime.Parse("12/12/2016"),
                      StatusKey = 6
                 }, 
                 new AssessmentReview {
+                    ClientId = 2,
                     ClientName ="Liz Evins",
                     Assessment = "CAD Self Form",
-                    Updated = "12/08/2017",
+                    Updated = DateTime.Parse("12/08/2017"),
                      StatusKey = 6
                 },
                 new AssessmentReview {
+                    ClientId = 3,
                     ClientName ="Mike Smith",
                     Assessment = "Brief Student Form",
-                    Updated = "12/22/2017",
+                    Updated = DateTime.Parse("12/22/2017"),
                      StatusKey = 6
                 },
                 new AssessmentReview {
+                    ClientId = 4,
                     ClientName ="Tab Johnson",
                     Assessment = "Spectra Form",
-                    Updated = "1/12/2018",
+                    Updated = DateTime.Parse("1/12/2018"),
                      StatusKey = 5
                 },
                 new AssessmentReview {
+                    ClientId = 5,
                     ClientName ="Chris Peterson",
                     Assessment = "Spectra Form",
-                    Updated = "1/22/2018",
+                    Updated = DateTime.Parse("1/22/2018"),
+                     StatusKey = 5
+                },
+                new AssessmentReview {
+                    ClientId = 6,
+                    ClientName ="Steve Crowder",
+                    Assessment = "Brief Student Form",
+                    Updated = DateTime.Parse("12/22/2017"),
+                     StatusKey = 6
+                },
+                new AssessmentReview {
+                    ClientId = 7,
+                    ClientName ="Dave Rubin",
+                    Assessment = "Spectra Form",
+                    Updated = DateTime.Parse("1/12/2018"),
+                     StatusKey = 5
+                },
+                new AssessmentReview {
+                    ClientId = 8,
+                    ClientName ="Gavin McGinnis",
+                    Assessment = "Spectra Form",
+                    Updated = DateTime.Parse("1/22/2018"),
+                    StatusKey = 5
+                },
+                new AssessmentReview {
+                    ClientId = 6,
+                    ClientName ="Steve Crowder",
+                    Assessment = "Brief Student Form",
+                    Updated = DateTime.Parse("1/24/2017"),
+                     StatusKey = 6
+                },
+                new AssessmentReview {
+                    ClientId = 7,
+                    ClientName ="Dave Rubin",
+                    Assessment = "Spectra Form",
+                    Updated = DateTime.Parse("1/25/2018"),
+                     StatusKey = 5
+                },
+                new AssessmentReview {
+                    ClientId = 8,
+                    ClientName ="Gavin McGinnis",
+                    Assessment = "Spectra Form",
+                    Updated = DateTime.Parse("1/26/2018"),
                      StatusKey = 5
                 }
             };

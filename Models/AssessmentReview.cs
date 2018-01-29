@@ -1,3 +1,5 @@
+using System;
+
 namespace PARiConnect.MVCApp.Models
 {
     public class AssessmentReview
@@ -6,9 +8,10 @@ namespace PARiConnect.MVCApp.Models
         private string _status;
         private bool _completed;
 
+        public int ClientId{ get; set; }
         public string ClientName { get; set; }
         public string Assessment { get; set; }
-        public string Updated { get; set; }
+        public DateTime Updated { get; set; }
 
         public string Status
         {

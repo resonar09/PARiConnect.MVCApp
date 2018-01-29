@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
+using System;
 
 namespace PARiConnect.MVCApp.Services
 {
@@ -35,7 +36,7 @@ namespace PARiConnect.MVCApp.Services
                 {
                     Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
                     ClientName = x.Client.FirstName + " " + x.Client.LastName,
-                    Updated = x.TestDate.ToString()
+                    Updated = x.ModifiedDateTime??DateTime.MinValue,
                 }).OrderByDescending(x => x.Updated);
             return clientAssesReviews.GroupBy(c => c.ClientId, c => c.ClientName).Select(x=> new RecentlyAccessed{
                 ClientId = x.Key,
