@@ -87,6 +87,52 @@
                     $(this).toggle(rowMatch);
                 });
             });
+
+            $("#firstLastToggle").click(function(e){
+                    e.preventDefault();
+                    alert('clicked');  
+                    return false;  
+            });
+            $("#searchToggle").click(function(e){
+                    $(".search-toggle").toggle();
+            });
+            $.tablesorter.addParser({
+                
+                id: 'last-name',
+                is: function(s) {
+                    console.log("test");
+                return false;
+                },
+                format: function(str) {
+                var parts = (str || '').split(/\s+/),
+                    last = parts.pop();
+                
+                parts.unshift(last);
+                return parts.join(' ');
+                },
+                // set type, either numeric or text
+                type: 'text'
+            });
+
+/*           $.tablesorter.addParser({
+    id: 'last-name',
+    is: function() {
+      return false;
+    },
+    format: function(str) {
+      var parts = (str || '').split(/\s+/),
+        last = parts.pop();
+      parts.unshift(last);
+      return parts.join(' ');
+    },
+    // set type, either numeric or text
+    type: 'text'
+  });
+
+  $('table').tablesorter({
+    theme: 'blue'
+  }); */
+            
         }
         );
     </script>

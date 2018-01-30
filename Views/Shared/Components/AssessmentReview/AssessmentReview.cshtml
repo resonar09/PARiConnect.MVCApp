@@ -2,11 +2,47 @@
 <table class="table table-hover sortable w-100 tablesorter">
     <thead class="table-header">
         <tr class="table-row">
-            <th class="table-row-start client">Client</th>
-            <th class="assessment">Assessment</th>
-            <th class="updated">Updated</th>
-            <th class="status">Status</th>
-            <th class="table-row-end"></th>
+            <th class="table-row-start sorter-last-name">
+                <div class="header-text mb-1 ">Client 
+                     <div class="float-right">
+                        <button id="firstLastToggle" class="btn btn-sm btn-link text-muted table-toggle">F<i class="fa fa-exchange" aria-hidden="true"></i>L</button>
+                    </div>
+                </div>
+                <div class="search-toggle">
+                    <input type="text" />
+                </div>
+
+            </th>
+            <th class="assessment">
+                <div class="header-text mb-1">Assessment</div>
+                <div class="search-toggle">
+                    <input type="text" />
+                </div>
+            </th>
+            <th class="updated">
+                <div class="header-text mb-1">Updated</div>
+                <div class="search-toggle">
+                    <input type="text" />
+                </div>
+            </th>
+            <th class="status">  
+                <div class="header-text mb-1">Status</div>
+                <div class="search-toggle">
+                    <input type="text" />
+                </div>
+            </th>
+            <th class="table-row-end">
+                <div class="mb-1">
+                    <div class="float-right">
+                        <button id="searchToggle" class="btn btn-sm btn-link text-muted table-toggle">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        
+                    </div>
+                </div>
+                <div></div>
+                </div>
+            </th>
         </tr>
     </thead>
     <tbody class="searchable">
@@ -28,3 +64,31 @@
     }
     </tbody>
 </table>
+
+<!-- <table class="tablesorter">
+  <thead>
+    <tr>
+      <th class="sorter-last-name">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alex Adams</td>
+    </tr>
+    <tr>
+      <td>Robert (Bob) Rover</td>
+    </tr>
+    <tr>
+      <td>Bruce Black</td>
+    </tr>
+    <tr>
+      <td>Catelyn Cruz</td>
+    </tr>
+    <tr>
+      <td>Adam (Dave) Francis</td>
+    </tr>
+    <tr>
+      <td>Elaine Evans</td>
+    </tr>
+  </tbody>
+</table> -->
