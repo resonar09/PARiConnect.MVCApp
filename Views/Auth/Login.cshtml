@@ -6,20 +6,30 @@
 <div class="d-flex justify-content-center m-2">
 <form class="form-login" asp-action="Login"></a>
     <div class="my-4"><img alt="PARiConnect" class="" src="~/images/pic_logo_small.png" /></div>
-    
-
-    <div class="my-2"><label class="sr-only" >Email</label>
-    <input type="email" class="form-control" placeholder="Email" asp-for="Email" />
+    <div class="input-group my-2">
+        <!-- <label class="sr-only" >Email</label> -->
+        <div class="input-group-prepend">
+           <span class="input-group-text">
+               <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </span>
+        </div>
+        <input type="email" class="form-control" placeholder="Email" asp-for="Email" />
     </div>
-    <div class="my-2">
-    <label class="sr-only" >Password</label>
-    <input type="password" class="form-control" placeholder="Password" asp-for="Password" />
+    
+    <div class="input-group my-2">
+        <!-- <label class="sr-only" >Password</label> -->
+        <div class="input-group-prepend">
+           <span class="input-group-text">
+               <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+        </div>
+        <input type="password" class="form-control" placeholder="Password" asp-for="Password" />
     </div>
     @if (!ViewContext.ModelState.IsValid){
     <div asp-validation-summary="All" class="form-validation"></div>
 }
  <div class="my-4">
-<button class="btn  btn-outline-primary btn-block">Login</button>
+    <button class="btn  btn-outline-primary btn-block">Login</button>
 </div>
 
 </form>

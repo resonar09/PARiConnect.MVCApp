@@ -1,10 +1,8 @@
 ﻿
-
 body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
-
 
 .body-content {
     padding-left: 15px;
@@ -12,10 +10,9 @@ body {
 }
 /* Titles */
 .title-1{
-    color: #B9B9B9;
+    color: #E9E9E9;
     font-size: 2em;
 }
-
 
 /* Backgrounds */
 .bg-header {
@@ -26,8 +23,6 @@ body {
 .border-bottom {
     border-bottom: 1px solid lightgrey;
 }
-
-
 
 /*Nav Styling*/
 .nav-link {
@@ -127,4 +122,8 @@ th.header {
 
 .input-validation-error{
     border: red 1px solid;
+}
+
+.input-group-text{
+    width: 42px;
 }

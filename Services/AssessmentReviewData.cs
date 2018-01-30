@@ -33,7 +33,7 @@ namespace PARiConnect.MVCApp.Services
                 {
                     Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
                     ClientName = x.Client.FirstName + " " + x.Client.LastName,
-                    Updated = x.ModifiedDateTime??DateTime.MinValue,// : x.ModifiedDateTime,
+                    Updated = x.TestDate??DateTime.MinValue,//x.ModifiedDateTime??DateTime.MinValue,
                     StatusKey = x.StatusKey
                 });
             return clientAssesReviews.OrderBy(x => x.Assessment);
@@ -43,5 +43,6 @@ namespace PARiConnect.MVCApp.Services
         {
             throw new System.NotImplementedException();
         }
+
     }
 }

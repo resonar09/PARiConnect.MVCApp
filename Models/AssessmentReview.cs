@@ -7,6 +7,7 @@ namespace PARiConnect.MVCApp.Models
         private int _statusKey;
         private string _status;
         private bool _completed;
+        private bool _scored;
 
         public int ClientId{ get; set; }
         public string ClientName { get; set; }
@@ -31,6 +32,8 @@ namespace PARiConnect.MVCApp.Models
                 _statusKey = value;
                 _status = ClientAssessmentStatus.GetStatus(value);
                 _completed = ClientAssessmentStatus.GetCompleted(value);
+                _scored = ClientAssessmentStatus.GetScored(value);
+
             }
         }
 
@@ -39,6 +42,14 @@ namespace PARiConnect.MVCApp.Models
             get
             {
                 return _completed;
+            }
+
+        }
+        public bool Scored
+        {
+            get
+            {
+                return _scored;
             }
 
         }

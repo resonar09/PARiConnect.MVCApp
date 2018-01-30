@@ -43,6 +43,9 @@
         <div>
             @await Component.InvokeAsync("RecentlyAccessed", new { completed = true })
         </div>
+        <div>
+            @Html.Partial("_HelpMenu")
+        </div>
     </div>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

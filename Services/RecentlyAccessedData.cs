@@ -12,9 +12,11 @@ namespace PARiConnect.MVCApp.Services
     public class RecentlyAccessedData : IRecentlyAccessedData
     {
         private IHttpContextAccessor _httpAccessor;
-        public RecentlyAccessedData(IHttpContextAccessor httpAccessor)
+         private readonly IAssessmentReviewData _assessmentReview;
+        public RecentlyAccessedData(IHttpContextAccessor httpAccessor,IAssessmentReviewData assessmentReview)
         {
             _httpAccessor = httpAccessor;
+            _assessmentReview = assessmentReview;
         }
 
         public IEnumerable<RecentlyAccessed> GetRecentlyAccessed()
@@ -28,20 +30,16 @@ namespace PARiConnect.MVCApp.Services
             var loggedInUserName = loggedInUser.Identity.Name;
             var loggedInUserID = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Sid).Value;
 
-            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, int.Parse(loggedInUserID), null, null);
 
-            var clientAssesReviews = clientAssessmentReviews
-                .Select(x => new RecentlyAccessed
-                {
-                    Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
-                    ClientName = x.Client.FirstName + " " + x.Client.LastName,
-                    Updated = x.ModifiedDateTime??DateTime.MinValue,
-                }).OrderByDescending(x => x.Updated);
-            return clientAssesReviews.GroupBy(c => c.ClientId, c => c.ClientName).Select(x=> new RecentlyAccessed{
-                ClientId = x.Key,
-                ClientName = x.First()
-            });
+                var assessmentReview = await _assessmentReview.GetAllAsync();
+                
+                var grouped = assessmentReview.GroupBy(g => new{g.ClientId, g.ClientName}).Select(x => new RecentlyAccessed {
+                    ClientId = x.Key.ClientId,
+                    ClientName = x.Key.ClientName,
+                    Updated = x.Max(d => d.Updated)
+                });
+                              
+                return grouped.OrderByDescending(o => o.Updated).ToList().Take(10);
         }
 
     }

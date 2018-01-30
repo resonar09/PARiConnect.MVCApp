@@ -10,10 +10,11 @@
         </tr>
     </thead>
     <tbody class="searchable">
+
     @foreach (var assessmentReview in Model.AssessmentReview)
     {
         <tr class="table-row">
-            <td class="@(assessmentReview.Completed ? "table-row-start-completed" : "table-row-start-notcompleted")">
+            <td class="@(assessmentReview.Scored ? "table-row-start-completed" : "table-row-start-notcompleted")">
                 <span class="table-row-header">@assessmentReview.ClientName</span>
             </td>
             <td>@assessmentReview.Assessment</td>
