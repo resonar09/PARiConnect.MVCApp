@@ -70,9 +70,10 @@
 @section scripts {
     <script type="text/javascript">
         $(document).ready(function () {
-            // Selectors for future use
 
+            // Selectors for future use
             $(".sortable").tablesorter();
+            //$(".search-toggle").hide();
 
             $(".search-input").keyup(function () {
 
@@ -88,50 +89,41 @@
                 });
             });
 
-            $("#firstLastToggle").click(function(e){
-                    e.preventDefault();
-                    alert('clicked');  
-                    return false;  
-            });
-            $("#searchToggle").click(function(e){
-                    $(".search-toggle").toggle();
-            });
-            $.tablesorter.addParser({
-                
+            $(".name").click(function(e){
+                               $.tablesorter.addParser({
                 id: 'last-name',
                 is: function(s) {
-                    console.log("test");
                 return false;
                 },
                 format: function(str) {
                 var parts = (str || '').split(/\s+/),
                     last = parts.pop();
-                
                 parts.unshift(last);
                 return parts.join(' ');
                 },
                 // set type, either numeric or text
                 type: 'text'
             });
+            $.tablesorter.addParser({
+                id: 'first-name',
+                is: function(s) {
+                return false;
+                },
+                format: function(str) {
+                return str;
+                },
+                // set type, either numeric or text
+                type: 'text'
+            });
+                    $(".name").toggleClass("sorter-last-name");
+                    $(".name").toggleClass("sorter-first-name");
+            });
+            $(".searchToggle").click(function(e){
+                    $(".search-toggle").toggle();
+            });
 
-/*           $.tablesorter.addParser({
-    id: 'last-name',
-    is: function() {
-      return false;
-    },
-    format: function(str) {
-      var parts = (str || '').split(/\s+/),
-        last = parts.pop();
-      parts.unshift(last);
-      return parts.join(' ');
-    },
-    // set type, either numeric or text
-    type: 'text'
-  });
 
-  $('table').tablesorter({
-    theme: 'blue'
-  }); */
+
             
         }
         );

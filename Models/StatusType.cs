@@ -7,7 +7,6 @@ namespace PARiConnect.MVCApp.Models
 {
     public sealed class StatusTypes
     {
-
         private readonly String name;
         private readonly int value;
 

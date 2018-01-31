@@ -22,9 +22,6 @@ namespace PARiConnect.MVCApp.Services
             var loggedInUserName = loggedInUser.Identity.Name;
             var loggedInUserID = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Sid).Value;
 
-            //IEnumerable<Claim> claims = identity.Claims;
-            // Get the claims values
-            // var name = identity.Claims.Where(c => c.Type == ClaimTypes.Email).Select(c => c.Value).Single(); 
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
             var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, int.Parse(loggedInUserID), null, null);
 
@@ -36,7 +33,7 @@ namespace PARiConnect.MVCApp.Services
                     Updated = x.TestDate??DateTime.MinValue,//x.ModifiedDateTime??DateTime.MinValue,
                     StatusKey = x.StatusKey
                 });
-            return clientAssesReviews.OrderBy(x => x.Assessment);
+            return clientAssesReviews.OrderByDescending(x => x.Updated);
         }
 
         IEnumerable<AssessmentReview> IAssessmentReviewData.GetAll()

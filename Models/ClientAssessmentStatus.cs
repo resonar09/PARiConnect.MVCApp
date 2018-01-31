@@ -4,7 +4,6 @@ namespace PARiConnect.MVCApp.Models
 {
     public sealed class ClientAssessmentStatus
     {
-
         private readonly String name;
         private readonly int value;
 

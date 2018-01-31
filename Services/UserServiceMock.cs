@@ -30,8 +30,6 @@ namespace PARiConnect.MVCApp.Services
                     //user = _users[key].User;
                     return Task.FromResult(true);
                 }
-                
-
             }
             return Task.FromResult(false);
         }

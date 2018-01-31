@@ -8,7 +8,6 @@ namespace PARiConnect.MVCApp.Services
 {
     public interface IAssessmentReviewData
     {
-
        Task<IEnumerable<AssessmentReview>> GetAllAsync();
 
         IEnumerable<AssessmentReview> GetAll();

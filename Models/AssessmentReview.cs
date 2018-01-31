@@ -36,7 +36,6 @@ namespace PARiConnect.MVCApp.Models
 
             }
         }
-
         public bool Completed
         {
             get
