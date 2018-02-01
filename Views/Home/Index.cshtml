@@ -71,9 +71,22 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            // Selectors for future use
+             $.tablesorter.addParser({
+                id: 'last-name',
+                is: function(s) {
+                return false;
+                },
+                format: function(str) {
+                var parts = (str || '').split(/\s+/),
+                    last = parts.pop();
+                parts.unshift(last);
+                return parts.join(' ');
+                },
+                // set type, either numeric or text
+                type: 'text'
+            });
             $(".sortable").tablesorter();
-            //$(".search-toggle").hide();
+
 
             $(".search-input").keyup(function () {
 
@@ -89,40 +102,32 @@
                 });
             });
 
-            $(".name").click(function(e){
-                               $.tablesorter.addParser({
-                id: 'last-name',
-                is: function(s) {
-                return false;
-                },
-                format: function(str) {
-                var parts = (str || '').split(/\s+/),
-                    last = parts.pop();
-                parts.unshift(last);
-                return parts.join(' ');
-                },
-                // set type, either numeric or text
-                type: 'text'
-            });
-            $.tablesorter.addParser({
-                id: 'first-name',
-                is: function(s) {
-                return false;
-                },
-                format: function(str) {
-                return str;
-                },
-                // set type, either numeric or text
-                type: 'text'
-            });
-                    $(".name").toggleClass("sorter-last-name");
-                    $(".name").toggleClass("sorter-first-name");
+            $(".firstLastToggle").click(function(e){
+                $(".name-header").toggleClass("sorter-last-name");
+                $(".tablesorter").trigger("update");
+                if($(".name-header").hasClass("sorter-last-name")){
+                    $(".first").text("L");
+                    $(".last").text("F");
+                }
+                else{
+                    $(".first").text("F");
+                    $(".last").text("L"); 
+                }
             });
             $(".searchToggle").click(function(e){
                     $(".search-toggle").toggle();
             });
 
-
+            $("[data-toggle=popover]").each(function(i, obj) {
+                $(this).popover({
+                html: true,
+                content: function() {
+                    var id = $(this).attr('id')
+                    //$('#popover-content-' + id).show();
+                    return $('#popover-content-' + id).html();
+                }
+                });
+            });
 
             
         }

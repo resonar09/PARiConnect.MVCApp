@@ -1,5 +1,5 @@
-﻿<div class="alert alert-danger alert-dismissable">
-    <div class="d-flex">
+﻿<div class="alert alert-danger">
+    <div class="d-flex flex-row">
         <div>
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         </div>
@@ -7,17 +7,19 @@
             Inventory is low
         </div>
         <div class="ml-auto alert-link">
-            <a href="#">
-                <small>View Inventory</small>
+             <a href="#" 
+                         id="inventory"
+                         data-toggle="popover" 
+                         data-container="body" 
+                         data-placement="bottom" 
+                         data-html="true">
+                 <small>View Inventory</small>
             </a>
         </div>
-<!--         <div class="ml-auto">
-            <a class="close" (click)="removeAlert(alert)">&times;</a>
-        </div> -->
     </div>
 </div>
 <div class="alert alert-success alert-dismissable">
-    <div class="d-flex">
+    <div class="d-flex flex-row">
         <div>
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         </div>
@@ -29,8 +31,9 @@
                 <small>Distribute Uses</small>
             </a>
         </div>
-<!--         <div class="ml-auto">
-            <a class="close" (click)="removeAlert(alert)">&times;</a>
-        </div> -->
     </div>
+</div>
+
+<div id="popover-content-inventory" style="display:none;">
+     @await Component.InvokeAsync("Inventory")
 </div>

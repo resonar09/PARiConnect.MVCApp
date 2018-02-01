@@ -10,13 +10,23 @@ body {
 }
 /* Titles */
 .title-1{
-    color: #E9E9E9;
+    color: #E1E1E1;
     font-size: 2em;
 }
 
 /* Backgrounds */
 .bg-header {
     background: #f1f1f1;
+}
+
+/* Font and Text*/
+.font-size-md{
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.more-muted-text{
+    color: #c9c9c9;
 }
 
 /* Borders */
@@ -30,6 +40,19 @@ body {
 }
 #nav-dropdown-menu{
     left:-100px;
+}
+
+/* Button Links */
+.btn-link:focus,
+.btn-link:active:focus{
+    outline:none;
+}
+
+.btn-link:focus{
+    text-decoration:none;
+}
+.btn-link:hover{
+    text-decoration:none;
 }
 
 /*Table Styling*/
@@ -47,17 +70,7 @@ body {
 }
 
     .table-header th {
-        padding: 4px 5px;
-        /* background-image: url(../images/black-unsorted.gif);
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-        font-weight: bold;
-        
-        background-position: center right;
-        padding-left: 20px;
-        border-right: 1px solid #dad9c7;
-        margin-left: -1px;*/
+        padding: 2px 5px;
     }
 
 .table td {
