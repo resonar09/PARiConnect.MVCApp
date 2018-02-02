@@ -7,16 +7,18 @@ namespace PARiConnect.MVCApp.ViewComponents
 {
     public class InventoryViewComponent : ViewComponent
     {
-        private IAssessmentReviewData _assessmentReviewData;
+        private IInventoryUsesData _inventoryUsesData;
 
-        public InventoryViewComponent(IAssessmentReviewData assessmentReviewData)
+        public InventoryViewComponent(IInventoryUsesData inventoryUsesData)
         {
-            _assessmentReviewData = assessmentReviewData;
+            _inventoryUsesData = inventoryUsesData;
         }
         public IViewComponentResult Invoke()
         {
-
-            return View("Inventory");
+            var model = new InventoryUseListViewModel();
+            var invUses = _inventoryUsesData.GetListAsync().Result;
+            model.InventoryUseList= invUses.Take(5);
+            return View("Inventory", model);
         }
     }
 }

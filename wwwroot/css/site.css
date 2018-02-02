@@ -42,6 +42,40 @@ body {
     left:-100px;
 }
 
+/* Scrollbar */
+/*
+ *  STYLE 4
+ */
+ .scrollbar
+ {
+     height: 535px;
+     background: #F5F5F5;
+     overflow-y: scroll;
+ }
+ 
+ .force-overflow
+ {
+     min-height: 450px;
+ }
+ #style-4::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     background-color: #F5F5F5;
+ }
+ 
+ #style-4::-webkit-scrollbar
+ {
+     width: 10px;
+     background-color: #F5F5F5;
+ }
+ 
+ #style-4::-webkit-scrollbar-thumb
+ {
+     background-color: #888;
+     border: 2px solid #555555;
+ }
+
+
 /* Button Links */
 .btn-link:focus,
 .btn-link:active:focus{
@@ -55,6 +89,7 @@ body {
     text-decoration:none;
 }
 
+
 /*Table Styling*/
 .table {
     border-collapse: separate;
@@ -63,15 +98,16 @@ body {
 
 .table-header {
     max-height: 50px;
-    font-size: small;
-    background: #e9ecef;
+    font-size: smaller;
+    font-weight: 600;
+    background: #f1f1f1;
     /* background: #005596;
     color: white; */
 }
 
-    .table-header th {
-        padding: 2px 5px;
-    }
+.table-header th {
+    padding: 2px 5px;
+}
 
 .table td {
     padding: 0.75rem;
@@ -143,4 +179,45 @@ th.header {
 
 .input-group-text{
     width: 42px;
+}
+/* Popover */
+.popover{
+    font-size: small;
+    max-width: 300px;
+    width: 300px;
+}
+
+
+.popover-body{
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 550px;
+    max-height: 550px;
+}
+
+
+
+.popover-container{
+/*     height: 600px;
+    max-height: 600px;
+    overflow-y: auto; */
+}
+
+.popover-header{
+    max-height: 50px;
+    font-size: smaller;
+    font-weight: 600;
+    background: #f1f1f1;
+}
+
+.popover-row{
+    max-height: 50px;
+    font-size: small;
+    font-weight: 600;
+    background: #fafafa;
+}
+
+.popover-row-header{
+    font-size: smaller;
+    font-weight: 700;
 }
