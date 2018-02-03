@@ -48,15 +48,12 @@ body {
  */
  .scrollbar
  {
-     height: 535px;
+     max-height: 500px; 
      background: #F5F5F5;
-     overflow-y: scroll;
+     overflow-y: auto;
+     overflow-x: hidden;
  }
- 
- .force-overflow
- {
-     min-height: 450px;
- }
+
  #style-4::-webkit-scrollbar-track
  {
      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -183,7 +180,6 @@ th.header {
 /* Popover */
 .popover{
     font-size: small;
-    max-width: 300px;
     width: 300px;
 }
 
@@ -191,33 +187,53 @@ th.header {
 .popover-body{
     padding-left: 0px;
     padding-right: 0px;
-    height: 550px;
-    max-height: 550px;
+
+    background: #f1f1f1;
+    border-radius: 5px;
+/*     height: 550px;
+    max-height: 550px; */
 }
 
 
 
 .popover-container{
-/*     height: 600px;
-    max-height: 600px;
-    overflow-y: auto; */
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .popover-header{
     max-height: 50px;
-    font-size: smaller;
+    font-size: 11px;
     font-weight: 600;
     background: #f1f1f1;
+    margin-left: 0;
+    margin-right:0;
+    padding: 4px;
+
 }
 
 .popover-row{
-    max-height: 50px;
     font-size: small;
-    font-weight: 600;
-    background: #fafafa;
+    font-weight: 400;
+    
+}
+
+.popover-row:nth-child(odd) {
+    background:#fff;
+
 }
 
 .popover-row-header{
     font-size: smaller;
     font-weight: 700;
+}
+
+.popover-footer{
+    height: 45px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #f1f1f1;
+    margin-left: 0;
+    margin-right:0;
+    padding: 4px;
 }

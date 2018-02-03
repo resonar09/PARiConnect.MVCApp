@@ -41,6 +41,7 @@ namespace PARiConnect.MVCApp
             {
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewDataMock>();
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedDataMock>();
+                services.AddScoped<IInventoryUsesData, InventoryUsesDataMock>();
                 services.AddSingleton<IUserService>(new UserServiceMock(users));
             }
             else

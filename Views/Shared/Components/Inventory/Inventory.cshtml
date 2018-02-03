@@ -1,7 +1,7 @@
 ﻿@model PARiConnect.MVCApp.ViewModels.InventoryUseListViewModel
 
-<div class="container popover-container scrollbar" id="style-4">
-    <div class="row table-header">
+<div class="container popover-container">
+    <div class="row popover-header">
         <div class="col-8">
             Assessment
         </div>
@@ -9,22 +9,32 @@
             Uses Left
         </div>
     </div>
-    <div class="force-overflow">
-     @foreach (var invUse in Model.InventoryUseList)
+    <div class="scrollbar"  id="style-4">
+     @foreach (var invUseList in Model.InventoryUseList)
     {   
-    <div class="row popover-row pb-1">
+    <div class="row popover-row p-2">
         <div class="col-12">
-            <span class="popover-row-header">@invUse.ProductName</span>
+            <span class="popover-row-header">@invUseList.ProductName</span>
         </div>
-
+            @foreach (var invUse in invUseList.InventoryUses)
+            { 
             <div class="col-8 pl-4">
-                Score Report
+                <span class="@(invUse.Uses < 5 ? "text-danger" : "")">@invUse.Name</span>
             </div>
-            <div class="col-4 text-center">
-                4
+            <div class="@(invUse.Uses < 5 ? "text-danger" : "") col-4 text-center">
+                <span>@invUse.Uses</span>
             </div>
+            }
     </div>
     }
+    </div>
+    <div class="popover-footer p-2">
+        <div>
+            <i class="fa fa-question-circle"></i><a class="ml-1" href="#">Need help understanding the inventory types?</a>
+        </div>
+        <div>
+            <i class="fa fa-bell"></i><a class="ml-1" href="#">Configure alert settings for low inventory.</a>
+        </div>        
     </div>
 </div>
 

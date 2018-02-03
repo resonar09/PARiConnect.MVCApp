@@ -17,7 +17,7 @@ namespace PARiConnect.MVCApp.ViewComponents
         {
             var model = new InventoryUseListViewModel();
             var invUses = _inventoryUsesData.GetListAsync().Result;
-            model.InventoryUseList= invUses.Take(5);
+            model.InventoryUseList= invUses;
             return View("Inventory", model);
         }
     }

@@ -17,12 +17,8 @@ namespace PARiConnect.MVCApp.Services
             _httpAccessor = httpAccessor;
         }
 
-        public IEnumerable<InventoryUse> GetAll()
-        {
-            throw new NotImplementedException();
-        }
 
-        public async Task<IEnumerable<InventoryUse>> GetAllAsync()
+        public async Task<IEnumerable<InventoryUse>> GetAll()
         {
             var loggedInUser = _httpAccessor.HttpContext.User;
             var loggedInUserName = loggedInUser.Identity.Name;
@@ -40,6 +36,7 @@ namespace PARiConnect.MVCApp.Services
                 });
             return inventoryUses;
         }
+
 
         public async Task<IEnumerable<InventoryUseList>> GetListAsync()
         {
