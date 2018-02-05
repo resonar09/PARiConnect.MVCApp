@@ -19,9 +19,9 @@
             @foreach (var invUse in invUseList.InventoryUses)
             { 
             <div class="col-8 pl-4">
-                <span class="@(invUse.Uses < 5 ? "text-danger" : "")">@invUse.Name</span>
+                <span class="@(invUse.Uses < Model.InventoryLowThreshold ? "text-danger" : "")">@invUse.Name</span>
             </div>
-            <div class="@(invUse.Uses < 5 ? "text-danger" : "") col-4 text-center">
+            <div class="@(invUse.Uses < Model.InventoryLowThreshold ? "text-danger" : "") col-4 text-center">
                 <span>@invUse.Uses</span>
             </div>
             }

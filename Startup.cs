@@ -35,7 +35,7 @@ namespace PARiConnect.MVCApp
             var appSettings = appSettingsSection.Get<AppSettings>();
 
             var users = new Dictionary<string,string> {{"dperez@parinc.com","password"}};
-
+            
             //App Services
             if (Environment.IsDevelopment() && appSettings.Offline)
             {
@@ -51,7 +51,6 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IInventoryUsesData, InventoryUsesData>();
                 services.AddSingleton<IUserService>(new UserService(users));
             }
-
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();
 

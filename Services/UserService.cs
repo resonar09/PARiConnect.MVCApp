@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using PARiConnect.MVCApp.Models;
 
 namespace PARiConnect.MVCApp.Services
@@ -8,6 +11,8 @@ namespace PARiConnect.MVCApp.Services
     {
         private IDictionary<string, (string PasswordHash, User User)> _users =
             new Dictionary<string, (string PasswordHash, User User)>();
+
+        public string UserKey { get; set; }
 
         public UserService(IDictionary<string, string> users)
         {
@@ -35,15 +40,18 @@ namespace PARiConnect.MVCApp.Services
             var userAuth = orgUserServiceClient.AuthenticateCorpSvcsAsync(authenticateCorpSvcsRequest);
             if (userAuth.Result.AuthenticateCorpSvcsResult.IsValid)
             {
-                
                 User loggedInUser = new User(key);
                 user = loggedInUser;
                 user.FullName = userAuth.Result.identities[0].UserData.FullName;
                 user.ContactId = userAuth.Result.identities[0].UserData.ContactID;
                 user.OrgUserMappingKey = userAuth.Result.identities[0].OrgUserMapping.OrgUserMappingKey.ToString();
+                UserKey = user.OrgUserMappingKey;
                 return Task.FromResult(true);
             }
             return Task.FromResult(false);
+        }
+        public string GetCurrentUserId(){
+            return UserKey;
         }
     }
 }

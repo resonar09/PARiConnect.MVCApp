@@ -27,10 +27,14 @@ namespace PARiConnect.MVCApp.Services
             };
         }
 
-
         public async Task<IEnumerable<InventoryUseList>> GetListAsync()
         {
             return await Task.Run(() => _inventoryUseList);
+        }
+
+        public Task<bool> IsInventoryLow()
+        {
+            return Task.Run(() => _inventoryUseList.Any(x => x.InventoryUses.Any(u => u.Uses < 6)));
         }
 
         Task<IEnumerable<InventoryUse>> IInventoryUsesData.GetAll()

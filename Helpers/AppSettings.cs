@@ -9,5 +9,7 @@ namespace PARiConnect.MVCApp.Helpers
     {
         public string Secret { get; set; }
         public bool Offline { get; set; }
+
+        public int InventoryLowThreshold { get; set; }
     }
 }

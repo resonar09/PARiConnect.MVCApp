@@ -7,17 +7,16 @@ namespace PARiConnect.MVCApp.ViewComponents
 {
     public class NotificationsViewComponent : ViewComponent
     {
-        private IAssessmentReviewData _assessmentReviewData;
+        private IInventoryUsesData _inventoryUsesData;
 
-        public NotificationsViewComponent(IAssessmentReviewData assessmentReviewData)
+        public NotificationsViewComponent(IInventoryUsesData inventoryUsesData)
         {
-            _assessmentReviewData = assessmentReviewData;
+            _inventoryUsesData = inventoryUsesData;
         }
-        public IViewComponentResult Invoke(bool completed)
+        public IViewComponentResult Invoke()
         {
-            var model = new HomeIndexViewModel();
-            var assessmentReviews = _assessmentReviewData.GetAllAsync().Result;
-            model.AssessmentReview = assessmentReviews.Where(x => x.Completed == completed);
+            var model = new NotificationsViewModel();
+            model.IsInventoryLow = _inventoryUsesData.IsInventoryLow().Result;
             return View("Notifications", model);
         }
     }

@@ -9,6 +9,7 @@ namespace PARiConnect.MVCApp.Services
     public interface IInventoryUsesData
     {
        Task<IEnumerable<InventoryUse>> GetAll();
-        Task<IEnumerable<InventoryUseList>> GetListAsync();
+       Task<IEnumerable<InventoryUseList>> GetListAsync();
+       Task<bool> IsInventoryLow();
     }
 }

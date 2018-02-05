@@ -11,11 +11,11 @@ namespace PARiConnect.MVCApp.Services
 {
     public class RecentlyAccessedData : IRecentlyAccessedData
     {
-        private IHttpContextAccessor _httpAccessor;
+         private IUserService _userService;
          private readonly IAssessmentReviewData _assessmentReview;
-        public RecentlyAccessedData(IHttpContextAccessor httpAccessor,IAssessmentReviewData assessmentReview)
+        public RecentlyAccessedData(IUserService userService,IAssessmentReviewData assessmentReview)
         {
-            _httpAccessor = httpAccessor;
+            _userService = userService;
             _assessmentReview = assessmentReview;
         }
 
@@ -26,11 +26,7 @@ namespace PARiConnect.MVCApp.Services
 
         public async Task<IEnumerable<RecentlyAccessed>> GetRecentlyAccessedAsync()
         {
-            var loggedInUser = _httpAccessor.HttpContext.User;
-            var loggedInUserName = loggedInUser.Identity.Name;
-            var loggedInUserID = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Sid).Value;
-
-
+                var loggedInUserID = _userService.GetCurrentUserId();
                 var assessmentReview = await _assessmentReview.GetAllAsync();
                 
                 var grouped = assessmentReview.GroupBy(g => new{g.ClientId, g.ClientName}).Select(x => new RecentlyAccessed {

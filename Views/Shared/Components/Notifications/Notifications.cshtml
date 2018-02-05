@@ -1,4 +1,5 @@
-﻿<div class="alert alert-danger">
+﻿@model PARiConnect.MVCApp.ViewModels.NotificationsViewModel
+<div class="alert alert-danger @(Model.IsInventoryLow ? "" : "d-none")">
     <div class="d-flex flex-row">
         <div>
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>

@@ -16,6 +16,12 @@ namespace PARiConnect.MVCApp.Services
                 _users.Add(user.Key.ToLower(), (user.Value, new User(user.Key)));
             }
         }
+
+        public string GetCurrentUserId()
+        {
+            return "37";
+        }
+
         public Task<bool> ValidateCredentialsAsync(string email, string password, out User user)
         {
             user = null;
@@ -27,7 +33,6 @@ namespace PARiConnect.MVCApp.Services
                 {
                  User loggedInUser = new User(key,"Test Name", "12345", "37");
                     user = loggedInUser;
-                    //user = _users[key].User;
                     return Task.FromResult(true);
                 }
             }

@@ -11,17 +11,14 @@ namespace PARiConnect.MVCApp.Services
 {
     public class AssessmentReviewData : IAssessmentReviewData
     {
-        private IHttpContextAccessor _httpAccessor;
-        public AssessmentReviewData(IHttpContextAccessor httpAccessor)
+        private IUserService _userService;
+        public AssessmentReviewData(IUserService userService)
         {
-            _httpAccessor = httpAccessor;
+             _userService = userService;
         }
         public async Task<IEnumerable<AssessmentReview>> GetAllAsync()
         {
-            var loggedInUser = _httpAccessor.HttpContext.User;
-            var loggedInUserName = loggedInUser.Identity.Name;
-            var loggedInUserID = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Sid).Value;
-
+            var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
             var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, int.Parse(loggedInUserID), null, null);
 
