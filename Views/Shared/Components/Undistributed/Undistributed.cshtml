@@ -2,21 +2,21 @@
 
 <div class="container popover-container">
     <div class="row popover-header">
-        <div class="col-8">
+        <div class="col-6">
             Assessment
         </div>
-        <div class="col-4 text-center">
-            Uses Left
+        <div class="col-6 text-center">
+            Non-Allocated Uses
         </div>
     </div>
     <div class="scrollbar"  id="style-4">
-<!--      @foreach (var invUseList in Model.InventoryUseList)
+      @foreach (var invUseList in Model.InventoryUseList)
     {   
     <div class="row popover-row p-2">
         <div class="col-12">
             <span class="popover-row-header">@invUseList.ProductName</span>
         </div>
-            @foreach (var invUse in invUseList.InventoryUses)
+         @foreach (var invUse in invUseList.InventoryUses)
             { 
             <div class="col-8 pl-4">
                 <span class="@(invUse.Uses < Model.InventoryLowThreshold ? "text-danger" : "")">@invUse.Name</span>
@@ -26,14 +26,11 @@
             </div>
             }
     </div>
-    } -->
+    } 
     </div>
     <div class="popover-footer p-2">
-        <div>
-            <i class="fa fa-question-circle"></i><a class="ml-1" href="#">Need help understanding the inventory types?</a>
-        </div>
-        <div>
-            <i class="fa fa-bell"></i><a class="ml-1" href="#">Configure alert settings for low inventory.</a>
+        <div class="text-center">
+            <button class="btn btn-outline-primary">Distribute Uses</button>
         </div>        
     </div>
 </div>

@@ -70,15 +70,27 @@ namespace PARiConnect.MVCApp.Services
         {
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var inventoryUsesList = await coreServiceClient.GetCurrentInventoryForUserListAsync(int.Parse(loggedInUserID));
-
-            var inventoryUses = inventoryUsesList.GroupBy(g => g.ProductName, g => new InventoryUse(g.Name,g.Uses), (key,g) => new InventoryUseList {
-                    ProductName = key,
-                    InventoryUses = g.ToList()
-            });
-
-            return inventoryUses;
+            var distributableInventory = await coreServiceClient.GetDistributableInventoryForUserAsync(int.Parse(loggedInUserID),false);
+            List<InventoryUseList> distributableInventoryList = new List<InventoryUseList>();
+            foreach(var inv in distributableInventory)
+            {
+                var invUseList = new InventoryUseList(); 
+                List<InventoryUse> inventoryUseList = new List<InventoryUse>();
+                foreach(var assForms in inv.AssessmentForms){
+                   
+                    invUseList.ProductName = assForms.ProductFamily;
+                    foreach(var reportForm in assForms.ReportForms){
+                        var invUse = new InventoryUse();
+                        invUse.ProductName = assForms.ProductFamily;
+                        invUse.Name = reportForm.Name;
+                        invUse.Uses = reportForm.Count;
+                        inventoryUseList.Add(invUse);
+                    }
+                    invUseList.InventoryUses = inventoryUseList;
+                    distributableInventoryList.Add(invUseList);
+                }  
+            }
+            return distributableInventoryList;
         }
-
     }
 }

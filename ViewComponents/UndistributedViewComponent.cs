@@ -21,7 +21,7 @@ namespace PARiConnect.MVCApp.ViewComponents
         public IViewComponentResult Invoke()
         {
             var model = new InventoryUseListViewModel();
-            var invUses = _inventoryUsesData.GetListAsync().Result;
+            var invUses = _inventoryUsesData.GetUndistributedListAsync().Result;
             model.InventoryUseList= invUses;
 
             var appSettingsSection = _configuration.GetSection("AppSettings");
