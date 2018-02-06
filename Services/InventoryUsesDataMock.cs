@@ -32,6 +32,11 @@ namespace PARiConnect.MVCApp.Services
             return await Task.Run(() => _inventoryUseList);
         }
 
+        public Task<IEnumerable<InventoryUseList>> GetUndistributedListAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> IsInventoryLow()
         {
             return Task.Run(() => _inventoryUseList.Any(x => x.InventoryUses.Any(u => u.Uses < 6)));

@@ -28,8 +28,13 @@
             Undistibuted uses
         </div>
         <div class="ml-auto alert-link">
-            <a href="#">
-                <small>Distribute Uses</small>
+             <a href="#" 
+                         id="undistributed"
+                         data-toggle="popover" 
+                         data-container="body" 
+                         data-placement="bottom" 
+                         data-html="true">
+                 <small>Distribute Uses</small>
             </a>
         </div>
     </div>
@@ -37,4 +42,7 @@
 
 <div id="popover-content-inventory" style="display:none;">
      @await Component.InvokeAsync("Inventory")
+</div>
+<div id="popover-content-undistributed" style="display:none;">
+     @await Component.InvokeAsync("Undistributed")
 </div>
