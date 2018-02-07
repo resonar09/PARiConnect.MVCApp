@@ -36,6 +36,15 @@ namespace PARiConnect.MVCApp.Services
 
             return anyUsesLow;
         }
+
+        public async Task<bool> IsDistributable()
+        {
+            var loggedInUserID = _userService.GetCurrentUserId();
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var distributableInventory = await coreServiceClient.GetDistributableInventoryForUserAsync(int.Parse(loggedInUserID),false);
+            return distributableInventory.Any();
+
+        }
         public async Task<IEnumerable<InventoryUse>> GetAll()
         {
             var loggedInUserID = _userService.GetCurrentUserId();

@@ -11,6 +11,7 @@ namespace PARiConnect.MVCApp.Services
        Task<IEnumerable<InventoryUse>> GetAll();
        Task<IEnumerable<InventoryUseList>> GetListAsync();
        Task<bool> IsInventoryLow();
+       Task<bool> IsDistributable();
        Task<IEnumerable<InventoryUseList>> GetUndistributedListAsync();
 
     }

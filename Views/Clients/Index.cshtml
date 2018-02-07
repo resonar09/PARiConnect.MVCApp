@@ -2,69 +2,50 @@
 @{
     ViewData["Title"] = "Client Page";
 }
+<div class="row">
+    <div class="col-lg-2 par-bg-2 p-2 pt-3 bg-light">
+      <div class="pt-3">
+        <div class="card small ">
+          <div class="card-header font-weight-bold">
+            Clinician <a href="#" class="float-right "><small>select all</small></a>
+          </div>
+            <div class="card-block p-2">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+      </div>
+      <div class="pt-3">
+        <div class="card small">
+          <div class="card-header font-weight-bold">
+            Group <a href="#" class="float-right "><small>select all</small></a>
+          </div>
+            <div class="card-block p-2">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-12">
 
 
-<h1>Client Page</h1>
-
-<table class="table table-hover tablesorter sortable">
-  <thead>
-    <tr>
-      <th class="name-header sorter-last-name">
-          Name <button class="sortChange"><i class="fa fa-exchange" aria-hidden="true"></i></button>
-          </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="name">Alex Adams</td>
-    </tr>
-    <tr>
-      <td class="name">Robert (Bob) Rover</td>
-    </tr>
-    <tr>
-      <td class="name">Bruce Black</td>
-    </tr>
-    <tr>
-      <td class="name">Catelyn Cruz</td>
-    </tr>
-    <tr>
-      <td class="name">Adam (Dave) Francis</td>
-    </tr>
-    <tr>
-      <td class="name">Elaine Evans</td>
-    </tr>
-  </tbody>
-</table>
-@section scripts {
-    <script type="text/javascript">
-        $(document).ready(function () {
 
 
 
-            $.tablesorter.addParser({
-                id: 'last-name',
-                is: function(s) {
-                return false;
-                },
-                format: function(str) {
-                var parts = (str || '').split(/\s+/),
-                    last = parts.pop();
-                parts.unshift(last);
-                return parts.join(' ');
-                },
-                // set type, either numeric or text
-                type: 'text'
-            });
-            $(".sortable").tablesorter();
-            $(".sortChange").click(function(e){
-                console.log('sortChange');
-                $(".name-header").toggleClass("sorter-last-name");
-                $(".tablesorter").trigger("update");
-            });
-            $(".searchToggle").click(function(e){
-                    $(".search-toggle").toggle();
-            }); 
-        });
-        </script>
-}
+        <div class="mt-2">
+            @await Component.InvokeAsync("ClientTable")
+        </div>
+    </div>
+</div>
     

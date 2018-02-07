@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace PARiConnect.MVCApp.ViewComponents
 {
-    public class NotificationsViewComponent : ViewComponent
+    public class EditClientViewComponent : ViewComponent
     {
         private IInventoryUsesData _inventoryUsesData;
 
-        public NotificationsViewComponent(IInventoryUsesData inventoryUsesData)
+        public EditClientViewComponent(IInventoryUsesData inventoryUsesData)
         {
             _inventoryUsesData = inventoryUsesData;
         }
@@ -18,7 +18,7 @@ namespace PARiConnect.MVCApp.ViewComponents
             var model = new NotificationsViewModel();
             model.IsInventoryLow = _inventoryUsesData.IsInventoryLow().Result;
             model.IsDistributable = _inventoryUsesData.IsDistributable().Result;
-            return View("Notifications", model);
+            return View("EditClient", model);
         }
     }
 }
