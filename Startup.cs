@@ -51,6 +51,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedData>();
                 services.AddScoped<IInventoryUsesData, InventoryUsesData>();
                 services.AddScoped<IClientData, ClientData>();
+                services.AddScoped<IClinicianData, ClinicianData>();
                 services.AddSingleton<IUserService>(new UserService(users));
             }
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
