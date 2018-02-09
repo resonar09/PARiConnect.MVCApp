@@ -32,7 +32,14 @@ namespace PARiConnect.MVCApp.Services
                 .Select(x => new Clinician
                 {
                     OrgUserMappingKey = x.OrgUserMappingKey,
-                    Name = x.Name
+                    Name = x.Name,
+                    Clients = x.ClientListing.Clients.Select(c => new Client {
+                        ClientId = c.ClientID,
+                        ClientName = string.Format("{0} {1}", c.FirstName, c.LastName),
+                        Email = c.PrimaryEmail,
+                        Clinician = x.Name
+                    })
+
                 });
             return clinicianListing;
         }

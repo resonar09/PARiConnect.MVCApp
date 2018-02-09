@@ -25,8 +25,9 @@ namespace PARiConnect.MVCApp.Services
         public async Task<IEnumerable<Client>> GetListAsync()
         {
             var loggedInUserID = _userService.GetCurrentUserId();
+            var loggedInUserName = _userService.GetCurrentUserName();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var clientListingForUser = await coreServiceClient.GetClientListingForUserAsync(int.Parse(loggedInUserID));
+            var clientListingForUser = await coreServiceClient.GetAllClientListingForUserAsync(int.Parse(loggedInUserID));
 
             var clientListing = clientListingForUser.Clients
                 .Select(x => new Client
@@ -34,9 +35,27 @@ namespace PARiConnect.MVCApp.Services
                     ClientId = x.ClientID,
                     ClientName = x.FirstName + " " + x.LastName,
                     Email = x.PrimaryEmail
-                    //,
-                    //Clinician = x.
-
+                    ,
+                    Clinician = loggedInUserName
+                });
+            return clientListing;
+        }
+        public async Task<IEnumerable<Client>> GetListAsync(int id)
+        {
+            var loggedInUserID = _userService.GetCurrentUserId();
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var clientListingForUser = await coreServiceClient.GetAllClientListingForUserAsync(int.Parse(loggedInUserID));
+            var clinicians = await coreServiceClient.GetClinicianListingsForUserAsync(int.Parse(loggedInUserID));
+            var clinician = clinicians.Where(x=>x.OrgUserMappingKey == int.Parse(loggedInUserID)).Select(c => c.Name).SingleOrDefault();
+            
+            var clientListing = clientListingForUser.Clients
+                .Select(x => new Client
+                {
+                    ClientId = x.ClientID,
+                    ClientName = x.FirstName + " " + x.LastName,
+                    Email = x.PrimaryEmail
+                    ,
+                    Clinician = clinician
                 });
             return clientListing;
         }

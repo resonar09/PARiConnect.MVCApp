@@ -22,6 +22,11 @@ namespace PARiConnect.MVCApp.Services
             return "37";
         }
 
+        public string GetCurrentUserName()
+        {
+            return "Mike Nolan";
+        }
+
         public Task<bool> ValidateCredentialsAsync(string email, string password, out User user)
         {
             user = null;

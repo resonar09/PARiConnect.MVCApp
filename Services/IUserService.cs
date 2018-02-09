@@ -7,6 +7,8 @@ namespace PARiConnect.MVCApp.Services
     {
         Task<bool> ValidateCredentialsAsync(string email, string password, out User user);
         string GetCurrentUserId();
+
+        string GetCurrentUserName();
     }
     
 }

@@ -12,11 +12,12 @@ namespace PARiConnect.MVCApp.Controllers
     [Authorize]
     public class ClientsController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
             return View();
         }
-     
+
+   
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

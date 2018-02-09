@@ -13,6 +13,7 @@ namespace PARiConnect.MVCApp.Services
             new Dictionary<string, (string PasswordHash, User User)>();
 
         public string UserKey { get; set; }
+        public string UserName { get; set; }
 
         public UserService(IDictionary<string, string> users)
         {
@@ -42,16 +43,21 @@ namespace PARiConnect.MVCApp.Services
             {
                 User loggedInUser = new User(key);
                 user = loggedInUser;
-                user.FullName = userAuth.Result.identities[0].UserData.FullName;
+                user.FullName = string.Format("{0} {1}", userAuth.Result.identities[0].OrgUserMapping.UserProfile.ContactFirstName, userAuth.Result.identities[0].OrgUserMapping.UserProfile.ContactLastName);
                 user.ContactId = userAuth.Result.identities[0].UserData.ContactID;
                 user.OrgUserMappingKey = userAuth.Result.identities[0].OrgUserMapping.OrgUserMappingKey.ToString();
                 UserKey = user.OrgUserMappingKey;
+                UserName = user.FullName;
                 return Task.FromResult(true);
             }
             return Task.FromResult(false);
         }
         public string GetCurrentUserId(){
             return UserKey;
+        }
+
+        public string GetCurrentUserName(){
+            return UserName;
         }
     }
 }
