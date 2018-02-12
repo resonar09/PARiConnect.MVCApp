@@ -79,7 +79,8 @@ namespace PARiConnect.MVCApp.Services
         {
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var distributableInventory = await coreServiceClient.GetDistributableInventoryForUserAsync(int.Parse(loggedInUserID),false);
+
+           var distributableInventory = await coreServiceClient.GetDistributableInventoryForUserAsync(int.Parse(loggedInUserID),false);
             List<InventoryUseList> distributableInventoryList = new List<InventoryUseList>();
             foreach(var inv in distributableInventory)
             {
