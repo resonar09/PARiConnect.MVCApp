@@ -8,5 +8,6 @@ namespace PARiConnect.MVCApp.Models
         public string ClientName { get; set; }
         public string Email { get; set; }
         public string Clinician { get; set; }
+        public int ClinicianId { get; set; }
     }
 }
