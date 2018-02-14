@@ -14,6 +14,7 @@ namespace PARiConnect.MVCApp.Controllers
     {
         public IActionResult Index(int? id)
         {
+            
             return View();
         }
 

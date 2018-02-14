@@ -56,4 +56,15 @@
         </div>
     </div>
 </div>
-    
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {         
+            $(".clinicianCheckbox").click(function(e){
+                        var classId = $(this).val();
+                        $("." + classId).removeClass("d-none");
+                        $("." + classId).toggle(this.checked);
+                    });
+            });
+            
+    </script>
+}    
