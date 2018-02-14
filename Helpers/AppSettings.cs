@@ -8,6 +8,7 @@ namespace PARiConnect.MVCApp.Helpers
     public class AppSettings
     {
         public string Secret { get; set; }
+
         public bool Offline { get; set; }
 
         public int InventoryLowThreshold { get; set; }

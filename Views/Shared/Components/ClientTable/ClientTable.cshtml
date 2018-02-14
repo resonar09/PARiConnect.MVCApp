@@ -23,10 +23,10 @@
         </tr>
     </thead>
     <tbody class="searchable">
-
+    
     @foreach (var client in Model.Clients)
     {
-        <tr class="table-row @(client.IsUser ? "" : "d-none") @client.ClinicianId @client.GroupId">
+         <tr class="table-row @(client.IsUser ? "" : "d-none") @client.ClinicianId @client.GroupId">
             <td class="table-row-start">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="clientCheck">

@@ -16,7 +16,6 @@ namespace PARiConnect.MVCApp.Controllers
     {
         private readonly IAssessmentReviewData _assessmentReviewData;
 
-
         public HomeController(IAssessmentReviewData assessmentReviewData)
         {
             _assessmentReviewData = assessmentReviewData;

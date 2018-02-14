@@ -52,7 +52,6 @@ namespace PARiConnect.MVCApp.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index","Home");
         }
-
         private async Task LoginUser(User user)
         {
             var claims = new List<Claim> {

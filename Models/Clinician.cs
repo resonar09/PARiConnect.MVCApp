@@ -11,6 +11,5 @@ namespace PARiConnect.MVCApp.Models
         public IEnumerable<Client> Clients { get; set; }
 
         //public IEnumerable<Group> Groups { get; set; }
-
     }
 }

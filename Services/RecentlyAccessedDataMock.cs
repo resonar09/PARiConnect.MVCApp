@@ -15,7 +15,6 @@ namespace PARiConnect.MVCApp.Services
         public RecentlyAccessedDataMock(IAssessmentReviewData assessmentReview)
         {
             _assessmentReview = assessmentReview;
-
         }
 
         public IEnumerable<RecentlyAccessed> GetRecentlyAccessed()

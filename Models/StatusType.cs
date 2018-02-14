@@ -32,7 +32,6 @@ namespace PARiConnect.MVCApp.Models
         public static readonly StatusTypes AdminOnsiteEntryAssignedCompletedAdjustmentedCSBI = new StatusTypes(22, "Completed");
         public static readonly StatusTypes AdminRemoteEntryAssignedCompletedAdjustmentedCSBI = new StatusTypes(23, "Completed");
 
-
         private StatusTypes(int value, String name)
         {
             this.name = name;

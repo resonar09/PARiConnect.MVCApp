@@ -156,6 +156,5 @@ namespace PARiConnect.MVCApp.Models
             }
             return scored;
         }
-
     }
 }

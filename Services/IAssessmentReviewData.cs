@@ -10,6 +10,6 @@ namespace PARiConnect.MVCApp.Services
     {
        Task<IEnumerable<AssessmentReview>> GetAllAsync();
 
-        IEnumerable<AssessmentReview> GetAll();
+       IEnumerable<AssessmentReview> GetAll();
     }
 }

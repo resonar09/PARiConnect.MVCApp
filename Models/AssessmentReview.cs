@@ -50,7 +50,6 @@ namespace PARiConnect.MVCApp.Models
             {
                 return _scored;
             }
-
         }
     }
 }

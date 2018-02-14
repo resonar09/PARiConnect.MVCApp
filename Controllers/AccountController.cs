@@ -16,7 +16,6 @@ namespace PARiConnect.MVCApp.Controllers
         {
             return View();
         }
-
        
         public IActionResult Error()
         {

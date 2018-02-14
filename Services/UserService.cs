@@ -22,7 +22,6 @@ namespace PARiConnect.MVCApp.Services
                 _users.Add(user.Key.ToLower(), (user.Value, new User(user.Key)));
             }
         }
-
         public Task<bool> ValidateCredentials(string email, string password, out User user)
         {
             throw new System.NotImplementedException();

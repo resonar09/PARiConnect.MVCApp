@@ -21,7 +21,6 @@ namespace PARiConnect.MVCApp.Services
         {
             return "37";
         }
-
         public string GetCurrentUserName()
         {
             return "Mike Nolan";
