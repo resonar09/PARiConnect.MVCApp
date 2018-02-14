@@ -11,61 +11,26 @@ namespace PARiConnect.MVCApp.Services
         List<Client> _clients;
         public ClientDataMock()
         {
-            _clients = new List<Client>
-            {
-                new Client {
-                    ClientId = "1",
-                    ClientName ="Sam Smith",
-                    Email = "samsmith@gmail.com",
-                    Clinician = "Lane Meyers"
-
-                }, 
-                new Client {
-                    ClientId = "2",
-                    ClientName ="Liz Evins",
-                    Email = "lizevans@gmail.com",
-                    Clinician = "Lane Meyers"
-                },
-                new Client {
-                    ClientId = "3",
-                    ClientName ="Mike Smith",
-                    Email = "mikesmith@gmail.com",
-                    Clinician = "Richard Spencer"
-                },
-                new Client {
-                    ClientId = "4",
-                    ClientName ="Tab Johnson"
-
-                },
-                new Client {
-                    ClientId = "5",
-                    ClientName ="Chris Peterson"
-                },
-                new Client {
-                    ClientId = "6",
-                    ClientName ="Steve Crowder"
-                },
-                new Client {
-                    ClientId = "7",
-                    ClientName ="Dave Rubin"
-                },
-                new Client {
-                    ClientId = "8",
-                    ClientName ="Gavin McGinnis"
-                },
-                new Client {
-                    ClientId = "6",
-                    ClientName ="Steve Crowder"
-                },
-                new Client {
-                    ClientId = "7",
-                    ClientName ="Dave Rubin"
-                },
-                new Client {
-                    ClientId = "8",
-                    ClientName ="Gavin McGinnis"
-                }
-            };
+            _clients = new List<Client>();
+            for(var i=0;i < 4000; i++){
+                var client = new Client();
+                client.ClientId = i.ToString();
+                client.ClientName = "Client" + i;
+                client.Clinician = "Mike Nolan";
+                client.IsUser = true;
+                client.ClinicianId = "37";
+                _clients.Add(client);
+        }
+            for(var i=4000;i < 8000; i++){
+                var client = new Client();
+                client.ClientId = i.ToString();
+                client.ClientName = "Client" + i;
+                client.Clinician = "Roaming Crowder";
+                client.IsUser = true;
+                client.ClinicianId = "1";
+                _clients.Add(client);
+        }
+            
         }
 
         public async Task<IEnumerable<Client>> GetListAsync()

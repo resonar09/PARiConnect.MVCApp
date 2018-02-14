@@ -26,7 +26,6 @@ namespace PARiConnect.MVCApp
             Environment = environment;
         }
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -53,6 +52,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IInventoryUsesData, InventoryUsesData>();
                 services.AddScoped<IClientData, ClientData>();
                 services.AddScoped<IClinicianData, ClinicianData>();
+                services.AddScoped<IGroupData, GroupData>();
                 services.AddSingleton<IUserService>(new UserService(users));
             }
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();

@@ -1,0 +1,26 @@
+﻿     
+@model PARiConnect.MVCApp.ViewModels.GroupViewModel     
+      <div class="@(Model.Groups.Count() > 0 ? "" : "d-none") pt-3">
+        <div class="card small ">
+          <div class="card-header font-weight-bold">
+            Group <a href="#" class="float-right "><small>select all</small></a>
+          </div>
+            <div class="card-block p-2">
+              <div class="card-body">
+                      <ul class="list-group list-group-flush">
+
+                       @foreach (var group in Model.Groups)
+                        {      
+                        <li class="list-group-item">
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input groupCheckbox" id="groupCheck" value="@group.GroupId">
+                              <label class="form-check-label" for="groupCheck">@group.GroupName</label>
+                            </div>
+                        </li>
+                        } 
+                      </ul>
+              </div>
+
+            </div>
+        </div>
+      </div>
