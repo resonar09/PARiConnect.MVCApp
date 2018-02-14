@@ -15,17 +15,22 @@ namespace PARiConnect.MVCApp.Services
             {
                 new Client {
                     ClientId = "1",
-                    ClientName ="Sam Smith"
+                    ClientName ="Sam Smith",
+                    Email = "samsmith@gmail.com",
+                    Clinician = "Lane Meyers"
 
                 }, 
                 new Client {
                     ClientId = "2",
-                    ClientName ="Liz Evins"
-
+                    ClientName ="Liz Evins",
+                    Email = "lizevans@gmail.com",
+                    Clinician = "Lane Meyers"
                 },
                 new Client {
                     ClientId = "3",
-                    ClientName ="Mike Smith"
+                    ClientName ="Mike Smith",
+                    Email = "mikesmith@gmail.com",
+                    Clinician = "Richard Spencer"
                 },
                 new Client {
                     ClientId = "4",
