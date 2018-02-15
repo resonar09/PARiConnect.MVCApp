@@ -32,7 +32,10 @@ namespace PARiConnect.MVCApp.Services
                 .Select(x => new Group
                 {
                    GroupId = x.ClientGroupKey,
-                   GroupName = x.Name
+                   GroupName = x.Name,
+                   ClientCount = x.Clients.Count()
+                //    ,
+                //    Clients = x.Clients.ToList()
                 });
             return groupListing;
         }

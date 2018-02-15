@@ -12,7 +12,7 @@ namespace PARiConnect.MVCApp.Services
         public ClientDataMock()
         {
             _clients = new List<Client>();
-            for(var i=0;i < 4000; i++){
+            for(var i=0;i < 2000; i++){
                 var client = new Client();
                 client.ClientId = i.ToString();
                 client.ClientName = "Client" + i;
@@ -21,13 +21,23 @@ namespace PARiConnect.MVCApp.Services
                 client.ClinicianId = "37";
                 _clients.Add(client);
         }
-            for(var i=4000;i < 8000; i++){
+            for(var i=2000;i < 4000; i++){
                 var client = new Client();
                 client.ClientId = i.ToString();
                 client.ClientName = "Client" + i;
                 client.Clinician = "Roaming Crowder";
-                client.IsUser = true;
+                client.IsUser = false;
                 client.ClinicianId = "1";
+                _clients.Add(client);
+        }
+        for(var i=4001;i < 4010; i++){
+                var client = new Client();
+                client.ClientId = i.ToString();
+                client.ClientName = "Client" + i;
+                client.Clinician = "Roaming Crowder";
+                client.IsUser = false;
+                client.ClinicianId = "";
+                client.GroupId = "55";
                 _clients.Add(client);
         }
             

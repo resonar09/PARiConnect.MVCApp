@@ -18,8 +18,8 @@ namespace PARiConnect.MVCApp.ViewComponents
         public IViewComponentResult Invoke()
         {
             var model = new GroupViewModel();
-            var clinicians = _groupData.GetListAsync().Result;
-            model.Groups = clinicians;
+            var groups = _groupData.GetListAsync().Result;
+            model.Groups = groups;
             return View("GroupList", model);
         }
     }

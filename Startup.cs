@@ -43,6 +43,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IInventoryUsesData, InventoryUsesDataMock>();
                 services.AddScoped<IClientData, ClientDataMock>();
                 services.AddScoped<IClinicianData, ClinicianDataMock>();
+                services.AddScoped<IGroupData, GroupDataMock>();
                 services.AddSingleton<IUserService>(new UserServiceMock(users));
             }
             else

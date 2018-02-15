@@ -7,6 +7,8 @@ namespace PARiConnect.MVCApp.Models
     {
         public int GroupId{ get; set; }
         public string GroupName { get; set; }
+        public int ClientCount{ get; set; }
+        public IEnumerable<Client> Clients { get; set; }
 
     }
 }

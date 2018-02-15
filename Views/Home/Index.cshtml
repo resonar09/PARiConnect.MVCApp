@@ -92,7 +92,7 @@
 
                 var value = this.value;
                 $(".searchable").find("tr").each(function (index) {
-                    if (index === 0) return;
+                    //if (index === 0) return;
                     var rowMatch = false;
                     $(this).find("td").each(function (index) {
                         if ($(this).text().toUpperCase().indexOf(value.toUpperCase()) !== -1)

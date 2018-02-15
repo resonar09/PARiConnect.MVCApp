@@ -5,6 +5,7 @@ namespace PARiConnect.MVCApp.ViewModels
 {
     public class GroupViewModel
     {
+        
         public IEnumerable<Group> Groups { get; set; }
     }
 }

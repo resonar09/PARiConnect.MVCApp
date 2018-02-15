@@ -2,14 +2,19 @@
 <table class="table table-hover sortable w-100 tablesorter">
     <thead class="table-header">
         <tr class="table-row">
-            <th class="table-row-start">
-                <input class="ml-2" type="checkbox" value="" id="clientCheck" />
-<!--                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="clientCheck">
-                </div> -->
+            <th class="table-row-start ">
+                <input class="ml-2 clientCheckAll" type="checkbox" value="" id="clientCheckAll" />
             </th>
-            <th class="client">
-                <div class="header-text mb-1">Client</div>
+            <th class="client name-header sorter-last-name">
+                <div class="header-text mb-1">Client
+                    <div class="float-right">
+                        <button id="firstLastToggle" class="firstLastToggle btn btn-sm btn-link text-muted table-toggle">
+                            <span class="first">F</span>
+                            <i class="fa fa-exchange" aria-hidden="true"></i>
+                            <span class="last">L</span>
+                        </button>
+                    </div>
+                </div>
             </th>
             <th class="clientId">
                 <div class="header-text mb-1">Client Id</div>
@@ -17,8 +22,12 @@
             <th class="email">
                 <div class="header-text mb-1">Email</div>
             </th>
-            <th class="clinician table-row-end">  
+
+            <th class="clinician">  
                 <div class="header-text mb-1">Clinician</div>
+            </th>
+            <th class="group table-row-end">  
+                <div class="header-text mb-1">Group</div>
             </th>
         </tr>
     </thead>
@@ -29,7 +38,7 @@
          <tr class="table-row @(client.IsUser ? "" : "d-none") @client.ClinicianId @client.GroupId">
             <td class="table-row-start">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="clientCheck">
+                    <input class="form-check-input clientCheck" type="checkbox" value="" id="clientCheck">
                 </div>
             </td>
             <td class="">
@@ -37,8 +46,11 @@
             </td>
             <td>@client.ClientId</td>
             <td>@client.Email</td>
-            <td class="table-row-end">
+            <td >
                 @client.Clinician
+            </td>
+            <td class="table-row-end">
+                @client.GroupName
             </td>
         </tr>
     }

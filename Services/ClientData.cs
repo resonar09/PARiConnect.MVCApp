@@ -69,6 +69,7 @@ namespace PARiConnect.MVCApp.Services
                         client.ClientId = clinicianClientGroupClient.ClientID;
                         client.ClientName = string.Format("{0} {1}",clinicianClientGroupClient.FirstName, clinicianClientGroupClient.LastName);
                         client.GroupId = clinicianClientGroup.ClientGroupKey.ToString();
+                        client.GroupName = clinicianClientGroup.Name;
                         clientListing.Add(client); 
                     }
 
