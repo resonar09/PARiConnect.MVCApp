@@ -12,7 +12,7 @@ namespace PARiConnect.MVCApp.Models
         public string Clinician { get; set; }
         public string GroupId { get; set; }
         public string GroupName { get; set; }
-
+        
     }
 
 }

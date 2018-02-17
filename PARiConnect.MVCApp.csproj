@@ -5,11 +5,20 @@
     <SccProvider>SAK</SccProvider>
     <SccAuxPath>SAK</SccAuxPath>
     <SccLocalPath>SAK</SccLocalPath>
+    <Configurations>Debug;Release;Debug-DEV;Release-UAT</Configurations>
   </PropertyGroup>
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>800a7696-5638-4095-af91-0051ff4ee9ce</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-DEV|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0;DEBUG_DEV</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-UAT|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE_UAT;NETCOREAPP2_0</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

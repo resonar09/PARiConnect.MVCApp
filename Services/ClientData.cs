@@ -16,7 +16,7 @@ namespace PARiConnect.MVCApp.Services
         {
              _userService = userService;
         }
-
+        
         public Task<IEnumerable<Client>> GetAll()
         {
             throw new NotImplementedException();
