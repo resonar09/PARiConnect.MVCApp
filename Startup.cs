@@ -48,13 +48,14 @@ namespace PARiConnect.MVCApp
             }
             else
             {
+                services.AddScoped<IDynamicFormData, DynamicFormData>();
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewData>();
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedData>();
                 services.AddScoped<IInventoryUsesData, InventoryUsesData>();
                 services.AddScoped<IClientData, ClientData>();
                 services.AddScoped<IClinicianData, ClinicianData>();
                 services.AddScoped<IGroupData, GroupData>();
-                services.AddSingleton<IUserService>(new UserService(users));
+                services.AddScoped<IUserService,UserService>();
             }
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();
@@ -82,7 +83,7 @@ namespace PARiConnect.MVCApp
                 app.UseExceptionHandler("/Home/Error");
             }
 
-
+            
             app.UseStaticFiles();
 
             app.UseAuthentication();

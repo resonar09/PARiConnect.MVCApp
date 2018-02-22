@@ -7,20 +7,16 @@ using PARiConnect.MVCApp.Models;
 
 namespace PARiConnect.MVCApp.Services
 {
+
     public class UserService : IUserService
     {
-        private IDictionary<string, (string PasswordHash, User User)> _users =
-            new Dictionary<string, (string PasswordHash, User User)>();
-
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public string UserKey { get; set; }
         public string UserName { get; set; }
 
-        public UserService(IDictionary<string, string> users)
+        public UserService(IHttpContextAccessor httpContextAccessor)
         {
-            foreach (var user in users)
-            {
-                _users.Add(user.Key.ToLower(), (user.Value, new User(user.Key)));
-            }
+            _httpContextAccessor = httpContextAccessor;
         }
         public Task<bool> ValidateCredentials(string email, string password, out User user)
         {
@@ -52,11 +48,19 @@ namespace PARiConnect.MVCApp.Services
             return Task.FromResult(false);
         }
         public string GetCurrentUserId(){
-            return UserKey;
+            var context = _httpContextAccessor.HttpContext;
+            var userKey = context.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Sid)?.Value;
+            return userKey;
         }
 
         public string GetCurrentUserName(){
             return UserName;
+        }
+
+        public bool IsUserLoggedIn()
+        {
+            var context = _httpContextAccessor.HttpContext;
+            return context.User.Identities.Any(x => x.IsAuthenticated);
         }
     }
 }
