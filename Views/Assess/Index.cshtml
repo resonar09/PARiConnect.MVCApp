@@ -5,3 +5,9 @@
 
 
 <h1>Assess Page</h1>
+
+@await Component.InvokeAsync("DynamicForm")
+
+@section scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
