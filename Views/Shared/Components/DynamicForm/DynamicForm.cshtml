@@ -1,8 +1,10 @@
 ﻿@model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel   
 
 <h1>Dynamic Form</h1>
-
+@if(Model.Inputs != null)
+{
 <form class="form-login" asp-action="">
+
 <div class="container-fluid">
     <div class="row">
         @foreach (var input in Model.Inputs)
@@ -53,4 +55,4 @@
 </div>
 
 </form>
-
+}

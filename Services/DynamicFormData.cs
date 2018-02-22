@@ -47,6 +47,12 @@ namespace PARiConnect.MVCApp.Services
 
             return await Task.Run(() => _inputs);
         }
+        public async Task<IEnumerable<Input>> GetListAsync(string model)
+        {
+            Type t = Type.GetType("CAD");
+            
+            return await Task.Run(() => (IEnumerable<Input>)t);
+        }
     }
 }
 
