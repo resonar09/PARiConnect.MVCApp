@@ -10,6 +10,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+	  <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
     <UserSecretsId>800a7696-5638-4095-af91-0051ff4ee9ce</UserSecretsId>
   </PropertyGroup>
 
