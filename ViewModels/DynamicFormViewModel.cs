@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using PARiConnect.MVCApp.Models;
+using PARiConnect.MVCApp.Models.DynamicFormModels;
 
 namespace PARiConnect.MVCApp.ViewModels
 {

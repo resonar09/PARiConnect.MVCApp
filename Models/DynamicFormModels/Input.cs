@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace PARiConnect.MVCApp.Models
+namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
     public class Input
     {

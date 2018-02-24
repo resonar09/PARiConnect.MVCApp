@@ -1,9 +1,7 @@
 ﻿@model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel   
-
-<h1>Dynamic Form</h1>
 @if(Model.Inputs != null)
 {
-<form class="form-login" asp-action="">
+<form class="form-login" asp-controller="Auth" asp-action="Login">
 
 <div class="container-fluid">
     <div class="row">
@@ -28,6 +26,7 @@
                         width="@(input.Width)px"  
                         name="@input.Label" 
                         placeholder="@input.Placeholder"
+                        asp-for="@input.Label"
                         data-val="@(input.Validation ? "true" : "false")"
                         data-val-email="@input.ValidationEmailMessage" 
                         data-val-required="@input.ValidationRequiredMessage"
@@ -42,7 +41,13 @@
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
-                        <input id="@input.Id" type="@input.Type" class="form-control" width="@(input.Width)px"  name="@input.Label"   />
+                        <input 
+                            id="@input.Id" 
+                            type="@input.Type" 
+                            class="form-control" 
+                            width="@(input.Width)px"  
+                            name="@input.Label"
+                            asp-for="@input.Label"   />
             
                 } 
         </div>

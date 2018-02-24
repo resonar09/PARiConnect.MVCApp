@@ -3,20 +3,24 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
-    public class CAD
+    public class Login
     {
 
+        public Settings Settings { get; set; }
         public List<Input> Inputs { get; set; }
 
-        public CAD()
+        public Login()
         {
+            Settings = new Settings();
+            Settings.Layout = "Stacked";
+
             Inputs = new List<Input>
             {
                 new Input {
-                    Id = "test",
-                    Label = "Username",
+                    Id = "email",
+                    Label = "Email",
                     Type ="email",
-                    Placeholder ="sample3@email.com",
+                    Placeholder ="sample@email.com",
                     Class = "",
                     Width = "200",
                     Validation = true,
@@ -28,7 +32,9 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Label = "Password",
                     Type ="password",
                     Class = "",
-                    Width = "300"
+                    Width = "300",
+                    Validation = true,
+                    ValidationRequiredMessage = "The Password field is required!"
                 },
             };
         }

@@ -14,23 +14,7 @@ namespace PARiConnect.MVCApp.ViewComponents
         {
             _dynamicFormData = dynamicFormData;
         }
-/*         public IViewComponentResult Invoke()
-        {
-            var model = new DynamicFormViewModel();
-            var dynForm = _dynamicFormData.GetListAsync().Result;
-            //var clients = _clientData.GetListAsync().Result;
-            model.Inputs = dynForm;
-            return View("DynamicForm", model);
-            //return null;
-        }
-        public IViewComponentResult Invoke(object model)
-        {
-            var dynForm = _dynamicFormData.GetListAsync().Result;
-            //var clients = _clientData.GetListAsync().Result;
-            model = dynForm;
-            return View("DynamicForm", model);
-            //return null;
-        } */
+
         public IViewComponentResult Invoke(string model)
         {
             var dynFormModel = _dynamicFormData.GetListAsync(model).Result;
