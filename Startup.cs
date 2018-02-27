@@ -38,6 +38,7 @@ namespace PARiConnect.MVCApp
             //App Services
             if (Environment.IsDevelopment() && appSettings.Offline)
             {
+                services.AddScoped<IDynamicFormData, DynamicFormDataMock>();
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewDataMock>();
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedDataMock>();
                 services.AddScoped<IInventoryUsesData, InventoryUsesDataMock>();
