@@ -1,13 +1,15 @@
 ﻿@model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel   
 @if(Model.Inputs != null)
 {
+    
+
 <form class="form-login" asp-controller="Auth" asp-action="Login">
 
 <div class="container-fluid">
     <div class="row">
         @foreach (var input in Model.Inputs)
         {      
-        <div class="input-group m-2 col">
+        <div class="input-group mb-4 col-12">
                 @if (input.Type == "")
                 {
 
@@ -53,11 +55,16 @@
         </div>
         }
     </div>
-<div asp-validation-summary="All" class="form-validation"></div>
- <div class="my-4">
-    <button type="submit" class="btn  btn-outline-primary btn-block">Login</button>
-</div>
-</div>
-
+    <div class="row">
+        <div class="col-12">
+            <div asp-validation-summary="All" class="form-validation"></div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn  btn-outline-primary btn-block">Login</button>
+        </div>
+        
+    </div>
+    </div>
 </form>
+
 }

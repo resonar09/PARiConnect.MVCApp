@@ -73,15 +73,7 @@
             $(".search-input").keyup(function () {
 
                 var value = this.value;
-                $(".searchable").find("tr").each(function (index) {
-                    //if (index === 0) return;
-                    var rowMatch = false;
-                    $(this).find("td").each(function (index) {
-                        if ($(this).text().toUpperCase().indexOf(value.toUpperCase()) !== -1)
-                            rowMatch = true;
-                    });
-                    $(this).toggle(rowMatch);
-                });
+                //searchTables(value);
             });
 
             $(".firstLastToggle").click(function(e){
@@ -110,9 +102,98 @@
                 }
                 });
             });
+            $(".fa-sort").click(function(e){
+                    $(".fa-sort").show();
+                    $(this).hide();
+            });
+            $( "#assessment-table-completed .select" ).change(function() {
+                filterTable("assessment-table-completed");
+            });
+            $( "#assessment-table-pending .select" ).change(function() {
+                filterTable("assessment-table-pending");
+            });
 
-           
+            setup();
         }
         );
-    </script>
+        function setup() {
+            rePopulateSelectList('assessment-table-completed', 0, 'client-select');
+            rePopulateSelectList('assessment-table-completed', 1, 'assessment-select');
+            rePopulateSelectList('assessment-table-completed', 3, 'status-select');
+            rePopulateSelectList('assessment-table-pending', 0, 'client-select');
+            rePopulateSelectList('assessment-table-pending', 1, 'assessment-select');
+            rePopulateSelectList('assessment-table-pending', 3, 'status-select');
+            cleanupSelectedLists();
+        }
+        function rePopulateSelectList(table, columnIndex, select) {
+
+            var selectSelector = '#' + table + ' .' + select + ' option';
+            $(selectSelector).remove();
+            var control = $('#' + table + ' .' + select), values = [];
+            $('#' + table + ' tr').each(function () {
+                var cell = $(this).find('td:eq(' + columnIndex + ')'),
+                    text = cell.text();
+
+                if (values.indexOf(text) == -1) {
+                    values.push(text);
+                }
+            });
+            //var arrayLength = myStringArray.length;
+            values.sort();
+            control.append('<option value="All">All</option>');
+            for (var i = 0; i < values.length; i++) {
+                control.append('<option value="' + values[i] + '">' + values[i] + '</option>');
+            }
+        }
+        function cleanupSelectedLists() {
+            $('select option')
+                .filter(function() {
+                    return !this.value || $.trim(this.value).length == 0;
+                })
+            .remove();
+
+            $('select option')
+                .first()
+                .prop('selected', true);
+        }
+        function searchTables(value) {
+
+            $(".searchable").find("tr").each(function (index) { 
+                
+                if (value && value.toUpperCase() === "ALL") {
+                        $(this).show();
+                } 
+                else {
+                    var rowMatch = false;
+                    $(this).find("td").each(function (index) {
+                           if ($(this).text().toUpperCase().indexOf(value.toUpperCase()) !== -1)
+                                rowMatch = true;
+                    });
+                    $(this).toggle(rowMatch);  
+                }                
+            });
+        }
+        function filterTable(table) {
+            if(table){
+                table = "#" + table;  // + " .searchable";
+                selects = table + " .select";
+                console.log(table);
+
+                $(table).find("tr").each(function (index) { 
+                    var rowMatch = false;
+                    $(this).find("td").each(function (index) {
+                        $(selects).each(function(i, obj) {
+                            console.log($(obj).val());
+                            if ($(this).text().toUpperCase().indexOf($(obj).val().toUpperCase()) !== -1)
+                                rowMatch = true;
+                        });
+
+                    }); 
+                    
+                    $(this).toggle(rowMatch);   
+                });
+            }
+        }
+
+         </script>
 }
