@@ -177,18 +177,30 @@
             if(table){
                 table = "#" + table;  // + " .searchable";
                 selects = table + " .select";
-                console.log(table);
-
+                //console.log(table);
+                var filters = [];
+                $(selects).each(function(i, obj) {
+                    filters.push($(obj).val().trim().toUpperCase());
+                });
+                console.log(filters);
                 $(table).find("tr").each(function (index) { 
                     var rowMatch = false;
-                    $(this).find("td").each(function (index) {
+        
+                     $(this).find("td").each(function (index) {
                         $(selects).each(function(i, obj) {
-                            console.log($(obj).val());
-                            if ($(this).text().toUpperCase().indexOf($(obj).val().toUpperCase()) !== -1)
-                                rowMatch = true;
+                            
+                            var filterVal = $(obj).val().trim().toUpperCase();
+                            if(filterVal !== "ALL"){
+                                
+                                if ($(this).text().toUpperCase().indexOf(filterVal) !== -1){
+                                    console.log($(obj).val().trim());
+                                    rowMatch = true;
+                                }
+                                    
+                            }
                         });
 
-                    }); 
+                    });  
                     
                     $(this).toggle(rowMatch);   
                 });
