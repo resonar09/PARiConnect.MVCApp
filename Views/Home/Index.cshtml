@@ -106,10 +106,12 @@
                     $(".fa-sort").show();
                     $(this).hide();
             });
-            $( "#assessment-table-completed .select" ).change(function() {
+            $( "#assessment-table-completed .filter" ).change(function() {
+                console.log(this);
                 filterTable("assessment-table-completed");
             });
-            $( "#assessment-table-pending .select" ).change(function() {
+            $( "#assessment-table-pending .filter" ).change(function() {
+                console.log(this);
                 filterTable("assessment-table-pending");
             });
 
@@ -173,37 +175,49 @@
                 }                
             });
         }
+        function findObjectByKey(array, key, value) {
+            for (var i = 0; i < array.length; i++) {
+                if (array[i][key] === value) {
+                    return array[i];
+                }
+            }
+            return null;
+        }
         function filterTable(table) {
             if(table){
                 table = "#" + table;  // + " .searchable";
                 selects = table + " .select";
                 //console.log(table);
                 var filters = [];
-                $(selects).each(function(i, obj) {
-                    filters.push($(obj).val().trim().toUpperCase());
-                });
-                console.log(filters);
-                $(table).find("tr").each(function (index) { 
+                $(table + " thead").find("th").each(function (index) {
+                        //console.log(index);
+                        if($(this).find(".filter")[0]){
+                            //console.log($(this).find(".filter").val().trim().toUpperCase());
+                            if($(this).find(".filter").val().trim().toUpperCase() !== 'ALL'){
+                                filters.push({
+                                    key: index,
+                                    value: $(this).find(".filter").val().trim().toUpperCase()
+                                });
+                            }
+                        }       
+                 });
+                 $(table + " tbody").find("tr").each(function (index) { 
                     var rowMatch = false;
         
                      $(this).find("td").each(function (index) {
-                        $(selects).each(function(i, obj) {
-                            
-                            var filterVal = $(obj).val().trim().toUpperCase();
-                            if(filterVal !== "ALL"){
-                                
-                                if ($(this).text().toUpperCase().indexOf(filterVal) !== -1){
-                                    console.log($(obj).val().trim());
-                                    rowMatch = true;
-                                }
-                                    
-                            }
-                        });
 
+                            var obj = findObjectByKey(filters, 'key', index)
+                            
+                            if(obj){
+                                
+                                if ($(this).text().toUpperCase().indexOf(obj.value) !== -1){
+                                    rowMatch = true;
+                                }     
+                            }
                     });  
-                    
                     $(this).toggle(rowMatch);   
                 });
+                //setup();
             }
         }
 
