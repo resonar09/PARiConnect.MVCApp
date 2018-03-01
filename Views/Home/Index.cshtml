@@ -107,13 +107,14 @@
                     $(this).hide();
             });
             $( "#assessment-table-completed .filter" ).change(function() {
-
+                console.log("assessment-table-completed .filter");
                 filterTable("assessment-table-completed");
                 //filterTable("assessment-table-completed", this.value.trim().toUpperCase(),"0");
                 //rePopulateSelectList('assessment-table-completed', 1, 'assessment-select');
                 //rePopulateSelectList('assessment-table-completed', 3, 'status-select');
             });
             $( "#assessment-table-pending .filter" ).change(function() {
+                console.log("assessment-table-pending .filter");
                 filterTable("assessment-table-pending");
                 //filterTable("assessment-table-pending",this.value.trim().toUpperCase(), "0");
                 //rePopulateSelectList('assessment-table-pending', 1, 'assessment-select');
@@ -192,13 +193,12 @@
         function filterTable(table) {
             if(table){
                 table = "#" + table;  // + " .searchable";
-                //selects = table + " .select";
                 //console.log(table);
                 var filters = [];
                 $(table + " thead").find("th").each(function (index) {
                         //console.log(index);
                         if($(this).find(".filter")[0]){
-                            console.log($(this).find(".filter").val().trim().toUpperCase());
+                            //console.log($(this).find(".filter").val().trim().toUpperCase());
                             if($(this).find(".filter").val().trim().toUpperCase() !== 'ALL'){
                                 filters.push({
                                     key: index,
@@ -207,25 +207,21 @@
                             }
                         }       
                  });
-                 //console.log(filters);
-                 $(table + " tbody").find("tr").each(function (index) { 
-                    var rowMatch = false;
-        
-                     $(this).find("td").each(function (index) {
-
-                            var obj = findObjectByKey(filters, 'key', index);
-                            
-                            if(obj){
-                                
-                                if ($(this).text().toUpperCase().indexOf(obj.value) !== -1){
-                                    console.log(obj.value);
-                                    rowMatch = true;
-                                }     
-                            }
-                    });  
-                    $(this).toggle(rowMatch);   
+                 $(table + " tbody").find("tr").each(function (rIndex) { 
+                    var rowMatchCount = 0;
+                    var row = $(this);
+                    filters.forEach(function(element, index) {
+                        if(row.find('td').eq(element.key).text().trim().toUpperCase().indexOf(element.value) !== -1){
+                            rowMatchCount++;
+                            console.log(element.key + ": " + element.value);   
+                        }
+                    });
+                    
+                    if(rowMatchCount === filters.length)
+                        $(this).show();  
+                    else
+                        $(this).hide();
                 });
-                //setup();
             }
         }
         function filterTable3(table, value, column) {
