@@ -107,14 +107,20 @@
                     $(this).hide();
             });
             $( "#assessment-table-completed .filter" ).change(function() {
-                console.log(this);
+
                 filterTable("assessment-table-completed");
+                //filterTable("assessment-table-completed", this.value.trim().toUpperCase(),"0");
+                //rePopulateSelectList('assessment-table-completed', 1, 'assessment-select');
+                //rePopulateSelectList('assessment-table-completed', 3, 'status-select');
             });
             $( "#assessment-table-pending .filter" ).change(function() {
-                console.log(this);
                 filterTable("assessment-table-pending");
-            });
+                //filterTable("assessment-table-pending",this.value.trim().toUpperCase(), "0");
+                //rePopulateSelectList('assessment-table-pending', 1, 'assessment-select');
+                //rePopulateSelectList('assessment-table-pending', 3, 'status-select');
 
+            });
+ 
             setup();
         }
         );
@@ -186,13 +192,13 @@
         function filterTable(table) {
             if(table){
                 table = "#" + table;  // + " .searchable";
-                selects = table + " .select";
+                //selects = table + " .select";
                 //console.log(table);
                 var filters = [];
                 $(table + " thead").find("th").each(function (index) {
                         //console.log(index);
                         if($(this).find(".filter")[0]){
-                            //console.log($(this).find(".filter").val().trim().toUpperCase());
+                            console.log($(this).find(".filter").val().trim().toUpperCase());
                             if($(this).find(".filter").val().trim().toUpperCase() !== 'ALL'){
                                 filters.push({
                                     key: index,
@@ -201,16 +207,18 @@
                             }
                         }       
                  });
+                 //console.log(filters);
                  $(table + " tbody").find("tr").each(function (index) { 
                     var rowMatch = false;
         
                      $(this).find("td").each(function (index) {
 
-                            var obj = findObjectByKey(filters, 'key', index)
+                            var obj = findObjectByKey(filters, 'key', index);
                             
                             if(obj){
                                 
                                 if ($(this).text().toUpperCase().indexOf(obj.value) !== -1){
+                                    console.log(obj.value);
                                     rowMatch = true;
                                 }     
                             }
@@ -220,6 +228,22 @@
                 //setup();
             }
         }
-
+        function filterTable3(table, value, column) {
+            if(table){
+                table = "#" + table;  // + " .searchable";
+                if(value.toUpperCase() === "ALL"){
+                    $('.search tr ').show();
+                    return;
+                }
+                $(table + " tbody").addClass("search");
+                var rex = new RegExp(value, 'i');
+                $('.search tr ').hide();
+                var show = true;
+                 $('.search tr ').filter(function(i, v) {
+                    var $t = $(this).children(":eq(" + column + ")");
+                    return rex.test($t.text());
+                }).show(true); 
+            }
+        }
          </script>
 }
