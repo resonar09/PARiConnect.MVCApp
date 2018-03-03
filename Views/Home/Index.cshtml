@@ -107,14 +107,14 @@
                     $(this).hide();
             });
             $( "#assessment-table-completed .filter" ).change(function() {
-                console.log("assessment-table-completed .filter");
+                //console.log("assessment-table-completed .filter");
                 filterTable("assessment-table-completed");
                 //filterTable("assessment-table-completed", this.value.trim().toUpperCase(),"0");
                 //rePopulateSelectList('assessment-table-completed', 1, 'assessment-select');
                 //rePopulateSelectList('assessment-table-completed', 3, 'status-select');
             });
             $( "#assessment-table-pending .filter" ).change(function() {
-                console.log("assessment-table-pending .filter");
+                //console.log("assessment-table-pending .filter");
                 filterTable("assessment-table-pending");
                 //filterTable("assessment-table-pending",this.value.trim().toUpperCase(), "0");
                 //rePopulateSelectList('assessment-table-pending', 1, 'assessment-select');
@@ -126,33 +126,73 @@
         }
         );
         function setup() {
-            rePopulateSelectList('assessment-table-completed', 0, 'client-select');
-            rePopulateSelectList('assessment-table-completed', 1, 'assessment-select');
-            rePopulateSelectList('assessment-table-completed', 3, 'status-select');
-            rePopulateSelectList('assessment-table-pending', 0, 'client-select');
-            rePopulateSelectList('assessment-table-pending', 1, 'assessment-select');
-            rePopulateSelectList('assessment-table-pending', 3, 'status-select');
+            populateSelectList('assessment-table-completed', 0, 'client-select');
+            populateSelectList('assessment-table-completed', 1, 'assessment-select');
+            populateSelectList('assessment-table-completed', 3, 'status-select');
+            populateSelectList('assessment-table-pending', 0, 'client-select');
+            populateSelectList('assessment-table-pending', 1, 'assessment-select');
+            populateSelectList('assessment-table-pending', 3, 'status-select');
             cleanupSelectedLists();
         }
-        function rePopulateSelectList(table, columnIndex, select) {
+        function populateSelectList(table, columnIndex, select) {
 
             var selectSelector = '#' + table + ' .' + select + ' option';
             $(selectSelector).remove();
             var control = $('#' + table + ' .' + select), values = [];
+            var rowCount = 0;
             $('#' + table + ' tr').each(function () {
-                var cell = $(this).find('td:eq(' + columnIndex + ')'),
-                    text = cell.text();
-
-                if (values.indexOf(text) == -1) {
-                    values.push(text);
+                if($(this).is(":visible")){
+                    var cell = $(this).find('td:eq(' + columnIndex + ')'),
+                        text = cell.text();
+                    
+                    if (values.indexOf(text) == -1) {
+                        //console.log(text);
+                        values.push(text);
+                    }
                 }
+
             });
+            //console.log(rowCount);
             //var arrayLength = myStringArray.length;
             values.sort();
             control.append('<option value="All">All</option>');
             for (var i = 0; i < values.length; i++) {
                 control.append('<option value="' + values[i] + '">' + values[i] + '</option>');
             }
+        }
+        function rePopulateSelectList(table) {
+
+            //var selectSelector = '#' + table + ' .' + select + ' option';
+            //$(selectSelector).remove();
+            //var control = $('#' + table + ' .' + select), values = [];
+            var filterCols = $(table + ' thead').find(".filter").parents('th');
+            //console.log(filterCols); 
+            var rowCount = 0;
+
+            filterCols.each(function(index, elem) {
+                var colList = [];
+                $(table + ' tbody tr').each(function () {
+                    var row = $(this);
+                    if(row.is(":visible")){
+                        var cell = row.find('td').eq(elem.column).text().trim(); 
+                        
+                        if($.inArray(cell,colList)){ 
+                            //console.log(cell);   
+                        //console.log(row.find('td').eq(elem.column).text().trim());
+                            colList.push(cell);
+                        }
+                    }
+                });
+                //console.log(colList.sort());
+                var control = $(this).find(".filter").find("option");
+                $(this).find(".filter").find("option").remove();
+                $(this).find(".filter").find("option").append('<option value="All">All</option>');
+                control.append('<option value="TEST">TEST</option>');
+                for (var i = 0; i < colList.length; i++) {
+                    console.log(colList[i]);
+                    control.append('<option value="' + colList[i] + '">' + colList[i] + '</option>');
+                } 
+            });   
         }
         function cleanupSelectedLists() {
             $('select option')
@@ -213,7 +253,7 @@
                     filters.forEach(function(element, index) {
                         if(row.find('td').eq(element.key).text().trim().toUpperCase().indexOf(element.value) !== -1){
                             rowMatchCount++;
-                            console.log(element.key + ": " + element.value);   
+                            //console.log(element.key + ": " + element.value);   
                         }
                     });
                     
@@ -222,6 +262,9 @@
                     else
                         $(this).hide();
                 });
+                
+            rePopulateSelectList(table);
+                
             }
         }
         function filterTable3(table, value, column) {
