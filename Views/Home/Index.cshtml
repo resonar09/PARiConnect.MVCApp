@@ -126,13 +126,15 @@
         }
         );
         function setup() {
-            populateSelectList('assessment-table-completed', 0, 'client-select');
-            populateSelectList('assessment-table-completed', 1, 'assessment-select');
-            populateSelectList('assessment-table-completed', 3, 'status-select');
-            populateSelectList('assessment-table-pending', 0, 'client-select');
-            populateSelectList('assessment-table-pending', 1, 'assessment-select');
-            populateSelectList('assessment-table-pending', 3, 'status-select');
-            cleanupSelectedLists();
+            //populateSelectList('assessment-table-completed', 0, 'client-select');
+            //populateSelectList('assessment-table-completed', 1, 'assessment-select');
+            //populateSelectList('assessment-table-completed', 3, 'status-select');
+            //populateSelectList('assessment-table-pending', 0, 'client-select');
+            //populateSelectList('assessment-table-pending', 1, 'assessment-select');
+            //populateSelectList('assessment-table-pending', 3, 'status-select');
+            rePopulateSelectList('assessment-table-pending');
+            rePopulateSelectList('assessment-table-completed');
+            //cleanupSelectedLists();
         }
         function populateSelectList(table, columnIndex, select) {
 
@@ -144,13 +146,10 @@
                 if($(this).is(":visible")){
                     var cell = $(this).find('td:eq(' + columnIndex + ')'),
                         text = cell.text();
-                    
                     if (values.indexOf(text) == -1) {
-                        //console.log(text);
                         values.push(text);
                     }
                 }
-
             });
             console.log(rowCount);
             //var arrayLength = myStringArray.length;
@@ -161,48 +160,40 @@
             }
         }
         function rePopulateSelectList(table) {
-
-            //var selectSelector = '#' + table + ' .' + select + ' option';
-            //$(selectSelector).remove();
-            //var control = $('#' + table + ' .' + select), values = [];
-            var filterCols = $(table + ' thead').find(".filter").parents('th');
-            //console.log(filterCols); 
+            var tableSelector = "#" + table;
+            var filterCols = $(tableSelector + ' thead').find(".filter").parents('th');
             var rowCount = 0;
-
+            console.log(filterCols);
             filterCols.each(function(index, elem) {
                 var colList = [];
-
-                $(table + ' tbody tr').each(function () {
+                $(tableSelector + ' tbody tr').each(function () {
                     var row = $(this);
                     if(row.is(":visible")){
-                        var cell = row.find('td').eq(elem.column).text().trim();      
-/*                         if($.inArray(cell,colList)){ 
-                            colList.push(cell);
-                        } */
+                        var cell = row.find('td').eq(elem.column).text().trim();     
                         if (colList.indexOf(cell) == -1) {
                             colList.push(cell);
                         }
                     }
                 });
-                console.log(colList.sort());
+                //console.log(elem);
                 var control = $(this).find(".filter");
-                var selected = control.val();
+                console.log('control.val():' + control.val());
+                if(control.val()){                        
+                        var selected = control.val().trim();
+                        //control.val(selected);
+                }  
                 var options = control.find("option");
-                options.remove();
-                control.append('<option value="All">All</option>');
-                for (var i = 0; i < colList.length; i++) {
-                    //console.log(colList[i]);
+                if(colList.length > 0){
+                        options.remove();
+                        control.append('<option value="All">All</option>');
 
-                    if(selected === colList[i]){
-                            control.append('<option value="' + colList[i] + '"selected>' + colList[i] + '</option>');
-                    }
-                    else
-                    {
-                        control.append('<option value="' + colList[i] + '">' + colList[i] + '</option>');
-                    }
-                    
+                        for (var i = 0; i < colList.length; i++) {
+                                if(colList[i] === selected)
+                                    control.append('<option value="' + colList[i] + '" selected>' + colList[i] + '</option>');
+                                else
+                                    control.append('<option value="' + colList[i] + '">' + colList[i] + '</option>');                                                                                                             
+                        }
                 } 
-                control.val(selected);
             });   
         }
         function cleanupSelectedLists() {
@@ -242,14 +233,11 @@
             return null;
         }
         function filterTable(table) {
-            if(table){
-                table = "#" + table;  // + " .searchable";
-                //console.log(table);
+            if(table){   
+                tableSelector = "#" + table;  // + " .searchable";
                 var filters = [];
-                $(table + " thead").find("th").each(function (index) {
-                        //console.log(index);
+                $(tableSelector + " thead").find("th").each(function (index) {
                         if($(this).find(".filter")[0]){
-                            //console.log($(this).find(".filter").val().trim().toUpperCase());
                             if($(this).find(".filter").val().trim().toUpperCase() !== 'ALL'){
                                 filters.push({
                                     key: index,
@@ -258,24 +246,22 @@
                             }
                         }       
                  });
-                 $(table + " tbody").find("tr").each(function (rIndex) { 
+                 
+                 $(tableSelector + " tbody").find("tr").each(function (rIndex) { 
                     var rowMatchCount = 0;
                     var row = $(this);
                     filters.forEach(function(element, index) {
                         if(row.find('td').eq(element.key).text().trim().toUpperCase().indexOf(element.value) !== -1){
                             rowMatchCount++;
-                            console.log(element.key + ": " + element.value);   
+                            //console.log(element.key + ": " + element.value);   
                         }
                     });
-                    
                     if(rowMatchCount === filters.length)
                         $(this).show();  
                     else
                         $(this).hide();
                 });
-                
-            rePopulateSelectList(table);
-                
+            rePopulateSelectList(table);  
             }
         }
         function filterTable3(table, value, column) {
