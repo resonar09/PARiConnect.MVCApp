@@ -107,14 +107,14 @@
                     $(this).hide();
             });
             $( "#assessment-table-completed .filter" ).change(function() {
-                //console.log("assessment-table-completed .filter");
+                console.log("assessment-table-completed .filter");
                 filterTable("assessment-table-completed");
                 //filterTable("assessment-table-completed", this.value.trim().toUpperCase(),"0");
                 //rePopulateSelectList('assessment-table-completed', 1, 'assessment-select');
                 //rePopulateSelectList('assessment-table-completed', 3, 'status-select');
             });
             $( "#assessment-table-pending .filter" ).change(function() {
-                //console.log("assessment-table-pending .filter");
+                console.log("assessment-table-pending .filter");
                 filterTable("assessment-table-pending");
                 //filterTable("assessment-table-pending",this.value.trim().toUpperCase(), "0");
                 //rePopulateSelectList('assessment-table-pending', 1, 'assessment-select');
@@ -152,7 +152,7 @@
                 }
 
             });
-            //console.log(rowCount);
+            console.log(rowCount);
             //var arrayLength = myStringArray.length;
             values.sort();
             control.append('<option value="All">All</option>');
@@ -171,27 +171,38 @@
 
             filterCols.each(function(index, elem) {
                 var colList = [];
+
                 $(table + ' tbody tr').each(function () {
                     var row = $(this);
                     if(row.is(":visible")){
-                        var cell = row.find('td').eq(elem.column).text().trim(); 
-                        
-                        if($.inArray(cell,colList)){ 
-                            //console.log(cell);   
-                        //console.log(row.find('td').eq(elem.column).text().trim());
+                        var cell = row.find('td').eq(elem.column).text().trim();      
+/*                         if($.inArray(cell,colList)){ 
+                            colList.push(cell);
+                        } */
+                        if (colList.indexOf(cell) == -1) {
                             colList.push(cell);
                         }
                     }
                 });
-                //console.log(colList.sort());
-                var control = $(this).find(".filter").find("option");
-                $(this).find(".filter").find("option").remove();
-                $(this).find(".filter").find("option").append('<option value="All">All</option>');
-                control.append('<option value="TEST">TEST</option>');
+                console.log(colList.sort());
+                var control = $(this).find(".filter");
+                var selected = control.val();
+                var options = control.find("option");
+                options.remove();
+                control.append('<option value="All">All</option>');
                 for (var i = 0; i < colList.length; i++) {
-                    console.log(colList[i]);
-                    control.append('<option value="' + colList[i] + '">' + colList[i] + '</option>');
+                    //console.log(colList[i]);
+
+                    if(selected === colList[i]){
+                            control.append('<option value="' + colList[i] + '"selected>' + colList[i] + '</option>');
+                    }
+                    else
+                    {
+                        control.append('<option value="' + colList[i] + '">' + colList[i] + '</option>');
+                    }
+                    
                 } 
+                control.val(selected);
             });   
         }
         function cleanupSelectedLists() {
@@ -253,7 +264,7 @@
                     filters.forEach(function(element, index) {
                         if(row.find('td').eq(element.key).text().trim().toUpperCase().indexOf(element.value) !== -1){
                             rowMatchCount++;
-                            //console.log(element.key + ": " + element.value);   
+                            console.log(element.key + ": " + element.value);   
                         }
                     });
                     
