@@ -97,7 +97,6 @@
                 html: true,
                 content: function() {
                     var id = $(this).attr('id')
-                    //$('#popover-content-' + id).show();
                     return $('#popover-content-' + id).html();
                 }
                 });
@@ -107,33 +106,18 @@
                     $(this).hide();
             });
             $( "#assessment-table-completed .filter" ).change(function() {
-                console.log("assessment-table-completed .filter");
                 filterTable("assessment-table-completed");
-                //filterTable("assessment-table-completed", this.value.trim().toUpperCase(),"0");
-                //rePopulateSelectList('assessment-table-completed', 1, 'assessment-select');
-                //rePopulateSelectList('assessment-table-completed', 3, 'status-select');
             });
             $( "#assessment-table-pending .filter" ).change(function() {
-                console.log("assessment-table-pending .filter");
                 filterTable("assessment-table-pending");
-                //filterTable("assessment-table-pending",this.value.trim().toUpperCase(), "0");
-                //rePopulateSelectList('assessment-table-pending', 1, 'assessment-select');
-                //rePopulateSelectList('assessment-table-pending', 3, 'status-select');
-
             });
  
             setup();
         }
         );
         function setup() {
-            //populateSelectList('assessment-table-completed', 0, 'client-select');
-            //populateSelectList('assessment-table-completed', 1, 'assessment-select');
-            //populateSelectList('assessment-table-completed', 3, 'status-select');
-            //populateSelectList('assessment-table-pending', 0, 'client-select');
-            //populateSelectList('assessment-table-pending', 1, 'assessment-select');
-            //populateSelectList('assessment-table-pending', 3, 'status-select');
-            rePopulateSelectList('assessment-table-pending');
-            rePopulateSelectList('assessment-table-completed');
+            rePopulateSelectList('assessment-table-pending', true);
+            rePopulateSelectList('assessment-table-completed', true);
             //cleanupSelectedLists();
         }
         function populateSelectList(table, columnIndex, select) {
@@ -151,7 +135,6 @@
                     }
                 }
             });
-            console.log(rowCount);
             //var arrayLength = myStringArray.length;
             values.sort();
             control.append('<option value="All">All</option>');
@@ -159,34 +142,29 @@
                 control.append('<option value="' + values[i] + '">' + values[i] + '</option>');
             }
         }
-        function rePopulateSelectList(table) {
+        function rePopulateSelectList(table, init) {
             var tableSelector = "#" + table;
             var filterCols = $(tableSelector + ' thead').find(".filter").parents('th');
             var rowCount = 0;
-            console.log(filterCols);
             filterCols.each(function(index, elem) {
                 var colList = [];
                 $(tableSelector + ' tbody tr').each(function () {
                     var row = $(this);
-                    if(row.is(":visible")){
+                    if(row.is(":visible") || init){
                         var cell = row.find('td').eq(elem.column).text().trim();     
                         if (colList.indexOf(cell) == -1) {
                             colList.push(cell);
                         }
                     }
                 });
-                //console.log(elem);
                 var control = $(this).find(".filter");
-                console.log('control.val():' + control.val());
                 if(control.val()){                        
                         var selected = control.val().trim();
-                        //control.val(selected);
                 }  
                 var options = control.find("option");
                 if(colList.length > 0){
                         options.remove();
                         control.append('<option value="All">All</option>');
-
                         for (var i = 0; i < colList.length; i++) {
                                 if(colList[i] === selected)
                                     control.append('<option value="' + colList[i] + '" selected>' + colList[i] + '</option>');
@@ -264,22 +242,6 @@
             rePopulateSelectList(table);  
             }
         }
-        function filterTable3(table, value, column) {
-            if(table){
-                table = "#" + table;  // + " .searchable";
-                if(value.toUpperCase() === "ALL"){
-                    $('.search tr ').show();
-                    return;
-                }
-                $(table + " tbody").addClass("search");
-                var rex = new RegExp(value, 'i');
-                $('.search tr ').hide();
-                var show = true;
-                 $('.search tr ').filter(function(i, v) {
-                    var $t = $(this).children(":eq(" + column + ")");
-                    return rex.test($t.text());
-                }).show(true); 
-            }
-        }
+
          </script>
 }
