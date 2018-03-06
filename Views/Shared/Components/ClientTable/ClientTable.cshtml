@@ -1,21 +1,22 @@
 ﻿@model PARiConnect.MVCApp.ViewModels.ClientViewModel
-<div class="float-right  mt-2 d-flex flex-row"">
-    <div>
-        <button class="btn btn-outline-primary btn-sm mr-1">
+<div class="row mt-3">
+    <div class="col-8"><input type="text" class="search-input form-control" id="search" placeholder="Search by client, client id, email, clinician, or group..."></div>
+    <div class="col-4 "> 
+        <div class="dropdown float-right">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-archive" aria-hidden="true"></i>
+                Archive Client
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>        
+        <button class="btn btn-outline-primary btn-sm mr-2 float-right">
             <i class="fa fa-user-plus" aria-hidden="true"></i>
             Add Client
         </button>
-    </div>
-    <div class="dropdown">
-        <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-archive" aria-hidden="true"></i>
-            Archive Client
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
     </div>
 </div>
 <table class="table table-hover sortable w-100 tablesorter">
