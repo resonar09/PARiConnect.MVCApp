@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    //var component = "EditClient";
 }
 @model PARiConnect.MVCApp.ViewModels.HomeIndexViewModel
 <div class="row">
@@ -48,7 +49,7 @@
         </div>
     </div>
 </div>
-@Html.Partial("_Modal")
+@Html.Partial("_Modal","EditClient")
 @section scripts {
     <script type="text/javascript">
         $(document).ready(function () {
