@@ -5,11 +5,14 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
     public class CAD
     {
-
         public List<Input> Inputs { get; set; }
 
+        public Settings Settings { get; set; }
         public CAD()
-        {
+        {   
+            Settings = new Settings();
+            Settings.Layout = LayoutType.Stacked;
+            Settings.Container = ContainerType.Page;
             Inputs = new List<Input>
             {
                 new Input {

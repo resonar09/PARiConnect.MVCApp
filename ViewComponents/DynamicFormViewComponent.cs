@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PARiConnect.MVCApp.Models.DynamicFormModels;
 using PARiConnect.MVCApp.Services;
 using PARiConnect.MVCApp.ViewModels;
 using System;
@@ -17,10 +18,15 @@ namespace PARiConnect.MVCApp.ViewComponents
 
         public IViewComponentResult Invoke(string model)
         {
-            var dynFormModel = _dynamicFormData.GetListAsync(model).Result;
+            
+            var dynFormModelInputs = _dynamicFormData.GetInputsAsync(model).Result;
+            var dynFormModelSettings = _dynamicFormData.GetSettingsAsync(model).Result;
             //var clients = _clientData.GetListAsync().Result;
             var viewmodel = new DynamicFormViewModel();
-            viewmodel.Inputs = dynFormModel;
+            viewmodel.Inputs = dynFormModelInputs;
+            viewmodel.Settings = dynFormModelSettings;
+            if(viewmodel.Settings.Container == ContainerType.Modal)
+                return View("DynamicFormModal",viewmodel);
             return View("DynamicForm",viewmodel);
             //return null;
         }

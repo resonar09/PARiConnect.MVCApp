@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PARiConnect.MVCApp.Models;
 using PARiConnect.MVCApp.Services;
 using PARiConnect.MVCApp.ViewModels;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace PARiConnect.MVCApp.ViewComponents
         }
         public IViewComponentResult Invoke()
         {
-            //var model = new NotificationsViewModel();
+            var model = new Client();
             //model.IsInventoryLow = _inventoryUsesData.IsInventoryLow().Result;
             //model.IsDistributable = _inventoryUsesData.IsDistributable().Result;
-            return View("EditClient");
+            return View("EditClient", model);
         }
     }
 }

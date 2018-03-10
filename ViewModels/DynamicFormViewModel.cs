@@ -5,7 +5,7 @@ namespace PARiConnect.MVCApp.ViewModels
 {
     public class DynamicFormViewModel
     {
-        public string Layout { get; set; }
+        public Settings Settings { get; set; }
         
         public IEnumerable<Input> Inputs { get; set; }
         

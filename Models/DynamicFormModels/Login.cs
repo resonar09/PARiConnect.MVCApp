@@ -12,7 +12,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
         public Login()
         {
             Settings = new Settings();
-            Settings.Layout = "Stacked";
+            Settings.Layout = LayoutType.Stacked;
 
             Inputs = new List<Input>
             {

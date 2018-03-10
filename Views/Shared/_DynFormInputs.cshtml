@@ -1,0 +1,88 @@
+@model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel
+        <form class="form-login" asp-controller="Auth" asp-action="Login">
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var input in Model.Inputs)
+                {  
+                @if(Model.Settings.Labels){
+                            <div class="col-12">
+                                <label asp-for="@input.Id">@input.Label</label>
+                            </div>
+                }        
+                <div class="@(!String.IsNullOrEmpty(input.PrePendIcon) ? "input" : "form")-group mb-2 col-12">
+
+                        @if(!String.IsNullOrEmpty(input.PrePendIcon)){
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-@(input.PrePendIcon)" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        }                        
+                        @if (input.Type == "text")
+                        { 
+                            <input 
+                                id="@input.Id" 
+                                type="@input.Type" 
+                                class="form-control" 
+                                width="@(input.Width)px"  
+                                name="@input.Label" 
+                                placeholder="@input.Placeholder"
+                                asp-for="@input.Id"
+                                data-val="@(input.Validation ? "true" : "false")"
+                                data-val-required="@input.ValidationRequiredMessage"
+                                value=""
+                            />
+                        }
+                        else if (input.Type == "email")
+                        {
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <input 
+                                id="@input.Id" 
+                                type="@input.Type" 
+                                class="form-control" 
+                                width="@(input.Width)px"  
+                                name="@input.Label" 
+                                placeholder="@input.Placeholder"
+                                asp-for="@input.Id"
+                                data-val="@(input.Validation ? "true" : "false")"
+                                data-val-email="@input.ValidationEmailMessage" 
+                                data-val-required="@input.ValidationRequiredMessage"
+                                value=""
+                            />
+                            
+                        } 
+                        else if (input.Type == "password")
+                        {
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                                <input 
+                                    id="@input.Id" 
+                                    type="@input.Type" 
+                                    class="form-control" 
+                                    width="@(input.Width)px"  
+                                    name="@input.Label"
+                                    asp-for="@input.Id"   />
+                    
+                        } 
+
+                </div>
+                }
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div asp-validation-summary="All" class="form-validation"></div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn  btn-outline-primary btn-block">Login</button>
+                </div>
+                
+            </div>
+            </div>
+        </form>

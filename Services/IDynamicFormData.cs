@@ -11,6 +11,7 @@ namespace PARiConnect.MVCApp.Services
        Task<IEnumerable<Input>> GetAll();
        Task<IEnumerable<Input>> GetListAsync();
 
-       Task<IEnumerable<Input>> GetListAsync(string model);
+       Task<IEnumerable<Input>> GetInputsAsync(string model);
+       Task<Settings> GetSettingsAsync(string model);
     }
 }

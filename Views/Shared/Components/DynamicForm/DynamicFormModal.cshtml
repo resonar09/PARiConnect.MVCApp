@@ -1,0 +1,37 @@
+﻿@model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel   
+@if(Model.Inputs != null)
+{
+  
+<div class="modal fade" id="dynFormModal" tabindex="-1" role="dialog" aria-labelledby="dynFormModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dynFormModalLabel">Add Client</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            @Html.Partial("_DynFormInputs",Model)
+      </div>
+    </div>
+  </div>
+</div>
+}
+@section scripts {
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("[data-toggle=popover]").each(function(i, obj) {
+                $(this).popover({
+                html: true,
+                content: function() {
+                    var id = $(this).attr('id')
+                    return $('#popover-content-' + id).html();
+                }
+                });
+            });
+        });
+    </script>
+}

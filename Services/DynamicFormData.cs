@@ -48,16 +48,23 @@ namespace PARiConnect.MVCApp.Services
 
             return await Task.Run(() => _inputs);
         }
-        public async Task<IEnumerable<Input>> GetListAsync(string model)
+        public async Task<IEnumerable<Input>> GetInputsAsync(string model)
         {
             Type type = Assembly.GetEntryAssembly().GetType("PARiConnect.MVCApp.Models.DynamicFormModels."+ model);
- 
             var modelInstance = Activator.CreateInstance(type);
-            //var object = type.InvokeMember("GetModel", new IEnumerable<Input> input);
             PropertyInfo inputsPropertyInfo = type.GetProperty("Inputs");
             IEnumerable<Input> inputs = (IEnumerable<Input>)inputsPropertyInfo.GetValue(modelInstance, null);
 
             return await Task.Run(() => inputs);
+        }
+        public async Task<Settings> GetSettingsAsync(string model)
+        {
+            Type type = Assembly.GetEntryAssembly().GetType("PARiConnect.MVCApp.Models.DynamicFormModels."+ model);
+            var modelInstance = Activator.CreateInstance(type);
+            PropertyInfo settingsPropertyInfo = type.GetProperty("Settings");
+            Settings settings = (Settings)settingsPropertyInfo.GetValue(modelInstance, null);
+
+            return await Task.Run(() => settings);
         }
 
     }

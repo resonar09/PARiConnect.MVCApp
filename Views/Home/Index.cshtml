@@ -10,7 +10,7 @@
                 <h4 class="title-1">Welcome to PARiConnect</h4>
             </div>
             <div class="float-right">
-                <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#exampleModal">
+                <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#dynFormModal">
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
                     Add New Client
                 </button>
@@ -49,8 +49,10 @@
         </div>
     </div>
 </div>
-@Html.Partial("_Modal","EditClient")
+@await Component.InvokeAsync("DynamicForm", new { model = "ClientEdit"})
+
 @section scripts {
+    
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -102,14 +104,17 @@
                 }
                 });
             });
-            $(".fa-sort").click(function(e){
-                    $(".fa-sort").show();
-                    $(this).hide();
-            });
+
             $( "#assessment-table-completed .filter" ).change(function() {
                 filterTable("assessment-table-completed");
             });
             $( "#assessment-table-pending .filter" ).change(function() {
+                filterTable("assessment-table-pending");
+            });
+            $( "#assessment-table-completed .search" ).keyup(function() {
+                filterTable("assessment-table-completed");
+            });
+            $( "#assessment-table-pending .search" ).keyup(function() {
                 filterTable("assessment-table-pending");
             });
  
@@ -221,6 +226,14 @@
                                 filters.push({
                                     key: index,
                                     value: $(this).find(".filter").val().trim().toUpperCase()
+                                });
+                            }
+                        }  
+                        if($(this).find(".search")[0]){
+                            if($(this).find(".search").val().trim().toUpperCase() !== ''){
+                                filters.push({
+                                    key: index,
+                                    value: $(this).find(".search").val().trim().toUpperCase()
                                 });
                             }
                         }       
