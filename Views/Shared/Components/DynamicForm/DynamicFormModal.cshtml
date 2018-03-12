@@ -18,8 +18,9 @@
   </div>
 </div>
 }
+
 @section scripts {
-    
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script type="text/javascript">
         $(document).ready(function () {
 

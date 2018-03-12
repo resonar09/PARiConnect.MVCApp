@@ -1,16 +1,16 @@
 @model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel
-        <form class="form-login" asp-controller="Auth" asp-action="Login">
+
+        <form class="form-login" asp-controller="@(Model.Settings.FormController)" asp-action="@(Model.Settings.FormAction)">
         <div class="container-fluid">
-            <div class="row">
+            <div class="form-row">
                 @foreach (var input in Model.Inputs)
                 {  
-                @if(Model.Settings.Labels){
-                            <div class="col-12">
-                                <label asp-for="@input.Id">@input.Label</label>
-                            </div>
-                }        
-                <div class="@(!String.IsNullOrEmpty(input.PrePendIcon) ? "input" : "form")-group mb-2 col-12">
 
+                <div class="form-group mb-2 @(!String.IsNullOrEmpty(input.Class) ? input.Class : Model.Settings.Columns)">
+                    @if(Model.Settings.Labels){      
+                        <label asp-for="@input.Id">@input.Label</label>                   
+                    } 
+                    <div class="input-group">
                         @if(!String.IsNullOrEmpty(input.PrePendIcon)){
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -71,7 +71,7 @@
                                     asp-for="@input.Id"   />
                     
                         } 
-
+                    </div>
                 </div>
                 }
             </div>

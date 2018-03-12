@@ -32,7 +32,8 @@ namespace PARiConnect.MVCApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("_Modal", "EditClient");
+                //return View("_Modal", "EditClient");
+                return null;
 
             }
             return Json(model);
