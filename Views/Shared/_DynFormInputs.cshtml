@@ -24,7 +24,6 @@
                                 id="@input.Id" 
                                 type="@input.Type" 
                                 class="form-control" 
-                                width="@(input.Width)px"  
                                 name="@input.Label" 
                                 placeholder="@input.Placeholder"
                                 asp-for="@input.Id"
@@ -35,16 +34,10 @@
                         }
                         else if (input.Type == "email")
                         {
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                </span>
-                            </div>
                             <input 
                                 id="@input.Id" 
                                 type="@input.Type" 
                                 class="form-control" 
-                                width="@(input.Width)px"  
                                 name="@input.Label" 
                                 placeholder="@input.Placeholder"
                                 asp-for="@input.Id"
@@ -55,22 +48,65 @@
                             />
                             
                         } 
+                        else if (input.Type == "date")
+                        {
+                            <input 
+                                id="@input.Id" 
+                                type="@input.Type" 
+                                class="form-control" 
+                                name="@input.Label" 
+                                placeholder="@input.Placeholder"
+                                asp-for="@input.Id"
+                                data-val="@(input.Validation ? "true" : "false")"
+                                data-val-date="@input.ValidationDateMessage" 
+                                data-val-required="@input.ValidationRequiredMessage"
+                                value=""
+                            />
+                            
+                        }  
+                        else if (input.Type == "number")
+                        {
+                            <input 
+                                id="@input.Id" 
+                                type="@input.Type" 
+                                class="form-control" 
+                                name="@input.Label" 
+                                min="@input.Min"
+                                max="@input.Max"
+                                placeholder="@input.Placeholder"
+                                asp-for="@input.Id"
+                                data-val="@(input.Validation ? "true" : "false")"
+                                data-val-number="@input.ValidationNumberMessage" 
+                                value=""
+                            />
+                            
+                        }                         
                         else if (input.Type == "password")
                         {
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fa fa-lock" aria-hidden="true"></i>
-                                </span>
-                            </div>
+
                                 <input 
                                     id="@input.Id" 
                                     type="@input.Type" 
                                     class="form-control" 
-                                    width="@(input.Width)px"  
                                     name="@input.Label"
                                     asp-for="@input.Id"   />
                     
                         } 
+                        else if (input.Type == "select")
+                        {
+
+                            <select 
+                                id="@input.Id" 
+                                asp-for="@input.Id" 
+                                class="form-control" 
+                                name="@input.Label" 
+                                >
+                                    @foreach (var option in input.Options)
+                                    {  
+                                    <option value="@option.Value">@option.Value</option>
+                                    }
+                            </select>                          
+                        }  
                     </div>
                 </div>
                 }

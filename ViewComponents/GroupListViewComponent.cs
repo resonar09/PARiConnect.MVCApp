@@ -8,12 +8,10 @@ namespace PARiConnect.MVCApp.ViewComponents
     public class GroupListViewComponent : ViewComponent
     {
         private IGroupData _groupData;
-        private IUserService _userService;
-
-        public GroupListViewComponent(IGroupData groupData, IUserService userService)
+        public GroupListViewComponent(IGroupData groupData)
         {
             _groupData = groupData;
-            _userService = userService;
+        
         }
         public IViewComponentResult Invoke()
         {

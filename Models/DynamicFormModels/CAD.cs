@@ -21,7 +21,6 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Type ="email",
                     Placeholder ="sample3@email.com",
                     Class = "",
-                    Width = "200",
                     Validation = true,
                     ValidationEmailMessage = "The Email Address field is not a valid email address.",
                     ValidationRequiredMessage = "The Email Address field is required!"
@@ -30,8 +29,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Id = "password",
                     Label = "Password",
                     Type ="password",
-                    Class = "",
-                    Width = "300"
+                    Class = ""
                 },
             };
         }

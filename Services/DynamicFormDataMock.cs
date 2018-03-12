@@ -24,7 +24,6 @@ namespace PARiConnect.MVCApp.Services
                     Type ="email",
                     Placeholder ="sample@email.com",
                     Class = "",
-                    Width = "200",
                     Validation = true,
                     ValidationEmailMessage = "The Email Address field is not a valid email address.",
                     ValidationRequiredMessage = "The Email Address field is required!"
@@ -33,8 +32,7 @@ namespace PARiConnect.MVCApp.Services
                     Id = "password",
                     Label = "Password",
                     Type ="password",
-                    Class = "",
-                    Width = "300"
+                    Class = ""
                 },
             };
         }

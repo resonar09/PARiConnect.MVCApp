@@ -17,6 +17,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
 
         public String FormController { get; set; }
         public String FormAction { get; set; }
+        public String FormSubmitText { get; set; }
 
     }
 
