@@ -13,39 +13,8 @@ namespace PARiConnect.MVCApp.Services
 {
     public class DynamicFormDataMock : IDynamicFormData
     {
-        List<Input> _inputs;
         public DynamicFormDataMock()
         {
-            _inputs = new List<Input>
-            {
-                new Input {
-                    Id = "email",
-                    Label = "Email",
-                    Type ="email",
-                    Placeholder ="sample@email.com",
-                    Class = "",
-                    Validation = true,
-                    ValidationEmailMessage = "The Email Address field is not a valid email address.",
-                    ValidationRequiredMessage = "The Email Address field is required!"
-                },
-                new Input {
-                    Id = "password",
-                    Label = "Password",
-                    Type ="password",
-                    Class = ""
-                },
-            };
-        }
-
-        public Task<IEnumerable<Input>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<Input>> GetListAsync()
-        {
-
-            return await Task.Run(() => _inputs);
         }
         public async Task<IEnumerable<Input>> GetInputsAsync(string model)
         {
@@ -69,15 +38,7 @@ namespace PARiConnect.MVCApp.Services
 
             return await Task.Run(() => settings);
         }
-        Task<IEnumerable<Input>> IDynamicFormData.GetAll()
-        {
-            throw new NotImplementedException();
-        }
 
-        Task<IEnumerable<Input>> IDynamicFormData.GetListAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

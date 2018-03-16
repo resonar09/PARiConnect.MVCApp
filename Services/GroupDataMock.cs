@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
+using CoreServiceDevReference;
 
 namespace PARiConnect.MVCApp.Services
 {
@@ -24,6 +25,11 @@ namespace PARiConnect.MVCApp.Services
         }
 
         public Task<IEnumerable<Group>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ClientGroup> GetByKeyAsync(int key)
         {
             throw new NotImplementedException();
         }

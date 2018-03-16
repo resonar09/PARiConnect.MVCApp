@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-2 par-bg-2 p-2 pt-3 bg-light">
         @await Component.InvokeAsync("ClinicianList")
-        @await Component.InvokeAsync("GroupList")
+        <!-- @await Component.InvokeAsync("GroupList") -->
     </div>
 
     <div class="col-lg-10 col-md-12">
@@ -14,6 +14,7 @@
         </div>
     </div>
 </div>
+@await Component.InvokeAsync("DynamicForm", new { model = "ClientEdit"})
 @section scripts {
     <script type="text/javascript">
         $(document).ready(function () {

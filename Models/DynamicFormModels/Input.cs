@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PARiConnect.MVCApp.Models.DynamicFormModels
@@ -18,7 +19,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
         public string ValidationEmailMessage { get; set; }
         public string ValidationNumberMessage { get; set; }
         
-        public Option[] Options { get; set; }
+        public IEnumerable<Option> Options { get; set; }
          public string ValidationDateMessage { get; set; }
     }
 }

@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
-    public class ClientEdit : IDynamicFormModel
+    public class CAB : IDynamicFormModel
     {
         public List<Input> Inputs { get; set; }
         public Settings Settings { get; set; }
         private IGroupData _groupData;
-        private readonly IUserService _userService;
 
-        public ClientEdit(IUserService userService, IGroupData groupData)
+        public CAB(IGroupData groupData)
         {
-            _userService = userService;
-            _groupData = groupData;
+             _groupData = groupData;
             Settings = new Settings();
             Settings.Layout = LayoutType.Custom;
             Settings.Container = ContainerType.Modal;
             Settings.Labels = true;
             Settings.FormController = "Clients";
             Settings.FormAction = "Create";
-            Settings.FormSubmitText = "Add Client";
             Inputs = new List<Input>
             {
                 new Input {
@@ -78,7 +75,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Id = "gender",
                     Label = "Gender:",
                     Type ="select",
-                    Options = new[] {new Option(1,"Choose gender",true),new Option(1,"Male",false), new Option(2,"Female",false)},
+                    Options = new[] {new Option(1,"Male",true), new Option(2,"Female",false)},
                     Placeholder ="",
                     Class = "col-6"
                 },
@@ -86,7 +83,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Id = "group",
                     Label = "Group:",
                     Type ="select",
-                    Options = GetGroups(),
+                    Options = new[] {new Option(1,"Male",true), new Option(2,"Female",false)},
                     Placeholder ="",
                     Class = "col-6"
                 },
@@ -113,22 +110,20 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
 
         public string GetName()
         {
-            return this.GetType().Name;
+                return this.GetType().Name;
         }
         public IEnumerable<Option> GetGroups()
-        {
+        {       
             var optionList = new List<Option>();
-            if (!string.IsNullOrEmpty(_userService.GetCurrentUserId()))
-            {
-                optionList.Add(new Option(0, "Choose a group", true));
-                foreach (var group in _groupData.GetListAsync().Result)
-                {
-                    var option = new Option(group.GroupId, group.GroupName, false);
-                    optionList.Add(option);
-                }
+            if(_groupData != null){
+                    foreach(var group in _groupData.GetListAsync().Result){
+                        var option = new Option(group.GroupId,group.GroupName,false);
+                        optionList.Add(option);
+                    }
             }
             return optionList;
         }
+
         public async Task<IEnumerable<Input>> GetInputsAsync()
         {
             return await Task.Run(() => Inputs);

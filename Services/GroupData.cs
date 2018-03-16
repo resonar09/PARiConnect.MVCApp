@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
+using CoreServiceDevReference;
 
 namespace PARiConnect.MVCApp.Services
 {
@@ -38,6 +39,13 @@ namespace PARiConnect.MVCApp.Services
                 //    Clients = x.Clients.ToList()
                 });
             return groupListing;
+        }
+        public async Task<ClientGroup> GetByKeyAsync(int key)
+        {
+            //var loggedInUserID = _userService.GetCurrentUserId();
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var clientGroup = await coreServiceClient.GetClientGroupByKeyAsync(key);
+            return clientGroup;
         }
 
     }

@@ -98,11 +98,15 @@
             $("[data-toggle=popover]").each(function(i, obj) {
                 $(this).popover({
                 html: true,
+
                 content: function() {
                     var id = $(this).attr('id')
                     return $('#popover-content-' + id).html();
                 }
                 });
+            });
+            $('.popover-dismiss').popover({
+                trigger: 'focus'
             });
 
             $( "#assessment-table-completed .filter" ).change(function() {

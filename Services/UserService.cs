@@ -54,7 +54,9 @@ namespace PARiConnect.MVCApp.Services
         }
 
         public string GetCurrentUserName(){
-            return UserName;
+            var context = _httpContextAccessor.HttpContext;
+            var userName = context.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
+            return userName;
         }
 
         public bool IsUserLoggedIn()

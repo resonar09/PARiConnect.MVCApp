@@ -1,4 +1,5 @@
-﻿using PARiConnect.MVCApp.Models;
+﻿using CoreServiceDevReference;
+using PARiConnect.MVCApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace PARiConnect.MVCApp.Services
     {
        Task<IEnumerable<Group>> GetAll();
        Task<IEnumerable<Group>> GetListAsync();
+
+       Task<ClientGroup> GetByKeyAsync(int key);
     }
 }

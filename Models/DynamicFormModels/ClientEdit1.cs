@@ -1,34 +1,31 @@
-﻿using PARiConnect.MVCApp.Models;
-using PARiConnect.MVCApp.Models.DynamicFormModels;
-using PARiConnect.MVCApp.Services;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using PARiConnect.MVCApp.Services;
 
 namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
-    public class ClientEdit : IDynamicFormModel
+    public class ClientEdit1
     {
+        //private IGroupData _groupData;
         public List<Input> Inputs { get; set; }
         public Settings Settings { get; set; }
-        private IGroupData _groupData;
-        private readonly IUserService _userService;
-
-        public ClientEdit(IUserService userService, IGroupData groupData)
+        public ClientEdit1()
         {
-            _userService = userService;
-            _groupData = groupData;
+  
             Settings = new Settings();
             Settings.Layout = LayoutType.Custom;
+            //Settings.DefaultClass = "";
             Settings.Container = ContainerType.Modal;
             Settings.Labels = true;
             Settings.FormController = "Clients";
             Settings.FormAction = "Create";
-            Settings.FormSubmitText = "Add Client";
             Inputs = new List<Input>
             {
                 new Input {
                     Id = "clientID",
-                    Label = "Client Id:",
+                    Label = "Client Id",
                     Type ="text",
                     Placeholder ="123abc",
                     Class = "col-12",
@@ -38,7 +35,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = "firstName",
-                    Label = "First Name:",
+                    Label = "First Name",
                     Type ="text",
                     Placeholder ="Jerry",
                     Class = "col-6",
@@ -47,7 +44,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = "lastName",
-                    Label = "Last Name:",
+                    Label = "Last Name",
                     Type ="text",
                     Placeholder ="Nolan",
                     Class = "col-6",
@@ -56,7 +53,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = "birthday",
-                    Label = "Birthday:",
+                    Label = "Birthday",
                     Type ="date",
                     Placeholder ="",
                     Class = "col-6",
@@ -65,7 +62,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = "age",
-                    Label = "Age:",
+                    Label = "Age",
                     Type ="number",
                     Min = 0,
                     Max = 120,
@@ -76,23 +73,23 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = "gender",
-                    Label = "Gender:",
+                    Label = "Gender",
                     Type ="select",
-                    Options = new[] {new Option(1,"Choose gender",true),new Option(1,"Male",false), new Option(2,"Female",false)},
+                    Options = new[] {new Option(1,"Male",true), new Option(2,"Female",false)},
                     Placeholder ="",
                     Class = "col-6"
                 },
                 new Input {
                     Id = "group",
-                    Label = "Group:",
+                    Label = "Group",
                     Type ="select",
-                    Options = GetGroups(),
+                    Options = new[] {new Option(1,"Male",true), new Option(2,"Female",false)},
                     Placeholder ="",
                     Class = "col-6"
                 },
                 new Input {
                     Id = "primaryEmail",
-                    Label = "Primary Email:",
+                    Label = "Primary Email",
                     Type ="email",
                     Placeholder ="",
                     Class = "col-6",
@@ -101,7 +98,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = "secondaryEmail",
-                    Label = "Secondary Email:",
+                    Label = "Secondary Email",
                     Type ="email",
                     Placeholder ="",
                     Class = "col-6",
@@ -111,33 +108,15 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             };
         }
 
-        public string GetName()
+/*         public Option[] GetOptions()
         {
-            return this.GetType().Name;
-        }
-        public IEnumerable<Option> GetGroups()
-        {
-            var optionList = new List<Option>();
-            if (!string.IsNullOrEmpty(_userService.GetCurrentUserId()))
-            {
-                optionList.Add(new Option(0, "Choose a group", true));
-                foreach (var group in _groupData.GetListAsync().Result)
-                {
-                    var option = new Option(group.GroupId, group.GroupName, false);
-                    optionList.Add(option);
-                }
+            List<Option> optionList = new List<Option>();  
+            var groupList =  _groupData.GetListAsync().Result;
+            foreach(var group in groupList){
+                optionList.Add(new Option(group.GroupId,group.GroupName,false));
             }
-            return optionList;
-        }
-        public async Task<IEnumerable<Input>> GetInputsAsync()
-        {
-            return await Task.Run(() => Inputs);
-        }
+            return optionList.ToArray();
+        } */
 
-        public async Task<Settings> GetSettingsAsync()
-        {
-            return await Task.Run(() => Settings);
-        }
     }
 }
-

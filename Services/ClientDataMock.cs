@@ -48,9 +48,10 @@ namespace PARiConnect.MVCApp.Services
             return await Task.Run(() => _clients);
         }
 
-        Task<IEnumerable<Client>> IClientData.GetAll()
+        public  Task<CoreServiceDevReference.Client> SaveOrUpdate(CoreServiceDevReference.Client client,  CoreServiceDevReference.ClientGroup clientGroup)
         {
-            return  Task.Run(() => _clients.Select(x=>x));
+            throw new NotImplementedException();
         }
+
     }
 }

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PARiConnect.MVCApp.Models;
+using PARiConnect.MVCApp.Services;
 
 namespace PARiConnect.MVCApp.Controllers
 {
@@ -13,14 +12,21 @@ namespace PARiConnect.MVCApp.Controllers
 
     public class ClientsController : Controller
     {
-  
+        private readonly IGroupData _groupData;
+        private readonly IClientData _clientData;
+        private readonly IMapper _iMapper;
+
+        public ClientsController(IMapper iMapper, IGroupData groupData, IClientData clientData)
+        {
+            _iMapper = iMapper;
+            _clientData = clientData;
+            _groupData = groupData;
+        }
         public IActionResult Index(int? id)
         {
-            
+
             return View();
         }
-
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
@@ -33,11 +39,18 @@ namespace PARiConnect.MVCApp.Controllers
             if (!ModelState.IsValid)
             {
                 //return View("_Modal", "EditClient");
-                return null;
+                var errors = ModelState
+                    .SelectMany(x => x.Value.Errors, (y, z) => z.Exception.Message);
+
+                return BadRequest(errors);
 
             }
-            return Json(model);
-            
+            var clientGroup = _groupData.GetByKeyAsync(int.Parse(model.GroupId)).Result;
+            var clientMap = _iMapper.Map<CoreServiceDevReference.Client>(model);
+            var client = _clientData.SaveOrUpdate(clientMap,clientGroup);
+
+            return Ok(client);
+
         }
     }
 }

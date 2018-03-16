@@ -17,10 +17,7 @@ namespace PARiConnect.MVCApp.Services
              _userService = userService;
         }
         
-        public Task<IEnumerable<Client>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+
 
         public async Task<IEnumerable<Client>> GetListAsync(int id)
         {
@@ -102,6 +99,15 @@ namespace PARiConnect.MVCApp.Services
             } 
             return clientListing;
         }
+        public async Task<CoreServiceDevReference.Client> SaveOrUpdate(CoreServiceDevReference.Client client, CoreServiceDevReference.ClientGroup clientGroup)
+        {
+            var loggedInUserID = _userService.GetCurrentUserId();
+            var loggedInUserName = _userService.GetCurrentUserName();
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var clientResult = await coreServiceClient.SaveOrUpdateClientAsync(client,int.Parse(loggedInUserID),clientGroup,loggedInUserName);
+            return clientResult;
+        }
+        
     }
 }
 

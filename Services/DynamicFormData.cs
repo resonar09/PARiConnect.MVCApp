@@ -7,46 +7,36 @@ using System.Security.Claims;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PARiConnect.MVCApp.Services
 {
     public class DynamicFormData : IDynamicFormData
     {
-        List<Input> _inputs;
-        public DynamicFormData()
+        //List<Input> _inputs;
+
+        private IServiceProvider _serviceProvider;
+
+        public DynamicFormData(IServiceProvider serviceProvider)
         {
-            _inputs = new List<Input>
-            {
-                new Input {
-                    Id = "email",
-                    Label = "Email",
-                    Type ="email",
-                    Placeholder ="sample@email.com",
-                    Class = "",
-                    Validation = true,
-                    ValidationEmailMessage = "The Email Address field is not a valid email address.",
-                    ValidationRequiredMessage = "The Email Address field is required!"
-                },
-                new Input {
-                    Id = "password",
-                    Label = "Password",
-                    Type ="password",
-                    Class = ""
-                },
-            };
+            _serviceProvider = serviceProvider;
         }
 
-        public Task<IEnumerable<Input>> GetAll()
+        public Task<IEnumerable<Input>> GetInputsAsync(string model)
         {
-            throw new NotImplementedException();
+            var modelServices = _serviceProvider.GetServices<IDynamicFormModel>();
+            var modelService = modelServices.First(o => o.GetName() == model);
+            return modelService.GetInputsAsync();
         }
 
-        public async Task<IEnumerable<Input>> GetListAsync()
+        public Task<Settings> GetSettingsAsync(string model)
         {
-
-            return await Task.Run(() => _inputs);
+            var modelServices = _serviceProvider.GetServices<IDynamicFormModel>();
+            var modelService = modelServices.First(o => o.GetName() == model);
+            
+            return modelService.GetSettingsAsync();
         }
-        public async Task<IEnumerable<Input>> GetInputsAsync(string model)
+/*         public async Task<IEnumerable<Input>> GetInputsAsync(string model)
         {
             Type type = Assembly.GetEntryAssembly().GetType("PARiConnect.MVCApp.Models.DynamicFormModels."+ model);
             var modelInstance = Activator.CreateInstance(type);
@@ -63,7 +53,8 @@ namespace PARiConnect.MVCApp.Services
             Settings settings = (Settings)settingsPropertyInfo.GetValue(modelInstance, null);
 
             return await Task.Run(() => settings);
-        }
+        } */
+
 
     }
 }
