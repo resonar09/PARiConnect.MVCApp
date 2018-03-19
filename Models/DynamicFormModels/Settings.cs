@@ -10,8 +10,10 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
         public String Columns { get; set; }
         public String DefaultClass { get; set; }
 
+        public String Title { get; set; }
 
         public ContainerType Container { get; set; }
+        public string ContainerName { get; set; }
 
         public Boolean Labels { get; set; }
 

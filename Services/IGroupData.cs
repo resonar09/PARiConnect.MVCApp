@@ -13,5 +13,7 @@ namespace PARiConnect.MVCApp.Services
        Task<IEnumerable<Group>> GetListAsync();
 
        Task<ClientGroup> GetByKeyAsync(int key);
+
+       Task<CoreServiceDevReference.ClientGroup> SaveOrUpdate(CoreServiceDevReference.ClientGroup clientGroup);
     }
 }

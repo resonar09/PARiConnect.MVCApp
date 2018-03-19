@@ -18,7 +18,7 @@ namespace PARiConnect.MVCApp.Services
             _groups = new List<Group>
             {
                 new Group {
-                    GroupId = 55,
+                    ClientGroupKey = 55,
                     GroupName ="Group 11"
                 }
             };
@@ -39,6 +39,14 @@ namespace PARiConnect.MVCApp.Services
             return await Task.Run(() => _groups);
         }
 
+        public Task<ClientGroup> SaveOrUpdate(ClientGroup clientGroup)
+        {
+            //var group = new Group();
+            //if (group.GroupId > 0)
+
+            //_groups.Add(new Group(clientGroup));
+             throw new NotImplementedException();
+        }
     }
 }
 

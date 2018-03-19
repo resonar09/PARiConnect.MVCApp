@@ -64,6 +64,7 @@ namespace PARiConnect.MVCApp
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.Login>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAB>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClientEdit>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, GroupEdit>();
 
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();

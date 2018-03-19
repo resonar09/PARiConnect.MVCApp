@@ -5,15 +5,28 @@
 @model PARiConnect.MVCApp.ViewModels.HomeIndexViewModel
 <div class="row">
     <div class="col-lg-9 col-md-12">
-        <div class="col my-4 clearfix">
+        <div class="col mt-4 clearfix">
             <div class="float-left">
                 <h4 class="title-1">Welcome to PARiConnect</h4>
             </div>
             <div class="float-right">
-                <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#dynFormModal">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    Add New Client
-                </button>
+                <div>
+                    <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#clientEditModal">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        Add New Client
+                    </button>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-link btn-sm" type="button" data-toggle="modal" data-target="#dynFormModal">
+                        Add New Clinician
+                    </button>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-link btn-sm" type="button" data-toggle="modal" data-target="#groupEditModal">
+                        Add New Group
+                    </button>
+                </div>
+
             </div>
         </div>
         <ul class="nav nav-tabs" role="tablist">
@@ -50,7 +63,7 @@
     </div>
 </div>
 @await Component.InvokeAsync("DynamicForm", new { model = "ClientEdit"})
-
+@await Component.InvokeAsync("DynamicForm", new { model = "GroupEdit"})
 @section scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script type="text/javascript">

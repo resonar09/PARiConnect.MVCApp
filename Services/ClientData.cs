@@ -16,9 +16,6 @@ namespace PARiConnect.MVCApp.Services
         {
              _userService = userService;
         }
-        
-
-
         public async Task<IEnumerable<Client>> GetListAsync(int id)
         {
             var loggedInUserID = _userService.GetCurrentUserId();

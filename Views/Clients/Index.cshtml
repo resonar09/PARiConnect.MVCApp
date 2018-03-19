@@ -15,6 +15,7 @@
     </div>
 </div>
 @await Component.InvokeAsync("DynamicForm", new { model = "ClientEdit"})
+@await Component.InvokeAsync("DynamicForm", new { model = "GroupEdit"})
 @section scripts {
     <script type="text/javascript">
         $(document).ready(function () {

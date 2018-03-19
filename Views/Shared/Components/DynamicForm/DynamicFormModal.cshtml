@@ -1,12 +1,12 @@
 ﻿@model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel   
-@if(Model.Inputs != null)
+@if(Model.Inputs != null && Model.Settings != null)
 {
   
-<div class="modal fade" id="dynFormModal" tabindex="-1" role="dialog" aria-labelledby="dynFormModalLabel" aria-hidden="true">
+<div class="modal fade" id="@(Model.Settings.ContainerName)" tabindex="-1" role="dialog" aria-labelledby="@(Model.Settings.ContainerName)Label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="dynFormModalLabel">Add Client</h5>
+        <h5 class="modal-title" id="@(Model.Settings.ContainerName)Label">@(Model.Settings.Title)</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

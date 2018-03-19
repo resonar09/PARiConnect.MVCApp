@@ -19,7 +19,9 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             _groupData = groupData;
             Settings = new Settings();
             Settings.Layout = LayoutType.Custom;
+            Settings.Title = "Add/Edit Client";
             Settings.Container = ContainerType.Modal;
+            Settings.ContainerName = "clientEditModal";
             Settings.Labels = true;
             Settings.FormController = "Clients";
             Settings.FormAction = "Create";
@@ -123,7 +125,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 optionList.Add(new Option(0, "Choose a group", true));
                 foreach (var group in _groupData.GetListAsync().Result)
                 {
-                    var option = new Option(group.GroupId, group.GroupName, false);
+                    var option = new Option(group.ClientGroupKey, group.GroupName, false);
                     optionList.Add(option);
                 }
             }
