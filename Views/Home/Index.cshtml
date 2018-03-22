@@ -17,7 +17,7 @@
                     </button>
                 </div>
                 <div class="text-right">
-                    <button class="btn btn-link btn-sm" type="button" data-toggle="modal" data-target="#dynFormModal">
+                    <button class="btn btn-link btn-sm" type="button" data-toggle="modal" data-target="#clinicianAddModal">
                         Add New Clinician
                     </button>
                 </div>
@@ -64,6 +64,7 @@
 </div>
 @await Component.InvokeAsync("DynamicForm", new { model = "ClientEdit"})
 @await Component.InvokeAsync("DynamicForm", new { model = "GroupEdit"})
+@await Component.InvokeAsync("DynamicForm", new { model = "ClinicianInvite"})
 @section scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     <script type="text/javascript">

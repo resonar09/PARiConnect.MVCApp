@@ -58,6 +58,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IClientData, ClientData>();
                 services.AddScoped<IClinicianData, ClinicianData>();
                 services.AddScoped<IGroupData, GroupData>();
+                services.AddScoped<IPermissionData, PermissionData>();
                 services.AddScoped<IUserService,UserService>();
             }
             services.AddAutoMapper(x=> x.AddProfile(new MappingsProfile()));
@@ -65,6 +66,7 @@ namespace PARiConnect.MVCApp
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAB>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClientEdit>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, GroupEdit>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClinicianInvite>();
 
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMvc();

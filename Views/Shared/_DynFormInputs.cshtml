@@ -108,9 +108,41 @@
                             </select> 
                        
                         }  
+                        else if (input.Type == "radio")
+                        {  
+                            <div class="form-check form-check-inline">
+                            
+                            <label class="form-check-label">@input.Label</label>
+                            @{int i = 1;}
+                            @foreach (var option in input.Options)
+                            {           
+                                    <input type="radio" name="@input.Id" id="@(input.Id)@(i)" class="form-check-input ml-2" value="@option.Key" />
+                                    <label class="form-check-label" for="@(input.Id)@(i)">@option.Value</label>
+                                    i++;
+                            }  
+                            </div>                 
+                        } 
+                        else if (input.Type == "list")
+                        { 
+                            @foreach (var item in input.List) 
+                            {
+                                <div class="form-check form-check-inline">
+                                
+                                <label class="form-check-label">@item.Label</label>
+                                @{int i = 1;}
+                                @foreach (var option in item.Options)
+                                {           
+                                        <input type="radio" name="@item.Id" id="@(item.Id)@(i)" class="form-check-input ml-2" value="@option.Key" />
+                                        <label class="form-check-label" for="@(item.Id)@(i)">@option.Value</label>
+                                        i++;
+                                }  
+                                </div>  
+                            }               
+                        } 
                     </div>
                 </div>
                 }
+
             </div>
             <div class="row">
                 <div class="col-12">

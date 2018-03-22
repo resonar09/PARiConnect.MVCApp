@@ -117,7 +117,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             var optionList = new List<Option>();
             if(_groupData != null){
                     foreach(var group in _groupData.GetListAsync().Result){
-                        var option = new Option(group.ClientGroupKey,group.GroupName,false);
+                        var option = new Option(group.ClientGroupKey,group.Name,false);
                         optionList.Add(option);
                     }
             }
