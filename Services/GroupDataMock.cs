@@ -19,7 +19,7 @@ namespace PARiConnect.MVCApp.Services
             {
                 new Group {
                     ClientGroupKey = 55,
-                    GroupName ="Group 11"
+                    Name ="Group 11"
                 }
             };
         }

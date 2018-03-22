@@ -37,7 +37,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Class = ""
                 },
                 new Input {
-                    Id = "groupName",
+                    Id = "name",
                     Label = "Add/Edit Group Name:",
                     Type ="text",
                     Placeholder ="",
@@ -60,7 +60,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 optionList.Add(new Option(0, "Add a group", true));
                 foreach (var group in _groupData.GetListAsync().Result)
                 {
-                    var option = new Option(group.ClientGroupKey, group.GroupName, false);
+                    var option = new Option(group.ClientGroupKey, group.Name, false);
                     optionList.Add(option);
                 }
             }

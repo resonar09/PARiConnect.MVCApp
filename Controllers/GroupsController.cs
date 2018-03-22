@@ -45,7 +45,8 @@ namespace PARiConnect.MVCApp.Controllers
                 return BadRequest(errors);
 
             }
-            //var clientGroup = _groupData.GetByKeyAsync(int.Parse(model.GroupId)).Result;
+            model.ClientGroupKey = int.Parse(model.GroupId);
+
             var clientMap = _iMapper.Map<CoreServiceDevReference.ClientGroup>(model);
             var group = _groupData.SaveOrUpdate(clientMap);
 

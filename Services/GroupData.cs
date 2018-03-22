@@ -33,7 +33,7 @@ namespace PARiConnect.MVCApp.Services
                 .Select(x => new Group
                 {
                    ClientGroupKey = x.ClientGroupKey,
-                   GroupName = x.Name,
+                   Name = x.Name,
                    ClientCount = x.Clients.Count()
                 //    ,
                 //    Clients = x.Clients.ToList()
@@ -49,7 +49,8 @@ namespace PARiConnect.MVCApp.Services
         }
         public async Task<CoreServiceDevReference.ClientGroup> SaveOrUpdate(CoreServiceDevReference.ClientGroup clientGroup)
         {
-            //var loggedInUserID = _userService.GetCurrentUserId();
+            var loggedInUserID = _userService.GetCurrentUserId();
+            clientGroup.OrgUserMappingKey = int.Parse(loggedInUserID);
             //var loggedInUserName = _userService.GetCurrentUserName();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
             var clientGroupResult = await coreServiceClient.SaveOrUpdateClientGroupAsync(clientGroup);
