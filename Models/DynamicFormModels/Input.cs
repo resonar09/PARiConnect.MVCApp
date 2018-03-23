@@ -23,5 +23,6 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
 
         public IEnumerable<Input> List { get; set; }
         public string ValidationDateMessage { get; set; }
+        public string OnChange { get; set; }
     }
 }

@@ -94,26 +94,25 @@
                         } 
                         else if (input.Type == "select")
                         {
-
                             <select 
                                 id="@(input.Id)Id" 
                                 asp-for="@(input.Id)Id" 
                                 class="form-control" 
                                 name="@(input.Id)Id" 
+                                onchange="@input.OnChange"
                                 >
                                     @foreach (var option in input.Options)
                                     {  
                                     <option value="@option.Key">@option.Value</option>
                                     }
                             </select> 
-                       
                         }  
                         else if (input.Type == "radio")
                         {  
                             <div class="form-check form-check-inline">
                             
                             <label class="form-check-label">@input.Label</label>
-                            @{int i = 1;}
+                            @{int i = 0;}
                             @foreach (var option in input.Options)
                             {           
                                     <input type="radio" name="@input.Id" id="@(input.Id)@(i)" class="form-check-input ml-2" value="@option.Key" />
@@ -124,20 +123,27 @@
                         } 
                         else if (input.Type == "list")
                         { 
-                            @foreach (var item in input.List) 
-                            {
-                                <div class="form-check form-check-inline">
-                                
-                                <label class="form-check-label">@item.Label</label>
-                                @{int i = 1;}
-                                @foreach (var option in item.Options)
-                                {           
-                                        <input type="radio" name="@item.Id" id="@(item.Id)@(i)" class="form-check-input ml-2" value="@option.Key" />
-                                        <label class="form-check-label" for="@(item.Id)@(i)">@option.Value</label>
-                                        i++;
-                                }  
-                                </div>  
-                            }               
+                            <table>
+                                @foreach (var item in input.List) 
+                                {
+                                <tr>
+                                            <td>
+                                                <label class="form-check-label">@item.Label</label>
+                                            </td>
+                                            <td>
+                                                <div class="form-check form-check-inline">
+                                                @{int i = 0;}     
+                                                    @foreach (var option in item.Options)
+                                                    {           
+                                                            <input type="radio" name="@item.Id" id="@(item.Id)@(i)" class="form-check-input ml-2" value="@option.Key" />
+                                                            <label class="form-check-label" for="@(item.Id)@(i)">@option.Value</label>
+                                                            i++;
+                                                    }  
+                                                </div>  
+                                            </td>
+                                </tr>
+                                }
+                            </table>             
                         } 
                     </div>
                 </div>

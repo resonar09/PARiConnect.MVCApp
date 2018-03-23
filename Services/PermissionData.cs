@@ -18,14 +18,44 @@ namespace PARiConnect.MVCApp.Services
              _userService = userService;
         }
         
-        public async Task<IEnumerable<OrgUserServiceDevReference.PermissionProfile>> GetPermissionProfilesAsync()
+        public async Task<IEnumerable<OrgUserServiceDevReference.PermissionProfile>> GetPermissionProfileListAsync()
         {
             OrgUserServiceDevReference.OrgUserServiceClient orgUserServiceClient = new OrgUserServiceDevReference.OrgUserServiceClient();
-            var permissionProfiles = await orgUserServiceClient.GetAllPermissionProfilesWithDefaultPermissionsAsync();
-            IEnumerable<OrgUserServiceDevReference.PermissionProfile> permissionProfilesResult = permissionProfiles.Cast<OrgUserServiceDevReference.PermissionProfile>();
-            return permissionProfilesResult;
+            var permissionProfileList = await orgUserServiceClient.GetPermissionProfileListAsync();
+            //IEnumerable<OrgUserServiceDevReference.PermissionProfile> permissionProfilesResult = permissionProfiles.Cast<OrgUserServiceDevReference.PermissionProfile>();
+            return permissionProfileList;
         }
+        public async Task<IEnumerable<OrgUserServiceDevReference.Permission>> GetPermissionListAsync()
+        {
+            OrgUserServiceDevReference.OrgUserServiceClient orgUserServiceClient = new OrgUserServiceDevReference.OrgUserServiceClient();
+            var permissionList = await orgUserServiceClient.GetPermissionListAsync();
+            
+            //IEnumerable<OrgUserServiceDevReference.PermissionProfile> permissionProfilesResult = permissionProfiles.Cast<OrgUserServiceDevReference.PermissionProfile>();
+            return permissionList.Where(x=>x.PermissionKey != 1);
+        }
+        public async Task<IEnumerable<Models.PermissionProfileDefaultPerm>> GetDefaultPermissionsAsync(int key)
+        {
+            OrgUserServiceDevReference.OrgUserServiceClient orgUserServiceClient = new OrgUserServiceDevReference.OrgUserServiceClient();
+            var defaultPermissionProfileList = await orgUserServiceClient.GetAllPermissionProfilesWithDefaultPermissionsAsync();
+            var defaultPermissionList = defaultPermissionProfileList.Where(x=>x.PermissionProfileKey == key).Select(i=>i.PermissionProfileDefaultPerms);
+            
+            var permList = new List<Models.PermissionProfileDefaultPerm>();
+            foreach(var defperms in defaultPermissionList){
+                
+                foreach(var perm in  defperms){
+                    if(perm.PermissionKey > 1){
+                        var permProfileDefaultPerm = new Models.PermissionProfileDefaultPerm();
+                        permProfileDefaultPerm.PermissionProfileKey = key;
+                        permProfileDefaultPerm.PermissionKey =  perm.PermissionKey;
+                        permProfileDefaultPerm.PermissionID = perm.Permission.PermissionID;
+                        permProfileDefaultPerm.PermissionParameterValue = perm.PermissionParameterValue;
+                        permList.Add(permProfileDefaultPerm);
+                    }
 
+                }
+            }
+            return permList;
+        }
 
     }
 }

@@ -62,16 +62,15 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Label = "User Roles:",
                     Type ="select",
                     Options = GetUserRoles(),
+                    OnChange = "getPermissions(this.value, 'Permission', 'GetPermissions')",
                     Placeholder ="",
-                    Class = "col-6"
+                    Class = "col-8"
                 },
                 new Input {
                     Id = "permissionProfile",
                     Label = "Permissions:",
                     Type ="list",
-                    List = new[] {new Input { Id = "PURCHASE_INVENTORY", Label = "Ability to purchase:", Type ="radio", Options = new[] {new Option(1,"Yes",true), new Option(2,"No",false)}},
-                                  new Input { Id = "ALLOCATE_INVENTORY", Label = "Ability to allocate uses:", Type ="radio", Options = new[] {new Option(1,"Yes",true), new Option(2,"No",false)}}
-                                 },
+                    List = GetPermissions(),
                     Class = "col-12",
                     Validation = true,
                     ValidationRequiredMessage = "The Last Name field is required!"
@@ -89,7 +88,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             if (!string.IsNullOrEmpty(_userService.GetCurrentUserId()))
             {
                 optionList.Add(new Option(0, "Choose a user role", true));
-                foreach (var permProfile in _permissionData.GetPermissionProfilesAsync().Result)
+                foreach (var permProfile in _permissionData.GetPermissionProfileListAsync().Result)
                 {
                     if(permProfile.DisplayOrder > 0)
                     {
@@ -100,6 +99,40 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 }
             }
             return optionList;
+        }
+        public IEnumerable<Input> GetPermissions()
+        {
+            var inputList = new List<Input>();
+            
+            if (!string.IsNullOrEmpty(_userService.GetCurrentUserId()))
+            {
+
+                //optionList.Add(new Option(0, "Choose a user role", true));
+                //var input = new Input();
+                foreach (var perm in _permissionData.GetPermissionListAsync().Result)
+                {
+                    var optionList = new List<Option>();
+                    var input = new Input();
+                    input.Id = perm.PermissionID;
+                    input.Label = perm.PermissionName;
+                    input.Type = "radio";
+                    if(perm.PermissionOption == "2 Option")
+                    {
+                        optionList.Add(new Option(2, "Yes", false));
+                        optionList.Add(new Option(0, "No", false));
+                    }
+                    if(perm.PermissionOption == "3 Option")
+                    {
+                        optionList.Add(new Option(2, "All", false));
+                        optionList.Add(new Option(1, "Own", false));
+                        optionList.Add(new Option(0, "None", false));
+                    }
+                    input.Options = optionList;
+                    inputList.Add(input);
+                }
+
+            }
+            return inputList;
         }
         public async Task<IEnumerable<Input>> GetInputsAsync()
         {

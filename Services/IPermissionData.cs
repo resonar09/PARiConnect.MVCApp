@@ -9,6 +9,10 @@ namespace PARiConnect.MVCApp.Services
 {
     public interface IPermissionData
     {
-       Task<IEnumerable<OrgUserServiceDevReference.PermissionProfile>> GetPermissionProfilesAsync();
+       Task<IEnumerable<OrgUserServiceDevReference.PermissionProfile>> GetPermissionProfileListAsync();
+
+       Task<IEnumerable<OrgUserServiceDevReference.Permission>> GetPermissionListAsync();
+
+       Task<IEnumerable<Models.PermissionProfileDefaultPerm>> GetDefaultPermissionsAsync(int key);
     }
 }
