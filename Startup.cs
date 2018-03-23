@@ -60,6 +60,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IGroupData, GroupData>();
                 services.AddScoped<IPermissionData, PermissionData>();
                 services.AddScoped<IUserService,UserService>();
+                services.AddScoped<IReportData, ReportData>();
             }
             services.AddAutoMapper(x=> x.AddProfile(new MappingsProfile()));
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.Login>();

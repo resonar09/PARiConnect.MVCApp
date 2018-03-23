@@ -1,0 +1,102 @@
+﻿@model PARiConnect.MVCApp.ViewModels.ReportViewModel
+@*<div class="float-right  mt-2 d-flex flex-row">
+    <div>
+        <button class="btn btn-outline-primary btn-sm mr-1">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            Add Client
+        </button>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-archive" aria-hidden="true"></i>
+            Archive Client
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+</div>*@
+<table class="table table-hover sortable w-100 tablesorter">
+    <thead class="table-header">
+        <tr class="table-row">
+            <th class="table-row-start client name-header sorter-last-name">
+                <div class="header-text mb-1">Client<i class="fa fa-sort ml-1" aria-hidden="true"></i>
+                    <div class="float-right">
+                        <button id="firstLastToggle" class="firstLastToggle btn btn-sm btn-link text-muted table-toggle">
+                            <span class="first">F</span>
+                            <i class="fa fa-exchange" aria-hidden="true"></i>
+                            <span class="last">L</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-toggle" style="display: none;">
+                    <select class="form-control form-control-sm client-select filter" id="client-select"></select>
+                </div>
+            </th>
+            @*<th class="clientId">
+                <div class="header-text mb-1">Client Id</div>
+                <div class="search-toggle" style="display: none;">
+                    <select class="form-control form-control-sm clientId-select filter" id="clientId-select"></select>
+                </div>
+            </th>*@
+            <th class="report">
+                <div class="header-text mb-1">Report<i class="fa fa-sort ml-1" aria-hidden="true"></i></div>
+                <div class="search-toggle" style="display: none;">
+                    <select class="form-control form-control-sm report-select filter" id="report-select"></select>
+                </div>
+            </th>
+
+            <th class="assigned">
+                <div class="header-text mb-1">Assigned<i class="fa fa-sort ml-1" aria-hidden="true"></i></div>
+                <div class="search-toggle form-row " style="display: none;">
+
+                    <input class="form-control form-control-sm col-5 ml-1" type="date" />
+
+                    <input class="form-control form-control-sm col-5 ml-1" type="date" />
+                </div>
+            </th>
+            <th class="completed">
+                <div class="header-text mb-1">Completed<i class="fa fa-sort ml-1" aria-hidden="true"></i></div>
+                <div class="search-toggle form-row " style="display: none;">
+
+                    <input class="form-control form-control-sm col-5 ml-1" type="date" />
+
+                    <input class="form-control form-control-sm col-5 ml-1" type="date" />
+                </div>
+            </th>
+            <th class="group table-row-end">
+                <div class="header-text mb-1"></div>
+            </th>
+        </tr>
+    </thead>
+    <tbody class="searchable">
+
+        @foreach (var report in Model.Reports)
+        {
+        <tr class="table-row">
+            @*<td class="">
+                <div class="form-check">
+                    <input class="form-check-input clientCheck" type="checkbox" value="" id="clientCheck">
+                </div>
+            </td>*@
+            <td class="table-row-start table-row-header">
+                <span class="">@report.ClientName</span>
+            </td>
+            @*<td>@report.ClientId</td>*@
+            <td>@report.ReportName</td>
+            <td>
+                @report.AssignedDate
+            </td>
+            <td>
+                @report.CompletedDate
+            </td>
+            <td class="table-row-end">
+                @*@report.ReportLink*@
+                <button class="btn btn-sm btn-outline-primary"><i class="fa fa-search" aria-hidden="true"></i> View Report</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

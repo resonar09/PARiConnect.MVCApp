@@ -10,7 +10,7 @@ namespace PARiConnect.MVCApp.Controllers
 {
     public class ReportsController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
             return View();
         }
@@ -18,5 +18,6 @@ namespace PARiConnect.MVCApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
