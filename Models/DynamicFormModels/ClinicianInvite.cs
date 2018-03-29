@@ -24,8 +24,8 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             Settings.Container = ContainerType.Modal;
             Settings.ContainerName = "clinicianAddModal";
             Settings.Labels = true;
-            Settings.FormController = "Clients";
-            Settings.FormAction = "Create";
+            Settings.FormController = "Clinician";
+            Settings.FormAction = "Invite";
             Settings.FormSubmitText = "Add Clinician";
             Inputs = new List<Input>
             {
@@ -49,16 +49,17 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     ValidationRequiredMessage = "The Last Name field is required!"
                 },
                 new Input {
-                    Id = "primaryEmail",
+                    Id = "emailAddress",
                     Label = "Primary Email:",
                     Type ="email",
                     Placeholder ="",
                     Class = "col-12",
-                    Validation = false,
-                    ValidationEmailMessage = "A valid email is required!"
+                    Validation = true,
+                    ValidationRequiredMessage = "The Email field is required!",
+                    ValidationEmailMessage = "A valid Email is required!"
                 },                
                 new Input {
-                    Id = "userRoles",
+                    Id = "permissionProfile",
                     Label = "User Roles:",
                     Type ="select",
                     Options = GetUserRoles(),
@@ -67,13 +68,13 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Class = "col-8"
                 },
                 new Input {
-                    Id = "permissionProfile",
+                    Id = "permissions",
                     Label = "Permissions:",
                     Type ="list",
                     List = GetPermissions(),
                     Class = "col-12",
                     Validation = true,
-                    ValidationRequiredMessage = "The Last Name field is required!"
+                    ValidationRequiredMessage = "The permission list is required!"
                 }
 
             };
@@ -116,6 +117,8 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     input.Id = perm.PermissionID;
                     input.Label = perm.PermissionName;
                     input.Type = "radio";
+                    input.Validation = true;
+                    input.ValidationRequiredMessage = "You must choose permissions";
                     if(perm.PermissionOption == "2 Option")
                     {
                         optionList.Add(new Option(2, "Yes", false));

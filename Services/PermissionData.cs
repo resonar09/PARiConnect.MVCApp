@@ -56,7 +56,11 @@ namespace PARiConnect.MVCApp.Services
             }
             return permList;
         }
-
+        public async Task<int> GetPermissionByIdAsync(string id){
+            OrgUserServiceDevReference.OrgUserServiceClient orgUserServiceClient = new OrgUserServiceDevReference.OrgUserServiceClient();
+            var permissionList = await orgUserServiceClient.GetPermissionListAsync();
+            return permissionList.Where(x=>x.PermissionID == id).Select(i=>i.PermissionKey).Single();
+        }
     }
 }
 

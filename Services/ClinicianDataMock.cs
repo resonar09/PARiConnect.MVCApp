@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
+using OrgUserServiceDevReference;
 
 namespace PARiConnect.MVCApp.Services
 {
@@ -32,6 +33,11 @@ namespace PARiConnect.MVCApp.Services
         {
 
             return await Task.Run(() => _clinicians);
+        }
+
+        public Task<OrgUserInvitation> InviteAsync(string firstName, string lastName, string email, int permissionProfileKey, OrgUserMappingPerm[] permissions, int orgUserMappingKey)
+        {
+            throw new NotImplementedException();
         }
     }
 }

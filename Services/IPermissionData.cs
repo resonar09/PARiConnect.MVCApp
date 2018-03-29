@@ -13,6 +13,8 @@ namespace PARiConnect.MVCApp.Services
 
        Task<IEnumerable<OrgUserServiceDevReference.Permission>> GetPermissionListAsync();
 
+       Task<int> GetPermissionByIdAsync(string id);
+
        Task<IEnumerable<Models.PermissionProfileDefaultPerm>> GetDefaultPermissionsAsync(int key);
     }
 }

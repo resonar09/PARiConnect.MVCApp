@@ -10,5 +10,8 @@ namespace PARiConnect.MVCApp.Services
     {
        Task<IEnumerable<Clinician>> GetAll();
        Task<IEnumerable<Clinician>> GetListAsync();
+
+       Task<OrgUserServiceDevReference.OrgUserInvitation> InviteAsync(string firstName, string lastName, string email, int permissionProfileKey, 
+                                                              OrgUserServiceDevReference.OrgUserMappingPerm[] permissions, int orgUserMappingKey);
     }
 }

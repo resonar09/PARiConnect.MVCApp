@@ -43,6 +43,15 @@ namespace PARiConnect.MVCApp.Services
                 });
             return clinicianListing;
         }
+        public async Task<OrgUserServiceDevReference.OrgUserInvitation> InviteAsync(string firstName, string lastName, string email, int permissionProfileKey, 
+                                                              OrgUserServiceDevReference.OrgUserMappingPerm[] permissions, int orgUserMappingKey)
+        {
+            var loggedInUserID = _userService.GetCurrentUserId();
+            OrgUserServiceDevReference.OrgUserServiceClient orgUserServiceClient = new OrgUserServiceDevReference.OrgUserServiceClient();
+            var orgUserInvitation = await orgUserServiceClient.CreateNewOrgUserInvitationAsync(firstName,lastName,email,permissionProfileKey, permissions,orgUserMappingKey,loggedInUserID);
+
+            return orgUserInvitation;
+        }
     }
 }
 
