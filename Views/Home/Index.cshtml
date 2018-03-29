@@ -276,7 +276,6 @@
         function getPermissions(val,controller,action) {
             var action = controller + "/" + action + "/" + val ;
             var url = window.location.href + action;
-            alert(url);
             $.ajax({
                         type: "GET",
                         url: url,

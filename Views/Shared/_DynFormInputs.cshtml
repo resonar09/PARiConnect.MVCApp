@@ -115,7 +115,7 @@
                             @{int i = 0;}
                             @foreach (var option in input.Options)
                             {           
-                                    <input type="radio" name="@input.Id" id="@(input.Id)@(i)" class="form-check-input ml-2" value="@option.Key" />
+                                    <input type="radio" name="@input.Id" id="@(input.Id)@(i)" class="form-check-input ml-2" value="@option.Key" data-val="@(input.Validation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage"/>
                                     <label class="form-check-label" for="@(input.Id)@(i)">@option.Value</label>
                                     i++;
                             }  
@@ -135,7 +135,7 @@
                                                 @{int i = 0;}     
                                                     @foreach (var option in item.Options)
                                                     {           
-                                                            <input type="radio" name="@item.Id" id="@(item.Id)@(i)" class="form-check-input ml-2" value="@option.Key" />
+                                                            <input type="radio" name="@item.Id" id="@(item.Id)@(i)" class="form-check-input ml-2" value="@option.Key" data-val="@(input.Validation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
                                                             <label class="form-check-label" for="@(item.Id)@(i)">@option.Value</label>
                                                             i++;
                                                     }  

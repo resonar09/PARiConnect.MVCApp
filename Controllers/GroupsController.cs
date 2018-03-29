@@ -51,7 +51,7 @@ namespace PARiConnect.MVCApp.Controllers
             var group = _groupData.SaveOrUpdate(clientMap);
 
             //return Ok(client);
-            return Ok(group);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

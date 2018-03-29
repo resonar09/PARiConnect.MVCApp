@@ -49,7 +49,7 @@ namespace PARiConnect.MVCApp.Controllers
             var clientMap = _iMapper.Map<CoreServiceDevReference.Client>(model);
             var client = _clientData.SaveOrUpdate(clientMap,clientGroup);
 
-            return Ok(client);
+            return RedirectToAction("Index", "Clients");
 
         }
     }
