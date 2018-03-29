@@ -18,9 +18,12 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             Settings = new Settings();
             Settings.Layout = LayoutType.Custom;
             Settings.Container = ContainerType.Modal;
+            Settings.ContainerName = "cabModal";
+            Settings.Title = "CAB Demographics";
+            Settings.FormSubmitText = "Submit";
             Settings.Labels = true;
-            Settings.FormController = "Clients";
-            Settings.FormAction = "Create";
+            Settings.FormController = "Demographics";
+            Settings.FormAction = "Index";
             Inputs = new List<Input>
             {
                 new Input {
@@ -28,10 +31,21 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Label = "Client Id:",
                     Type ="text",
                     Placeholder ="123abc",
-                    Class = "col-12",
+                    Class = "col-6",
                     PrePendIcon = "address-card",
                     Validation = true,
                     ValidationRequiredMessage = "The Client ID field is required!"
+                },
+                new Input {
+                    Id = "dob",
+                    Label = "Birthday:",
+                    Type ="date",
+                    Placeholder ="",
+                    Class = "col-6",
+                    PrePendIcon = "calendar",
+                    Validation = true,
+                    ValidationRequiredMessage = "The Client ID field is required!",
+                    ValidationDateMessage = "A valid date must be entered"
                 },
                 new Input {
                     Id = "firstName",
@@ -52,58 +66,14 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     ValidationRequiredMessage = "The Last Name field is required!"
                 },
                 new Input {
-                    Id = "birthday",
-                    Label = "Birthday:",
-                    Type ="date",
-                    Placeholder ="",
-                    Class = "col-6",
-                    Validation = false,
-                    ValidationDateMessage = "A valid date is required!"
-                },
-                new Input {
-                    Id = "age",
-                    Label = "Age:",
-                    Type ="number",
-                    Min = 0,
-                    Max = 120,
+                    Id = "gender",
+                    Label = "Gender:",
+                    Type ="radio",
+                    Options = new[] {new Option(1,"Male",false), new Option(2,"Female",false)},
                     Placeholder ="",
                     Class = "col-6",
                     Validation = true,
-                    ValidationNumberMessage = "A valid age is required!"
-                },
-                new Input {
-                    Id = "gender",
-                    Label = "Gender:",
-                    Type ="select",
-                    Options = new[] {new Option(1,"Male",true), new Option(2,"Female",false)},
-                    Placeholder ="",
-                    Class = "col-6"
-                },
-                new Input {
-                    Id = "group",
-                    Label = "Group:",
-                    Type ="select",
-                    Options = new[] {new Option(1,"Male",true), new Option(2,"Female",false)},
-                    Placeholder ="",
-                    Class = "col-6"
-                },
-                new Input {
-                    Id = "primaryEmail",
-                    Label = "Primary Email:",
-                    Type ="email",
-                    Placeholder ="",
-                    Class = "col-6",
-                    Validation = false,
-                    ValidationEmailMessage = "A valid email is required!"
-                },
-                new Input {
-                    Id = "secondaryEmail",
-                    Label = "Secondary Email:",
-                    Type ="email",
-                    Placeholder ="",
-                    Class = "col-6",
-                    Validation = false,
-                    ValidationEmailMessage = "A valid email is required!"
+                    ValidationRequiredMessage = "The gender field is required!"
                 }
             };
         }

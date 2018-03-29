@@ -5,20 +5,12 @@
 <h1>Assess Page</h1>
 <div class="row">
     <div class="col-4">
-        <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#dynFormModal">
+        <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#cabModal">
             <i class="fa fa-user-plus" aria-hidden="true"></i>
-            Add New Client
-        </button>
-        <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#dynFormModal">
-            <i class="fa fa-user-plus" aria-hidden="true"></i>
-            Add New Client
+            CAB Demo
         </button>
     </div>
-    <div class="col-4">
-        @await Component.InvokeAsync("DynamicForm", new { model = "ClientEdit"})
-    </div>
-    <div class="col-4">
-    </div>
+        @await Component.InvokeAsync("DynamicForm", new { model = "CAB"})
 </div>
 
 
