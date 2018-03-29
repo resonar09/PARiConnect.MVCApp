@@ -59,6 +59,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IClinicianData, ClinicianData>();
                 services.AddScoped<IGroupData, GroupData>();
                 services.AddScoped<IPermissionData, PermissionData>();
+                services.AddScoped<IMessageService,MessageService>();
                 services.AddScoped<IUserService,UserService>();
                 services.AddScoped<IReportData, ReportData>();
             }
