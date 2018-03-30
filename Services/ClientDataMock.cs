@@ -1,4 +1,5 @@
-﻿using PARiConnect.MVCApp.Models;
+﻿using CoreServiceDevReference;
+using PARiConnect.MVCApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,12 @@ namespace PARiConnect.MVCApp.Services
 {
     public class ClientDataMock : IClientData
     {
-        List<Client> _clients;
+        List<Models.Client> _clients;
         public ClientDataMock()
         {
-            _clients = new List<Client>();
+            _clients = new List<Models.Client>();
             for(var i=0;i < 2000; i++){
-                var client = new Client();
+                var client = new Models.Client();
                 client.ClientId = i.ToString();
                 client.ClientName = "Client" + i;
                 client.Clinician = "Mike Nolan";
@@ -22,7 +23,7 @@ namespace PARiConnect.MVCApp.Services
                 _clients.Add(client);
         }
             for(var i=2000;i < 4000; i++){
-                var client = new Client();
+                var client = new Models.Client();
                 client.ClientId = i.ToString();
                 client.ClientName = "Client" + i;
                 client.Clinician = "Roaming Crowder";
@@ -31,7 +32,7 @@ namespace PARiConnect.MVCApp.Services
                 _clients.Add(client);
         }
         for(var i=4001;i < 4010; i++){
-                var client = new Client();
+                var client = new Models.Client();
                 client.ClientId = i.ToString();
                 client.ClientName = "Client" + i;
                 client.Clinician = "Roaming Crowder";
@@ -43,8 +44,14 @@ namespace PARiConnect.MVCApp.Services
             
         }
 
-        public async Task<IEnumerable<Client>> GetListAsync()
+        public Task<CoreServiceDevReference.Client> GetByKeyAsync(int id)
         {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Models.Client>> GetListAsync()
+        {
+
             return await Task.Run(() => _clients);
         }
 

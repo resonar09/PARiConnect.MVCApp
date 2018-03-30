@@ -9,7 +9,7 @@ namespace PARiConnect.MVCApp.Services
 {
     public interface IGroupData
     {
-       Task<IEnumerable<Group>> GetAll();
+
        Task<IEnumerable<Group>> GetListAsync();
 
        Task<ClientGroup> GetByKeyAsync(int key);

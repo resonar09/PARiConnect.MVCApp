@@ -10,13 +10,13 @@ namespace PARiConnect.MVCApp.Controllers
 {
     [Authorize]
 
-    public class GroupsController : Controller
+    public class ClientDetailController : Controller
     {
         private readonly IGroupData _groupData;
         private readonly IClientData _clientData;
         private readonly IMapper _iMapper;
 
-        public GroupsController(IMapper iMapper, IGroupData groupData, IClientData clientData)
+        public ClientDetailController(IMapper iMapper, IGroupData groupData, IClientData clientData)
         {
             _iMapper = iMapper;
             _clientData = clientData;
@@ -25,7 +25,7 @@ namespace PARiConnect.MVCApp.Controllers
         public IActionResult Index(int? id)
         {
 
-            return View();
+            return View("Index", id);
         }
         public IActionResult Error()
         {
@@ -34,7 +34,7 @@ namespace PARiConnect.MVCApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(Models.Group model)
+        public IActionResult Create(Models.Client model)
         {
             if (!ModelState.IsValid)
             {
@@ -44,13 +44,12 @@ namespace PARiConnect.MVCApp.Controllers
                 return BadRequest(errors);
 
             }
-            model.ClientGroupKey = int.Parse(model.GroupId);
+            var clientGroup = _groupData.GetByKeyAsync(int.Parse(model.GroupId)).Result;
+            var clientMap = _iMapper.Map<CoreServiceDevReference.Client>(model);
+            var client = _clientData.SaveOrUpdate(clientMap,clientGroup);
 
-            var clientMap = _iMapper.Map<CoreServiceDevReference.ClientGroup>(model);
-            var group = _groupData.SaveOrUpdate(clientMap);
+            return RedirectToAction("Index", "Clients");
 
-            //return Ok(client);
-            return RedirectToAction("Index", "Home");
         }
     }
 }

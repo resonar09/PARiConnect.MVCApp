@@ -46,7 +46,6 @@ namespace PARiConnect.MVCApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                //return View("_Modal", "EditClient");
                 var errors = ModelState
                     .SelectMany(x => x.Value.Errors, (y, z) => z.Exception.Message);
 

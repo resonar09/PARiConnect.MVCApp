@@ -6,17 +6,28 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
+using CoreServiceDevReference;
+using AutoMapper;
 
 namespace PARiConnect.MVCApp.Services
 {
     public class ClientData : IClientData
     {
         private IUserService _userService;
+
         public ClientData(IUserService userService)
         {
              _userService = userService;
         }
-        public async Task<IEnumerable<Client>> GetListAsync(int id)
+
+        public async Task<CoreServiceDevReference.Client> GetByKeyAsync(int id)
+        {
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var client = await coreServiceClient.GetClientByKeyAsync(id);
+            return client;
+        }
+
+/*         public async Task<IEnumerable<Client>> GetListAsync()
         {
             var loggedInUserID = _userService.GetCurrentUserId();
             var loggedInUserName = _userService.GetCurrentUserName();
@@ -33,8 +44,8 @@ namespace PARiConnect.MVCApp.Services
                     Clinician = loggedInUserName
                 });
             return clientListing;
-        }
-        public async Task<IEnumerable<Client>> GetListAsync()
+        } */
+        public async Task<IEnumerable<Models.Client>> GetListAsync()
         {
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
@@ -44,7 +55,7 @@ namespace PARiConnect.MVCApp.Services
             
 
              var clientListing = clientListingForUser.Clients
-                .Select(x => new Client
+                .Select(x => new Models.Client
                 {
                     ClientId = x.ClientID,
                     ClientName = x.FirstName + " " + x.LastName,
@@ -56,7 +67,7 @@ namespace PARiConnect.MVCApp.Services
 
                 foreach(var clinicianClientGroup in clientListingForUser.ClientGroups){
                     foreach(var clinicianClientGroupClient in clinicianClientGroup.Clients){
-                        var client = new Client();
+                        var client = new Models.Client();
                         client.Clinician =  _userService.GetCurrentUserName();
                         client.ClinicianId = loggedInUserID;
                         client.Email = clinicianClientGroupClient.PrimaryEmail;
@@ -73,7 +84,7 @@ namespace PARiConnect.MVCApp.Services
             foreach(var clinician in clinicians){
                 var clinicianClients = await coreServiceClient.GetAllClientListingForUserAsync(clinician.OrgUserMappingKey);
                 foreach(var clinicianClient in clinicianClients.Clients){
-                    var client = new Client();
+                    var client = new Models.Client();
                     client.Clinician = clinician.Name;
                     client.ClinicianId = clinician.OrgUserMappingKey.ToString();
                     client.Email = clinicianClient.PrimaryEmail;
@@ -83,7 +94,7 @@ namespace PARiConnect.MVCApp.Services
                 }
                 foreach(var clinicianClientGroup in clinicianClients.ClientGroups){
                     foreach(var clinicianClientGroupClient in clinicianClientGroup.Clients){
-                        var client = new Client();
+                        var client = new Models.Client();
                         client.Clinician = clinician.Name;
                         client.ClinicianId = clinician.OrgUserMappingKey.ToString();
                         client.Email = clinicianClientGroupClient.PrimaryEmail;
@@ -105,7 +116,8 @@ namespace PARiConnect.MVCApp.Services
             var clientResult = await coreServiceClient.SaveOrUpdateClientAsync(client,int.Parse(loggedInUserID),clientGroup,loggedInUserName);
             return clientResult;
         }
-        
+
+
     }
 }
 

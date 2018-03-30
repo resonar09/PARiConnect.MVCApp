@@ -9,23 +9,20 @@
                 <h4 class="title-1">Welcome to PARiConnect</h4>
             </div>
             <div class="float-right">
-                <div>
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                     <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#clientEditModal">
                         <i class="fa fa-user-plus" aria-hidden="true"></i>
                         Add New Client
                     </button>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </button>
+                        <div id="add-dropdown-menu" class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#clinicianAddModal">Add New Clinician</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#groupEditModal">Add New Group</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-right">
-                    <button class="btn btn-link btn-sm" type="button" data-toggle="modal" data-target="#clinicianAddModal">
-                        Add New Clinician
-                    </button>
-                </div>
-                <div class="text-right">
-                    <button class="btn btn-link btn-sm" type="button" data-toggle="modal" data-target="#groupEditModal">
-                        Add New Group
-                    </button>
-                </div>
-
             </div>
         </div>
         <ul class="nav nav-tabs" role="tablist">

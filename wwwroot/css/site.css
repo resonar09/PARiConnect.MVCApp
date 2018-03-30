@@ -33,6 +33,10 @@ body {
     font-weight: 600;
     color: #007bff;
 }
+/* Buttons */
+#add-dropdown-menu{
+    left:-100px;
+}
 
 /* Borders */
 .border-bottom {

@@ -1,0 +1,56 @@
+﻿ @model PARiConnect.MVCApp.Models.Client
+ <div class="container-fluid mt-4">
+  <div class="row">
+      <div class="col-6">
+          <h5>@(Model.FirstName) @(Model.LastName) <small>@(Model.ClientId)</small></h5>
+      </div>
+        <div class="col-6 text-right">
+          <button type="button" class="btn btn-link">Edit Client Information</button>
+      </div>
+    <div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div>
+        <label id="dob">DATE OF BIRTH</label>
+      </div>
+      <div>
+        <span>@(Model.DateOfBirth)</span>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <label id="age">AGE</label>
+      </div>
+      <div>
+        <span>@(Model.DateOfBirth)</span>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <label id="gender">GENDER</label>
+      </div>
+      <div>
+        <span>@(Model.Gender)</span>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <label id="email">PRIMARY EMAIL</label>
+      </div>
+      <div>
+        <span>@(Model.PrimaryEmail)</span>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <label id="group">GROUP</label>
+      </div>
+      <div>
+        <span>@(Model.DateOfBirth)</span>
+      </div>
+    </div>
+  </div>
+</div> 
