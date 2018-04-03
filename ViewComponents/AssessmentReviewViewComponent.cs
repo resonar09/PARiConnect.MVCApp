@@ -13,10 +13,10 @@ namespace PARiConnect.MVCApp.ViewComponents
         {
             _assessmentReviewData = assessmentReviewData;
         }
-        public IViewComponentResult Invoke(bool completed)
+        public IViewComponentResult Invoke(bool completed, int? clientKey)
         {
             var model = new HomeIndexViewModel();
-            var assessmentReviews = _assessmentReviewData.GetAllAsync().Result;
+            var assessmentReviews = _assessmentReviewData.GetAllAsync(clientKey).Result;
             model.AssessmentReview = assessmentReviews.Where(x => x.Completed == completed);
             model.TableId = (completed) ? "assessment-table-completed": "assessment-table-pending";
             return View("AssessmentReview", model);

@@ -20,13 +20,30 @@ namespace PARiConnect.MVCApp.Services
              _userService = userService;
         }
 
-        public async Task<CoreServiceDevReference.Client> GetByKeyAsync(int id)
+        public async Task<Models.Client> GetByKeyAsync(int id)
         {
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var client = await coreServiceClient.GetClientByKeyAsync(id);
+            var clientRef = await coreServiceClient.GetClientByKeyAsync(id);
+            var client = new Models.Client();
+            client.ClientKey = clientRef.ClientKey;
+            client.ClientId = clientRef.ClientID;
+            client.ClientName = clientRef.FirstName + " " + clientRef.LastName;
+            client.DateOfBirth = (clientRef.DateOfBirth.HasValue) ? clientRef.DateOfBirth.Value.ToShortDateString() : "---";
+            client.Gender = (clientRef.Gender.HasValue) ? clientRef.Gender.Value.ToString() : "---";
+            client.PrimaryEmail = clientRef.PrimaryEmail;
+            client.GroupName = "---";
+            client.Age = GetAgeFromDOBCalculated(clientRef.DateOfBirthComputed);
             return client;
         }
-
+        private string GetAgeFromDOBCalculated(DateTime? dobCalculated){
+            if(dobCalculated.HasValue){
+                var today = DateTime.Today;
+                var age = today.Year - dobCalculated.Value.Year;
+                if (dobCalculated.Value > today.AddYears(-age)) age--;
+                return age.ToString();
+            }
+            return "---";
+        }
 /*         public async Task<IEnumerable<Client>> GetListAsync()
         {
             var loggedInUserID = _userService.GetCurrentUserId();
@@ -56,7 +73,7 @@ namespace PARiConnect.MVCApp.Services
 
              var clientListing = clientListingForUser.Clients
                 .Select(x => new Models.Client
-                {
+                {   ClientKey= x.ClientKey,
                     ClientId = x.ClientID,
                     ClientName = x.FirstName + " " + x.LastName,
                     Email = x.PrimaryEmail
@@ -68,6 +85,7 @@ namespace PARiConnect.MVCApp.Services
                 foreach(var clinicianClientGroup in clientListingForUser.ClientGroups){
                     foreach(var clinicianClientGroupClient in clinicianClientGroup.Clients){
                         var client = new Models.Client();
+                        client.ClientKey = clinicianClientGroupClient.ClientKey;
                         client.Clinician =  _userService.GetCurrentUserName();
                         client.ClinicianId = loggedInUserID;
                         client.Email = clinicianClientGroupClient.PrimaryEmail;
@@ -85,6 +103,7 @@ namespace PARiConnect.MVCApp.Services
                 var clinicianClients = await coreServiceClient.GetAllClientListingForUserAsync(clinician.OrgUserMappingKey);
                 foreach(var clinicianClient in clinicianClients.Clients){
                     var client = new Models.Client();
+                    client.ClientKey = clinicianClient.ClientKey;
                     client.Clinician = clinician.Name;
                     client.ClinicianId = clinician.OrgUserMappingKey.ToString();
                     client.Email = clinicianClient.PrimaryEmail;
@@ -95,6 +114,7 @@ namespace PARiConnect.MVCApp.Services
                 foreach(var clinicianClientGroup in clinicianClients.ClientGroups){
                     foreach(var clinicianClientGroupClient in clinicianClientGroup.Clients){
                         var client = new Models.Client();
+                        client.ClientKey = clinicianClientGroupClient.ClientKey;
                         client.Clinician = clinician.Name;
                         client.ClinicianId = clinician.OrgUserMappingKey.ToString();
                         client.Email = clinicianClientGroupClient.PrimaryEmail;

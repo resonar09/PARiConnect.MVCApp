@@ -5,6 +5,7 @@ namespace PARiConnect.MVCApp.Models
 {
     public class Client
     {
+        public int ClientKey{ get; set; }
         public string ClientId{ get; set; }
         public string ClientName { get; set; }
         [Required]

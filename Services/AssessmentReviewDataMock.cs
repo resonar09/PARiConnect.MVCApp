@@ -154,7 +154,7 @@ namespace PARiConnect.MVCApp.Services
             return  _assessmentReviews.OrderBy(x => x.Assessment);
         }
 
-        public async Task<IEnumerable<AssessmentReview>> GetAllAsync()
+        public async Task<IEnumerable<AssessmentReview>> GetAllAsync(int? clientKey)
         {
             return await Task.Run(() => _assessmentReviews);
         }

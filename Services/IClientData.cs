@@ -10,7 +10,7 @@ namespace PARiConnect.MVCApp.Services
     public interface IClientData
     {
        Task<IEnumerable<Models.Client>> GetListAsync();
-       Task<CoreServiceDevReference.Client> GetByKeyAsync(int id);
+       Task<Models.Client> GetByKeyAsync(int id);
        Task<CoreServiceDevReference.Client> SaveOrUpdate(CoreServiceDevReference.Client client, CoreServiceDevReference.ClientGroup clientGroup);
     }
 }

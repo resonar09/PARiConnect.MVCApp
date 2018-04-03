@@ -24,7 +24,7 @@ namespace PARiConnect.MVCApp.Services
 
         public async Task<IEnumerable<RecentlyAccessed>> GetRecentlyAccessedAsync()
         {
-                var assessmentReview = await _assessmentReview.GetAllAsync();
+                var assessmentReview = await _assessmentReview.GetAllAsync(null);
                 
                 var grouped = assessmentReview.GroupBy(g => new{g.ClientId, g.ClientName}).Select(x => new RecentlyAccessed {
                     ClientId = x.Key.ClientId,

@@ -16,11 +16,11 @@ namespace PARiConnect.MVCApp.Services
         {
              _userService = userService;
         }
-        public async Task<IEnumerable<AssessmentReview>> GetAllAsync()
+        public async Task<IEnumerable<AssessmentReview>> GetAllAsync(int? clientKey)
         {
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(null, int.Parse(loggedInUserID), null, null);
+            var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(clientKey, int.Parse(loggedInUserID), null, null);
 
             var clientAssesReviews = clientAssessmentReviews
                 .Select(x => new AssessmentReview

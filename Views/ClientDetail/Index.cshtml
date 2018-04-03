@@ -2,91 +2,44 @@
 @{
     ViewData["Title"] = "Client Detail Page";
 }
-<div class="container-fluid pt-4">
-    <div class="row">
+    <div class="row ">
         <div class="col-6 text-left">
             @await Component.InvokeAsync("ClientEdit", new { id = @Model})
         </div>
-        <div class="col-6 text-right">
+        <div class="col-6 text-right mt-4">
                     <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#newAssessmentModal">
                         <i class="fa fa-book" aria-hidden="true"></i>
                         New Assessment
                     </button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 bg-light">
-            assessment section
+    <div class="row mt-2">
+        <div class="col-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#pending" role="tab">Pending Assessments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#completed" role="tab">Completed Assessments</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="pending" role="tabpanel">
+                        <div class="mt-2">
+                            @await Component.InvokeAsync("AssessmentReview", new { completed = false, clientKey=@Model})
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="completed" role="tabpanel">
+                        <div class="mt-2">
+                            @await Component.InvokeAsync("AssessmentReview", new { completed = true, clientKey=@Model})
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-</div>
 @await Component.InvokeAsync("DynamicForm", new { model = "ClinicianInvite"})
 
 @section scripts {
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $.tablesorter.addParser({
-                id: 'last-name',
-                is: function(s) {
-                return false;
-                },
-                format: function(str) {
-                var parts = (str || '').split(/\s+/),
-                    last = parts.pop();
-                parts.unshift(last);
-                return parts.join(' ');
-                },
-                // set type, either numeric or text
-                type: 'text'
-            });
-            $(".sortable").tablesorter();  
-
-            $(".search-input").keyup(function () {
-
-                var value = this.value;
-                $(".searchable").find("tr").each(function (index) {
-                    //if (index === 0) return;
-                    var rowMatch = false;
-                    $(this).find("td").each(function (index) {
-                        if ($(this).text().toUpperCase().indexOf(value.toUpperCase()) !== -1)
-                            rowMatch = true;
-                    });
-                    $(this).toggle(rowMatch);
-                });
-            });
-
-            $(".firstLastToggle").click(function(e){
-                $(".name-header").toggleClass("sorter-last-name");
-                $(".tablesorter").trigger("update");
-                if($(".name-header").hasClass("sorter-last-name")){
-                    $(".first").text("L");
-                    $(".last").text("F");
-                }
-                else{
-                    $(".first").text("F");
-                    $(".last").text("L"); 
-                }
-            });
-
-            $(".clinicianCheckbox").click(function(e){
-                        var classId = $(this).val();
-                        $("." + classId).removeClass("d-none");
-                        $("." + classId).toggle(this.checked);
-             });
-            $(".groupCheckbox").click(function(e){
-                        var classId = $(this).val();
-                        $("." + classId).removeClass("d-none");
-                        $("." + classId).toggle(this.checked);
-             });
-            $("#clientCheckAll").click(function(e){
-                if($(this).is(':checked'))
-                    $(".clientCheck").prop('checked', true);
-                else
-                    $(".clientCheck").prop('checked', false);
-            });
-    });
-
-
-            
-    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @{await Html.RenderPartialAsync("_GridScriptsPartial"); }
 }    

@@ -24,7 +24,10 @@ body {
     font-size: 1.1em;
     font-weight: 600;
 }
-
+.font-header-sm{
+    font-size: .8em;
+    font-weight: 700;
+}
 .more-muted-text{
     color: #c9c9c9;
 }

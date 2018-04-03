@@ -44,7 +44,7 @@ namespace PARiConnect.MVCApp.Services
             
         }
 
-        public Task<CoreServiceDevReference.Client> GetByKeyAsync(int id)
+        public Task<Models.Client> GetByKeyAsync(int id)
         {
             throw new NotImplementedException();
         }

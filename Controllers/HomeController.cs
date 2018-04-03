@@ -23,7 +23,7 @@ namespace PARiConnect.MVCApp.Controllers
         public async Task<IActionResult> Index()
         {
                 var model = new HomeIndexViewModel();
-                model.AssessmentReview = await _assessmentReviewData.GetAllAsync();
+                model.AssessmentReview = await _assessmentReviewData.GetAllAsync(null);
                 return View(model);
 
         }

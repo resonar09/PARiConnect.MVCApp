@@ -2,51 +2,48 @@
  <div class="container-fluid mt-4">
   <div class="row">
       <div class="col-6">
-          <h5>@(Model.FirstName) @(Model.LastName) <small>@(Model.ClientId)</small></h5>
+          <h5>@(Model.ClientName) <small>@(Model.ClientId)</small></h5>
       </div>
-        <div class="col-6 text-right">
+      <div class="col-6 text-right">
           <button type="button" class="btn btn-link">Edit Client Information</button>
       </div>
-    <div>
-
-    </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col-4">
       <div>
-        <label id="dob">DATE OF BIRTH</label>
+        <label id="dob" class="font-header-sm">DATE OF BIRTH</label>
       </div>
       <div>
         <span>@(Model.DateOfBirth)</span>
       </div>
     </div>
-    <div class="col">
+    <div class="col-4">
       <div>
-        <label id="age">AGE</label>
+        <label id="age" class="font-header-sm">AGE</label>
       </div>
       <div>
-        <span>@(Model.DateOfBirth)</span>
+        <span>@(Model.Age)</span>
       </div>
     </div>
-    <div class="col">
+    <div class="col-4">
       <div>
-        <label id="gender">GENDER</label>
+        <label id="gender" class="font-header-sm">GENDER</label>
       </div>
       <div>
         <span>@(Model.Gender)</span>
       </div>
     </div>
-    <div class="col">
+    <div class="col-4">
       <div>
-        <label id="email">PRIMARY EMAIL</label>
+        <label id="email" class="font-header-sm">PRIMARY EMAIL</label>
       </div>
       <div>
         <span>@(Model.PrimaryEmail)</span>
       </div>
     </div>
-    <div class="col">
+    <div class="col-4">
       <div>
-        <label id="group">GROUP</label>
+        <label id="group" class="font-header-sm">GROUP</label>
       </div>
       <div>
         <span>@(Model.DateOfBirth)</span>

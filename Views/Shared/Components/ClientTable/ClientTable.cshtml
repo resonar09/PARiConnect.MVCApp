@@ -62,7 +62,7 @@
                 </div>
             </td>
             <td class="">
-                <span class="table-row-header">@client.ClientName</span>
+                <a asp-controller="ClientDetail" asp-action="Index" asp-route-id="@client.ClientKey"><span class="table-row-header">@client.ClientName</span></a>
             </td>
             <td>@client.ClientId</td>
             <td>@client.Email</td>
