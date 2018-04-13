@@ -15,7 +15,7 @@ namespace PARiConnect.MVCApp.Controllers
         private readonly IGroupData _groupData;
         private readonly IClientData _clientData;
         private readonly IMapper _iMapper;
-
+        
         public ClientsController(IMapper iMapper, IGroupData groupData, IClientData clientData)
         {
             _iMapper = iMapper;

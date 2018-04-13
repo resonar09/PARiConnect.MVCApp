@@ -20,7 +20,7 @@ namespace PARiConnect.MVCApp.Controllers
         private readonly IPermissionData _permissionData;
         private readonly IMessageService _messageService;
         private readonly IMapper _iMapper;
-
+        
         public ClinicianController(IMapper iMapper, IUserService userService, IClinicianData clinicianData, 
         IPermissionData permissionData, IMessageService messageService)
         {

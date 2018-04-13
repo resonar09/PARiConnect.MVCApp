@@ -9,9 +9,11 @@ namespace PARiConnect.MVCApp.Models
         private bool _completed;
         private bool _scored;
 
+        public int ClientAssessmentKey { get; set; }
         public int ClientKey{ get; set; }
         public int ClientId{ get; set; }
         public string ClientName { get; set; }
+        public int AssessmentFormKey { get; set; }
         public string Assessment { get; set; }
         public DateTime Updated { get; set; }
 

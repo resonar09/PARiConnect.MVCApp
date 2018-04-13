@@ -7,7 +7,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
     {
         public LayoutType Layout { get; set; }
 
-        public String Columns { get; set; }
+        public int Columns { get; set; }
         public String DefaultClass { get; set; }
 
         public String Title { get; set; }

@@ -5,8 +5,9 @@
     <thead class="table-header">
         <tr class="table-row mb-1">
             <th class="table-row-start name-header sorter-last-name client">
-                <div class="header-text mb-1 ">Client
-                     <div class="float-right">
+                <div class="header-text mb-1 ">
+                    Client
+                    <div class="float-right">
                         <button id="firstLastToggle" class="firstLastToggle btn btn-sm btn-link text-muted table-toggle">
                             <span class="first">F</span>
                             <i class="fa fa-exchange" aria-hidden="true"></i>
@@ -16,33 +17,31 @@
                 </div>
                 <div class="search-toggle" style="display: none;">
                     <input type="text" class="form-control form-control-sm search" />
-<!--                     <select class="form-control form-control-sm client-select filter" id="client-select">
-                    </select> -->
+                    <!--                     <select class="form-control form-control-sm client-select filter" id="client-select">
+                                        </select> -->
                 </div>
             </th>
             <th class="assessment">
                 <div class="header-text mb-1">Assessment</div>
                 <div class="search-toggle" style="display: none;">
                     <!-- <input type="text" id="assessment-select" /> -->
-                    <select class="form-control form-control-sm assessment-select filter" id="assessment-select">
-                    </select>
+                    <select class="form-control form-control-sm assessment-select filter" id="assessment-select"></select>
                 </div>
             </th>
             <th class="updated">
                 <div class="header-text mb-1">Updated</i></div>
                 <div class="search-toggle form-row " style="display: none;">
 
-                    <input class="form-control form-control-sm col-5 ml-1" type="date" placeholder="From" /> 
+                    <input class="form-control form-control-sm col-5 ml-1" type="date" placeholder="From" />
 
                     <input class="form-control form-control-sm col-5 ml-1" type="date" placeholder="To" />
                 </div>
             </th>
-            <th class="status">  
+            <th class="status">
                 <div class="header-text mb-1">Status</div>
                 <div class="search-toggle" style="display: none;">
                     <!-- <input type="text" /> -->
-                    <select class="form-control form-control-sm status-select filter" id="status-select">
-                    </select>
+                    <select class="form-control form-control-sm status-select filter" id="status-select"></select>
                 </div>
             </th>
             <th class="table-row-end">
@@ -51,31 +50,45 @@
                         <button class="searchToggle btn btn-sm btn-link text-muted table-toggle">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
-                       
+
                     </div>
-                </div>
-                <div></div>
                 </div>
             </th>
         </tr>
     </thead>
     <tbody class="searchable">
 
-    @foreach (var assessmentReview in Model.AssessmentReview)
-    {
-        <tr class="table-row">
-            <td class="@(assessmentReview.Scored ? "table-row-start-completed" : "table-row-start-notcompleted") table-row-header">
-                @assessmentReview.ClientName
-            </td>
-            <td>@assessmentReview.Assessment</td>
-            <td>@assessmentReview.Updated</td>
-            <td>@assessmentReview.Status</td>
-            <td class="table-row-end">
-                <button class="btn btn-sm btn-outline-success"><i class="fa fa-file-text-o" aria-hidden="true"></i> Run Report</button>
-                <button class="btn btn-sm btn-outline-primary"><i class="fa fa-search" aria-hidden="true"></i> View Responses</button>
-            </td>
-        </tr>
-    }
+        @foreach (var assessmentReview in Model.AssessmentReview)
+        {
+            <tr class="table-row">
+                <td class="@(assessmentReview.Scored ? "table-row-start-completed" : "table-row-start-notcompleted") table-row-header">
+                    <a asp-controller="ClientDetail" asp-action="Index" asp-route-id="@assessmentReview.ClientKey"><span class="table-row-header">@assessmentReview.ClientName</span></a>
+
+                </td>
+                <td>@assessmentReview.Assessment</td>
+                <td>@assessmentReview.Updated</td>
+                <td>@assessmentReview.Status</td>
+                <td class="table-row-end">
+                    @if (Model.ClientKey > 0)
+                    {
+                        <button class="btn btn-sm btn-outline-success" type="button" data-toggle="modal" data-target="#clientReportModal"><i class="fa fa-file-text-o" aria-hidden="true"></i> Reports and Notes </button>
+                    }
+                    else
+                    {
+                        @if (assessmentReview.Scored)
+                        {
+                            <button class="btn btn-sm btn-outline-success" type="button" data-toggle="modal" data-target="#reportsNotesModal"><i class="fa fa-file-text-o" aria-hidden="true"></i> Run Report</button>
+                            <button class="btn btn-sm btn-outline-primary"><i class="fa fa-search" aria-hidden="true"></i> View Responses</button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-sm btn-outline-success"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send Email </button>
+                        }
+                    }
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

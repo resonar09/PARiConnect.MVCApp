@@ -31,16 +31,20 @@ namespace PARiConnect.MVCApp.Services
             OrgUserServiceDevReference.AuthenticationToken authenticationToken = new OrgUserServiceDevReference.AuthenticationToken();
             authenticationToken.EmailAddress = email;
             authenticationToken.Password = password;
-            OrgUserServiceDevReference.AuthenticateCorpSvcsRequest authenticateCorpSvcsRequest = new OrgUserServiceDevReference.AuthenticateCorpSvcsRequest();
-            authenticateCorpSvcsRequest.token = authenticationToken;
-            var userAuth = orgUserServiceClient.AuthenticateCorpSvcsAsync(authenticateCorpSvcsRequest);
-            if (userAuth.Result.AuthenticateCorpSvcsResult.IsValid)
+            //OrgUserServiceDevReference.AuthenticateCorpSvcsRequest authenticateCorpSvcsRequest = new OrgUserServiceDevReference.AuthenticateCorpSvcsRequest();
+            //authenticateCorpSvcsRequest.token = authenticationToken;
+            //var userAuth = orgUserServiceClient.AuthenticateCorpSvcsAsync(authenticateCorpSvcsRequest).Result;
+            OrgUserServiceDevReference.AuthenticateRequest authenticateRequest = new OrgUserServiceDevReference.AuthenticateRequest();
+            authenticateRequest.token = authenticationToken;
+            var userAuth = orgUserServiceClient.AuthenticateAsync(authenticateRequest).Result;
+            //if (userAuth.AuthenticateCorpSvcsResult.IsValid)
+            if (userAuth.AuthenticateResult.IsValid)
             {
                 User loggedInUser = new User(key);
                 user = loggedInUser;
-                user.FullName = string.Format("{0} {1}", userAuth.Result.identities[0].OrgUserMapping.UserProfile.ContactFirstName, userAuth.Result.identities[0].OrgUserMapping.UserProfile.ContactLastName);
-                user.ContactId = userAuth.Result.identities[0].UserData.ContactID;
-                user.OrgUserMappingKey = userAuth.Result.identities[0].OrgUserMapping.OrgUserMappingKey.ToString();
+                user.FullName = string.Format("{0} {1}", userAuth.identities[0].OrgUserMapping.UserProfile.ContactFirstName, userAuth.identities[0].OrgUserMapping.UserProfile.ContactLastName);
+                user.ContactId = userAuth.identities[0].UserData.ContactID;
+                user.OrgUserMappingKey = userAuth.identities[0].OrgUserMapping.OrgUserMappingKey.ToString();
                 UserKey = user.OrgUserMappingKey;
                 UserName = user.FullName;
                 return Task.FromResult(true);
@@ -54,9 +58,7 @@ namespace PARiConnect.MVCApp.Services
         }
 
         public string GetCurrentUserName(){
-            var context = _httpContextAccessor.HttpContext;
-            var userName = context.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
-            return userName;
+            return UserName;
         }
 
         public bool IsUserLoggedIn()

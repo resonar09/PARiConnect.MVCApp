@@ -7,6 +7,7 @@ namespace PARiConnect.MVCApp.Models
     {
         public int PermissionProfileDefaultPermKey{ get; set; }
 
+
         public int PermissionProfileKey{ get; set; }
         public int? PermissionKey{ get; set; }
 

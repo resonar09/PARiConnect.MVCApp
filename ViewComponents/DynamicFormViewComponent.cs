@@ -26,16 +26,16 @@ namespace PARiConnect.MVCApp.ViewComponents
             
             viewmodel.Inputs = dynFormModelInputs;
             if(dynFormModelSettings.Layout == LayoutType.Stacked){
-                dynFormModelSettings.Columns = "col-12";
+                dynFormModelSettings.Columns = 1;
             }
             else if(dynFormModelSettings.Layout == LayoutType.TwoColumn){
-                dynFormModelSettings.Columns = "col-6";
+                dynFormModelSettings.Columns = 2;
             }
             else if(dynFormModelSettings.Layout == LayoutType.Responsive){
-                dynFormModelSettings.Columns = "col";
+                dynFormModelSettings.Columns = 1;
             }
-            else {
-                dynFormModelSettings.Columns = "";
+            else if(!(dynFormModelSettings.Columns > 0)){
+                dynFormModelSettings.Columns = 1;
             }
             viewmodel.Settings = dynFormModelSettings;
             if(viewmodel.Settings.Container == ContainerType.Modal)

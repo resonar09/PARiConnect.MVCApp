@@ -13,186 +13,7 @@ namespace CoreServiceDevReference
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCleanupExpression", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportCleanupExpression : object
-    {
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string ExpressionPatternField;
-        
-        private string ReplacementTextField;
-        
-        private int ReportCleanupExpressionKeyField;
-        
-        private CoreServiceDevReference.ReportFormToReportCleanupExpression[] ReportFormToReportCleanupExpressionsField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExpressionPattern
-        {
-            get
-            {
-                return this.ExpressionPatternField;
-            }
-            set
-            {
-                this.ExpressionPatternField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReplacementText
-        {
-            get
-            {
-                return this.ReplacementTextField;
-            }
-            set
-            {
-                this.ReplacementTextField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportCleanupExpressionKey
-        {
-            get
-            {
-                return this.ReportCleanupExpressionKeyField;
-            }
-            set
-            {
-                this.ReportCleanupExpressionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportFormToReportCleanupExpression[] ReportFormToReportCleanupExpressions
-        {
-            get
-            {
-                return this.ReportFormToReportCleanupExpressionsField;
-            }
-            set
-            {
-                this.ReportFormToReportCleanupExpressionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormToReportCleanupExpression", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportFormToReportCleanupExpression : object
-    {
-        
-        private int CleanupOrderField;
-        
-        private CoreServiceDevReference.ReportCleanupExpression ReportCleanupExpressionField;
-        
-        private int ReportCleanupExpressionKeyField;
-        
-        private CoreServiceDevReference.ReportForm ReportFormField;
-        
-        private int ReportFormKeyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CleanupOrder
-        {
-            get
-            {
-                return this.CleanupOrderField;
-            }
-            set
-            {
-                this.CleanupOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportCleanupExpression ReportCleanupExpression
-        {
-            get
-            {
-                return this.ReportCleanupExpressionField;
-            }
-            set
-            {
-                this.ReportCleanupExpressionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportCleanupExpressionKey
-        {
-            get
-            {
-                return this.ReportCleanupExpressionKeyField;
-            }
-            set
-            {
-                this.ReportCleanupExpressionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm ReportForm
-        {
-            get
-            {
-                return this.ReportFormField;
-            }
-            set
-            {
-                this.ReportFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormKey
-        {
-            get
-            {
-                return this.ReportFormKeyField;
-            }
-            set
-            {
-                this.ReportFormKeyField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class ReportForm : object
     {
@@ -231,19 +52,11 @@ namespace CoreServiceDevReference
         
         private string PurchaseLinkField;
         
-        private CoreServiceDevReference.ReportCategory[] ReportCategoriesField;
-        
         private int ReportCategoryKeyField;
-        
-        private CoreServiceDevReference.ReportDisplaySection[] ReportDisplaySectionsField;
         
         private int ReportFormKeyField;
         
-        private CoreServiceDevReference.ReportFormOptionInput[] ReportFormOptionInputsField;
-        
         private CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentFormsField;
-        
-        private CoreServiceDevReference.ReportFormToReportCleanupExpression[] ReportFormToReportCleanupExpressionsField;
         
         private string ReportOptionsControlField;
         
@@ -479,19 +292,6 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportCategory[] ReportCategories
-        {
-            get
-            {
-                return this.ReportCategoriesField;
-            }
-            set
-            {
-                this.ReportCategoriesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int ReportCategoryKey
         {
             get
@@ -501,19 +301,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.ReportCategoryKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportDisplaySection[] ReportDisplaySections
-        {
-            get
-            {
-                return this.ReportDisplaySectionsField;
-            }
-            set
-            {
-                this.ReportDisplaySectionsField = value;
             }
         }
         
@@ -531,19 +318,6 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportFormOptionInput[] ReportFormOptionInputs
-        {
-            get
-            {
-                return this.ReportFormOptionInputsField;
-            }
-            set
-            {
-                this.ReportFormOptionInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentForms
         {
             get
@@ -553,19 +327,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.ReportFormToAssessmentFormsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportFormToReportCleanupExpression[] ReportFormToReportCleanupExpressions
-        {
-            get
-            {
-                return this.ReportFormToReportCleanupExpressionsField;
-            }
-            set
-            {
-                this.ReportFormToReportCleanupExpressionsField = value;
             }
         }
         
@@ -649,7 +410,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeReportForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class CompositeReportForm : object
     {
@@ -731,7 +492,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class Status : object
     {
@@ -918,7 +679,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeReportFormCombination", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class CompositeReportFormCombination : object
     {
@@ -1030,553 +791,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCategory", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportCategory : object
-    {
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string DescriptionField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private string NameField;
-        
-        private int ReportCategoryKeyField;
-        
-        private CoreServiceDevReference.ReportForm[] ReportFormsField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description
-        {
-            get
-            {
-                return this.DescriptionField;
-            }
-            set
-            {
-                this.DescriptionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportCategoryKey
-        {
-            get
-            {
-                return this.ReportCategoryKeyField;
-            }
-            set
-            {
-                this.ReportCategoryKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm[] ReportForms
-        {
-            get
-            {
-                return this.ReportFormsField;
-            }
-            set
-            {
-                this.ReportFormsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDisplaySection", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportDisplaySection : object
-    {
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private bool IncludeEndMatchField;
-        
-        private bool IncludeStartMatchField;
-        
-        private string NameField;
-        
-        private int ProcessOrderField;
-        
-        private string RegexEndField;
-        
-        private string RegexStartField;
-        
-        private int ReportDisplaySectionKeyField;
-        
-        private CoreServiceDevReference.ReportForm ReportFormField;
-        
-        private int ReportFormKeyField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IncludeEndMatch
-        {
-            get
-            {
-                return this.IncludeEndMatchField;
-            }
-            set
-            {
-                this.IncludeEndMatchField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IncludeStartMatch
-        {
-            get
-            {
-                return this.IncludeStartMatchField;
-            }
-            set
-            {
-                this.IncludeStartMatchField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProcessOrder
-        {
-            get
-            {
-                return this.ProcessOrderField;
-            }
-            set
-            {
-                this.ProcessOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RegexEnd
-        {
-            get
-            {
-                return this.RegexEndField;
-            }
-            set
-            {
-                this.RegexEndField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RegexStart
-        {
-            get
-            {
-                return this.RegexStartField;
-            }
-            set
-            {
-                this.RegexStartField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportDisplaySectionKey
-        {
-            get
-            {
-                return this.ReportDisplaySectionKeyField;
-            }
-            set
-            {
-                this.ReportDisplaySectionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm ReportForm
-        {
-            get
-            {
-                return this.ReportFormField;
-            }
-            set
-            {
-                this.ReportFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormKey
-        {
-            get
-            {
-                return this.ReportFormKeyField;
-            }
-            set
-            {
-                this.ReportFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormOptionInput", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportFormOptionInput : object
-    {
-        
-        private int ColumnNumberField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private System.Nullable<int> DataStreamOrderField;
-        
-        private CoreServiceDevReference.DataStreamSection DataStreamSectionField;
-        
-        private System.Nullable<int> DataStreamSectionKeyField;
-        
-        private int DisplayOrderField;
-        
-        private string GroupNameField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private CoreServiceDevReference.OptionInput OptionInputField;
-        
-        private int OptionInputKeyField;
-        
-        private CoreServiceDevReference.ReportForm ReportFormField;
-        
-        private int ReportFormKeyField;
-        
-        private int ReportFormOptionInputKeyField;
-        
-        private bool RequiredField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ColumnNumber
-        {
-            get
-            {
-                return this.ColumnNumberField;
-            }
-            set
-            {
-                this.ColumnNumberField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> DataStreamOrder
-        {
-            get
-            {
-                return this.DataStreamOrderField;
-            }
-            set
-            {
-                this.DataStreamOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.DataStreamSection DataStreamSection
-        {
-            get
-            {
-                return this.DataStreamSectionField;
-            }
-            set
-            {
-                this.DataStreamSectionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> DataStreamSectionKey
-        {
-            get
-            {
-                return this.DataStreamSectionKeyField;
-            }
-            set
-            {
-                this.DataStreamSectionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DisplayOrder
-        {
-            get
-            {
-                return this.DisplayOrderField;
-            }
-            set
-            {
-                this.DisplayOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string GroupName
-        {
-            get
-            {
-                return this.GroupNameField;
-            }
-            set
-            {
-                this.GroupNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.OptionInput OptionInput
-        {
-            get
-            {
-                return this.OptionInputField;
-            }
-            set
-            {
-                this.OptionInputField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OptionInputKey
-        {
-            get
-            {
-                return this.OptionInputKeyField;
-            }
-            set
-            {
-                this.OptionInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm ReportForm
-        {
-            get
-            {
-                return this.ReportFormField;
-            }
-            set
-            {
-                this.ReportFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormKey
-        {
-            get
-            {
-                return this.ReportFormKeyField;
-            }
-            set
-            {
-                this.ReportFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormOptionInputKey
-        {
-            get
-            {
-                return this.ReportFormOptionInputKeyField;
-            }
-            set
-            {
-                this.ReportFormOptionInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Required
-        {
-            get
-            {
-                return this.RequiredField;
-            }
-            set
-            {
-                this.RequiredField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormToAssessmentForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class ReportFormToAssessmentForm : object
     {
@@ -1673,7 +888,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class Report : object
     {
@@ -1703,8 +918,6 @@ namespace CoreServiceDevReference
         private int ReportFormKeyField;
         
         private int ReportKeyField;
-        
-        private CoreServiceDevReference.ReportOptionInput[] ReportOptionInputsField;
         
         private string ReportOptionsField;
         
@@ -1882,19 +1095,6 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportOptionInput[] ReportOptionInputs
-        {
-            get
-            {
-                return this.ReportOptionInputsField;
-            }
-            set
-            {
-                this.ReportOptionInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ReportOptions
         {
             get
@@ -1935,7 +1135,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class AssessmentForm : object
     {
@@ -1945,10 +1145,6 @@ namespace CoreServiceDevReference
         private string AdminURLField;
         
         private CoreServiceDevReference.Assessment AssessmentField;
-        
-        private CoreServiceDevReference.AssessmentBlock[] AssessmentBlocksField;
-        
-        private CoreServiceDevReference.AssessmentFormDemoInput[] AssessmentFormDemoInputsField;
         
         private int AssessmentFormKeyField;
         
@@ -2042,32 +1238,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.AssessmentField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentBlock[] AssessmentBlocks
-        {
-            get
-            {
-                return this.AssessmentBlocksField;
-            }
-            set
-            {
-                this.AssessmentBlocksField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentFormDemoInput[] AssessmentFormDemoInputs
-        {
-            get
-            {
-                return this.AssessmentFormDemoInputsField;
-            }
-            set
-            {
-                this.AssessmentFormDemoInputsField = value;
             }
         }
         
@@ -2437,7 +1607,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Assessment", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class Assessment : object
     {
@@ -2594,471 +1764,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentBlock", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class AssessmentBlock : object
-    {
-        
-        private int AssessmentBlockKeyField;
-        
-        private CoreServiceDevReference.AssessmentBlockToAssessmentQuestion[] AssessmentBlockToAssessmentQuestionsField;
-        
-        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
-        
-        private int AssessmentFormKeyField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private int DisplayOrderField;
-        
-        private string InstructionsField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private string NameField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentBlockKey
-        {
-            get
-            {
-                return this.AssessmentBlockKeyField;
-            }
-            set
-            {
-                this.AssessmentBlockKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentBlockToAssessmentQuestion[] AssessmentBlockToAssessmentQuestions
-        {
-            get
-            {
-                return this.AssessmentBlockToAssessmentQuestionsField;
-            }
-            set
-            {
-                this.AssessmentBlockToAssessmentQuestionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentForm AssessmentForm
-        {
-            get
-            {
-                return this.AssessmentFormField;
-            }
-            set
-            {
-                this.AssessmentFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentFormKey
-        {
-            get
-            {
-                return this.AssessmentFormKeyField;
-            }
-            set
-            {
-                this.AssessmentFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DisplayOrder
-        {
-            get
-            {
-                return this.DisplayOrderField;
-            }
-            set
-            {
-                this.DisplayOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Instructions
-        {
-            get
-            {
-                return this.InstructionsField;
-            }
-            set
-            {
-                this.InstructionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentFormDemoInput", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class AssessmentFormDemoInput : object
-    {
-        
-        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
-        
-        private int AssessmentFormDemoInputKeyField;
-        
-        private int AssessmentFormKeyField;
-        
-        private int ColumnNumberField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private System.Nullable<int> DataStreamOrderField;
-        
-        private CoreServiceDevReference.DataStreamSection DataStreamSectionField;
-        
-        private System.Nullable<int> DataStreamSectionKeyField;
-        
-        private CoreServiceDevReference.DemoInput DemoInputField;
-        
-        private int DemoInputKeyField;
-        
-        private int DisplayOrderField;
-        
-        private bool EditableByClientField;
-        
-        private bool EditableByClinicianField;
-        
-        private string GroupNameField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private bool RequiredField;
-        
-        private System.Guid RowGUIDField;
-        
-        private bool VisibleToClientField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentForm AssessmentForm
-        {
-            get
-            {
-                return this.AssessmentFormField;
-            }
-            set
-            {
-                this.AssessmentFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentFormDemoInputKey
-        {
-            get
-            {
-                return this.AssessmentFormDemoInputKeyField;
-            }
-            set
-            {
-                this.AssessmentFormDemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentFormKey
-        {
-            get
-            {
-                return this.AssessmentFormKeyField;
-            }
-            set
-            {
-                this.AssessmentFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ColumnNumber
-        {
-            get
-            {
-                return this.ColumnNumberField;
-            }
-            set
-            {
-                this.ColumnNumberField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> DataStreamOrder
-        {
-            get
-            {
-                return this.DataStreamOrderField;
-            }
-            set
-            {
-                this.DataStreamOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.DataStreamSection DataStreamSection
-        {
-            get
-            {
-                return this.DataStreamSectionField;
-            }
-            set
-            {
-                this.DataStreamSectionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> DataStreamSectionKey
-        {
-            get
-            {
-                return this.DataStreamSectionKeyField;
-            }
-            set
-            {
-                this.DataStreamSectionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.DemoInput DemoInput
-        {
-            get
-            {
-                return this.DemoInputField;
-            }
-            set
-            {
-                this.DemoInputField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DemoInputKey
-        {
-            get
-            {
-                return this.DemoInputKeyField;
-            }
-            set
-            {
-                this.DemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DisplayOrder
-        {
-            get
-            {
-                return this.DisplayOrderField;
-            }
-            set
-            {
-                this.DisplayOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool EditableByClient
-        {
-            get
-            {
-                return this.EditableByClientField;
-            }
-            set
-            {
-                this.EditableByClientField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool EditableByClinician
-        {
-            get
-            {
-                return this.EditableByClinicianField;
-            }
-            set
-            {
-                this.EditableByClinicianField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string GroupName
-        {
-            get
-            {
-                return this.GroupNameField;
-            }
-            set
-            {
-                this.GroupNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Required
-        {
-            get
-            {
-                return this.RequiredField;
-            }
-            set
-            {
-                this.RequiredField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool VisibleToClient
-        {
-            get
-            {
-                return this.VisibleToClientField;
-            }
-            set
-            {
-                this.VisibleToClientField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientAssessment", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class ClientAssessment : object
     {
@@ -3072,10 +1778,6 @@ namespace CoreServiceDevReference
         private System.Nullable<int> AssessmentTimeField;
         
         private CoreServiceDevReference.Client ClientField;
-        
-        private CoreServiceDevReference.ClientAssessmentChoice[] ClientAssessmentChoicesField;
-        
-        private CoreServiceDevReference.ClientAssessmentDemoInput[] ClientAssessmentDemoInputsField;
         
         private int ClientAssessmentKeyField;
         
@@ -3096,8 +1798,6 @@ namespace CoreServiceDevReference
         private CoreServiceDevReference.DataCaptureModeType DataCaptureModeTypeField;
         
         private CoreServiceDevReference.EncryptedClient EncryptedClientField;
-        
-        private CoreServiceDevReference.EncryptedClientAssessmentDemoInput[] EncryptedClientAssessmentDemoInputsField;
         
         private System.Nullable<int> ExpirationDaysField;
         
@@ -3201,32 +1901,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.ClientField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessmentChoice[] ClientAssessmentChoices
-        {
-            get
-            {
-                return this.ClientAssessmentChoicesField;
-            }
-            set
-            {
-                this.ClientAssessmentChoicesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessmentDemoInput[] ClientAssessmentDemoInputs
-        {
-            get
-            {
-                return this.ClientAssessmentDemoInputsField;
-            }
-            set
-            {
-                this.ClientAssessmentDemoInputsField = value;
             }
         }
         
@@ -3357,19 +2031,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.EncryptedClientField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.EncryptedClientAssessmentDemoInput[] EncryptedClientAssessmentDemoInputs
-        {
-            get
-            {
-                return this.EncryptedClientAssessmentDemoInputsField;
-            }
-            set
-            {
-                this.EncryptedClientAssessmentDemoInputsField = value;
             }
         }
         
@@ -3635,7 +2296,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserFavorite", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class UserFavorite : object
     {
@@ -3747,957 +2408,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentBlockToAssessmentQuestion", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class AssessmentBlockToAssessmentQuestion : object
-    {
-        
-        private CoreServiceDevReference.AssessmentBlock AssessmentBlockField;
-        
-        private int AssessmentBlockKeyField;
-        
-        private CoreServiceDevReference.AssessmentQuestion AssessmentQuestionField;
-        
-        private int AssessmentQuestionKeyField;
-        
-        private int DisplayOrderField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentBlock AssessmentBlock
-        {
-            get
-            {
-                return this.AssessmentBlockField;
-            }
-            set
-            {
-                this.AssessmentBlockField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentBlockKey
-        {
-            get
-            {
-                return this.AssessmentBlockKeyField;
-            }
-            set
-            {
-                this.AssessmentBlockKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentQuestion AssessmentQuestion
-        {
-            get
-            {
-                return this.AssessmentQuestionField;
-            }
-            set
-            {
-                this.AssessmentQuestionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentQuestionKey
-        {
-            get
-            {
-                return this.AssessmentQuestionKeyField;
-            }
-            set
-            {
-                this.AssessmentQuestionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DisplayOrder
-        {
-            get
-            {
-                return this.DisplayOrderField;
-            }
-            set
-            {
-                this.DisplayOrderField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentQuestion", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class AssessmentQuestion : object
-    {
-        
-        private System.Nullable<int> AdminDisplayOrderField;
-        
-        private string AdminPromptField;
-        
-        private CoreServiceDevReference.AssessmentBlockToAssessmentQuestion[] AssessmentBlockToAssessmentQuestionsField;
-        
-        private int AssessmentQuestionKeyField;
-        
-        private CoreServiceDevReference.ClientAssessmentChoice[] ClientAssessmentChoicesField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private CoreServiceDevReference.InputType InputTypeField;
-        
-        private int InputTypeKeyField;
-        
-        private string InstructionsField;
-        
-        private string LabelField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private string ResponseField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string TextField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> AdminDisplayOrder
-        {
-            get
-            {
-                return this.AdminDisplayOrderField;
-            }
-            set
-            {
-                this.AdminDisplayOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AdminPrompt
-        {
-            get
-            {
-                return this.AdminPromptField;
-            }
-            set
-            {
-                this.AdminPromptField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentBlockToAssessmentQuestion[] AssessmentBlockToAssessmentQuestions
-        {
-            get
-            {
-                return this.AssessmentBlockToAssessmentQuestionsField;
-            }
-            set
-            {
-                this.AssessmentBlockToAssessmentQuestionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentQuestionKey
-        {
-            get
-            {
-                return this.AssessmentQuestionKeyField;
-            }
-            set
-            {
-                this.AssessmentQuestionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessmentChoice[] ClientAssessmentChoices
-        {
-            get
-            {
-                return this.ClientAssessmentChoicesField;
-            }
-            set
-            {
-                this.ClientAssessmentChoicesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.InputType InputType
-        {
-            get
-            {
-                return this.InputTypeField;
-            }
-            set
-            {
-                this.InputTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputTypeKey
-        {
-            get
-            {
-                return this.InputTypeKeyField;
-            }
-            set
-            {
-                this.InputTypeKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Instructions
-        {
-            get
-            {
-                return this.InstructionsField;
-            }
-            set
-            {
-                this.InstructionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Label
-        {
-            get
-            {
-                return this.LabelField;
-            }
-            set
-            {
-                this.LabelField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Response
-        {
-            get
-            {
-                return this.ResponseField;
-            }
-            set
-            {
-                this.ResponseField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Text
-        {
-            get
-            {
-                return this.TextField;
-            }
-            set
-            {
-                this.TextField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InputType", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class InputType : object
-    {
-        
-        private CoreServiceDevReference.AssessmentQuestion[] AssessmentQuestionsField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string DefaultValueField;
-        
-        private CoreServiceDevReference.DemoInput[] DemoInputsField;
-        
-        private string EmptyValueField;
-        
-        private CoreServiceDevReference.InputChoice[] InputChoicesField;
-        
-        private int InputTypeKeyField;
-        
-        private string InterfaceControlField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private string NameField;
-        
-        private CoreServiceDevReference.OptionInput[] OptionInputsField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentQuestion[] AssessmentQuestions
-        {
-            get
-            {
-                return this.AssessmentQuestionsField;
-            }
-            set
-            {
-                this.AssessmentQuestionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DefaultValue
-        {
-            get
-            {
-                return this.DefaultValueField;
-            }
-            set
-            {
-                this.DefaultValueField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.DemoInput[] DemoInputs
-        {
-            get
-            {
-                return this.DemoInputsField;
-            }
-            set
-            {
-                this.DemoInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EmptyValue
-        {
-            get
-            {
-                return this.EmptyValueField;
-            }
-            set
-            {
-                this.EmptyValueField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.InputChoice[] InputChoices
-        {
-            get
-            {
-                return this.InputChoicesField;
-            }
-            set
-            {
-                this.InputChoicesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputTypeKey
-        {
-            get
-            {
-                return this.InputTypeKeyField;
-            }
-            set
-            {
-                this.InputTypeKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InterfaceControl
-        {
-            get
-            {
-                return this.InterfaceControlField;
-            }
-            set
-            {
-                this.InterfaceControlField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.OptionInput[] OptionInputs
-        {
-            get
-            {
-                return this.OptionInputsField;
-            }
-            set
-            {
-                this.OptionInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClientAssessmentChoice", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ClientAssessmentChoice : object
-    {
-        
-        private CoreServiceDevReference.AssessmentQuestion AssessmentQuestionField;
-        
-        private int AssessmentQuestionKeyField;
-        
-        private CoreServiceDevReference.ClientAssessment ClientAssessmentField;
-        
-        private int ClientAssessmentChoiceKeyField;
-        
-        private int ClientAssessmentKeyField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string CustomValueField;
-        
-        private CoreServiceDevReference.InputChoice InputChoiceField;
-        
-        private System.Nullable<int> InputChoiceKeyField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentQuestion AssessmentQuestion
-        {
-            get
-            {
-                return this.AssessmentQuestionField;
-            }
-            set
-            {
-                this.AssessmentQuestionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentQuestionKey
-        {
-            get
-            {
-                return this.AssessmentQuestionKeyField;
-            }
-            set
-            {
-                this.AssessmentQuestionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessment ClientAssessment
-        {
-            get
-            {
-                return this.ClientAssessmentField;
-            }
-            set
-            {
-                this.ClientAssessmentField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientAssessmentChoiceKey
-        {
-            get
-            {
-                return this.ClientAssessmentChoiceKeyField;
-            }
-            set
-            {
-                this.ClientAssessmentChoiceKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientAssessmentKey
-        {
-            get
-            {
-                return this.ClientAssessmentKeyField;
-            }
-            set
-            {
-                this.ClientAssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustomValue
-        {
-            get
-            {
-                return this.CustomValueField;
-            }
-            set
-            {
-                this.CustomValueField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.InputChoice InputChoice
-        {
-            get
-            {
-                return this.InputChoiceField;
-            }
-            set
-            {
-                this.InputChoiceField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> InputChoiceKey
-        {
-            get
-            {
-                return this.InputChoiceKeyField;
-            }
-            set
-            {
-                this.InputChoiceKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InputChoice", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class InputChoice : object
-    {
-        
-        private string AudioTextField;
-        
-        private CoreServiceDevReference.ClientAssessmentChoice[] ClientAssessmentChoicesField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private int DisplayOrderField;
-        
-        private int InputChoiceKeyField;
-        
-        private CoreServiceDevReference.InputType InputTypeField;
-        
-        private int InputTypeKeyField;
-        
-        private string InstructionsField;
-        
-        private string KeyboardCharField;
-        
-        private string LastModifiedByField;
-        
-        private string LongTextField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string StyleField;
-        
-        private string TextField;
-        
-        private string ValueField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AudioText
-        {
-            get
-            {
-                return this.AudioTextField;
-            }
-            set
-            {
-                this.AudioTextField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessmentChoice[] ClientAssessmentChoices
-        {
-            get
-            {
-                return this.ClientAssessmentChoicesField;
-            }
-            set
-            {
-                this.ClientAssessmentChoicesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DisplayOrder
-        {
-            get
-            {
-                return this.DisplayOrderField;
-            }
-            set
-            {
-                this.DisplayOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputChoiceKey
-        {
-            get
-            {
-                return this.InputChoiceKeyField;
-            }
-            set
-            {
-                this.InputChoiceKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.InputType InputType
-        {
-            get
-            {
-                return this.InputTypeField;
-            }
-            set
-            {
-                this.InputTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputTypeKey
-        {
-            get
-            {
-                return this.InputTypeKeyField;
-            }
-            set
-            {
-                this.InputTypeKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Instructions
-        {
-            get
-            {
-                return this.InstructionsField;
-            }
-            set
-            {
-                this.InstructionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string KeyboardChar
-        {
-            get
-            {
-                return this.KeyboardCharField;
-            }
-            set
-            {
-                this.KeyboardCharField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LongText
-        {
-            get
-            {
-                return this.LongTextField;
-            }
-            set
-            {
-                this.LongTextField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Style
-        {
-            get
-            {
-                return this.StyleField;
-            }
-            set
-            {
-                this.StyleField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Text
-        {
-            get
-            {
-                return this.TextField;
-            }
-            set
-            {
-                this.TextField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this.ValueField;
-            }
-            set
-            {
-                this.ValueField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Client", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities")]
     public partial class Client : object
     {
@@ -4914,7 +2625,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EncryptedClient", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class EncryptedClient : object
     {
@@ -5191,7 +2902,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class User : object
     {
@@ -5528,134 +3239,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClientAssessmentDemoInput", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities")]
-    public partial class ClientAssessmentDemoInput : object
-    {
-        
-        private int ClientAssessmentDemoInputKeyField;
-        
-        private int ClientAssessmentKeyField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private int DemoInputKeyField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string ValueField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientAssessmentDemoInputKey
-        {
-            get
-            {
-                return this.ClientAssessmentDemoInputKeyField;
-            }
-            set
-            {
-                this.ClientAssessmentDemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientAssessmentKey
-        {
-            get
-            {
-                return this.ClientAssessmentKeyField;
-            }
-            set
-            {
-                this.ClientAssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DemoInputKey
-        {
-            get
-            {
-                return this.DemoInputKeyField;
-            }
-            set
-            {
-                this.DemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this.ValueField;
-            }
-            set
-            {
-                this.ValueField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientAssessmentNote", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class ClientAssessmentNote : object
     {
@@ -5781,7 +3365,7 @@ namespace CoreServiceDevReference
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DataCaptureModeType", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities/Enum")]
     public enum DataCaptureModeType : byte
     {
@@ -5802,164 +3386,7 @@ namespace CoreServiceDevReference
         EmailNonBranded = 4,
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EncryptedClientAssessmentDemoInput", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class EncryptedClientAssessmentDemoInput : object
-    {
-        
-        private CoreServiceDevReference.ClientAssessment ClientAssessmentField;
-        
-        private int ClientAssessmentDemoInputKeyField;
-        
-        private int ClientAssessmentKeyField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private CoreServiceDevReference.DemoInput DemoInputField;
-        
-        private int DemoInputKeyField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private System.Guid RowGUIDField;
-        
-        private byte[] ValueField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessment ClientAssessment
-        {
-            get
-            {
-                return this.ClientAssessmentField;
-            }
-            set
-            {
-                this.ClientAssessmentField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientAssessmentDemoInputKey
-        {
-            get
-            {
-                return this.ClientAssessmentDemoInputKeyField;
-            }
-            set
-            {
-                this.ClientAssessmentDemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientAssessmentKey
-        {
-            get
-            {
-                return this.ClientAssessmentKeyField;
-            }
-            set
-            {
-                this.ClientAssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.DemoInput DemoInput
-        {
-            get
-            {
-                return this.DemoInputField;
-            }
-            set
-            {
-                this.DemoInputField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DemoInputKey
-        {
-            get
-            {
-                return this.DemoInputKeyField;
-            }
-            set
-            {
-                this.DemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] Value
-        {
-            get
-            {
-                return this.ValueField;
-            }
-            set
-            {
-                this.ValueField = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Gender", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities/Enum")]
     public enum Gender : int
     {
@@ -5975,7 +3402,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientGroup", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class ClientGroup : object
     {
@@ -6132,7 +3559,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientNote", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class ClientNote : object
     {
@@ -6259,7 +3686,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserEmailTemplate", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class UserEmailTemplate : object
     {
@@ -6401,7 +3828,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserInventory", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class UserInventory : object
     {
@@ -6498,665 +3925,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOptionInput", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportOptionInput : object
-    {
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private CoreServiceDevReference.OptionInput OptionInputField;
-        
-        private int OptionInputKeyField;
-        
-        private CoreServiceDevReference.Report ReportField;
-        
-        private int ReportKeyField;
-        
-        private int ReportOptionInputKeyField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string ValueField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.OptionInput OptionInput
-        {
-            get
-            {
-                return this.OptionInputField;
-            }
-            set
-            {
-                this.OptionInputField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OptionInputKey
-        {
-            get
-            {
-                return this.OptionInputKeyField;
-            }
-            set
-            {
-                this.OptionInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.Report Report
-        {
-            get
-            {
-                return this.ReportField;
-            }
-            set
-            {
-                this.ReportField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportKey
-        {
-            get
-            {
-                return this.ReportKeyField;
-            }
-            set
-            {
-                this.ReportKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportOptionInputKey
-        {
-            get
-            {
-                return this.ReportOptionInputKeyField;
-            }
-            set
-            {
-                this.ReportOptionInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this.ValueField;
-            }
-            set
-            {
-                this.ValueField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionInput", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class OptionInput : object
-    {
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private CoreServiceDevReference.InputType InputTypeField;
-        
-        private int InputTypeKeyField;
-        
-        private string LabelField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private int OptionInputKeyField;
-        
-        private CoreServiceDevReference.ReportFormOptionInput[] ReportFormOptionInputsField;
-        
-        private CoreServiceDevReference.ReportOptionInput[] ReportOptionInputsField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string ValidationErrorMessageField;
-        
-        private string ValidationExpressionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.InputType InputType
-        {
-            get
-            {
-                return this.InputTypeField;
-            }
-            set
-            {
-                this.InputTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputTypeKey
-        {
-            get
-            {
-                return this.InputTypeKeyField;
-            }
-            set
-            {
-                this.InputTypeKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Label
-        {
-            get
-            {
-                return this.LabelField;
-            }
-            set
-            {
-                this.LabelField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OptionInputKey
-        {
-            get
-            {
-                return this.OptionInputKeyField;
-            }
-            set
-            {
-                this.OptionInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportFormOptionInput[] ReportFormOptionInputs
-        {
-            get
-            {
-                return this.ReportFormOptionInputsField;
-            }
-            set
-            {
-                this.ReportFormOptionInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportOptionInput[] ReportOptionInputs
-        {
-            get
-            {
-                return this.ReportOptionInputsField;
-            }
-            set
-            {
-                this.ReportOptionInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ValidationErrorMessage
-        {
-            get
-            {
-                return this.ValidationErrorMessageField;
-            }
-            set
-            {
-                this.ValidationErrorMessageField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ValidationExpression
-        {
-            get
-            {
-                return this.ValidationExpressionField;
-            }
-            set
-            {
-                this.ValidationExpressionField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DemoInput", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class DemoInput : object
-    {
-        
-        private CoreServiceDevReference.AssessmentFormDemoInput[] AssessmentFormDemoInputsField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private int DemoInputKeyField;
-        
-        private CoreServiceDevReference.EncryptedClientAssessmentDemoInput[] EncryptedClientAssessmentDemoInputsField;
-        
-        private CoreServiceDevReference.InputType InputTypeField;
-        
-        private int InputTypeKeyField;
-        
-        private string LabelField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string ValidationErrorMessageField;
-        
-        private string ValidationExpressionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentFormDemoInput[] AssessmentFormDemoInputs
-        {
-            get
-            {
-                return this.AssessmentFormDemoInputsField;
-            }
-            set
-            {
-                this.AssessmentFormDemoInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DemoInputKey
-        {
-            get
-            {
-                return this.DemoInputKeyField;
-            }
-            set
-            {
-                this.DemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.EncryptedClientAssessmentDemoInput[] EncryptedClientAssessmentDemoInputs
-        {
-            get
-            {
-                return this.EncryptedClientAssessmentDemoInputsField;
-            }
-            set
-            {
-                this.EncryptedClientAssessmentDemoInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.InputType InputType
-        {
-            get
-            {
-                return this.InputTypeField;
-            }
-            set
-            {
-                this.InputTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputTypeKey
-        {
-            get
-            {
-                return this.InputTypeKeyField;
-            }
-            set
-            {
-                this.InputTypeKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Label
-        {
-            get
-            {
-                return this.LabelField;
-            }
-            set
-            {
-                this.LabelField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ValidationErrorMessage
-        {
-            get
-            {
-                return this.ValidationErrorMessageField;
-            }
-            set
-            {
-                this.ValidationErrorMessageField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ValidationExpression
-        {
-            get
-            {
-                return this.ValidationExpressionField;
-            }
-            set
-            {
-                this.ValidationExpressionField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataStreamSection", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class DataStreamSection : object
-    {
-        
-        private CoreServiceDevReference.AssessmentFormDemoInput[] AssessmentFormDemoInputsField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private int DataStreamSectionKeyField;
-        
-        private int DisplayOrderField;
-        
-        private string NameField;
-        
-        private CoreServiceDevReference.ReportFormOptionInput[] ReportFormOptionInputsField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string XMLTagField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentFormDemoInput[] AssessmentFormDemoInputs
-        {
-            get
-            {
-                return this.AssessmentFormDemoInputsField;
-            }
-            set
-            {
-                this.AssessmentFormDemoInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DataStreamSectionKey
-        {
-            get
-            {
-                return this.DataStreamSectionKeyField;
-            }
-            set
-            {
-                this.DataStreamSectionKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DisplayOrder
-        {
-            get
-            {
-                return this.DisplayOrderField;
-            }
-            set
-            {
-                this.DisplayOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportFormOptionInput[] ReportFormOptionInputs
-        {
-            get
-            {
-                return this.ReportFormOptionInputsField;
-            }
-            set
-            {
-                this.ReportFormOptionInputsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string XMLTag
-        {
-            get
-            {
-                return this.XMLTagField;
-            }
-            set
-            {
-                this.XMLTagField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmailTemplate", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class EmailTemplate : object
     {
@@ -7313,7 +4082,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceValidationResult", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Validation")]
     public partial class ServiceValidationResult : object
     {
@@ -7350,7 +4119,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceValidationFailure", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Validation")]
     public partial class ServiceValidationFailure : object
     {
@@ -7387,7 +4156,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmailMessage", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class EmailMessage : object
     {
@@ -7604,7 +4373,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DesktopAssessment", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class DesktopAssessment : object
     {
@@ -7835,255 +4604,213 @@ namespace CoreServiceDevReference
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="vwDataStreamView", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class vwDataStreamView : object
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FileFormat", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities")]
+    public enum FileFormat : int
     {
         
-        private int AssessmentFormKeyField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Rtf = 0,
         
-        private string AssessmentFormNameField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pdf = 1,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountActivity", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Account")]
+    public partial class AccountActivity : object
+    {
         
-        private string AssessmentKeyField;
+        private int CountField;
         
-        private string DataStreamSectionField;
-        
-        private int DataStreamSectionOrderField;
-        
-        private int FormInputKeyField;
-        
-        private string FormInputSourceField;
-        
-        private System.Nullable<int> InputDataStreamOrderField;
-        
-        private int InputKeyField;
-        
-        private string InputLabelField;
-        
-        private int InputTypeKeyField;
-        
-        private string InputTypeNameField;
-        
-        private string InterfaceControlField;
-        
-        private int ReportFormKeyField;
-        
-        private string ReportFormNameField;
-        
-        private bool RequiredField;
+        private System.DateTime ReportDateField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentFormKey
+        public int Count
         {
             get
             {
-                return this.AssessmentFormKeyField;
+                return this.CountField;
             }
             set
             {
-                this.AssessmentFormKeyField = value;
+                this.CountField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AssessmentFormName
+        public System.DateTime ReportDate
         {
             get
             {
-                return this.AssessmentFormNameField;
+                return this.ReportDateField;
             }
             set
             {
-                this.AssessmentFormNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AssessmentKey
-        {
-            get
-            {
-                return this.AssessmentKeyField;
-            }
-            set
-            {
-                this.AssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DataStreamSection
-        {
-            get
-            {
-                return this.DataStreamSectionField;
-            }
-            set
-            {
-                this.DataStreamSectionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DataStreamSectionOrder
-        {
-            get
-            {
-                return this.DataStreamSectionOrderField;
-            }
-            set
-            {
-                this.DataStreamSectionOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int FormInputKey
-        {
-            get
-            {
-                return this.FormInputKeyField;
-            }
-            set
-            {
-                this.FormInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FormInputSource
-        {
-            get
-            {
-                return this.FormInputSourceField;
-            }
-            set
-            {
-                this.FormInputSourceField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> InputDataStreamOrder
-        {
-            get
-            {
-                return this.InputDataStreamOrderField;
-            }
-            set
-            {
-                this.InputDataStreamOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputKey
-        {
-            get
-            {
-                return this.InputKeyField;
-            }
-            set
-            {
-                this.InputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InputLabel
-        {
-            get
-            {
-                return this.InputLabelField;
-            }
-            set
-            {
-                this.InputLabelField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InputTypeKey
-        {
-            get
-            {
-                return this.InputTypeKeyField;
-            }
-            set
-            {
-                this.InputTypeKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InputTypeName
-        {
-            get
-            {
-                return this.InputTypeNameField;
-            }
-            set
-            {
-                this.InputTypeNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InterfaceControl
-        {
-            get
-            {
-                return this.InterfaceControlField;
-            }
-            set
-            {
-                this.InterfaceControlField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormKey
-        {
-            get
-            {
-                return this.ReportFormKeyField;
-            }
-            set
-            {
-                this.ReportFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportFormName
-        {
-            get
-            {
-                return this.ReportFormNameField;
-            }
-            set
-            {
-                this.ReportFormNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Required
-        {
-            get
-            {
-                return this.RequiredField;
-            }
-            set
-            {
-                this.RequiredField = value;
+                this.ReportDateField = value;
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountClinicianCaseLoad", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Account")]
+    public partial class AccountClinicianCaseLoad : object
+    {
+        
+        private CoreServiceDevReference.ClinicianCaseLoad[] CliniciansField;
+        
+        private string OrgNameField;
+        
+        private int OrgUserMappingKeyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ClinicianCaseLoad[] Clinicians
+        {
+            get
+            {
+                return this.CliniciansField;
+            }
+            set
+            {
+                this.CliniciansField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrgName
+        {
+            get
+            {
+                return this.OrgNameField;
+            }
+            set
+            {
+                this.OrgNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrgUserMappingKey
+        {
+            get
+            {
+                return this.OrgUserMappingKeyField;
+            }
+            set
+            {
+                this.OrgUserMappingKeyField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClinicianCaseLoad", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Account")]
+    public partial class ClinicianCaseLoad : object
+    {
+        
+        private int CaseCountField;
+        
+        private string FirstNameField;
+        
+        private string LastNameField;
+        
+        private int OrgUserMappingKeyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CaseCount
+        {
+            get
+            {
+                return this.CaseCountField;
+            }
+            set
+            {
+                this.CaseCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName
+        {
+            get
+            {
+                return this.FirstNameField;
+            }
+            set
+            {
+                this.FirstNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName
+        {
+            get
+            {
+                return this.LastNameField;
+            }
+            set
+            {
+                this.LastNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrgUserMappingKey
+        {
+            get
+            {
+                return this.OrgUserMappingKeyField;
+            }
+            set
+            {
+                this.OrgUserMappingKeyField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InventoryCount", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
+    public partial class InventoryCount : object
+    {
+        
+        private int CountField;
+        
+        private string PartNumberField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Count
+        {
+            get
+            {
+                return this.CountField;
+            }
+            set
+            {
+                this.CountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber
+        {
+            get
+            {
+                return this.PartNumberField;
+            }
+            set
+            {
+                this.PartNumberField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentInventoryItem", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
     public partial class AssessmentInventoryItem : CoreServiceDevReference.InventoryItem
     {
@@ -8195,7 +4922,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InventoryItem", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CoreServiceDevReference.AssessmentFormInventoryItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CoreServiceDevReference.ReportFormInventoryItem))]
@@ -8265,7 +4992,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentFormInventoryItem", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
     public partial class AssessmentFormInventoryItem : CoreServiceDevReference.InventoryItem
     {
@@ -8422,7 +5149,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormInventoryItem", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
     public partial class ReportFormInventoryItem : CoreServiceDevReference.InventoryItem
     {
@@ -8534,406 +5261,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClientAssessmentDemoInputValue", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities")]
-    public partial class ClientAssessmentDemoInputValue : object
-    {
-        
-        private int ClientAssessmentKeyField;
-        
-        private int DemoInputKeyField;
-        
-        private string ValueField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientAssessmentKey
-        {
-            get
-            {
-                return this.ClientAssessmentKeyField;
-            }
-            set
-            {
-                this.ClientAssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DemoInputKey
-        {
-            get
-            {
-                return this.DemoInputKeyField;
-            }
-            set
-            {
-                this.DemoInputKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this.ValueField;
-            }
-            set
-            {
-                this.ValueField = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FileFormat", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities")]
-    public enum FileFormat : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Rtf = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Pdf = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountActivity", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Account")]
-    public partial class AccountActivity : object
-    {
-        
-        private int CountField;
-        
-        private System.DateTime ReportDateField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Count
-        {
-            get
-            {
-                return this.CountField;
-            }
-            set
-            {
-                this.CountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ReportDate
-        {
-            get
-            {
-                return this.ReportDateField;
-            }
-            set
-            {
-                this.ReportDateField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountUsage", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Account")]
-    public partial class AccountUsage : object
-    {
-        
-        private string AssessmentKeyField;
-        
-        private string AssessmentNameField;
-        
-        private System.Nullable<int> ClientGroupKeyField;
-        
-        private string ClientGroupNameField;
-        
-        private string ContactNameField;
-        
-        private int MonthField;
-        
-        private int OrgUserMappingKeyField;
-        
-        private int UsageCountField;
-        
-        private int YearField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AssessmentKey
-        {
-            get
-            {
-                return this.AssessmentKeyField;
-            }
-            set
-            {
-                this.AssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AssessmentName
-        {
-            get
-            {
-                return this.AssessmentNameField;
-            }
-            set
-            {
-                this.AssessmentNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ClientGroupKey
-        {
-            get
-            {
-                return this.ClientGroupKeyField;
-            }
-            set
-            {
-                this.ClientGroupKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ClientGroupName
-        {
-            get
-            {
-                return this.ClientGroupNameField;
-            }
-            set
-            {
-                this.ClientGroupNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContactName
-        {
-            get
-            {
-                return this.ContactNameField;
-            }
-            set
-            {
-                this.ContactNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Month
-        {
-            get
-            {
-                return this.MonthField;
-            }
-            set
-            {
-                this.MonthField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrgUserMappingKey
-        {
-            get
-            {
-                return this.OrgUserMappingKeyField;
-            }
-            set
-            {
-                this.OrgUserMappingKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UsageCount
-        {
-            get
-            {
-                return this.UsageCountField;
-            }
-            set
-            {
-                this.UsageCountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Year
-        {
-            get
-            {
-                return this.YearField;
-            }
-            set
-            {
-                this.YearField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountClinicianCaseLoad", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Account")]
-    public partial class AccountClinicianCaseLoad : object
-    {
-        
-        private CoreServiceDevReference.ClinicianCaseLoad[] CliniciansField;
-        
-        private string OrgNameField;
-        
-        private int OrgUserMappingKeyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClinicianCaseLoad[] Clinicians
-        {
-            get
-            {
-                return this.CliniciansField;
-            }
-            set
-            {
-                this.CliniciansField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OrgName
-        {
-            get
-            {
-                return this.OrgNameField;
-            }
-            set
-            {
-                this.OrgNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrgUserMappingKey
-        {
-            get
-            {
-                return this.OrgUserMappingKeyField;
-            }
-            set
-            {
-                this.OrgUserMappingKeyField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClinicianCaseLoad", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Account")]
-    public partial class ClinicianCaseLoad : object
-    {
-        
-        private int CaseCountField;
-        
-        private string FirstNameField;
-        
-        private string LastNameField;
-        
-        private int OrgUserMappingKeyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CaseCount
-        {
-            get
-            {
-                return this.CaseCountField;
-            }
-            set
-            {
-                this.CaseCountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName
-        {
-            get
-            {
-                return this.FirstNameField;
-            }
-            set
-            {
-                this.FirstNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName
-        {
-            get
-            {
-                return this.LastNameField;
-            }
-            set
-            {
-                this.LastNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrgUserMappingKey
-        {
-            get
-            {
-                return this.OrgUserMappingKeyField;
-            }
-            set
-            {
-                this.OrgUserMappingKeyField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InventoryCount", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
-    public partial class InventoryCount : object
-    {
-        
-        private int CountField;
-        
-        private string PartNumberField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Count
-        {
-            get
-            {
-                return this.CountField;
-            }
-            set
-            {
-                this.CountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartNumber
-        {
-            get
-            {
-                return this.PartNumberField;
-            }
-            set
-            {
-                this.PartNumberField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AccountInventoryItem", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
     public partial class AccountInventoryItem : object
     {
@@ -8985,7 +5313,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientListing", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Listing")]
     public partial class ClientListing : object
     {
@@ -9022,7 +5350,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClinicianListing", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Listing")]
     public partial class ClinicianListing : object
     {
@@ -9074,7 +5402,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientReportSummary", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Summary")]
     public partial class ClientReportSummary : object
     {
@@ -9096,7 +5424,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientReportSummaryItem", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Summary")]
     public partial class ClientReportSummaryItem : object
     {
@@ -9297,7 +5625,7 @@ namespace CoreServiceDevReference
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserToClientRelationship", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities/Enum")]
     public enum UserToClientRelationship : int
     {
@@ -9313,7 +5641,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportSearchItem", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Listing")]
     public partial class ReportSearchItem : object
     {
@@ -9545,7 +5873,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Message", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Mail")]
     public partial class Message : object
     {
@@ -9687,7 +6015,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Recipient", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Mail")]
     public partial class Recipient : object
     {
@@ -9724,7 +6052,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Attachment", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Mail")]
     public partial class Attachment : object
     {
@@ -9775,7 +6103,7 @@ namespace CoreServiceDevReference
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Format", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Mail")]
     public enum Format : int
     {
@@ -9788,7 +6116,7 @@ namespace CoreServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ClientAssSummary", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Summary")]
     public partial class ClientAssSummary : object
     {
@@ -9854,56 +6182,95 @@ namespace CoreServiceDevReference
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://parinc.com/PARiConnect/Services", ConfigurationName="CoreServiceDevReference.ICoreService")]
     public interface ICoreService
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportCleanupExpression" +
-            "s", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportCleanupExpression" +
-            "sResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportCleanupExpression[]> GetAllReportCleanupExpressionsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormResponse")]
+        System.Threading.Tasks.Task DeleteReportFormAsync(CoreServiceDevReference.ReportForm entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportDisplaySect" +
-            "ion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportDisplaySect" +
-            "ionResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportDisplaySection> SaveOrUpdateReportDisplaySectionAsync(CoreServiceDevReference.ReportDisplaySection entity);
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormAsync(CoreServiceDevReference.ReportForm entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportDisplaySection", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportDisplaySectionRes" +
-            "ponse")]
-        System.Threading.Tasks.Task DeleteReportDisplaySectionAsync(CoreServiceDevReference.ReportDisplaySection entity);
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormByKeyResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormByKeyAsync(int key);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportDisplaySection", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportDisplaySectionR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportDisplaySectionAsync(CoreServiceDevReference.ReportDisplaySection entity);
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportForms", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormsResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm[]> GetAllReportFormsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportDisplaySectionByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportDisplaySectionByKeyR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportDisplaySection> GetReportDisplaySectionByKeyAsync(int key);
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormToAsses" +
+            "smentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormToAsses" +
+            "smentFormResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> SaveOrUpdateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportDisplaySections", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportDisplaySectionsRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportDisplaySection[]> GetAllReportDisplaySectionsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormToAssessmentF" +
+            "orm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormToAssessmentF" +
+            "ormResponse")]
+        System.Threading.Tasks.Task DeleteReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormToRepor" +
-            "tCleanupExpression", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormToRepor" +
-            "tCleanupExpressionResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToReportCleanupExpression> SaveOrUpdateReportFormToReportCleanupExpressionAsync(CoreServiceDevReference.ReportFormToReportCleanupExpression entity);
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormToAssessmen" +
+            "tForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormToAssessmen" +
+            "tFormResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormToReportClean" +
-            "upExpression", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormToReportClean" +
-            "upExpressionResponse")]
-        System.Threading.Tasks.Task DeleteReportFormToReportCleanupExpressionAsync(CoreServiceDevReference.ReportFormToReportCleanupExpression entity);
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
+            "ByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
+            "ByKeyResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> GetReportFormToAssessmentFormByKeyAsync(int key);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormToReportCle" +
-            "anupExpression", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormToReportCle" +
-            "anupExpressionResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormToReportCleanupExpressionAsync(CoreServiceDevReference.ReportFormToReportCleanupExpression entity);
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormToAssessmentF" +
+            "orms", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormToAssessmentF" +
+            "ormsResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetAllReportFormToAssessmentFormsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormToReportClean" +
-            "upExpressions", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormToReportClean" +
-            "upExpressionsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToReportCleanupExpression[]> GetAllReportFormToReportCleanupExpressionsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateStatusResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Status> SaveOrUpdateStatusAsync(CoreServiceDevReference.Status entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteStatusResponse")]
+        System.Threading.Tasks.Task DeleteStatusAsync(CoreServiceDevReference.Status entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateStatusResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateStatusAsync(CoreServiceDevReference.Status entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetStatusByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetStatusByKeyResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Status> GetStatusByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllStatusResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Status[]> GetAllStatusAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.User> SaveOrUpdateUserAsync(CoreServiceDevReference.User entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserResponse")]
+        System.Threading.Tasks.Task DeleteUserAsync(CoreServiceDevReference.User entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUserResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserAsync(CoreServiceDevReference.User entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUsers", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUsersResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.User[]> GetAllUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserEmailTemplate" +
+            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserEmailTemplate" +
+            "Response")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> SaveOrUpdateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserEmailTemplateRespon" +
+            "se")]
+        System.Threading.Tasks.Task DeleteUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUserEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUserEmailTemplateResp" +
+            "onse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetUserEmailTemplateByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetUserEmailTemplateByKeyResp" +
+            "onse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> GetUserEmailTemplateByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUserEmailTemplates", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUserEmailTemplatesRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate[]> GetAllUserEmailTemplatesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateEmailMessage", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateEmailMessageRespo" +
             "nse")]
@@ -9988,22 +6355,6 @@ namespace CoreServiceDevReference
             "inationsResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.CompositeReportFormCombination[]> GetAllCompositeReportFormCombinationsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdatevwDataStreamView", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdatevwDataStreamViewR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.vwDataStreamView> SaveOrUpdatevwDataStreamViewAsync(CoreServiceDevReference.vwDataStreamView entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeletevwDataStreamView", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeletevwDataStreamViewRespons" +
-            "e")]
-        System.Threading.Tasks.Task DeletevwDataStreamViewAsync(CoreServiceDevReference.vwDataStreamView entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidatevwDataStreamView", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidatevwDataStreamViewRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidatevwDataStreamViewAsync(CoreServiceDevReference.vwDataStreamView entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllvwDataStreamViews", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllvwDataStreamViewsRespon" +
-            "se")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.vwDataStreamView[]> GetAllvwDataStreamViewsAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserFavorite", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserFavoriteRespo" +
             "nse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.UserFavorite> SaveOrUpdateUserFavoriteAsync(CoreServiceDevReference.UserFavorite entity);
@@ -10016,516 +6367,6 @@ namespace CoreServiceDevReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUserFavorites", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUserFavoritesResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.UserFavorite[]> GetAllUserFavoritesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentBlockTo" +
-            "AssessmentQuestion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentBlockTo" +
-            "AssessmentQuestionResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlockToAssessmentQuestion> SaveOrUpdateAssessmentBlockToAssessmentQuestionAsync(CoreServiceDevReference.AssessmentBlockToAssessmentQuestion entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentBlockToAssess" +
-            "mentQuestion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentBlockToAssess" +
-            "mentQuestionResponse")]
-        System.Threading.Tasks.Task DeleteAssessmentBlockToAssessmentQuestionAsync(CoreServiceDevReference.AssessmentBlockToAssessmentQuestion entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentBlockToAsse" +
-            "ssmentQuestion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentBlockToAsse" +
-            "ssmentQuestionResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentBlockToAssessmentQuestionAsync(CoreServiceDevReference.AssessmentBlockToAssessmentQuestion entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentBlockToAssess" +
-            "mentQuestions", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentBlockToAssess" +
-            "mentQuestionsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlockToAssessmentQuestion[]> GetAllAssessmentBlockToAssessmentQuestionsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormsByAccountId" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormsByAccountId" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAssessmentFormsByAccountIdAsync(int accountId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ImportClient", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ImportClientResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Client> ImportClientAsync(CoreServiceDevReference.Client entity, int orgUserMappingKey, string clientGroup, string identity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetDistributableInventoryForA" +
-            "ccount", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetDistributableInventoryForA" +
-            "ccountResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentInventoryItem[]> GetDistributableInventoryForAccountAsync(int orgUserMappingKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SetUserInventoryStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SetUserInventoryStatusRespons" +
-            "e")]
-        System.Threading.Tasks.Task SetUserInventoryStatusAsync(int orgUserMappingKey, string productFamily, bool selected);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserInventory", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserInventoryResponse")]
-        System.Threading.Tasks.Task DeleteUserInventoryAsync(int orgUserMappingKey, string productFamily);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetReportFormToAssessmentFormAsync(int assessmentFormKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessment", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Assessment> SaveOrUpdateAssessmentAsync(CoreServiceDevReference.Assessment entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessment", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentResponse")]
-        System.Threading.Tasks.Task DeleteAssessmentAsync(CoreServiceDevReference.Assessment entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessment", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentAsync(CoreServiceDevReference.Assessment entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessments", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Assessment[]> GetAllAssessmentsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentBlock", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentBlockRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> SaveOrUpdateAssessmentBlockAsync(CoreServiceDevReference.AssessmentBlock entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentBlock", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentBlockResponse" +
-            "")]
-        System.Threading.Tasks.Task DeleteAssessmentBlockAsync(CoreServiceDevReference.AssessmentBlock entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentBlock", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentBlockRespon" +
-            "se")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentBlockAsync(CoreServiceDevReference.AssessmentBlock entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentBlockByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentBlockByKeyRespon" +
-            "se")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> GetAssessmentBlockByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentBlocks", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentBlocksRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock[]> GetAllAssessmentBlocksAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentFormRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> SaveOrUpdateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentFormResponse")]
-        System.Threading.Tasks.Task DeleteAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentFormRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormByKeyRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentForms", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentFormsResponse" +
-            "")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAllAssessmentFormsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentFormDem" +
-            "oInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentFormDem" +
-            "oInputResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput> SaveOrUpdateAssessmentFormDemoInputAsync(CoreServiceDevReference.AssessmentFormDemoInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentFormDemoInput" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentFormDemoInput" +
-            "Response")]
-        System.Threading.Tasks.Task DeleteAssessmentFormDemoInputAsync(CoreServiceDevReference.AssessmentFormDemoInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentFormDemoInp" +
-            "ut", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentFormDemoInp" +
-            "utResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentFormDemoInputAsync(CoreServiceDevReference.AssessmentFormDemoInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormDemoInputByK" +
-            "ey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormDemoInputByK" +
-            "eyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput> GetAssessmentFormDemoInputByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentFormDemoInput" +
-            "s", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentFormDemoInput" +
-            "sResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput[]> GetAllAssessmentFormDemoInputsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentQuestio" +
-            "n", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentQuestio" +
-            "nResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> SaveOrUpdateAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentQuestion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentQuestionRespo" +
-            "nse")]
-        System.Threading.Tasks.Task DeleteAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentQuestion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentQuestionRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentQuestionByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentQuestionByKeyRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> GetAssessmentQuestionByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentQuestions", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentQuestionsResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion[]> GetAllAssessmentQuestionsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentC" +
-            "hoice", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentC" +
-            "hoiceResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentChoice> SaveOrUpdateClientAssessmentChoiceAsync(CoreServiceDevReference.ClientAssessmentChoice entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientAssessmentChoice", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientAssessmentChoiceR" +
-            "esponse")]
-        System.Threading.Tasks.Task DeleteClientAssessmentChoiceAsync(CoreServiceDevReference.ClientAssessmentChoice entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentChoic" +
-            "e", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentChoic" +
-            "eResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentChoiceAsync(CoreServiceDevReference.ClientAssessmentChoice entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentChoiceByKe" +
-            "y", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentChoiceByKe" +
-            "yResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentChoice> GetClientAssessmentChoiceByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientAssessmentChoices" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientAssessmentChoices" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentChoice[]> GetAllClientAssessmentChoicesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentN" +
-            "ote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentN" +
-            "oteResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> SaveOrUpdateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientAssessmentNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientAssessmentNoteRes" +
-            "ponse")]
-        System.Threading.Tasks.Task DeleteClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentNoteR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentNoteByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentNoteByKeyR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> GetClientAssessmentNoteByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientAssessmentNotes", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientAssessmentNotesRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote[]> GetAllClientAssessmentNotesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientGroup", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientGroupRespon" +
-            "se")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> SaveOrUpdateClientGroupAsync(CoreServiceDevReference.ClientGroup entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientGroup", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientGroupResponse")]
-        System.Threading.Tasks.Task DeleteClientGroupAsync(CoreServiceDevReference.ClientGroup entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientGroup", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientGroupResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientGroupAsync(CoreServiceDevReference.ClientGroup entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientGroupByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientGroupByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> GetClientGroupByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientGroups", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientGroupsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup[]> GetAllClientGroupsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientNoteRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> SaveOrUpdateClientNoteAsync(CoreServiceDevReference.ClientNote entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientNoteResponse")]
-        System.Threading.Tasks.Task DeleteClientNoteAsync(CoreServiceDevReference.ClientNote entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientNoteResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientNoteAsync(CoreServiceDevReference.ClientNote entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientNoteByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientNoteByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> GetClientNoteByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientNotes", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientNotesResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote[]> GetAllClientNotesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateDataStreamSection" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateDataStreamSection" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.DataStreamSection> SaveOrUpdateDataStreamSectionAsync(CoreServiceDevReference.DataStreamSection entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteDataStreamSection", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteDataStreamSectionRespon" +
-            "se")]
-        System.Threading.Tasks.Task DeleteDataStreamSectionAsync(CoreServiceDevReference.DataStreamSection entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateDataStreamSection", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateDataStreamSectionResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateDataStreamSectionAsync(CoreServiceDevReference.DataStreamSection entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetDataStreamSectionByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetDataStreamSectionByKeyResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.DataStreamSection> GetDataStreamSectionByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllDataStreamSections", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllDataStreamSectionsRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.DataStreamSection[]> GetAllDataStreamSectionsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateDemoInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateDemoInputResponse" +
-            "")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput> SaveOrUpdateDemoInputAsync(CoreServiceDevReference.DemoInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteDemoInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteDemoInputResponse")]
-        System.Threading.Tasks.Task DeleteDemoInputAsync(CoreServiceDevReference.DemoInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateDemoInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateDemoInputResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateDemoInputAsync(CoreServiceDevReference.DemoInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetDemoInputByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetDemoInputByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput> GetDemoInputByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllDemoInputs", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllDemoInputsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput[]> GetAllDemoInputsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateEmailTemplateResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> SaveOrUpdateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteEmailTemplateResponse")]
-        System.Threading.Tasks.Task DeleteEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateEmailTemplateResponse" +
-            "")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetEmailTemplateByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetEmailTemplateByKeyResponse" +
-            "")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> GetEmailTemplateByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllEmailTemplates", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllEmailTemplatesResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate[]> GetAllEmailTemplatesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateInputChoice", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateInputChoiceRespon" +
-            "se")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputChoice> SaveOrUpdateInputChoiceAsync(CoreServiceDevReference.InputChoice entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteInputChoice", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteInputChoiceResponse")]
-        System.Threading.Tasks.Task DeleteInputChoiceAsync(CoreServiceDevReference.InputChoice entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateInputChoice", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateInputChoiceResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateInputChoiceAsync(CoreServiceDevReference.InputChoice entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetInputChoiceByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetInputChoiceByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputChoice> GetInputChoiceByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllInputChoices", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllInputChoicesResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputChoice[]> GetAllInputChoicesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateInputType", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateInputTypeResponse" +
-            "")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputType> SaveOrUpdateInputTypeAsync(CoreServiceDevReference.InputType entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteInputType", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteInputTypeResponse")]
-        System.Threading.Tasks.Task DeleteInputTypeAsync(CoreServiceDevReference.InputType entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateInputType", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateInputTypeResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateInputTypeAsync(CoreServiceDevReference.InputType entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllInputTypes", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllInputTypesResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputType[]> GetAllInputTypesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateOptionInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateOptionInputRespon" +
-            "se")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput> SaveOrUpdateOptionInputAsync(CoreServiceDevReference.OptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteOptionInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteOptionInputResponse")]
-        System.Threading.Tasks.Task DeleteOptionInputAsync(CoreServiceDevReference.OptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateOptionInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateOptionInputResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateOptionInputAsync(CoreServiceDevReference.OptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetOptionInputByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetOptionInputByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput> GetOptionInputByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllOptionInputs", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllOptionInputsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput[]> GetAllOptionInputsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Report> SaveOrUpdateReportAsync(CoreServiceDevReference.Report entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportResponse")]
-        System.Threading.Tasks.Task DeleteReportAsync(CoreServiceDevReference.Report entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportAsync(CoreServiceDevReference.Report entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReports", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportCategory", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportCategoryRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportCategory> SaveOrUpdateReportCategoryAsync(CoreServiceDevReference.ReportCategory entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportCategory", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportCategoryResponse")]
-        System.Threading.Tasks.Task DeleteReportCategoryAsync(CoreServiceDevReference.ReportCategory entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportCategory", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportCategoryRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportCategoryAsync(CoreServiceDevReference.ReportCategory entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportCategoryByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportCategoryByKeyRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportCategory> GetReportCategoryByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportCategories", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportCategoriesRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportCategory[]> GetAllReportCategoriesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormResponse")]
-        System.Threading.Tasks.Task DeleteReportFormAsync(CoreServiceDevReference.ReportForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormAsync(CoreServiceDevReference.ReportForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportForms", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm[]> GetAllReportFormsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormOptionI" +
-            "nput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormOptionI" +
-            "nputResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormOptionInput> SaveOrUpdateReportFormOptionInputAsync(CoreServiceDevReference.ReportFormOptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormOptionInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormOptionInputRe" +
-            "sponse")]
-        System.Threading.Tasks.Task DeleteReportFormOptionInputAsync(CoreServiceDevReference.ReportFormOptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormOptionInput" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormOptionInput" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormOptionInputAsync(CoreServiceDevReference.ReportFormOptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormOptionInputByKey" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormOptionInputByKey" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormOptionInput> GetReportFormOptionInputByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormOptionInputs", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormOptionInputsR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormOptionInput[]> GetAllReportFormOptionInputsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormToAsses" +
-            "smentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormToAsses" +
-            "smentFormResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> SaveOrUpdateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormToAssessmentF" +
-            "orm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormToAssessmentF" +
-            "ormResponse")]
-        System.Threading.Tasks.Task DeleteReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormToAssessmen" +
-            "tForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportFormToAssessmen" +
-            "tFormResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
-            "ByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
-            "ByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> GetReportFormToAssessmentFormByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormToAssessmentF" +
-            "orms", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportFormToAssessmentF" +
-            "ormsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetAllReportFormToAssessmentFormsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportOptionInput" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportOptionInput" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportOptionInput> SaveOrUpdateReportOptionInputAsync(CoreServiceDevReference.ReportOptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportOptionInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportOptionInputRespon" +
-            "se")]
-        System.Threading.Tasks.Task DeleteReportOptionInputAsync(CoreServiceDevReference.ReportOptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportOptionInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportOptionInputResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportOptionInputAsync(CoreServiceDevReference.ReportOptionInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportOptionInputByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportOptionInputByKeyResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportOptionInput> GetReportOptionInputByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportOptionInputs", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportOptionInputsRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportOptionInput[]> GetAllReportOptionInputsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateStatusResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Status> SaveOrUpdateStatusAsync(CoreServiceDevReference.Status entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteStatusResponse")]
-        System.Threading.Tasks.Task DeleteStatusAsync(CoreServiceDevReference.Status entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateStatusResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateStatusAsync(CoreServiceDevReference.Status entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetStatusByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetStatusByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Status> GetStatusByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllStatusResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Status[]> GetAllStatusAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.User> SaveOrUpdateUserAsync(CoreServiceDevReference.User entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserResponse")]
-        System.Threading.Tasks.Task DeleteUserAsync(CoreServiceDevReference.User entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUserResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserAsync(CoreServiceDevReference.User entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUsers", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUsersResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.User[]> GetAllUsersAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserEmailTemplate" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateUserEmailTemplate" +
-            "Response")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> SaveOrUpdateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserEmailTemplateRespon" +
-            "se")]
-        System.Threading.Tasks.Task DeleteUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUserEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateUserEmailTemplateResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetUserEmailTemplateByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetUserEmailTemplateByKeyResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> GetUserEmailTemplateByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUserEmailTemplates", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllUserEmailTemplatesRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate[]> GetAllUserEmailTemplatesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportCleanupExpr" +
-            "ession", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportCleanupExpr" +
-            "essionResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportCleanupExpression> SaveOrUpdateReportCleanupExpressionAsync(CoreServiceDevReference.ReportCleanupExpression entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportCleanupExpression" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportCleanupExpression" +
-            "Response")]
-        System.Threading.Tasks.Task DeleteReportCleanupExpressionAsync(CoreServiceDevReference.ReportCleanupExpression entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportCleanupExpressi" +
-            "on", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportCleanupExpressi" +
-            "onResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportCleanupExpressionAsync(CoreServiceDevReference.ReportCleanupExpression entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportCleanupExpressionByK" +
-            "ey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportCleanupExpressionByK" +
-            "eyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportCleanupExpression> GetReportCleanupExpressionByKeyAsync(int key);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/HelloWorld", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/HelloWorldResponse")]
         System.Threading.Tasks.Task HelloWorldAsync();
@@ -10588,11 +6429,6 @@ namespace CoreServiceDevReference
             "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentsForReview" +
             "Response")]
         System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessment[]> GetClientAssessmentsForReviewAsync(System.Nullable<int> clientKey, int orgUserMappingKey, System.Nullable<System.DateTime> minDate, System.Nullable<int> accessClientsPermissionParameterValue);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/UpdateCustomClientAssessmentC" +
-            "hoice", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/UpdateCustomClientAssessmentC" +
-            "hoiceResponse")]
-        System.Threading.Tasks.Task<bool> UpdateCustomClientAssessmentChoiceAsync(int client_assessment_choice_key, string value, string identity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessment", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentR" +
             "esponse")]
@@ -10659,40 +6495,6 @@ namespace CoreServiceDevReference
             "ientResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote[]> GetClientAssessmentNotesForClientAsync(int clientKey);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentD" +
-            "emoInput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentD" +
-            "emoInputResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInput> SaveOrUpdateClientAssessmentDemoInputAsync(CoreServiceDevReference.ClientAssessmentDemoInput entity, string identity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentD" +
-            "emoInputs", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentD" +
-            "emoInputsResponse")]
-        System.Threading.Tasks.Task SaveOrUpdateClientAssessmentDemoInputsAsync(CoreServiceDevReference.ClientAssessmentDemoInput[] clientAssessmentDemoInputs, string identity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentDemoI" +
-            "nput", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentDemoI" +
-            "nputResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentDemoInputAsync(CoreServiceDevReference.ClientAssessmentDemoInput entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentDemoInputB" +
-            "yKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentDemoInputB" +
-            "yKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInput> GetClientAssessmentDemoInputByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentDemoInputs" +
-            "ByClientAssessmentKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentDemoInputs" +
-            "ByClientAssessmentKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInput[]> GetClientAssessmentDemoInputsByClientAssessmentKeyAsync(int clientAssessmentKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SubmitClientAssessmentChoice", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SubmitClientAssessmentChoiceR" +
-            "esponse")]
-        System.Threading.Tasks.Task SubmitClientAssessmentChoiceAsync(int assessmentQuestionKey, int inputChoiceKey, int clientAssessmentKey, int userKey, System.DateTime timeStamp, string identity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SubmitClientAssessmentChoices" +
-            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SubmitClientAssessmentChoices" +
-            "Response")]
-        System.Threading.Tasks.Task SubmitClientAssessmentChoicesAsync(CoreServiceDevReference.ClientAssessment clientAssessment, string identity);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveClientAssessmentResponses" +
             "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveClientAssessmentResponses" +
             "Response")]
@@ -10711,11 +6513,6 @@ namespace CoreServiceDevReference
             "esponse")]
         System.Threading.Tasks.Task ChangeClientAssessmentStatusAsync(int client_assessment_key, int status_key, string identity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeWithQuestionsByKe" +
-            "y", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeWithQuestionsByKe" +
-            "yResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeWithQuestionsByKeyAsync(int key);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithAssessme" +
             "ntByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithAssessme" +
             "ntByKeyResponse")]
@@ -10723,16 +6520,6 @@ namespace CoreServiceDevReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentByKeyResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Assessment> GetAssessmentByKeyAsync(string assessmentKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormDemoInputsFo" +
-            "rAssessmentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormDemoInputsFo" +
-            "rAssessmentFormResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput[]> GetAssessmentFormDemoInputsForAssessmentFormAsync(int assessmentFormKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentFormsWithAsse" +
-            "ssmentDemoInputs", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentFormsWithAsse" +
-            "ssmentDemoInputsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAllAssessmentFormsWithAssessmentDemoInputsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/CreateClientAssessmentReport_" +
             "NEW", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/CreateClientAssessmentReport_" +
@@ -10744,28 +6531,10 @@ namespace CoreServiceDevReference
             "ReportResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Report> CreateDefaultClientAssessmentReportAsync(int invOrgUserMappingKey, int reportOrgUserMappingKey, int clientAssessmentKey, string reportPartNum, string identity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/CreateClientAssessmentReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/CreateClientAssessmentReportR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Report> CreateClientAssessmentReportAsync(int orgUserMappingKey, int clientAssessmentKey, int reportFormKey, CoreServiceDevReference.ReportOptionInput[] reportOptionInputs, int[] combinedReportKeys, string identity);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportsToCombineByCriteria" +
             "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportsToCombineByCriteria" +
             "Response")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetReportsToCombineByCriteriaAsync(int clientKey, int compositeReportFormKey, System.Nullable<System.DateTime> minCreatedDate, System.Nullable<System.DateTime> maxCreatedDate, System.Nullable<System.DateTime> minTestDate, System.Nullable<System.DateTime> maxTestDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentDemoInputV" +
-            "alueByInputTypeName", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentDemoInputV" +
-            "alueByInputTypeNameResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInputValue> GetClientAssessmentDemoInputValueByInputTypeNameAsync(int clientAssessmentKey, string inputTypeName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormForRichTextToHtm" +
-            "lConversion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormForRichTextToHtm" +
-            "lConversionResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormForRichTextToHtmlConversionAsync(int reportFormKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportRichTextData", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportRichTextDataResponse" +
-            "")]
-        System.Threading.Tasks.Task<byte[]> GetReportRichTextDataAsync(int reportKey);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportData", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportDataResponse")]
         System.Threading.Tasks.Task<byte[]> GetReportDataAsync(int reportKey, CoreServiceDevReference.FileFormat fileFormat);
@@ -10778,16 +6547,10 @@ namespace CoreServiceDevReference
             "_NEWResponse")]
         System.Threading.Tasks.Task<byte[]> RequestReportFromReportServer_NEWAsync(string dataStream, CoreServiceDevReference.FileFormat fileFormat);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetRawTxtReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetRawTxtReportResponse")]
-        System.Threading.Tasks.Task<string> GetRawTxtReportAsync(int clientAssessmentKey, string reportType, int version, string[] options);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetRawTxtReportFromDataStream" +
             "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetRawTxtReportFromDataStream" +
             "Response")]
         System.Threading.Tasks.Task<string> GetRawTxtReportFromDataStreamAsync(string data_stream);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetRawReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetRawReportResponse")]
-        System.Threading.Tasks.Task<byte[]> GetRawReportAsync(int clientAssessmentKey, string reportType, int version, string[] options);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetRawReportFromDataStream", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetRawReportFromDataStreamRes" +
             "ponse")]
@@ -10806,9 +6569,6 @@ namespace CoreServiceDevReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAccountActivity", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAccountActivityResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.AccountActivity[]> GetAccountActivityAsync(int orgUserMappingKey, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAccountUsage", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAccountUsageResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AccountUsage[]> GetAccountUsageAsync(int orgUserMappingKey, System.Nullable<int> orgUserMappingKeyFilter, string assessmentKeyFilter, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAccountClinicianCaseLoad", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAccountClinicianCaseLoadRe" +
             "sponse")]
@@ -10906,11 +6666,6 @@ namespace CoreServiceDevReference
             "aResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.DesktopAssessment> GetDesktopAssessmentByCriteriaAsync(System.Guid rowGuid, string desktopKey, string desktopClassId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormByDesktopCla" +
-            "ss", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormByDesktopCla" +
-            "ssResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormByDesktopClassAsync(string desktopClassId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormsByAssessmen" +
             "tKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormsByAssessmen" +
             "tKeyResponse")]
@@ -10921,111 +6676,13 @@ namespace CoreServiceDevReference
             "smentKeyResponse")]
         System.Threading.Tasks.Task<int> GetAssessmentFormCountByAssessmentKeyAsync(string assessmentKey);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllDemoInputsWithInputType" +
-            "s", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllDemoInputsWithInputType" +
-            "sResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput[]> GetAllDemoInputsWithInputTypesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormDemoInputCou" +
-            "ntByDemoInputKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormDemoInputCou" +
-            "ntByDemoInputKeyResponse")]
-        System.Threading.Tasks.Task<int> GetAssessmentFormDemoInputCountByDemoInputKeyAsync(int demoInputKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeWithAllRelatedObj" +
-            "ects", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeWithAllRelatedObj" +
-            "ectsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeWithAllRelatedObjectsAsync(int inputTypeKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeWithInputChoicesB" +
-            "yKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetInputTypeWithInputChoicesB" +
-            "yKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeWithInputChoicesByKeyAsync(int inputTypeKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllOptionInputsWithInputTy" +
-            "pes", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllOptionInputsWithInputTy" +
-            "pesResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput[]> GetAllOptionInputsWithInputTypesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetOptionInputWithReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetOptionInputWithReportFormR" +
-            "esponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput> GetOptionInputWithReportFormAsync(int optionInputKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormWithOptionsAndFo" +
-            "rms", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormWithOptionsAndFo" +
-            "rmsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormWithOptionsAndFormsAsync(int reportFormKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormWithOptions", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormWithOptionsRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormWithOptionsAsync(int reportformKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithDemoInpu" +
-            "tsByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithDemoInpu" +
-            "tsByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormWithDemoInputsByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithQuestion" +
-            "s", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithQuestion" +
-            "sResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormWithQuestionsAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentQuestionWithBloc" +
-            "k", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentQuestionWithBloc" +
-            "kResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> GetAssessmentQuestionWithBlockAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentBlockWithQuestio" +
-            "ns", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentBlockWithQuestio" +
-            "nsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> GetAssessmentBlockWithQuestionsAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveNewAssessmentQuestion", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveNewAssessmentQuestionResp" +
-            "onse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> SaveNewAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion question, int assessmentBlockKey);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentWithReportsByKey" +
             "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentWithReportsByKey" +
             "Response")]
         System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentWithReportsByKeyAsync(int key);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveNewAssessmentQuestionBloc" +
-            "k", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveNewAssessmentQuestionBloc" +
-            "kResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> SaveNewAssessmentQuestionBlockAsync(CoreServiceDevReference.AssessmentBlock block);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/AssessmentBlockReorder", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/AssessmentBlockReorderRespons" +
-            "e")]
-        System.Threading.Tasks.Task AssessmentBlockReorderAsync(int assessmentFormKey, int assessmentBlockKey, bool direction);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentQuestionAndRe" +
-            "order", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentQuestionAndRe" +
-            "orderResponse")]
-        System.Threading.Tasks.Task DeleteAssessmentQuestionAndReorderAsync(CoreServiceDevReference.AssessmentQuestion question, int assessmentBlockKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllInputTypesWithInputChoi" +
-            "ces", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllInputTypesWithInputChoi" +
-            "cesResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.InputType[]> GetAllInputTypesWithInputChoicesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/AssessmentQuestionReorder", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/AssessmentQuestionReorderResp" +
-            "onse")]
-        System.Threading.Tasks.Task AssessmentQuestionReorderAsync(int assessmentQuestionKey, int assessmentQuestionBlockKey, bool direction);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentBlockAndReord" +
-            "er", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentBlockAndReord" +
-            "erResponse")]
-        System.Threading.Tasks.Task DeleteAssessmentBlockAndReorderAsync(CoreServiceDevReference.AssessmentBlock block);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithDemograp" +
-            "hicsAndBlocksAndReportsByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormWithDemograp" +
-            "hicsAndBlocksAndReportsByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormWithDemographicsAndBlocksAndReportsByKeyAsync(int key);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/PasswordUtility", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/PasswordUtilityResponse")]
         System.Threading.Tasks.Task<string> PasswordUtilityAsync(string pw_in, string pw_entrophy, string scope);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetDataStreamView", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetDataStreamViewResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.vwDataStreamView[]> GetDataStreamViewAsync(int assessmentFormKey, int reportFormKey);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveNewReportFormToAssessment" +
             "Form", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveNewReportFormToAssessment" +
@@ -11036,10 +6693,6 @@ namespace CoreServiceDevReference
             "sessmentFormKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentUsagesByAs" +
             "sessmentFormKeyResponse")]
         System.Threading.Tasks.Task<int> GetClientAssessmentUsagesByAssessmentFormKeyAsync(int assessmentFormKey);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAllAssessmentQuestions", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAllAssessmentQuestionsR" +
-            "esponse")]
-        System.Threading.Tasks.Task DeleteAllAssessmentQuestionsAsync(int assessmentFormKey);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentByClientGr" +
             "oupKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentByClientGr" +
@@ -11083,15 +6736,162 @@ namespace CoreServiceDevReference
             "Id", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormsByClinician" +
             "IdResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAssessmentFormsByClinicianIdAsync(int clinicianId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormsByAccountId" +
+            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormsByAccountId" +
+            "Response")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAssessmentFormsByAccountIdAsync(int accountId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ImportClient", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ImportClientResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Client> ImportClientAsync(CoreServiceDevReference.Client entity, int orgUserMappingKey, string clientGroup, string identity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetDistributableInventoryForA" +
+            "ccount", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetDistributableInventoryForA" +
+            "ccountResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentInventoryItem[]> GetDistributableInventoryForAccountAsync(int orgUserMappingKey);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SetUserInventoryStatus", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SetUserInventoryStatusRespons" +
+            "e")]
+        System.Threading.Tasks.Task SetUserInventoryStatusAsync(int orgUserMappingKey, string productFamily, bool selected);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserInventory", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteUserInventoryResponse")]
+        System.Threading.Tasks.Task DeleteUserInventoryAsync(int orgUserMappingKey, string productFamily);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
+            "", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportFormToAssessmentForm" +
+            "Response")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetReportFormToAssessmentFormAsync(int assessmentFormKey);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessment", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentRespons" +
+            "e")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Assessment> SaveOrUpdateAssessmentAsync(CoreServiceDevReference.Assessment entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessment", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentResponse")]
+        System.Threading.Tasks.Task DeleteAssessmentAsync(CoreServiceDevReference.Assessment entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessment", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentAsync(CoreServiceDevReference.Assessment entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessments", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentsResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Assessment[]> GetAllAssessmentsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateAssessmentFormRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> SaveOrUpdateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteAssessmentFormResponse")]
+        System.Threading.Tasks.Task DeleteAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateAssessmentFormRespons" +
+            "e")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAssessmentFormByKeyRespons" +
+            "e")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentForms", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllAssessmentFormsResponse" +
+            "")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAllAssessmentFormsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentN" +
+            "ote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientAssessmentN" +
+            "oteResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> SaveOrUpdateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientAssessmentNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientAssessmentNoteRes" +
+            "ponse")]
+        System.Threading.Tasks.Task DeleteClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientAssessmentNoteR" +
+            "esponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentNoteByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientAssessmentNoteByKeyR" +
+            "esponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> GetClientAssessmentNoteByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientAssessmentNotes", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientAssessmentNotesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote[]> GetAllClientAssessmentNotesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientGroup", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientGroupRespon" +
+            "se")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> SaveOrUpdateClientGroupAsync(CoreServiceDevReference.ClientGroup entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientGroup", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientGroupResponse")]
+        System.Threading.Tasks.Task DeleteClientGroupAsync(CoreServiceDevReference.ClientGroup entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientGroup", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientGroupResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientGroupAsync(CoreServiceDevReference.ClientGroup entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientGroupByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientGroupByKeyResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> GetClientGroupByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientGroups", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientGroupsResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup[]> GetAllClientGroupsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateClientNoteRespons" +
+            "e")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> SaveOrUpdateClientNoteAsync(CoreServiceDevReference.ClientNote entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteClientNoteResponse")]
+        System.Threading.Tasks.Task DeleteClientNoteAsync(CoreServiceDevReference.ClientNote entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientNote", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateClientNoteResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientNoteAsync(CoreServiceDevReference.ClientNote entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientNoteByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientNoteByKeyResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> GetClientNoteByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientNotes", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllClientNotesResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote[]> GetAllClientNotesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateEmailTemplateResp" +
+            "onse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> SaveOrUpdateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteEmailTemplateResponse")]
+        System.Threading.Tasks.Task DeleteEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateEmailTemplate", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateEmailTemplateResponse" +
+            "")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetEmailTemplateByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetEmailTemplateByKeyResponse" +
+            "")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> GetEmailTemplateByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllEmailTemplates", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllEmailTemplatesResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate[]> GetAllEmailTemplatesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Report> SaveOrUpdateReportAsync(CoreServiceDevReference.Report entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportResponse")]
+        System.Threading.Tasks.Task DeleteReportAsync(CoreServiceDevReference.Report entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportAsync(CoreServiceDevReference.Report entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKeyResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReports", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportsResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormRespons" +
+            "e")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity);
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     public interface ICoreServiceChannel : CoreServiceDevReference.ICoreService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     public partial class CoreServiceClient : System.ServiceModel.ClientBase<CoreServiceDevReference.ICoreService>, CoreServiceDevReference.ICoreService
     {
         
@@ -11135,54 +6935,119 @@ namespace CoreServiceDevReference
         {
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportCleanupExpression[]> GetAllReportCleanupExpressionsAsync()
+        public System.Threading.Tasks.Task DeleteReportFormAsync(CoreServiceDevReference.ReportForm entity)
         {
-            return base.Channel.GetAllReportCleanupExpressionsAsync();
+            return base.Channel.DeleteReportFormAsync(entity);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportDisplaySection> SaveOrUpdateReportDisplaySectionAsync(CoreServiceDevReference.ReportDisplaySection entity)
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormAsync(CoreServiceDevReference.ReportForm entity)
         {
-            return base.Channel.SaveOrUpdateReportDisplaySectionAsync(entity);
+            return base.Channel.ValidateReportFormAsync(entity);
         }
         
-        public System.Threading.Tasks.Task DeleteReportDisplaySectionAsync(CoreServiceDevReference.ReportDisplaySection entity)
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormByKeyAsync(int key)
         {
-            return base.Channel.DeleteReportDisplaySectionAsync(entity);
+            return base.Channel.GetReportFormByKeyAsync(key);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportDisplaySectionAsync(CoreServiceDevReference.ReportDisplaySection entity)
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm[]> GetAllReportFormsAsync()
         {
-            return base.Channel.ValidateReportDisplaySectionAsync(entity);
+            return base.Channel.GetAllReportFormsAsync();
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportDisplaySection> GetReportDisplaySectionByKeyAsync(int key)
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> SaveOrUpdateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity)
         {
-            return base.Channel.GetReportDisplaySectionByKeyAsync(key);
+            return base.Channel.SaveOrUpdateReportFormToAssessmentFormAsync(entity);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportDisplaySection[]> GetAllReportDisplaySectionsAsync()
+        public System.Threading.Tasks.Task DeleteReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity)
         {
-            return base.Channel.GetAllReportDisplaySectionsAsync();
+            return base.Channel.DeleteReportFormToAssessmentFormAsync(entity);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToReportCleanupExpression> SaveOrUpdateReportFormToReportCleanupExpressionAsync(CoreServiceDevReference.ReportFormToReportCleanupExpression entity)
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity)
         {
-            return base.Channel.SaveOrUpdateReportFormToReportCleanupExpressionAsync(entity);
+            return base.Channel.ValidateReportFormToAssessmentFormAsync(entity);
         }
         
-        public System.Threading.Tasks.Task DeleteReportFormToReportCleanupExpressionAsync(CoreServiceDevReference.ReportFormToReportCleanupExpression entity)
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> GetReportFormToAssessmentFormByKeyAsync(int key)
         {
-            return base.Channel.DeleteReportFormToReportCleanupExpressionAsync(entity);
+            return base.Channel.GetReportFormToAssessmentFormByKeyAsync(key);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormToReportCleanupExpressionAsync(CoreServiceDevReference.ReportFormToReportCleanupExpression entity)
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetAllReportFormToAssessmentFormsAsync()
         {
-            return base.Channel.ValidateReportFormToReportCleanupExpressionAsync(entity);
+            return base.Channel.GetAllReportFormToAssessmentFormsAsync();
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToReportCleanupExpression[]> GetAllReportFormToReportCleanupExpressionsAsync()
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Status> SaveOrUpdateStatusAsync(CoreServiceDevReference.Status entity)
         {
-            return base.Channel.GetAllReportFormToReportCleanupExpressionsAsync();
+            return base.Channel.SaveOrUpdateStatusAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteStatusAsync(CoreServiceDevReference.Status entity)
+        {
+            return base.Channel.DeleteStatusAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateStatusAsync(CoreServiceDevReference.Status entity)
+        {
+            return base.Channel.ValidateStatusAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Status> GetStatusByKeyAsync(int key)
+        {
+            return base.Channel.GetStatusByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Status[]> GetAllStatusAsync()
+        {
+            return base.Channel.GetAllStatusAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.User> SaveOrUpdateUserAsync(CoreServiceDevReference.User entity)
+        {
+            return base.Channel.SaveOrUpdateUserAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserAsync(CoreServiceDevReference.User entity)
+        {
+            return base.Channel.DeleteUserAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserAsync(CoreServiceDevReference.User entity)
+        {
+            return base.Channel.ValidateUserAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.User[]> GetAllUsersAsync()
+        {
+            return base.Channel.GetAllUsersAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> SaveOrUpdateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity)
+        {
+            return base.Channel.SaveOrUpdateUserEmailTemplateAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity)
+        {
+            return base.Channel.DeleteUserEmailTemplateAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity)
+        {
+            return base.Channel.ValidateUserEmailTemplateAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> GetUserEmailTemplateByKeyAsync(int key)
+        {
+            return base.Channel.GetUserEmailTemplateByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate[]> GetAllUserEmailTemplatesAsync()
+        {
+            return base.Channel.GetAllUserEmailTemplatesAsync();
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.EmailMessage> SaveOrUpdateEmailMessageAsync(CoreServiceDevReference.EmailMessage entity)
@@ -11285,26 +7150,6 @@ namespace CoreServiceDevReference
             return base.Channel.GetAllCompositeReportFormCombinationsAsync();
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.vwDataStreamView> SaveOrUpdatevwDataStreamViewAsync(CoreServiceDevReference.vwDataStreamView entity)
-        {
-            return base.Channel.SaveOrUpdatevwDataStreamViewAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeletevwDataStreamViewAsync(CoreServiceDevReference.vwDataStreamView entity)
-        {
-            return base.Channel.DeletevwDataStreamViewAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidatevwDataStreamViewAsync(CoreServiceDevReference.vwDataStreamView entity)
-        {
-            return base.Channel.ValidatevwDataStreamViewAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.vwDataStreamView[]> GetAllvwDataStreamViewsAsync()
-        {
-            return base.Channel.GetAllvwDataStreamViewsAsync();
-        }
-        
         public System.Threading.Tasks.Task<CoreServiceDevReference.UserFavorite> SaveOrUpdateUserFavoriteAsync(CoreServiceDevReference.UserFavorite entity)
         {
             return base.Channel.SaveOrUpdateUserFavoriteAsync(entity);
@@ -11323,666 +7168,6 @@ namespace CoreServiceDevReference
         public System.Threading.Tasks.Task<CoreServiceDevReference.UserFavorite[]> GetAllUserFavoritesAsync()
         {
             return base.Channel.GetAllUserFavoritesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlockToAssessmentQuestion> SaveOrUpdateAssessmentBlockToAssessmentQuestionAsync(CoreServiceDevReference.AssessmentBlockToAssessmentQuestion entity)
-        {
-            return base.Channel.SaveOrUpdateAssessmentBlockToAssessmentQuestionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentBlockToAssessmentQuestionAsync(CoreServiceDevReference.AssessmentBlockToAssessmentQuestion entity)
-        {
-            return base.Channel.DeleteAssessmentBlockToAssessmentQuestionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentBlockToAssessmentQuestionAsync(CoreServiceDevReference.AssessmentBlockToAssessmentQuestion entity)
-        {
-            return base.Channel.ValidateAssessmentBlockToAssessmentQuestionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlockToAssessmentQuestion[]> GetAllAssessmentBlockToAssessmentQuestionsAsync()
-        {
-            return base.Channel.GetAllAssessmentBlockToAssessmentQuestionsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAssessmentFormsByAccountIdAsync(int accountId)
-        {
-            return base.Channel.GetAssessmentFormsByAccountIdAsync(accountId);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Client> ImportClientAsync(CoreServiceDevReference.Client entity, int orgUserMappingKey, string clientGroup, string identity)
-        {
-            return base.Channel.ImportClientAsync(entity, orgUserMappingKey, clientGroup, identity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentInventoryItem[]> GetDistributableInventoryForAccountAsync(int orgUserMappingKey)
-        {
-            return base.Channel.GetDistributableInventoryForAccountAsync(orgUserMappingKey);
-        }
-        
-        public System.Threading.Tasks.Task SetUserInventoryStatusAsync(int orgUserMappingKey, string productFamily, bool selected)
-        {
-            return base.Channel.SetUserInventoryStatusAsync(orgUserMappingKey, productFamily, selected);
-        }
-        
-        public System.Threading.Tasks.Task DeleteUserInventoryAsync(int orgUserMappingKey, string productFamily)
-        {
-            return base.Channel.DeleteUserInventoryAsync(orgUserMappingKey, productFamily);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetReportFormToAssessmentFormAsync(int assessmentFormKey)
-        {
-            return base.Channel.GetReportFormToAssessmentFormAsync(assessmentFormKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Assessment> SaveOrUpdateAssessmentAsync(CoreServiceDevReference.Assessment entity)
-        {
-            return base.Channel.SaveOrUpdateAssessmentAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentAsync(CoreServiceDevReference.Assessment entity)
-        {
-            return base.Channel.DeleteAssessmentAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentAsync(CoreServiceDevReference.Assessment entity)
-        {
-            return base.Channel.ValidateAssessmentAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Assessment[]> GetAllAssessmentsAsync()
-        {
-            return base.Channel.GetAllAssessmentsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> SaveOrUpdateAssessmentBlockAsync(CoreServiceDevReference.AssessmentBlock entity)
-        {
-            return base.Channel.SaveOrUpdateAssessmentBlockAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentBlockAsync(CoreServiceDevReference.AssessmentBlock entity)
-        {
-            return base.Channel.DeleteAssessmentBlockAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentBlockAsync(CoreServiceDevReference.AssessmentBlock entity)
-        {
-            return base.Channel.ValidateAssessmentBlockAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> GetAssessmentBlockByKeyAsync(int key)
-        {
-            return base.Channel.GetAssessmentBlockByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock[]> GetAllAssessmentBlocksAsync()
-        {
-            return base.Channel.GetAllAssessmentBlocksAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> SaveOrUpdateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity)
-        {
-            return base.Channel.SaveOrUpdateAssessmentFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity)
-        {
-            return base.Channel.DeleteAssessmentFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity)
-        {
-            return base.Channel.ValidateAssessmentFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormByKeyAsync(int key)
-        {
-            return base.Channel.GetAssessmentFormByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAllAssessmentFormsAsync()
-        {
-            return base.Channel.GetAllAssessmentFormsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput> SaveOrUpdateAssessmentFormDemoInputAsync(CoreServiceDevReference.AssessmentFormDemoInput entity)
-        {
-            return base.Channel.SaveOrUpdateAssessmentFormDemoInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentFormDemoInputAsync(CoreServiceDevReference.AssessmentFormDemoInput entity)
-        {
-            return base.Channel.DeleteAssessmentFormDemoInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentFormDemoInputAsync(CoreServiceDevReference.AssessmentFormDemoInput entity)
-        {
-            return base.Channel.ValidateAssessmentFormDemoInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput> GetAssessmentFormDemoInputByKeyAsync(int key)
-        {
-            return base.Channel.GetAssessmentFormDemoInputByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput[]> GetAllAssessmentFormDemoInputsAsync()
-        {
-            return base.Channel.GetAllAssessmentFormDemoInputsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> SaveOrUpdateAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion entity)
-        {
-            return base.Channel.SaveOrUpdateAssessmentQuestionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion entity)
-        {
-            return base.Channel.DeleteAssessmentQuestionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion entity)
-        {
-            return base.Channel.ValidateAssessmentQuestionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> GetAssessmentQuestionByKeyAsync(int key)
-        {
-            return base.Channel.GetAssessmentQuestionByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion[]> GetAllAssessmentQuestionsAsync()
-        {
-            return base.Channel.GetAllAssessmentQuestionsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentChoice> SaveOrUpdateClientAssessmentChoiceAsync(CoreServiceDevReference.ClientAssessmentChoice entity)
-        {
-            return base.Channel.SaveOrUpdateClientAssessmentChoiceAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteClientAssessmentChoiceAsync(CoreServiceDevReference.ClientAssessmentChoice entity)
-        {
-            return base.Channel.DeleteClientAssessmentChoiceAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentChoiceAsync(CoreServiceDevReference.ClientAssessmentChoice entity)
-        {
-            return base.Channel.ValidateClientAssessmentChoiceAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentChoice> GetClientAssessmentChoiceByKeyAsync(int key)
-        {
-            return base.Channel.GetClientAssessmentChoiceByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentChoice[]> GetAllClientAssessmentChoicesAsync()
-        {
-            return base.Channel.GetAllClientAssessmentChoicesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> SaveOrUpdateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity)
-        {
-            return base.Channel.SaveOrUpdateClientAssessmentNoteAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity)
-        {
-            return base.Channel.DeleteClientAssessmentNoteAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity)
-        {
-            return base.Channel.ValidateClientAssessmentNoteAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> GetClientAssessmentNoteByKeyAsync(int key)
-        {
-            return base.Channel.GetClientAssessmentNoteByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote[]> GetAllClientAssessmentNotesAsync()
-        {
-            return base.Channel.GetAllClientAssessmentNotesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> SaveOrUpdateClientGroupAsync(CoreServiceDevReference.ClientGroup entity)
-        {
-            return base.Channel.SaveOrUpdateClientGroupAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteClientGroupAsync(CoreServiceDevReference.ClientGroup entity)
-        {
-            return base.Channel.DeleteClientGroupAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientGroupAsync(CoreServiceDevReference.ClientGroup entity)
-        {
-            return base.Channel.ValidateClientGroupAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> GetClientGroupByKeyAsync(int key)
-        {
-            return base.Channel.GetClientGroupByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup[]> GetAllClientGroupsAsync()
-        {
-            return base.Channel.GetAllClientGroupsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> SaveOrUpdateClientNoteAsync(CoreServiceDevReference.ClientNote entity)
-        {
-            return base.Channel.SaveOrUpdateClientNoteAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteClientNoteAsync(CoreServiceDevReference.ClientNote entity)
-        {
-            return base.Channel.DeleteClientNoteAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientNoteAsync(CoreServiceDevReference.ClientNote entity)
-        {
-            return base.Channel.ValidateClientNoteAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> GetClientNoteByKeyAsync(int key)
-        {
-            return base.Channel.GetClientNoteByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote[]> GetAllClientNotesAsync()
-        {
-            return base.Channel.GetAllClientNotesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.DataStreamSection> SaveOrUpdateDataStreamSectionAsync(CoreServiceDevReference.DataStreamSection entity)
-        {
-            return base.Channel.SaveOrUpdateDataStreamSectionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteDataStreamSectionAsync(CoreServiceDevReference.DataStreamSection entity)
-        {
-            return base.Channel.DeleteDataStreamSectionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateDataStreamSectionAsync(CoreServiceDevReference.DataStreamSection entity)
-        {
-            return base.Channel.ValidateDataStreamSectionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.DataStreamSection> GetDataStreamSectionByKeyAsync(int key)
-        {
-            return base.Channel.GetDataStreamSectionByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.DataStreamSection[]> GetAllDataStreamSectionsAsync()
-        {
-            return base.Channel.GetAllDataStreamSectionsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput> SaveOrUpdateDemoInputAsync(CoreServiceDevReference.DemoInput entity)
-        {
-            return base.Channel.SaveOrUpdateDemoInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteDemoInputAsync(CoreServiceDevReference.DemoInput entity)
-        {
-            return base.Channel.DeleteDemoInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateDemoInputAsync(CoreServiceDevReference.DemoInput entity)
-        {
-            return base.Channel.ValidateDemoInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput> GetDemoInputByKeyAsync(int key)
-        {
-            return base.Channel.GetDemoInputByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput[]> GetAllDemoInputsAsync()
-        {
-            return base.Channel.GetAllDemoInputsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> SaveOrUpdateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity)
-        {
-            return base.Channel.SaveOrUpdateEmailTemplateAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity)
-        {
-            return base.Channel.DeleteEmailTemplateAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity)
-        {
-            return base.Channel.ValidateEmailTemplateAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> GetEmailTemplateByKeyAsync(int key)
-        {
-            return base.Channel.GetEmailTemplateByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate[]> GetAllEmailTemplatesAsync()
-        {
-            return base.Channel.GetAllEmailTemplatesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputChoice> SaveOrUpdateInputChoiceAsync(CoreServiceDevReference.InputChoice entity)
-        {
-            return base.Channel.SaveOrUpdateInputChoiceAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteInputChoiceAsync(CoreServiceDevReference.InputChoice entity)
-        {
-            return base.Channel.DeleteInputChoiceAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateInputChoiceAsync(CoreServiceDevReference.InputChoice entity)
-        {
-            return base.Channel.ValidateInputChoiceAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputChoice> GetInputChoiceByKeyAsync(int key)
-        {
-            return base.Channel.GetInputChoiceByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputChoice[]> GetAllInputChoicesAsync()
-        {
-            return base.Channel.GetAllInputChoicesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputType> SaveOrUpdateInputTypeAsync(CoreServiceDevReference.InputType entity)
-        {
-            return base.Channel.SaveOrUpdateInputTypeAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteInputTypeAsync(CoreServiceDevReference.InputType entity)
-        {
-            return base.Channel.DeleteInputTypeAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateInputTypeAsync(CoreServiceDevReference.InputType entity)
-        {
-            return base.Channel.ValidateInputTypeAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeByKeyAsync(int key)
-        {
-            return base.Channel.GetInputTypeByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputType[]> GetAllInputTypesAsync()
-        {
-            return base.Channel.GetAllInputTypesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput> SaveOrUpdateOptionInputAsync(CoreServiceDevReference.OptionInput entity)
-        {
-            return base.Channel.SaveOrUpdateOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteOptionInputAsync(CoreServiceDevReference.OptionInput entity)
-        {
-            return base.Channel.DeleteOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateOptionInputAsync(CoreServiceDevReference.OptionInput entity)
-        {
-            return base.Channel.ValidateOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput> GetOptionInputByKeyAsync(int key)
-        {
-            return base.Channel.GetOptionInputByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput[]> GetAllOptionInputsAsync()
-        {
-            return base.Channel.GetAllOptionInputsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Report> SaveOrUpdateReportAsync(CoreServiceDevReference.Report entity)
-        {
-            return base.Channel.SaveOrUpdateReportAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteReportAsync(CoreServiceDevReference.Report entity)
-        {
-            return base.Channel.DeleteReportAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportAsync(CoreServiceDevReference.Report entity)
-        {
-            return base.Channel.ValidateReportAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key)
-        {
-            return base.Channel.GetReportByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync()
-        {
-            return base.Channel.GetAllReportsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportCategory> SaveOrUpdateReportCategoryAsync(CoreServiceDevReference.ReportCategory entity)
-        {
-            return base.Channel.SaveOrUpdateReportCategoryAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteReportCategoryAsync(CoreServiceDevReference.ReportCategory entity)
-        {
-            return base.Channel.DeleteReportCategoryAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportCategoryAsync(CoreServiceDevReference.ReportCategory entity)
-        {
-            return base.Channel.ValidateReportCategoryAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportCategory> GetReportCategoryByKeyAsync(int key)
-        {
-            return base.Channel.GetReportCategoryByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportCategory[]> GetAllReportCategoriesAsync()
-        {
-            return base.Channel.GetAllReportCategoriesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity)
-        {
-            return base.Channel.SaveOrUpdateReportFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteReportFormAsync(CoreServiceDevReference.ReportForm entity)
-        {
-            return base.Channel.DeleteReportFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormAsync(CoreServiceDevReference.ReportForm entity)
-        {
-            return base.Channel.ValidateReportFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormByKeyAsync(int key)
-        {
-            return base.Channel.GetReportFormByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm[]> GetAllReportFormsAsync()
-        {
-            return base.Channel.GetAllReportFormsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormOptionInput> SaveOrUpdateReportFormOptionInputAsync(CoreServiceDevReference.ReportFormOptionInput entity)
-        {
-            return base.Channel.SaveOrUpdateReportFormOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteReportFormOptionInputAsync(CoreServiceDevReference.ReportFormOptionInput entity)
-        {
-            return base.Channel.DeleteReportFormOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormOptionInputAsync(CoreServiceDevReference.ReportFormOptionInput entity)
-        {
-            return base.Channel.ValidateReportFormOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormOptionInput> GetReportFormOptionInputByKeyAsync(int key)
-        {
-            return base.Channel.GetReportFormOptionInputByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormOptionInput[]> GetAllReportFormOptionInputsAsync()
-        {
-            return base.Channel.GetAllReportFormOptionInputsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> SaveOrUpdateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity)
-        {
-            return base.Channel.SaveOrUpdateReportFormToAssessmentFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity)
-        {
-            return base.Channel.DeleteReportFormToAssessmentFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm entity)
-        {
-            return base.Channel.ValidateReportFormToAssessmentFormAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> GetReportFormToAssessmentFormByKeyAsync(int key)
-        {
-            return base.Channel.GetReportFormToAssessmentFormByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetAllReportFormToAssessmentFormsAsync()
-        {
-            return base.Channel.GetAllReportFormToAssessmentFormsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportOptionInput> SaveOrUpdateReportOptionInputAsync(CoreServiceDevReference.ReportOptionInput entity)
-        {
-            return base.Channel.SaveOrUpdateReportOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteReportOptionInputAsync(CoreServiceDevReference.ReportOptionInput entity)
-        {
-            return base.Channel.DeleteReportOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportOptionInputAsync(CoreServiceDevReference.ReportOptionInput entity)
-        {
-            return base.Channel.ValidateReportOptionInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportOptionInput> GetReportOptionInputByKeyAsync(int key)
-        {
-            return base.Channel.GetReportOptionInputByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportOptionInput[]> GetAllReportOptionInputsAsync()
-        {
-            return base.Channel.GetAllReportOptionInputsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Status> SaveOrUpdateStatusAsync(CoreServiceDevReference.Status entity)
-        {
-            return base.Channel.SaveOrUpdateStatusAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteStatusAsync(CoreServiceDevReference.Status entity)
-        {
-            return base.Channel.DeleteStatusAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateStatusAsync(CoreServiceDevReference.Status entity)
-        {
-            return base.Channel.ValidateStatusAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Status> GetStatusByKeyAsync(int key)
-        {
-            return base.Channel.GetStatusByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Status[]> GetAllStatusAsync()
-        {
-            return base.Channel.GetAllStatusAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.User> SaveOrUpdateUserAsync(CoreServiceDevReference.User entity)
-        {
-            return base.Channel.SaveOrUpdateUserAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteUserAsync(CoreServiceDevReference.User entity)
-        {
-            return base.Channel.DeleteUserAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserAsync(CoreServiceDevReference.User entity)
-        {
-            return base.Channel.ValidateUserAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.User[]> GetAllUsersAsync()
-        {
-            return base.Channel.GetAllUsersAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> SaveOrUpdateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity)
-        {
-            return base.Channel.SaveOrUpdateUserEmailTemplateAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity)
-        {
-            return base.Channel.DeleteUserEmailTemplateAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateUserEmailTemplateAsync(CoreServiceDevReference.UserEmailTemplate entity)
-        {
-            return base.Channel.ValidateUserEmailTemplateAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate> GetUserEmailTemplateByKeyAsync(int key)
-        {
-            return base.Channel.GetUserEmailTemplateByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate[]> GetAllUserEmailTemplatesAsync()
-        {
-            return base.Channel.GetAllUserEmailTemplatesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportCleanupExpression> SaveOrUpdateReportCleanupExpressionAsync(CoreServiceDevReference.ReportCleanupExpression entity)
-        {
-            return base.Channel.SaveOrUpdateReportCleanupExpressionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task DeleteReportCleanupExpressionAsync(CoreServiceDevReference.ReportCleanupExpression entity)
-        {
-            return base.Channel.DeleteReportCleanupExpressionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportCleanupExpressionAsync(CoreServiceDevReference.ReportCleanupExpression entity)
-        {
-            return base.Channel.ValidateReportCleanupExpressionAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportCleanupExpression> GetReportCleanupExpressionByKeyAsync(int key)
-        {
-            return base.Channel.GetReportCleanupExpressionByKeyAsync(key);
         }
         
         public System.Threading.Tasks.Task HelloWorldAsync()
@@ -12065,11 +7250,6 @@ namespace CoreServiceDevReference
             return base.Channel.GetClientAssessmentsForReviewAsync(clientKey, orgUserMappingKey, minDate, accessClientsPermissionParameterValue);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateCustomClientAssessmentChoiceAsync(int client_assessment_choice_key, string value, string identity)
-        {
-            return base.Channel.UpdateCustomClientAssessmentChoiceAsync(client_assessment_choice_key, value, identity);
-        }
-        
         public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessment> SaveOrUpdateClientAssessmentAsync(int orgUserMappingKey, CoreServiceDevReference.ClientAssessment entity, string identity)
         {
             return base.Channel.SaveOrUpdateClientAssessmentAsync(orgUserMappingKey, entity, identity);
@@ -12140,41 +7320,6 @@ namespace CoreServiceDevReference
             return base.Channel.GetClientAssessmentNotesForClientAsync(clientKey);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInput> SaveOrUpdateClientAssessmentDemoInputAsync(CoreServiceDevReference.ClientAssessmentDemoInput entity, string identity)
-        {
-            return base.Channel.SaveOrUpdateClientAssessmentDemoInputAsync(entity, identity);
-        }
-        
-        public System.Threading.Tasks.Task SaveOrUpdateClientAssessmentDemoInputsAsync(CoreServiceDevReference.ClientAssessmentDemoInput[] clientAssessmentDemoInputs, string identity)
-        {
-            return base.Channel.SaveOrUpdateClientAssessmentDemoInputsAsync(clientAssessmentDemoInputs, identity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentDemoInputAsync(CoreServiceDevReference.ClientAssessmentDemoInput entity)
-        {
-            return base.Channel.ValidateClientAssessmentDemoInputAsync(entity);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInput> GetClientAssessmentDemoInputByKeyAsync(int key)
-        {
-            return base.Channel.GetClientAssessmentDemoInputByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInput[]> GetClientAssessmentDemoInputsByClientAssessmentKeyAsync(int clientAssessmentKey)
-        {
-            return base.Channel.GetClientAssessmentDemoInputsByClientAssessmentKeyAsync(clientAssessmentKey);
-        }
-        
-        public System.Threading.Tasks.Task SubmitClientAssessmentChoiceAsync(int assessmentQuestionKey, int inputChoiceKey, int clientAssessmentKey, int userKey, System.DateTime timeStamp, string identity)
-        {
-            return base.Channel.SubmitClientAssessmentChoiceAsync(assessmentQuestionKey, inputChoiceKey, clientAssessmentKey, userKey, timeStamp, identity);
-        }
-        
-        public System.Threading.Tasks.Task SubmitClientAssessmentChoicesAsync(CoreServiceDevReference.ClientAssessment clientAssessment, string identity)
-        {
-            return base.Channel.SubmitClientAssessmentChoicesAsync(clientAssessment, identity);
-        }
-        
         public System.Threading.Tasks.Task SaveClientAssessmentResponsesAsync(int caKey, string responses, bool final, string identity)
         {
             return base.Channel.SaveClientAssessmentResponsesAsync(caKey, responses, final, identity);
@@ -12195,11 +7340,6 @@ namespace CoreServiceDevReference
             return base.Channel.ChangeClientAssessmentStatusAsync(client_assessment_key, status_key, identity);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeWithQuestionsByKeyAsync(int key)
-        {
-            return base.Channel.GetInputTypeWithQuestionsByKeyAsync(key);
-        }
-        
         public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormWithAssessmentByKeyAsync(int assessmentFormKey)
         {
             return base.Channel.GetAssessmentFormWithAssessmentByKeyAsync(assessmentFormKey);
@@ -12208,16 +7348,6 @@ namespace CoreServiceDevReference
         public System.Threading.Tasks.Task<CoreServiceDevReference.Assessment> GetAssessmentByKeyAsync(string assessmentKey)
         {
             return base.Channel.GetAssessmentByKeyAsync(assessmentKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentFormDemoInput[]> GetAssessmentFormDemoInputsForAssessmentFormAsync(int assessmentFormKey)
-        {
-            return base.Channel.GetAssessmentFormDemoInputsForAssessmentFormAsync(assessmentFormKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAllAssessmentFormsWithAssessmentDemoInputsAsync()
-        {
-            return base.Channel.GetAllAssessmentFormsWithAssessmentDemoInputsAsync();
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.Report> CreateClientAssessmentReport_NEWAsync(int orgUserMappingKey, int clientAssessmentKey, int reportFormKey, string reportOptionInputs, int[] combinedReportKeys, string identity)
@@ -12230,29 +7360,9 @@ namespace CoreServiceDevReference
             return base.Channel.CreateDefaultClientAssessmentReportAsync(invOrgUserMappingKey, reportOrgUserMappingKey, clientAssessmentKey, reportPartNum, identity);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Report> CreateClientAssessmentReportAsync(int orgUserMappingKey, int clientAssessmentKey, int reportFormKey, CoreServiceDevReference.ReportOptionInput[] reportOptionInputs, int[] combinedReportKeys, string identity)
-        {
-            return base.Channel.CreateClientAssessmentReportAsync(orgUserMappingKey, clientAssessmentKey, reportFormKey, reportOptionInputs, combinedReportKeys, identity);
-        }
-        
         public System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetReportsToCombineByCriteriaAsync(int clientKey, int compositeReportFormKey, System.Nullable<System.DateTime> minCreatedDate, System.Nullable<System.DateTime> maxCreatedDate, System.Nullable<System.DateTime> minTestDate, System.Nullable<System.DateTime> maxTestDate)
         {
             return base.Channel.GetReportsToCombineByCriteriaAsync(clientKey, compositeReportFormKey, minCreatedDate, maxCreatedDate, minTestDate, maxTestDate);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentDemoInputValue> GetClientAssessmentDemoInputValueByInputTypeNameAsync(int clientAssessmentKey, string inputTypeName)
-        {
-            return base.Channel.GetClientAssessmentDemoInputValueByInputTypeNameAsync(clientAssessmentKey, inputTypeName);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormForRichTextToHtmlConversionAsync(int reportFormKey)
-        {
-            return base.Channel.GetReportFormForRichTextToHtmlConversionAsync(reportFormKey);
-        }
-        
-        public System.Threading.Tasks.Task<byte[]> GetReportRichTextDataAsync(int reportKey)
-        {
-            return base.Channel.GetReportRichTextDataAsync(reportKey);
         }
         
         public System.Threading.Tasks.Task<byte[]> GetReportDataAsync(int reportKey, CoreServiceDevReference.FileFormat fileFormat)
@@ -12270,19 +7380,9 @@ namespace CoreServiceDevReference
             return base.Channel.RequestReportFromReportServer_NEWAsync(dataStream, fileFormat);
         }
         
-        public System.Threading.Tasks.Task<string> GetRawTxtReportAsync(int clientAssessmentKey, string reportType, int version, string[] options)
-        {
-            return base.Channel.GetRawTxtReportAsync(clientAssessmentKey, reportType, version, options);
-        }
-        
         public System.Threading.Tasks.Task<string> GetRawTxtReportFromDataStreamAsync(string data_stream)
         {
             return base.Channel.GetRawTxtReportFromDataStreamAsync(data_stream);
-        }
-        
-        public System.Threading.Tasks.Task<byte[]> GetRawReportAsync(int clientAssessmentKey, string reportType, int version, string[] options)
-        {
-            return base.Channel.GetRawReportAsync(clientAssessmentKey, reportType, version, options);
         }
         
         public System.Threading.Tasks.Task<byte[]> GetRawReportFromDataStreamAsync(string data_stream)
@@ -12308,11 +7408,6 @@ namespace CoreServiceDevReference
         public System.Threading.Tasks.Task<CoreServiceDevReference.AccountActivity[]> GetAccountActivityAsync(int orgUserMappingKey, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate)
         {
             return base.Channel.GetAccountActivityAsync(orgUserMappingKey, startDate, endDate);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AccountUsage[]> GetAccountUsageAsync(int orgUserMappingKey, System.Nullable<int> orgUserMappingKeyFilter, string assessmentKeyFilter, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate)
-        {
-            return base.Channel.GetAccountUsageAsync(orgUserMappingKey, orgUserMappingKeyFilter, assessmentKeyFilter, startDate, endDate);
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.AccountClinicianCaseLoad> GetAccountClinicianCaseLoadAsync(int orgUserMappingKey)
@@ -12425,11 +7520,6 @@ namespace CoreServiceDevReference
             return base.Channel.GetDesktopAssessmentByCriteriaAsync(rowGuid, desktopKey, desktopClassId);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormByDesktopClassAsync(string desktopClassId)
-        {
-            return base.Channel.GetAssessmentFormByDesktopClassAsync(desktopClassId);
-        }
-        
         public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAssessmentFormsByAssessmentKeyAsync(string assessmentKey)
         {
             return base.Channel.GetAssessmentFormsByAssessmentKeyAsync(assessmentKey);
@@ -12440,119 +7530,14 @@ namespace CoreServiceDevReference
             return base.Channel.GetAssessmentFormCountByAssessmentKeyAsync(assessmentKey);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.DemoInput[]> GetAllDemoInputsWithInputTypesAsync()
-        {
-            return base.Channel.GetAllDemoInputsWithInputTypesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<int> GetAssessmentFormDemoInputCountByDemoInputKeyAsync(int demoInputKey)
-        {
-            return base.Channel.GetAssessmentFormDemoInputCountByDemoInputKeyAsync(demoInputKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeWithAllRelatedObjectsAsync(int inputTypeKey)
-        {
-            return base.Channel.GetInputTypeWithAllRelatedObjectsAsync(inputTypeKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputType> GetInputTypeWithInputChoicesByKeyAsync(int inputTypeKey)
-        {
-            return base.Channel.GetInputTypeWithInputChoicesByKeyAsync(inputTypeKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput[]> GetAllOptionInputsWithInputTypesAsync()
-        {
-            return base.Channel.GetAllOptionInputsWithInputTypesAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.OptionInput> GetOptionInputWithReportFormAsync(int optionInputKey)
-        {
-            return base.Channel.GetOptionInputWithReportFormAsync(optionInputKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormWithOptionsAndFormsAsync(int reportFormKey)
-        {
-            return base.Channel.GetReportFormWithOptionsAndFormsAsync(reportFormKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> GetReportFormWithOptionsAsync(int reportformKey)
-        {
-            return base.Channel.GetReportFormWithOptionsAsync(reportformKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormWithDemoInputsByKeyAsync(int key)
-        {
-            return base.Channel.GetAssessmentFormWithDemoInputsByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormWithQuestionsAsync(int key)
-        {
-            return base.Channel.GetAssessmentFormWithQuestionsAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> GetAssessmentQuestionWithBlockAsync(int key)
-        {
-            return base.Channel.GetAssessmentQuestionWithBlockAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> GetAssessmentBlockWithQuestionsAsync(int key)
-        {
-            return base.Channel.GetAssessmentBlockWithQuestionsAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentQuestion> SaveNewAssessmentQuestionAsync(CoreServiceDevReference.AssessmentQuestion question, int assessmentBlockKey)
-        {
-            return base.Channel.SaveNewAssessmentQuestionAsync(question, assessmentBlockKey);
-        }
-        
         public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentWithReportsByKeyAsync(int key)
         {
             return base.Channel.GetAssessmentWithReportsByKeyAsync(key);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentBlock> SaveNewAssessmentQuestionBlockAsync(CoreServiceDevReference.AssessmentBlock block)
-        {
-            return base.Channel.SaveNewAssessmentQuestionBlockAsync(block);
-        }
-        
-        public System.Threading.Tasks.Task AssessmentBlockReorderAsync(int assessmentFormKey, int assessmentBlockKey, bool direction)
-        {
-            return base.Channel.AssessmentBlockReorderAsync(assessmentFormKey, assessmentBlockKey, direction);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentQuestionAndReorderAsync(CoreServiceDevReference.AssessmentQuestion question, int assessmentBlockKey)
-        {
-            return base.Channel.DeleteAssessmentQuestionAndReorderAsync(question, assessmentBlockKey);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.InputType[]> GetAllInputTypesWithInputChoicesAsync()
-        {
-            return base.Channel.GetAllInputTypesWithInputChoicesAsync();
-        }
-        
-        public System.Threading.Tasks.Task AssessmentQuestionReorderAsync(int assessmentQuestionKey, int assessmentQuestionBlockKey, bool direction)
-        {
-            return base.Channel.AssessmentQuestionReorderAsync(assessmentQuestionKey, assessmentQuestionBlockKey, direction);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAssessmentBlockAndReorderAsync(CoreServiceDevReference.AssessmentBlock block)
-        {
-            return base.Channel.DeleteAssessmentBlockAndReorderAsync(block);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormWithDemographicsAndBlocksAndReportsByKeyAsync(int key)
-        {
-            return base.Channel.GetAssessmentFormWithDemographicsAndBlocksAndReportsByKeyAsync(key);
-        }
-        
         public System.Threading.Tasks.Task<string> PasswordUtilityAsync(string pw_in, string pw_entrophy, string scope)
         {
             return base.Channel.PasswordUtilityAsync(pw_in, pw_entrophy, scope);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.vwDataStreamView[]> GetDataStreamViewAsync(int assessmentFormKey, int reportFormKey)
-        {
-            return base.Channel.GetDataStreamViewAsync(assessmentFormKey, reportFormKey);
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm> SaveNewReportFormToAssessmentFormAsync(CoreServiceDevReference.ReportFormToAssessmentForm reportFormToAssessmentForm)
@@ -12563,11 +7548,6 @@ namespace CoreServiceDevReference
         public System.Threading.Tasks.Task<int> GetClientAssessmentUsagesByAssessmentFormKeyAsync(int assessmentFormKey)
         {
             return base.Channel.GetClientAssessmentUsagesByAssessmentFormKeyAsync(assessmentFormKey);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAllAssessmentQuestionsAsync(int assessmentFormKey)
-        {
-            return base.Channel.DeleteAllAssessmentQuestionsAsync(assessmentFormKey);
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessment[]> GetClientAssessmentByClientGroupKeyAsync(int clinicianKey, int clientGroupKey, int assessmentFormKey)
@@ -12625,6 +7605,211 @@ namespace CoreServiceDevReference
             return base.Channel.GetAssessmentFormsByClinicianIdAsync(clinicianId);
         }
         
+        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAssessmentFormsByAccountIdAsync(int accountId)
+        {
+            return base.Channel.GetAssessmentFormsByAccountIdAsync(accountId);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Client> ImportClientAsync(CoreServiceDevReference.Client entity, int orgUserMappingKey, string clientGroup, string identity)
+        {
+            return base.Channel.ImportClientAsync(entity, orgUserMappingKey, clientGroup, identity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentInventoryItem[]> GetDistributableInventoryForAccountAsync(int orgUserMappingKey)
+        {
+            return base.Channel.GetDistributableInventoryForAccountAsync(orgUserMappingKey);
+        }
+        
+        public System.Threading.Tasks.Task SetUserInventoryStatusAsync(int orgUserMappingKey, string productFamily, bool selected)
+        {
+            return base.Channel.SetUserInventoryStatusAsync(orgUserMappingKey, productFamily, selected);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserInventoryAsync(int orgUserMappingKey, string productFamily)
+        {
+            return base.Channel.DeleteUserInventoryAsync(orgUserMappingKey, productFamily);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportFormToAssessmentForm[]> GetReportFormToAssessmentFormAsync(int assessmentFormKey)
+        {
+            return base.Channel.GetReportFormToAssessmentFormAsync(assessmentFormKey);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Assessment> SaveOrUpdateAssessmentAsync(CoreServiceDevReference.Assessment entity)
+        {
+            return base.Channel.SaveOrUpdateAssessmentAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAssessmentAsync(CoreServiceDevReference.Assessment entity)
+        {
+            return base.Channel.DeleteAssessmentAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentAsync(CoreServiceDevReference.Assessment entity)
+        {
+            return base.Channel.ValidateAssessmentAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Assessment[]> GetAllAssessmentsAsync()
+        {
+            return base.Channel.GetAllAssessmentsAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> SaveOrUpdateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity)
+        {
+            return base.Channel.SaveOrUpdateAssessmentFormAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity)
+        {
+            return base.Channel.DeleteAssessmentFormAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateAssessmentFormAsync(CoreServiceDevReference.AssessmentForm entity)
+        {
+            return base.Channel.ValidateAssessmentFormAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm> GetAssessmentFormByKeyAsync(int key)
+        {
+            return base.Channel.GetAssessmentFormByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.AssessmentForm[]> GetAllAssessmentFormsAsync()
+        {
+            return base.Channel.GetAllAssessmentFormsAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> SaveOrUpdateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity)
+        {
+            return base.Channel.SaveOrUpdateClientAssessmentNoteAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity)
+        {
+            return base.Channel.DeleteClientAssessmentNoteAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientAssessmentNoteAsync(CoreServiceDevReference.ClientAssessmentNote entity)
+        {
+            return base.Channel.ValidateClientAssessmentNoteAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote> GetClientAssessmentNoteByKeyAsync(int key)
+        {
+            return base.Channel.GetClientAssessmentNoteByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientAssessmentNote[]> GetAllClientAssessmentNotesAsync()
+        {
+            return base.Channel.GetAllClientAssessmentNotesAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> SaveOrUpdateClientGroupAsync(CoreServiceDevReference.ClientGroup entity)
+        {
+            return base.Channel.SaveOrUpdateClientGroupAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteClientGroupAsync(CoreServiceDevReference.ClientGroup entity)
+        {
+            return base.Channel.DeleteClientGroupAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientGroupAsync(CoreServiceDevReference.ClientGroup entity)
+        {
+            return base.Channel.ValidateClientGroupAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup> GetClientGroupByKeyAsync(int key)
+        {
+            return base.Channel.GetClientGroupByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientGroup[]> GetAllClientGroupsAsync()
+        {
+            return base.Channel.GetAllClientGroupsAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> SaveOrUpdateClientNoteAsync(CoreServiceDevReference.ClientNote entity)
+        {
+            return base.Channel.SaveOrUpdateClientNoteAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteClientNoteAsync(CoreServiceDevReference.ClientNote entity)
+        {
+            return base.Channel.DeleteClientNoteAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateClientNoteAsync(CoreServiceDevReference.ClientNote entity)
+        {
+            return base.Channel.ValidateClientNoteAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote> GetClientNoteByKeyAsync(int key)
+        {
+            return base.Channel.GetClientNoteByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ClientNote[]> GetAllClientNotesAsync()
+        {
+            return base.Channel.GetAllClientNotesAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> SaveOrUpdateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity)
+        {
+            return base.Channel.SaveOrUpdateEmailTemplateAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity)
+        {
+            return base.Channel.DeleteEmailTemplateAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateEmailTemplateAsync(CoreServiceDevReference.EmailTemplate entity)
+        {
+            return base.Channel.ValidateEmailTemplateAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate> GetEmailTemplateByKeyAsync(int key)
+        {
+            return base.Channel.GetEmailTemplateByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate[]> GetAllEmailTemplatesAsync()
+        {
+            return base.Channel.GetAllEmailTemplatesAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Report> SaveOrUpdateReportAsync(CoreServiceDevReference.Report entity)
+        {
+            return base.Channel.SaveOrUpdateReportAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteReportAsync(CoreServiceDevReference.Report entity)
+        {
+            return base.Channel.DeleteReportAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportAsync(CoreServiceDevReference.Report entity)
+        {
+            return base.Channel.ValidateReportAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key)
+        {
+            return base.Channel.GetReportByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync()
+        {
+            return base.Channel.GetAllReportsAsync();
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity)
+        {
+            return base.Channel.SaveOrUpdateReportFormAsync(entity);
+        }
+        
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
@@ -12652,7 +7837,7 @@ namespace CoreServiceDevReference
         {
             if ((endpointConfiguration == EndpointConfiguration.NetTcpBinding_ICoreService))
             {
-                return new System.ServiceModel.EndpointAddress("net.tcp://devservices.parinc.com/CoreService.svc");
+                return new System.ServiceModel.EndpointAddress("net.tcp://localservices.pariconnect.com/CoreService.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

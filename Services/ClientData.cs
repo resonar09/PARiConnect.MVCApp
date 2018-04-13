@@ -128,6 +128,21 @@ namespace PARiConnect.MVCApp.Services
             } 
             return clientListing;
         }
+        public async Task<IEnumerable<Models.Report>> GetClientReportsAsync(int clientKey)
+        {
+            var loggedInUserID = _userService.GetCurrentUserId();
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var clientReportsSummary = await coreServiceClient.GetClientReportSummaryAsync(clientKey);
+            var reports = clientReportsSummary.Items.Select(x => new Models.Report
+            {
+                ReportKey = x.ReportKey,
+                ReportName = x.ReportFormName,
+                CreatedDate = x.CreatedDateTime
+         
+    });
+
+            return reports;
+        }
         public async Task<CoreServiceDevReference.Client> SaveOrUpdate(CoreServiceDevReference.Client client, CoreServiceDevReference.ClientGroup clientGroup)
         {
             var loggedInUserID = _userService.GetCurrentUserId();

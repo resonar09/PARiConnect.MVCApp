@@ -52,6 +52,12 @@
     $( "#assessment-table-pending .search" ).keyup(function() {
         filterTable("assessment-table-pending");
     });
+    $("#report-table .filter").change(function () {
+        filterTable("report-table");
+    });
+    $("#report-table .search").keyup(function () {
+        filterTable("report-table");
+    });
     $(".clinicianCheckbox").click(function(e){
         var classId = $(this).val();
         $("." + classId).removeClass("d-none");
@@ -75,6 +81,7 @@
 function setup() {
     rePopulateSelectList('assessment-table-pending', true);
     rePopulateSelectList('assessment-table-completed', true);
+    rePopulateSelectList('report-table', true);
     //cleanupSelectedLists();
 }
 function populateSelectList(table, columnIndex, select) {

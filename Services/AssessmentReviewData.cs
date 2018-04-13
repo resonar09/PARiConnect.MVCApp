@@ -21,10 +21,12 @@ namespace PARiConnect.MVCApp.Services
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
             var clientAssessmentReviews = await coreServiceClient.GetClientAssessmentsForReview_NEWAsync(clientKey, int.Parse(loggedInUserID), null, null);
-
+           // var clientAssessment = await coreServiceClient.GetClientAssessmentByKeyAsync();
             var clientAssesReviews = clientAssessmentReviews
                 .Select(x => new AssessmentReview
                 {
+                    ClientAssessmentKey = x.ClientAssessmentKey,
+                    ClientKey = x.ClientKey,
                     Assessment = x.AssessmentForm.Assessment.Name + " " + x.AssessmentForm.Name,
                     ClientName = x.Client.FirstName + " " + x.Client.LastName,
                     Updated = x.TestDate??DateTime.MinValue,//x.ModifiedDateTime??DateTime.MinValue,

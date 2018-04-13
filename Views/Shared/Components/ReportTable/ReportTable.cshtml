@@ -18,11 +18,11 @@
         </div>
     </div>
 </div>*@
-<table class="table table-hover sortable w-100 tablesorter">
+<table id="report-table" class="table table-hover sortable w-100 tablesorter">
     <thead class="table-header">
         <tr class="table-row">
             <th class="table-row-start client name-header sorter-last-name">
-                <div class="header-text mb-1">Client<i class="fa fa-sort ml-1" aria-hidden="true"></i>
+                <div class="header-text mb-1 ">Client
                     <div class="float-right">
                         <button id="firstLastToggle" class="firstLastToggle btn btn-sm btn-link text-muted table-toggle">
                             <span class="first">F</span>
@@ -36,20 +36,20 @@
                 </div>
             </th>
             @*<th class="clientId">
-                <div class="header-text mb-1">Client Id</div>
-                <div class="search-toggle" style="display: none;">
-                    <select class="form-control form-control-sm clientId-select filter" id="clientId-select"></select>
-                </div>
-            </th>*@
+            <div class="header-text mb-1">Client Id</div>
+            <div class="search-toggle" style="display: none;">
+                <select class="form-control form-control-sm clientId-select filter" id="clientId-select"></select>
+            </div>
+        </th>*@
             <th class="report">
-                <div class="header-text mb-1">Report<i class="fa fa-sort ml-1" aria-hidden="true"></i></div>
+                <div class="header-text mb-1">Report</div>
                 <div class="search-toggle" style="display: none;">
                     <select class="form-control form-control-sm report-select filter" id="report-select"></select>
                 </div>
             </th>
 
             <th class="assigned">
-                <div class="header-text mb-1">Assigned<i class="fa fa-sort ml-1" aria-hidden="true"></i></div>
+                <div class="header-text mb-1">Assigned</div>
                 <div class="search-toggle form-row " style="display: none;">
 
                     <input class="form-control form-control-sm col-5 ml-1" type="date" />
@@ -58,7 +58,7 @@
                 </div>
             </th>
             <th class="completed">
-                <div class="header-text mb-1">Completed<i class="fa fa-sort ml-1" aria-hidden="true"></i></div>
+                <div class="header-text mb-1">Completed</div>
                 <div class="search-toggle form-row " style="display: none;">
 
                     <input class="form-control form-control-sm col-5 ml-1" type="date" />
@@ -66,8 +66,16 @@
                     <input class="form-control form-control-sm col-5 ml-1" type="date" />
                 </div>
             </th>
-            <th class="group table-row-end">
-                <div class="header-text mb-1"></div>
+            <th class="table-row-end">
+                <div class="mb-1">
+                    <div class="float-right">
+                        <button class="searchToggle btn btn-sm btn-link text-muted table-toggle">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+
+                    </div>
+                </div>
+                <div></div>
             </th>
         </tr>
     </thead>
@@ -76,11 +84,6 @@
         @foreach (var report in Model.Reports)
         {
         <tr class="table-row">
-            @*<td class="">
-                <div class="form-check">
-                    <input class="form-check-input clientCheck" type="checkbox" value="" id="clientCheck">
-                </div>
-            </td>*@
             <td class="table-row-start table-row-header">
                 <span class="">@report.ClientName</span>
             </td>

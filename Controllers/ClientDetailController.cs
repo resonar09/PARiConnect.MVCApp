@@ -27,6 +27,12 @@ namespace PARiConnect.MVCApp.Controllers
 
             return View("Index", id);
         }
+
+        public IActionResult ClientDetailReports(int clientKey, int clientAssessmentKey)
+        {
+
+            return View("ClientDetailReports", clientKey);
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

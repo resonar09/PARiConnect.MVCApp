@@ -2,42 +2,44 @@
 @{
     ViewData["Title"] = "Client Detail Page";
 }
-    <div class="row ">
-        <div class="col-6 text-left">
-            @await Component.InvokeAsync("ClientEdit", new { id = @Model})
-        </div>
-        <div class="col-6 text-right mt-4">
-                    <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#newAssessmentModal">
-                        <i class="fa fa-book" aria-hidden="true"></i>
-                        New Assessment
-                    </button>
-        </div>
+<div class="row ">
+    <div class="col-6 text-left">
+        @await Component.InvokeAsync("ClientEdit", new { id = @Model })
     </div>
-    <div class="row mt-2">
-        <div class="col-12">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#pending" role="tab">Pending Assessments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#completed" role="tab">Completed Assessments</a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="pending" role="tabpanel">
-                        <div class="mt-2">
-                            @await Component.InvokeAsync("AssessmentReview", new { completed = false, clientKey=@Model})
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="completed" role="tabpanel">
-                        <div class="mt-2">
-                            @await Component.InvokeAsync("AssessmentReview", new { completed = true, clientKey=@Model})
-                        </div>
-                    </div>
+    <div class="col-6 text-right mt-4">
+        <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#newAssessmentModal">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            New Assessment
+        </button>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-12">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#pending" role="tab">Pending Assessments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#completed" role="tab">Completed Assessments</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="pending" role="tabpanel">
+                <div class="mt-2">
+                    @await Component.InvokeAsync("AssessmentReview", new { completed = false, clientKey = @Model })
                 </div>
+            </div>
+            <div class="tab-pane" id="completed" role="tabpanel">
+                <div class="mt-2">
+                    @await Component.InvokeAsync("AssessmentReview", new { completed = true, clientKey = @Model })
+                </div>
+            </div>
         </div>
     </div>
-@await Component.InvokeAsync("DynamicForm", new { model = "ClinicianInvite"})
+</div>
+@await Component.InvokeAsync("ClientReports", new { clientKey = 384248 })
+@await Component.InvokeAsync("DynamicForm", new { model = "ClinicianInvite" })
+@await Component.InvokeAsync("DynamicForm", new { model = "ClientEdit" })
 
 @section scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

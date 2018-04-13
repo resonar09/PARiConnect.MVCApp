@@ -11,6 +11,7 @@ namespace PARiConnect.MVCApp.Services
     {
        Task<IEnumerable<Models.Client>> GetListAsync();
        Task<Models.Client> GetByKeyAsync(int id);
+       Task<IEnumerable<Models.Report>> GetClientReportsAsync(int clientKey);
        Task<CoreServiceDevReference.Client> SaveOrUpdate(CoreServiceDevReference.Client client, CoreServiceDevReference.ClientGroup clientGroup);
     }
 }

@@ -65,7 +65,9 @@ namespace PARiConnect.MVCApp
             }
             services.AddAutoMapper(x=> x.AddProfile(new MappingsProfile()));
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.Login>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.AAB>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAB>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAD>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClientEdit>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, GroupEdit>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClinicianInvite>();
@@ -80,6 +82,8 @@ namespace PARiConnect.MVCApp
             })
             .AddCookie(options => {
                 options.LoginPath = "/auth/login";
+                options.ReturnUrlParameter = "ReturnUrl";
+                options.AccessDeniedPath = "/auth/accessdenied";
             });
         }
 

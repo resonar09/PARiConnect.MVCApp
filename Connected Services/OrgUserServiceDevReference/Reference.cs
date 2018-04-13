@@ -5833,7 +5833,7 @@ namespace OrgUserServiceDevReference
         {
             if ((endpointConfiguration == EndpointConfiguration.NetTcpBinding_IOrgUserService))
             {
-                return new System.ServiceModel.EndpointAddress("net.tcp://devservices.parinc.com/OrgUserService.svc");
+                return new System.ServiceModel.EndpointAddress("net.tcp://localservices.pariconnect.com/OrgUserService.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

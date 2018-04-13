@@ -10,6 +10,8 @@ namespace PARiConnect.MVCApp.Models
         public string ClientId { get; set; }
         public string ClientName { get; set; }
         public string ReportName { get; set; }
+
+        public DateTime CreatedDate { get; set; }
         public DateTime AssignedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
         public int ReportKey { get; set; }

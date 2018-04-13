@@ -6,6 +6,9 @@ namespace PARiConnect.MVCApp.ViewModels
     public class HomeIndexViewModel
     {
         public string TableId { get; set; }
+
+        public int ClientKey { get; set; }
+
         public IEnumerable<AssessmentReview> AssessmentReview { get; set; }
     }
 }
