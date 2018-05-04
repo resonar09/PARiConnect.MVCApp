@@ -49,7 +49,17 @@ namespace PARiConnect.MVCApp.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Models.Report>> GetClientReportsAsync(int clientKey)
+        public Task<IEnumerable<Models.Client>> GetClientGroupListAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Models.Report>> GetClientReportsAsync(int clientKey, int clientAssessmentKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Models.Client>> GetClientsByKeysAsync(int[] keys)
         {
             throw new NotImplementedException();
         }

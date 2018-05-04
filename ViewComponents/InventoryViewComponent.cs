@@ -9,11 +9,11 @@ namespace PARiConnect.MVCApp.ViewComponents
 {
     public class InventoryViewComponent : ViewComponent
     {
-        private IInventoryUsesData _inventoryUsesData;
+        private IInventoryData _inventoryUsesData;
         private IConfiguration _configuration;
 
 
-        public InventoryViewComponent(IInventoryUsesData inventoryUsesData, IConfiguration configuration)
+        public InventoryViewComponent(IInventoryData inventoryUsesData, IConfiguration configuration)
         {
             _inventoryUsesData = inventoryUsesData;
             _configuration = configuration;
@@ -21,7 +21,7 @@ namespace PARiConnect.MVCApp.ViewComponents
         public IViewComponentResult Invoke()
         {
             var model = new InventoryUseListViewModel();
-            var invUses = _inventoryUsesData.GetListAsync().Result;
+            var invUses = _inventoryUsesData.GetInventoryUseListAsync().Result;
             model.InventoryUseList= invUses;
 
             var appSettingsSection = _configuration.GetSection("AppSettings");

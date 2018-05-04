@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PARiConnect.MVCApp.Models;
 using PARiConnect.MVCApp.Services;
+using PARiConnect.MVCApp.ViewModels;
 
 namespace PARiConnect.MVCApp.Controllers
 {
@@ -24,8 +25,12 @@ namespace PARiConnect.MVCApp.Controllers
         }
         public IActionResult Index(int? id)
         {
-
+               
             return View();
+        }
+        public IActionResult GetClients(int[] keys)
+        {
+            return ViewComponent("ClientAssessTable", keys);
         }
         public IActionResult Error()
         {

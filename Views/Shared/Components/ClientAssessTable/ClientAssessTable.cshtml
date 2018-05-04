@@ -1,0 +1,44 @@
+﻿@model PARiConnect.MVCApp.ViewModels.ClientViewModel
+
+<table class="table table-hover sortable w-100 tablesorter small header-fixed ">
+    <thead class="table-header">
+        <tr class="table-row">
+            <th class="table-row-start width-20">
+                <div class="header-text mb-0">
+                    First Name
+                </div>
+            </th>
+            <th class="width-20">
+                <div class="header-text mb-0">Last Name</div>
+            </th>
+            <th class="width-30">
+                <div class="header-text mb-0">Email</div>
+            </th>
+            <th class="width-20">
+                <div class="header-text mb-0">Birthday</div>
+            </th>
+            <th class="table-row-end width-10">
+                <div class="header-text mb-0">Age</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody class="searchable">
+    
+    @foreach (var client in Model.Clients)
+    {
+        <tr class="table-row">
+            <td class="table-row-start width-20">
+                @client.FirstName
+            </td>
+            <td class="width-20">@client.LastName</td>
+            <td class="width-30">@client.PrimaryEmail</td>
+            <td class="width-20">
+                @client.DateOfBirth
+            </td>
+            <td class="table-row-end width-10">
+                @client.Age
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

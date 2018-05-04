@@ -13,14 +13,20 @@ namespace PARiConnect.MVCApp.Controllers
     public class DemographicsController : Controller
     {
 
-        public DemographicsController()
+        private readonly IAssessmentFormData _assessmentFormData;
+        public DemographicsController(IAssessmentFormData assessmentFormData)
         {
-
+            _assessmentFormData = assessmentFormData;
         }
         public IActionResult Index(int? id)
         {
-
             return View();
+        }
+        public IActionResult GetDemo(int key)
+        {
+            var assessmentForm = _assessmentFormData.GetByKeyAsync(key).Result;
+
+            return ViewComponent("DynamicForm", assessmentForm.AssessmentKey);
         }
         public IActionResult Error()
         {

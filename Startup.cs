@@ -43,7 +43,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IDynamicFormData, DynamicFormDataMock>();
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewDataMock>();
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedDataMock>();
-                services.AddScoped<IInventoryUsesData, InventoryUsesDataMock>();
+                services.AddScoped<IInventoryData, InventoryDataMock>();
                 services.AddScoped<IClientData, ClientDataMock>();
                 services.AddScoped<IClinicianData, ClinicianDataMock>();
                 services.AddScoped<IGroupData, GroupDataMock>();
@@ -52,9 +52,10 @@ namespace PARiConnect.MVCApp
             else
             {
                 services.AddScoped<IDynamicFormData, DynamicFormData>();
+                services.AddScoped<IAssessmentFormData, AssessmentFormData>();
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewData>();
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedData>();
-                services.AddScoped<IInventoryUsesData, InventoryUsesData>();
+                services.AddScoped<IInventoryData, InventoryData>();
                 services.AddScoped<IClientData, ClientData>();
                 services.AddScoped<IClinicianData, ClinicianData>();
                 services.AddScoped<IGroupData, GroupData>();
@@ -66,6 +67,7 @@ namespace PARiConnect.MVCApp
             services.AddAutoMapper(x=> x.AddProfile(new MappingsProfile()));
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.Login>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.AAB>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.APS>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAB>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAD>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClientEdit>();

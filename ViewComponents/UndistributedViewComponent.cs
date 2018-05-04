@@ -9,11 +9,11 @@ namespace PARiConnect.MVCApp.ViewComponents
 {
     public class UndistributedViewComponent : ViewComponent
     {
-        private IInventoryUsesData _inventoryUsesData;
+        private IInventoryData _inventoryUsesData;
         private IConfiguration _configuration;
 
 
-        public UndistributedViewComponent(IInventoryUsesData inventoryUsesData, IConfiguration configuration)
+        public UndistributedViewComponent(IInventoryData inventoryUsesData, IConfiguration configuration)
         {
             _inventoryUsesData = inventoryUsesData;
             _configuration = configuration;

@@ -13,10 +13,10 @@ namespace PARiConnect.MVCApp.ViewComponents
         {
             _clientData = clientData;
         }
-        public IViewComponentResult Invoke(int clientKey)
+        public IViewComponentResult Invoke(int clientKey, int clientAssessmentKey)
         {
             var model = new ClientDetailViewModel();
-            var clients = _clientData.GetClientReportsAsync(clientKey).Result;
+            var clients = _clientData.GetClientReportsAsync(clientKey, clientAssessmentKey).Result;
             model.Reports = clients;
             return View("ClientReports", model);
         }

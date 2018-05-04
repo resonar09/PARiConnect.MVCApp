@@ -5009,6 +5009,8 @@ namespace CoreServiceDevReference
         
         private bool DisableOnSiteAdministrationField;
         
+        private bool IsFavoriteField;
+        
         private string PartNumberField;
         
         private string ProductFamilyField;
@@ -5092,6 +5094,19 @@ namespace CoreServiceDevReference
             set
             {
                 this.DisableOnSiteAdministrationField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsFavorite
+        {
+            get
+            {
+                return this.IsFavoriteField;
+            }
+            set
+            {
+                this.IsFavoriteField = value;
             }
         }
         
@@ -6187,6 +6202,10 @@ namespace CoreServiceDevReference
     public interface ICoreService
     {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormRespons" +
+            "e")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/DeleteReportFormResponse")]
         System.Threading.Tasks.Task DeleteReportFormAsync(CoreServiceDevReference.ReportForm entity);
         
@@ -6393,6 +6412,9 @@ namespace CoreServiceDevReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKeyResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Client> GetClientByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKeys", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKeysResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Client[]> GetClientByKeysAsync(int[] keys);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByRowGUID", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByRowGUIDResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Client> GetClientByRowGUIDAsync(System.Guid rowGuid);
@@ -6879,10 +6901,6 @@ namespace CoreServiceDevReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReports", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportsResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormRespons" +
-            "e")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
@@ -6933,6 +6951,11 @@ namespace CoreServiceDevReference
         public CoreServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity)
+        {
+            return base.Channel.SaveOrUpdateReportFormAsync(entity);
         }
         
         public System.Threading.Tasks.Task DeleteReportFormAsync(CoreServiceDevReference.ReportForm entity)
@@ -7208,6 +7231,11 @@ namespace CoreServiceDevReference
         public System.Threading.Tasks.Task<CoreServiceDevReference.Client> GetClientByKeyAsync(int key)
         {
             return base.Channel.GetClientByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Client[]> GetClientByKeysAsync(int[] keys)
+        {
+            return base.Channel.GetClientByKeysAsync(keys);
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.Client> GetClientByRowGUIDAsync(System.Guid rowGuid)
@@ -7803,11 +7831,6 @@ namespace CoreServiceDevReference
         public System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync()
         {
             return base.Channel.GetAllReportsAsync();
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity)
-        {
-            return base.Channel.SaveOrUpdateReportFormAsync(entity);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

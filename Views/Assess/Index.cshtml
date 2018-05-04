@@ -1,34 +1,598 @@
-@{
-    ViewData["Title"] = "Assess Page";
-}
+@model PARiConnect.MVCApp.ViewModels.AssessViewModel
+<div class="container-fluid  full-height-100">
+    <div class="row mt-3">
+        <h3>Assess</h3>
+    </div>
+    <div class="row mt-1">
+        <div>To issue assessments to clients, select clients, then select the assessments you'd like them to take.</div>
+        <input id="usesNeeded" type="hidden" name="clientCount" value="0">
+        <input id="usesAvailable" type="hidden" name="assessmentCount" value="0">
+        <input id="disableEmailInvitations" type="hidden" name="disableEmailInvitations" value="0">
+        <input id="disableOnSiteAdministration" type="hidden" name="disableOnSiteAdministration" value="0">
+        <input id="disableManualEntry" type="hidden" name="disableManualEntry" value="0">
 
-<h1>Assess Page</h1>
-<div class="row">
-    <div class="col-2">
-        <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#aabModal">
-            <i class="fa fa-user-plus" aria-hidden="true"></i>
-            AAB
-        </button>
     </div>
-    @await Component.InvokeAsync("DynamicForm", new { model = "AAB" })
-    <div class="col-2">
-        <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#cabModal">
-            <i class="fa fa-user-plus" aria-hidden="true"></i>
-            CAB Parent
-        </button>
+    <div class="row mt-3">
+        <div class="col-3">
+            <input type="text" class="form-control form-control-sm search-list" data-list-id="#client-list" placeholder="Search for clients..." />
+        </div>
+        <div class="col text-center">
+            <h5>These Clients</h5>
+        </div>
+        <div class="col-1 text-center">
+            <span>will take</span>
+        </div>
+        <div class="col text-center">
+            <h5>This Assessment</h5>
+        </div>
+        <div class="col-3">
+            <input type="text" class="form-control form-control-sm search-list" data-list-id="#assessment-list" placeholder="Search for assessments..." />
+        </div>
     </div>
-    @await Component.InvokeAsync("DynamicForm", new { model = "CAB" })
-    <div class="col-2">
-        <button class="btn btn-outline-primary btn-lg" type="button" data-toggle="modal" data-target="#cadModal">
-            <i class="fa fa-user-plus" aria-hidden="true"></i>
-            CAD
-        </button>
+    <div class="row mt-3 full-height-150">
+        <div id="clients" class="col-3 h-100">
+            <div class="menu-bar d-flex justify-content-between">
+                <div class="btn-group ml-1" role="group" aria-label="Client Group">
+                    <button type="button" id="toggle-client" class="btn btn-outline-secondary btn-sm pt-0 pb-0 active"><i class="fa fa-user text-light" aria-hidden="true"></i></button>
+                    <button type="button" id="toggle-group" class="btn btn-outline-secondary btn-sm pt-0 pb-0"><i class="fa fa-users text-light" aria-hidden="true"></i></button>
+                </div>
+                <div class="dropdown sort">
+                    <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="dropdown-text">Alphabetical</span>
+                    </a>
+                    <span class="dropdown-menu text-left" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" data-container="client-list" data-id="alphabetical" data-text="Alphabetical"><i class="fa fa-sort-alpha-asc mr-1"></i>Alphabetical</a>
+                        <a class="dropdown-item" href="#" data-container="client-list" data-id="created" data-text="Date Created"><i class="fa fa-calendar mr-1" aria-hidden="true"></i>Date Created</a>
+                    </span>
+                </div>
+            </div>
+            <div class="scrollbar scrollbar-style h-100">
+                <ul id="client-list" class="list-group ">
+                    @{int ci = 1;}
+                    @foreach (var client in Model.Clients)
+                    {
+                        @if (!client.IsGroup)
+                        {
+                            <li id="client-drag@(ci)" class="list-group-item d-flex align-items-center client-item pr-1" data-client-date-created="@(client.DateCreated)" draggable="true" ondragstart="drag(event)">
+                                @*<button class="btn btn-link remove-client start-button d-none" type="button" data-client-name="@(client.ClientName)" data-client-id="@(client.ClientId)" data-client-key="@(client.ClientKey)"><i class="fa fa-arrow-left fa-1x"></i></button>*@
+                                <i class="fa fa-user-o mr-2 d-none d-xl-block"></i>
+                                <span class="search-text">@client.ClientName</span>
+                                <span class="ml-auto"></span>
+                                <span class="text-muted ml-auto mr-2 d-none d-lg-block small">@client.ClientId</span>
+                                <button class="btn btn-link add-client end-button" type="button" data-client-name="@(client.ClientName)" data-client-id="@(client.ClientId)" data-client-key="@(client.ClientKey)"><i class="fa fa-arrow-right fa-1x"></i></button>
+                            </li>
+                        }
+                        else
+                        {
+                            <li id="client-drag@(ci)" class="list-group-item d-flex align-items-center pr-1 group-item hide-item" data-client-date-created="@(client.DateCreated)" draggable="true" ondragstart="drag(event)">
+                                @*<button class="btn btn-link remove-client start-button d-none" type="button" data-client-name="@(client.GroupName)" data-client-id="" data-client-key="@(client.GroupKey)"><i class="fa fa-arrow-left fa-1x"></i></button>*@
+                                <i class="fa fa-users mr-2 d-none d-xl-block"></i>
+                                <span class="search-text">@client.GroupName</span>
+                                <span class="ml-auto"></span>
+                                <button class="btn btn-link add-client end-button" type="button" data-client-name="@(client.GroupName)" data-client-id="" data-client-key="@(client.GroupKey)"><i class="fa fa-arrow-right fa-1x"></i></button>
+                            </li>
+                        }
+                        ci++;
+                    }
+                </ul>
+            </div>
+        </div>
+        <div id="assess-clients" class="col text-center border scrollbar scrollbar-style h-100" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <ul class="list-group"></ul>
+        </div>
+        <div id="assess-assessments" class="col text-center border h-100">
+            <ul class="list-group"></ul>
+        </div>
+        <div id="assessments" class="col-3 h-100">
+            <div class="menu-bar">
+                <div class="dropdown filter text-right">
+                    <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="dropdown-text">All</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" data-container="assessment-list" data-id="all" data-text="All"><i class="fa fa-asterisk mr-1" aria-hidden="true"></i>All</a>
+                        <a class="dropdown-item" href="#" data-container="assessment-list" data-id="favorite" data-text="My Favorites"><i class="fa fa-star mr-1"></i>My Favorites</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scrollbar scrollbar-style h-100">
+                <ul id="assessment-list" class="list-group">
+                    @foreach (var assessment in Model.Assessments)
+                    {
+                        <li class="list-group-item p-0" data-assessment-count="@(assessment.Count)">
+                            <div class="assessment-header d-flex align-items-center ">
+                                <span class="ml-2">@assessment.ProductFamily</span>
+                                <em class="ml-auto mr-2">iAdmins: @assessment.Count</em>
+                            </div>
+                            @foreach (var assessmentform in @assessment.AssessmentForms)
+                            {
+                                <div class="assessment-body d-flex align-items-center my-2 @(assessmentform.IsFavorite ? " favorite":"not-favorite")">
+                                    <button class="btn btn-link add-assessment @(assessment.Count > 0 || assessmentform.DisableOnSiteAdministration ? " active" : "disabled" )" @(assessment.Count > 0 || assessmentform.DisableOnSiteAdministration ? "" : "disabled")
+                                            type="button"
+                                            data-assessment-form-name="@(assessmentform.AssessmentName) - @(assessmentform.Name)"
+                                            data-assessment-form-key="@(assessmentform.AssessmentFormKey)"
+                                            data-assessment-count="@(assessment.Count)"
+                                            data-disable-email-invitations="@(assessmentform.DisableEmailInvitations ? 1:0)"
+                                            data-disable-manual-entry="@(assessmentform.DisableManualEntry ? 1:0)"
+                                            data-disable-onsite-administration="@(assessmentform.DisableOnSiteAdministration ? 1:0)">
+                                        <i class="fa fa-arrow-left fa-1x"></i>
+                                    </button>
+                                    <i class="fa fa-file-text-o mr-2 d-none d-xl-block"></i>
+                                    <a href="#" title="purchase more">
+                                        <span class="ml-1">@assessmentform.Name</span>
+                                    </a>
+                                    <a href="#" class="btn-link fav-link ml-auto mr-2" data-assessment-form-id="@(assessmentform.AssessmentFormKey)" data-assessment-favorite="@(assessmentform.IsFavorite)"><i class="fa @(assessmentform.IsFavorite ? " fa-star" : "fa-star-o" ) fa-1x ml-2"></i></a>
+                                </div>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
     </div>
-    @await Component.InvokeAsync("DynamicForm", new { model = "CAD" })
 </div>
+<div class="modal fade" id="adminOptionModal" tabindex="-1" role="dialog" aria-labelledby="adminOptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="adminOptionModalLabel">Please choose an administration option.</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex justify-content-around pt-3">
 
+                <button id="email-button" type="button" class="btn btn-outline-secondary admin-option" data-toggle="modal" data-target="#emailAssessmentModal">
+                    <i class="fa fa-envelope-o fa-3x mb-3"></i>
+                    <h6>Email</h6>
+                    <h6>Invitation</h6>
+                </button>
+                <button id="onsite-button" type="button" class="btn btn-outline-secondary admin-option">
+                    <i class="fa fa-desktop fa-3x mb-3"></i>
+                    <h6>Administer</h6>
+                    <h6>On-Site</h6>
+                </button>
+                <button id="manual-button" type="button" class="btn btn-outline-secondary admin-option">
+                    <i class="fa fa-file-text-o fa-3x mb-3"></i>
+                    <h6>Enter Form</h6>
+                    <h6>Paper</h6>
+                </button>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="emailAssessmentModal" tabindex="-1" role="dialog" aria-labelledby="emailAssessmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content ">
+            <div class="modal-body d-flex justify-content-around pt-3">
+                <div class="col-3 bg-light d-none d-lg-block d-xl-block small">
+                    <div class=" font-weight-bold  mt-3">Send Assessment By Email</div>
+                    <div>The Form</div>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mt-3">
+                            <span class="fa-stack mr-2">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <strong class="fa-stack-1x text-white">1</strong>
+                            </span>Client Demographics
+                        </li>
+                        <li class="mt-3">
+                            <span class="fa-stack mr-2 text-muted">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <strong class="fa-stack-1x text-white">2</strong>
+                            </span>Email Settings
+                        </li>
+                    </ul>
+                </div>
+                <div class="col d-block col">
+                    <div class="main-section">
+                        <div class="d-flex justify-content-between ">
+                            <span>Please review the information below:</span>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        
+                        <div id="client-assess-table"></div>
+                        @*<table id="client-demo-table" class="table table-hover sortable w-100 tablesorter header-fixed">
+                                <thead class="table-header">
+                                    <tr class="table-row">
+                                        <th class="table-row-start">
+                                            <div class="header-text">
+                                                Client
+                                            </div>
+                                        </th>
+                                        <th class="report">
+                                            <div class="header-text">Report</div>
+                                        </th>
+                                        <th class="assigned">
+                                            <div class="header-text">Assigned</div>
+                                        </th>
+                                        <th class="completed">
+                                            <div class="header-text">Completed</div>
+                                        </th>
+                                        <th class="table-row-end">
+                                            <div class="header-text">Completed</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="searchable">
+
+                                    @foreach (var report in Model.Assessments)
+                                    {
+                                        <tr class="table-row">
+                                            <td class="table-row-start table-row-header">
+                                                <span class="">@report.AssessmentKey</span>
+                                            </td>
+
+                                            <td>@report.AssessmentKey</td>
+                                            <td>
+                                                @report.AssessmentKey
+                                            </td>
+                                            <td>
+                                                @report.AssessmentKey
+                                            </td>
+                                            <td class="table-row-end">
+                                                @report.AssessmentKey
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>*@
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Next Step</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Footer {
+    <div class="text-right p-2">
+        <button id="next-step1" type="button" class="btn btn-primary btn-lg mr-3 disabled" data-toggle="modal" data-target="#adminOptionModal">Next Step</button>
+    </div>
+}
 @section scripts {
     @{await Html.RenderPartialAsync("_CommonScriptsPartial"); }
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        var PAR = PAR || {};
+        PAR.Assess = {};
+        PAR.Assess.data = {
+            disableEmailInvitations: false,
+            disableManualEntry: false,
+            disableOnSiteAdministration: false,
+            clientCount: 0,
+            assessmentCount: 0,
+            assessmentUses: 0,
+            clients: [],
+            assessments: [],
+            setDisableEmailInvitations: function (disableEmailInvitations) {
+                console.log(disableEmailInvitations);
+                if (disableEmailInvitations > 0)
+                    this.disableEmailInvitations = true;
+                else
+                    this.disableEmailInvitations = false;
+                return this.disableEmailInvitations;
+            },
+            setDisableManualEntry: function (disableManualEntry) {
+                if (disableManualEntry > 0)
+                    this.disableManualEntry = true;
+                else
+                    this.disableManualEntry = false;
+                return this.disableManualEntry;
+            },
+            setDisableOnSiteAdministration: function (disableOnSiteAdministration) {
+                if (disableOnSiteAdministration > 0)
+                    this.disableOnSiteAdministration = true;
+                else
+                    this.disableOnSiteAdministration = false;
+                return this.disableOnSiteAdministration;
+            },
+            addClientCount: function () {
+                this.clientCount++;
+                return this.clientCount;
+            },
+            addClient: function (key) {
+                this.clientCount++;
+                this.clients.push(key);
+                return this.clientCount;
+            },
+            addClientKey: function (key) {
+                this.clients.push(key);
+                return this.clients;
+            },
+            removeClient: function (key) {
+                this.clientCount--;
+                this.clients.pop(key);
+                return this.clientCount;
+            },
+            addAssessment: function (key, uses) {
+                this.assessmentCount++;
+                this.assessmentUses = uses;
+                this.assessments.push(key);
+                return this.assessmentCount;
+            },
+            removeAssessment: function (key) {
+                this.assessmentCount--;
+                this.assessmentUses = 0;
+                this.assessments.pop(key);
+                return this.assessmentCount;
+            }
+        }
 
+        function addClient(item) {
+
+            var newClientCount = PAR.Assess.data.clientCount + 1;
+            var assessmentCount = PAR.Assess.data.assessmentCount;
+            var assessmentUses = PAR.Assess.data.assessmentUses;
+
+            if ((assessmentCount == 0) || (assessmentUses >= newClientCount)) {
+                var clientName = item.data("client-name");
+                var clientId = item.data("client-id");
+                var clientKey = item.data("client-key");
+                var clientCount = PAR.Assess.data.addClient(clientKey);
+                AddClientToAssess(clientKey, clientName, clientId);
+
+                ValidateNext(clientCount, assessmentUses);
+                item.closest("li").eq(0).addClass("hide-item");
+            }
+            else {
+                alert("Purchase more uses or remove clients from list on the left.");
+            }
+        }
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var item = $("#" + data).find(".add-client");
+            addClient(item);
+
+        }
+        function searchList(obj, value) {
+            $(obj).find("li").each(function (index) {
+                var rowMatch = false;
+                if ($(this).find("span").text().toUpperCase().indexOf(value.toUpperCase()) !== -1) {
+                    rowMatch = true;
+                }
+                $(this).toggleClass("hide-filtered-item", !rowMatch);
+            });
+        }
+        function AddClientToAssess(clientKey, clientName, clientId) {
+            $(".ass-badge").text(PAR.Assess.data.clientCount + " of " + PAR.Assess.data.assessmentUses);
+            $("#assess-clients ul").append('<li class="list-group-item d-flex align-items-center pl-1"><button class="btn btn-link" type="button" onClick="RemoveClientFromAssess(this);" data-client-name=\"' + clientName
+                + '" data-client-key=\"' + clientKey + '\"><i class="fa fa-arrow-left fa-1x"></i></button><i class="fa fa-user-o d-none d-xl-block mr-2"></i><span >' + clientName
+                + '</span><span class="ml-auto"></span><small class="text-muted d-none d-lg-block mr-2">' + clientId + '</small></li>');
+        }
+        function AddAssessmentToAssess(assessmentFormKey, assessmentForm) {
+            var assCount = PAR.Assess.data.clientCount + " of " + PAR.Assess.data.assessmentUses;
+            $("#assess-assessments ul").append('<li class="list-group-item d-flex align-items-center pr-1"><i class="fa fa-file-text-o d-none d-xl-block mr-2"></i><span >' + assessmentForm
+                + '</span><span class="ass-badge badge badge-pill badge-success ml-1">' + assCount + '</span><span class="ml-auto"></span><button class="btn btn-link" type="button" onClick="RemoveAssessmentFromAssess(this);" data-assessment-form-key=\"' + assessmentFormKey
+                + '\"><i class="fa fa-arrow-right fa-1x"></i></button></li>');
+            $(".active").prop("disabled", true);
+        }
+        function ShowClient(clientkey) {
+            var hiddenClient = $('*[data-client-key="' + clientkey + '"]');
+            hiddenClient.closest("li").eq(0).removeClass("hide-item");
+        }
+        function ShowAssessment(assessmentFormKey) {
+            var hiddenClient = $('*[data-assessment-form-key="' + assessmentFormKey + '"]');
+            hiddenClient.closest("li").eq(0).removeClass("hide-item");
+            $(".active").prop("disabled", false);
+        }
+        function RemoveClientFromAssess(obj) {
+
+            var clientCount = PAR.Assess.data.clientCount;
+            var key = $(obj).data("client-key");
+            var assessmentUses = PAR.Assess.data.assessmentUses;
+            PAR.Assess.data.removeClient(key);
+            $(".ass-badge").text(clientCount + " of " + assessmentUses);
+            $(obj).closest("li").eq(0).remove();
+  
+            ShowClient(key);
+            ValidateNext(clientCount, assessmentUses);
+        }
+        function RemoveAssessmentFromAssess(obj) {
+            var key = $(obj).data("assessment-form-key");
+            PAR.Assess.data.removeAssessment(key);
+            $(obj).closest("li").eq(0).remove();
+
+            ShowAssessment(key);
+            ValidateNext(PAR.Assess.data.clientCount, 0);
+        }
+        function ValidateNext(usesNeeded, usesAvailable) {
+            if (usesNeeded > 0 && usesAvailable > 0) {
+                $("#next-step1").removeClass("disabled");
+                $("#next-step1").attr("disabled", false);
+            }
+            else {
+                $("#next-step1").addClass("disabled");
+                $("#next-step1").attr("disabled", true);
+            }
+        }
+        $(document).ready(function () {
+            $("#email-button").click(function () {
+                $('#adminOptionModal').modal('hide');
+            });
+            $("#toggle-client").click(function (e) {
+                $(".client-item").removeClass("hide-item");
+                $(".group-item").addClass("hide-toggle-item");
+                $(".client-item").removeClass("hide-toggle-item");
+                $("#toggle-client").removeClass("active");
+                $("#toggle-group").addClass("active");
+            });
+            $("#toggle-group").click(function (e) {
+                $(".group-item").removeClass("hide-item");
+                $(".group-item").removeClass("hide-toggle-item");
+                $(".client-item").addClass("hide-toggle-item");
+                $("#toggle-client").addClass("active");
+                $("#toggle-group").removeClass("active");
+            });
+            $(".search-list").keyup(function () {
+                var value = this.value;
+                var obj = $(this).data("list-id");
+                searchList(obj, value);
+            });
+            $(".dropdown-item").click(function (e) {
+                $(".search-list").val("");
+                var text = $(this).data("text");
+                var id = $(this).data("id");
+                var container = $(this).data("container");
+                var items = $("#" + container).find(".list-group-item");
+                $(this).closest(".dropdown").find(".dropdown-text").text(text);
+                $(items).addClass("hide-item");
+                if (id == 'favorite') {
+                    $(".not-favorite").addClass("hide-item");
+                    $(".favorite").parent("li").removeClass("hide-item");
+                }
+                if (id == 'all') {
+                    $(items).removeClass("hide-item");
+                    $(".not-favorite").removeClass("hide-item");
+                }
+                if (id == 'alphabetical') {
+                    items.sort(function (a, b) {
+                        var keyA = $(a).find(".search-text").text();
+                        var keyB = $(b).find(".search-text").text();
+                        if (keyA < keyB) return -1;
+                        if (keyA > keyB) return 1;
+                        return 0;
+                    });
+                    var ul = $('#' + container);
+                    items.removeClass("hide-item");
+                    $.each(items, function (i, li) {
+                        ul.append(li);
+                    });
+                }
+                if (id == 'created') {
+                    items.sort(function (a, b) {
+                        var keyA = Date.parse($(a).data("client-date-created"));
+                        var keyB = Date.parse($(b).data("client-date-created"));
+                        if (keyA < keyB) return 1;
+                        if (keyA > keyB) return -1;
+                        return 0;
+                    });
+                    var ul = $('#' + container);
+                    items.removeClass("hide-item");
+                    $.each(items, function (i, li) {
+                        ul.append(li);
+                    });
+                }
+            });
+            $(".add-client").click(function (e) {
+                e.preventDefault();
+                addClient($(this));
+            });
+            $(".add-assessment").click(function (e) {
+                e.preventDefault();
+                var disableEmailInvitations = $(this).data("disable-email-invitations");
+                var disableManualEntry = $(this).data("disable-manual-entry");
+                var disableOnSiteAdministration = $(this).data("disable-onsite-administration");
+                var iAdminCount = $(this).data("assessment-count");
+                var clientCount = PAR.Assess.data.clientCount;
+                if (disableEmailInvitations) {
+                    iAdminCount = 1;
+                }
+                if ((clientCount == 0) || (iAdminCount >= clientCount)) {
+                    PAR.Assess.data.setDisableEmailInvitations(disableEmailInvitations);
+                    PAR.Assess.data.setDisableManualEntry(disableManualEntry);
+                    PAR.Assess.data.setDisableOnSiteAdministration(disableOnSiteAdministration);
+                    var assessmentFormKey = $(this).data("assessment-form-key");
+                    var assessmentFormName = $(this).data("assessment-form-name");
+                    PAR.Assess.data.addAssessment(assessmentFormKey, iAdminCount);
+
+                    AddAssessmentToAssess(assessmentFormKey, assessmentFormName);
+                    $(this).closest("li").eq(0).addClass("hide-item");
+                }
+                else {
+                    alert("Purchase more uses or remove clients from list on the left.");
+                }
+                var usesAvailable = +$("#usesAvailable").val();
+                ValidateNext(PAR.Assess.data.clientCount, PAR.Assess.data.assessmentUses);
+            });
+            $(".fav-link").click(function (e) {
+                var favLink = $(this);
+                var id = $(this).data("assessment-form-id");
+                var favorited = $(this).data("assessment-favorite");
+                if (favorited === 'False')
+                    favorited = false;
+                if (favorited === 'True')
+                    favorited = true;
+                console.log('data-fav: ' + favorited);
+                $.ajax({
+                    url: '/Inventory/SetFavoriteStatus/' + id,
+                    type: "get",
+                    data: { favorited: !favorited },
+                    success: function (response) {
+                        console.log('new data-fav: ' + !favorited);
+                        favLink.data("assessment-favorite", !favorited);
+                        favLink.find('.fa').toggleClass("fa-star-o fa-star");
+                        favLink.closest(".assessment-body").eq(0).toggleClass("favorite", !favorited);
+                        favLink.closest(".assessment-body").eq(0).toggleClass("not-favorite", favorited)
+                    }
+                });
+
+
+            });
+            $('#adminOptionModal').on('show.bs.modal', function (event) {
+                //console.log('disableEmailInvitations : ' + $("#disableEmailInvitations").val());
+                //console.log('disableManualEntry: ' + $("#disableManualEntry").val());
+                //console.log('disableOnSiteAdministration: ' + $("#disableOnSiteAdministration").val());
+                if ($("#disableEmailInvitations").val() > 0) {
+                    $("#email-button").addClass("disabled");
+                    $("#email-button").attr("disabled", true);
+                }
+                else {
+                    $("#email-button").removeClass("disabled");
+                    $("#email-button").attr("disabled", false);
+                }
+                if ($("#disableManualEntry").val() > 0) {
+                    $("#manual-button").addClass("disabled");
+                    $("#manual-button").attr("disabled", true);
+                }
+                else {
+                    $("#manual-button").removeClass("disabled");
+                    $("#manual-button").attr("disabled", false);
+                }
+                if ($("#disableOnSiteAdministration").val() > 0) {
+                    $("#onsite-button").addClass("disabled");
+                    $("#onsite-button").attr("disabled", true);
+                }
+                else {
+                    $("#onsite-button").removeClass("disabled");
+                    $("#onsite-button").attr("disabled", false);
+                }
+            });
+            $('#emailAssessmentModal').on('show.bs.modal', function (event) {
+                console.log("emailAssessmentModal");
+                //$.ajax({
+                //    url: 'Clients/GetClients',
+                //    type: 'GET',
+                //    traditional: true,
+                //    data: { keys: PAR.Assess.data.clients },
+                //    success: function (result) {
+                //        $('#client-assess-table').html(result);
+                //    }
+                //});
+                $.ajax({
+                    url: 'Demographics/GetDemo',
+                    type: 'GET',
+                    traditional: true,
+                    data: { key: PAR.Assess.data.assessments[0] },
+                    success: function (result) {
+                        $('#client-assess-table').html(result);
+                    }
+                });
+            });
+        });
+    </script>
 }

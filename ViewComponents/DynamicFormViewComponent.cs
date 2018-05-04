@@ -41,7 +41,6 @@ namespace PARiConnect.MVCApp.ViewComponents
             if(viewmodel.Settings.Container == ContainerType.Modal)
                 return View("DynamicFormModal",viewmodel);
             return View("DynamicForm",viewmodel);
-            //return null;
         }
     }
 }

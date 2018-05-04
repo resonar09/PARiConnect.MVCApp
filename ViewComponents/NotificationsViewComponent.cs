@@ -7,9 +7,9 @@ namespace PARiConnect.MVCApp.ViewComponents
 {
     public class NotificationsViewComponent : ViewComponent
     {
-        private IInventoryUsesData _inventoryUsesData;
+        private IInventoryData _inventoryUsesData;
 
-        public NotificationsViewComponent(IInventoryUsesData inventoryUsesData)
+        public NotificationsViewComponent(IInventoryData inventoryUsesData)
         {
             _inventoryUsesData = inventoryUsesData;
         }

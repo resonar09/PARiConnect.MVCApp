@@ -11,12 +11,12 @@ using PARiConnect.MVCApp.Helpers;
 
 namespace PARiConnect.MVCApp.Services
 {
-    public class InventoryUsesData : IInventoryUsesData
+    public class InventoryData : IInventoryData
     {
 
         private IConfiguration _configuration;
         private IUserService _userService;
-        public InventoryUsesData(IConfiguration configuration, IUserService userService)
+        public InventoryData(IConfiguration configuration, IUserService userService)
         { 
             _userService = userService;
             _configuration = configuration;
@@ -45,7 +45,7 @@ namespace PARiConnect.MVCApp.Services
             return distributableInventory.Any();
 
         }
-        public async Task<IEnumerable<InventoryUse>> GetAll()
+        public async Task<IEnumerable<InventoryUse>> GetAllInventoryUse()
         {
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
@@ -62,7 +62,7 @@ namespace PARiConnect.MVCApp.Services
         }
 
 
-        public async Task<IEnumerable<InventoryUseList>> GetListAsync()
+        public async Task<IEnumerable<InventoryUseList>> GetInventoryUseListAsync()
         {
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
@@ -101,6 +101,44 @@ namespace PARiConnect.MVCApp.Services
                 }  
             }
             return distributableInventoryList;
+        }
+
+        public async Task<IEnumerable<CoreServiceDevReference.AssessmentInventoryItem>> GetAssessmentListAsync()
+        {
+            var loggedInUserID = _userService.GetCurrentUserId();
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            var assessments = await coreServiceClient.GetCurrentInventoryForUserAsync(int.Parse(loggedInUserID));
+            var favorites = await coreServiceClient.GetFavoriteInventoryForCurrentUserAsync(int.Parse(loggedInUserID));
+
+            //var fav = favorites.Where(x=>x.)
+            var assessment = new Models.Assessment();
+
+            
+            var assessmentInventoryItems = assessments.Select(x => new CoreServiceDevReference.AssessmentInventoryItem
+            {
+                AssessmentKey = x.AssessmentKey,
+                ProductFamily = x.ProductFamily,
+                Count = x.Count,
+                AssessmentForms = x.AssessmentForms
+            });
+
+            return assessmentInventoryItems;
+        }
+
+        public async Task<bool> SetFavoriteStatus(int assessmentFormKey, bool favorited)
+        {
+            var loggedInUserID = _userService.GetCurrentUserId();
+            CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
+            try
+            {
+                await coreServiceClient.SetFavoriteStatusAsync(int.Parse(loggedInUserID), assessmentFormKey, favorited);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
     }
 }

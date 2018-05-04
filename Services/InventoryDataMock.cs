@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
+using CoreServiceDevReference;
 
 namespace PARiConnect.MVCApp.Services
 {
-    public class InventoryUsesDataMock : IInventoryUsesData
+    public class InventoryDataMock : IInventoryData
     {
         List<InventoryUseList> _inventoryUseList;
-        public InventoryUsesDataMock()
+        public InventoryDataMock()
         {
              _inventoryUseList = new List<InventoryUseList>
             {
@@ -27,7 +28,12 @@ namespace PARiConnect.MVCApp.Services
             };
         }
 
-        public async Task<IEnumerable<InventoryUseList>> GetListAsync()
+        public Task<IEnumerable<AssessmentInventoryItem>> GetAssessmentListAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<InventoryUseList>> GetInventoryUseListAsync()
         {
             return await Task.Run(() => _inventoryUseList);
         }
@@ -47,7 +53,12 @@ namespace PARiConnect.MVCApp.Services
             return Task.Run(() => _inventoryUseList.Any(x => x.InventoryUses.Any(u => u.Uses < 6)));
         }
 
-        Task<IEnumerable<InventoryUse>> IInventoryUsesData.GetAll()
+        public Task<bool> SetFavoriteStatus(int assessmentFormKey, bool favorited)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<InventoryUse>> IInventoryData.GetAllInventoryUse()
         {
             throw new NotImplementedException();
         }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
-    public class CAD : IDynamicFormModel
+    public class APS : IDynamicFormModel
     {
         public List<Input> Inputs { get; set; }
 
         public Settings Settings { get; set; }
         private IGroupData _groupData;
 
-        public CAD(IGroupData groupData)
+        public APS(IGroupData groupData)
         {
             _groupData = groupData;
             Settings = new Settings();

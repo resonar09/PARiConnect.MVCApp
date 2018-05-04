@@ -29,7 +29,14 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - PARiConnect.MVCApp</p>
+            @if (IsSectionDefined("Footer"))
+            {
+                RenderSection("Footer");
+            }
+            else
+            {
+                <span>This is the default yo!</span>
+        }
         </footer>
     </div>
     
