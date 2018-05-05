@@ -40,6 +40,7 @@ namespace PARiConnect.MVCApp
             //App Services
             if (Environment.IsDevelopment() && appSettings.Offline)
             {
+                
                 services.AddScoped<IDynamicFormData, DynamicFormDataMock>();
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewDataMock>();
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedDataMock>();
@@ -47,6 +48,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IClientData, ClientDataMock>();
                 services.AddScoped<IClinicianData, ClinicianDataMock>();
                 services.AddScoped<IGroupData, GroupDataMock>();
+                services.AddScoped<IPermissionData, PermissionDataMock>();
                 services.AddSingleton<IUserService>(new UserServiceMock(users));
             }
             else
