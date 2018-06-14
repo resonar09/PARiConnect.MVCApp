@@ -23,10 +23,9 @@
         </tr>
     </thead>
     <tbody class="searchable">
-    
     @foreach (var client in Model.Clients)
     {
-        <tr class="table-row">
+        <tr class="table-row" data-client-key="@(client.ClientKey)" data-client-id="@(client.ClientId)" data-client-firstname="@(client.FirstName)" data-client-lastname="@(client.LastName)" data-client-email="@(client.PrimaryEmail)" data-client-dob="@(client.DateOfBirth)" data-client-age="@(client.Age)">
             <td class="table-row-start width-20">
                 @client.FirstName
             </td>

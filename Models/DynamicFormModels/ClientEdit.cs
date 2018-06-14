@@ -80,7 +80,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     Id = "gender",
                     Label = "Gender:",
                     Type ="select",
-                    Options = new[] {new Option(1,"Choose gender",true),new Option(1,"Male",false), new Option(2,"Female",false)},
+                    Options = Utility.GetGender2Options(),
                     Placeholder ="",
                     Class = "col-6"
                 },

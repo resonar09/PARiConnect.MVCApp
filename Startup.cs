@@ -59,19 +59,55 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedData>();
                 services.AddScoped<IInventoryData, InventoryData>();
                 services.AddScoped<IClientData, ClientData>();
+                services.AddScoped<IClientAssessmentData, ClientAssessmentData>();
                 services.AddScoped<IClinicianData, ClinicianData>();
+                services.AddScoped<IEmailData, EmailData>();
                 services.AddScoped<IGroupData, GroupData>();
                 services.AddScoped<IPermissionData, PermissionData>();
                 services.AddScoped<IMessageService,MessageService>();
                 services.AddScoped<IUserService,UserService>();
                 services.AddScoped<IReportData, ReportData>();
+
+                services.AddScoped<IStrategy, ClientAssessmentByEmailAdminStrategy>();
+
             }
             services.AddAutoMapper(x=> x.AddProfile(new MappingsProfile()));
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.Login>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.AAB>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.APS>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.BRIEF>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.BRIEF2>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAB>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAD>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAPI>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CHAMP>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CPCI>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CSBI>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CTI>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.ECBI>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.EDDT>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.FAM>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.FAR>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.FRSBE>();
+            //services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.KLDA>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.MEMRY>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.PBRS>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.PSS>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.RADS>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.RAIT>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.RCDS2>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.SDS>();
+            //services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.SEARSA>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.SIPA>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.SIQ>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.SOPA>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.SPECTRA>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.STAXI2>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.TOGRA>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.TSCC>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.TSI2>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.WSA>();
+
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClientEdit>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, GroupEdit>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, ClinicianInvite>();
@@ -111,9 +147,13 @@ namespace PARiConnect.MVCApp
 
             app.UseMvc(routes =>
             {
+                //routes.MapRoute(
+                //    name: "settings",
+                //    template: "{controller=AccountSettings}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
             });
         }
     }

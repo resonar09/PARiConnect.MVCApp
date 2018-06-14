@@ -17,7 +17,7 @@ namespace PARiConnect.MVCApp.Services
 
         public ClientData(IUserService userService)
         {
-             _userService = userService;
+            _userService = userService;
         }
 
         public async Task<Models.Client> GetByKeyAsync(int id)
@@ -33,8 +33,8 @@ namespace PARiConnect.MVCApp.Services
             client.Gender = (clientRef.Gender.HasValue) ? clientRef.Gender.Value.ToString() : "---";
             client.PrimaryEmail = clientRef.PrimaryEmail;
             client.GroupName = "---";
-           
-            client.Age = GetAgeFromDOBCalculated(clientRef.DateOfBirthComputed);
+
+            client.Age = GetAgeFromDOBCalculated(clientRef.DateOfBirth, clientRef.DateOfBirthComputed);
             return client;
         }
         public async Task<IEnumerable<Models.Client>> GetClientsByKeysAsync(int[] keys)
@@ -52,13 +52,23 @@ namespace PARiConnect.MVCApp.Services
                 DateOfBirth = (x.DateOfBirth.HasValue) ? x.DateOfBirth.Value.ToShortDateString() : "---",
                 DateCreated = x.CreatedDateTime.ToShortDateString(),
                 Gender = (x.Gender.HasValue) ? x.Gender.Value.ToString() : "---",
-                PrimaryEmail = (string.IsNullOrEmpty(x.PrimaryEmail)) ? "---": x.PrimaryEmail,
-                Age = GetAgeFromDOBCalculated(x.DateOfBirthComputed)
+                //GenderId = x.,
+                PrimaryEmail = (string.IsNullOrEmpty(x.PrimaryEmail)) ? "---" : x.PrimaryEmail,
+                Age = GetAgeFromDOBCalculated(x.DateOfBirth, x.DateOfBirthComputed)
             });
             return clients;
         }
-        private string GetAgeFromDOBCalculated(DateTime? dobCalculated){
-            if(dobCalculated.HasValue){
+        private string GetAgeFromDOBCalculated(DateTime? dob, DateTime? dobCalculated)
+        {
+            if (dob.HasValue)
+            {
+                var today = DateTime.Today;
+                var age = today.Year - dob.Value.Year;
+                if (dob.Value > today.AddYears(-age)) age--;
+                return age.ToString();
+            }
+            if (dobCalculated.HasValue)
+            {
                 var today = DateTime.Today;
                 var age = today.Year - dobCalculated.Value.Year;
                 if (dobCalculated.Value > today.AddYears(-age)) age--;
@@ -74,41 +84,49 @@ namespace PARiConnect.MVCApp.Services
             var clientListingForUser = await coreServiceClient.GetClientListingForUserAsync(int.Parse(loggedInUserID));
             var clinicians = await coreServiceClient.GetClinicianListingsForUserAsync(int.Parse(loggedInUserID));
             //var user = clinicians.Where(x=>x.OrgUserMappingKey == int.Parse(loggedInUserID)).Select(c => c.Name).SingleOrDefault();
-            
 
-             var clientListing = clientListingForUser.Clients
-                .Select(x => new Models.Client
-                {   ClientKey= x.ClientKey,
-                    ClientId = x.ClientID,
-                    ClientName = x.FirstName + " " + x.LastName,
-                    DateCreated = x.CreatedDateTime.ToShortDateString(),
-                    Email = x.PrimaryEmail
-                    ,Clinician = _userService.GetCurrentUserName()
-                    ,ClinicianId = loggedInUserID
-                    ,IsUser = true
-                }).ToList(); 
 
-                foreach(var clinicianClientGroup in clientListingForUser.ClientGroups){
-                    foreach(var clinicianClientGroupClient in clinicianClientGroup.Clients){
-                        var client = new Models.Client();
-                        client.ClientKey = clinicianClientGroupClient.ClientKey;
-                        client.Clinician =  _userService.GetCurrentUserName();
-                        client.ClinicianId = loggedInUserID;
-                        client.DateCreated = clinicianClientGroup.CreatedDateTime.ToShortDateString();
-                        client.Email = clinicianClientGroupClient.PrimaryEmail;
-                        client.ClientId = clinicianClientGroupClient.ClientID;
-                        client.ClientName = string.Format("{0} {1}",clinicianClientGroupClient.FirstName, clinicianClientGroupClient.LastName);
-                        client.GroupId = clinicianClientGroup.ClientGroupKey.ToString();
-                        client.GroupName = clinicianClientGroup.Name;
-                        client.IsUser = true;
-                        clientListing.Add(client); 
-                    }
+            var clientListing = clientListingForUser.Clients
+               .Select(x => new Models.Client
+               {
+                   ClientKey = x.ClientKey,
+                   ClientId = x.ClientID,
+                   ClientName = x.FirstName + " " + x.LastName,
+                   DateCreated = x.CreatedDateTime.ToShortDateString(),
+                   Email = x.PrimaryEmail
+                   ,
+                   Clinician = _userService.GetCurrentUserName()
+                   ,
+                   ClinicianId = loggedInUserID
+                   ,
+                   IsUser = true
+               }).ToList();
 
-                }            
+            foreach (var clinicianClientGroup in clientListingForUser.ClientGroups)
+            {
+                foreach (var clinicianClientGroupClient in clinicianClientGroup.Clients)
+                {
+                    var client = new Models.Client();
+                    client.ClientKey = clinicianClientGroupClient.ClientKey;
+                    client.Clinician = _userService.GetCurrentUserName();
+                    client.ClinicianId = loggedInUserID;
+                    client.DateCreated = clinicianClientGroup.CreatedDateTime.ToShortDateString();
+                    client.Email = clinicianClientGroupClient.PrimaryEmail;
+                    client.ClientId = clinicianClientGroupClient.ClientID;
+                    client.ClientName = string.Format("{0} {1}", clinicianClientGroupClient.FirstName, clinicianClientGroupClient.LastName);
+                    client.GroupId = clinicianClientGroup.ClientGroupKey.ToString();
+                    client.GroupName = clinicianClientGroup.Name;
+                    client.IsUser = true;
+                    clientListing.Add(client);
+                }
 
-            foreach(var clinician in clinicians){
+            }
+
+            foreach (var clinician in clinicians)
+            {
                 var clinicianClients = await coreServiceClient.GetClientListingForUserAsync(clinician.OrgUserMappingKey);
-                foreach(var clinicianClient in clinicianClients.Clients){
+                foreach (var clinicianClient in clinicianClients.Clients)
+                {
                     var client = new Models.Client();
                     client.ClientKey = clinicianClient.ClientKey;
                     client.Clinician = clinician.Name;
@@ -116,11 +134,13 @@ namespace PARiConnect.MVCApp.Services
                     client.Email = clinicianClient.PrimaryEmail;
                     client.DateCreated = clinicianClient.CreatedDateTime.ToShortDateString();
                     client.ClientId = clinicianClient.ClientID;
-                    client.ClientName = string.Format("{0} {1}",clinicianClient.FirstName, clinicianClient.LastName);
+                    client.ClientName = string.Format("{0} {1}", clinicianClient.FirstName, clinicianClient.LastName);
                     clientListing.Add(client);
                 }
-                foreach(var clinicianClientGroup in clinicianClients.ClientGroups){
-                    foreach(var clinicianClientGroupClient in clinicianClientGroup.Clients){
+                foreach (var clinicianClientGroup in clinicianClients.ClientGroups)
+                {
+                    foreach (var clinicianClientGroupClient in clinicianClientGroup.Clients)
+                    {
                         var client = new Models.Client();
                         client.ClientKey = clinicianClientGroupClient.ClientKey;
                         client.Clinician = clinician.Name;
@@ -128,13 +148,12 @@ namespace PARiConnect.MVCApp.Services
                         client.Email = clinicianClientGroupClient.PrimaryEmail;
                         client.ClientId = clinicianClientGroupClient.ClientID;
                         client.DateCreated = clinicianClientGroupClient.CreatedDateTime.ToShortDateString();
-                        client.ClientName = string.Format("{0} {1}",clinicianClientGroupClient.FirstName, clinicianClientGroupClient.LastName);
+                        client.ClientName = string.Format("{0} {1}", clinicianClientGroupClient.FirstName, clinicianClientGroupClient.LastName);
                         client.GroupId = clinicianClientGroup.ClientGroupKey.ToString();
-                        clientListing.Add(client); 
+                        clientListing.Add(client);
                     }
-
                 }
-            } 
+            }
             return clientListing;
         }
         public async Task<IEnumerable<Models.Report>> GetClientReportsAsync(int clientKey, int clientAssessmentKey)
@@ -147,8 +166,7 @@ namespace PARiConnect.MVCApp.Services
                 ReportKey = x.ReportKey,
                 ReportName = x.ReportFormName,
                 CreatedDate = x.CreatedDateTime
-         
-    });
+            });
 
             return reports;
         }
@@ -157,7 +175,7 @@ namespace PARiConnect.MVCApp.Services
             var loggedInUserID = _userService.GetCurrentUserId();
             var loggedInUserName = _userService.GetCurrentUserName();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
-            var clientResult = await coreServiceClient.SaveOrUpdateClientAsync(client,int.Parse(loggedInUserID),clientGroup,loggedInUserName);
+            var clientResult = await coreServiceClient.SaveOrUpdateClientAsync(client, int.Parse(loggedInUserID), clientGroup, loggedInUserName);
             return clientResult;
         }
 
@@ -182,7 +200,7 @@ namespace PARiConnect.MVCApp.Services
                 client.IsGroup = false;
                 clientGroupList.Add(client);
             }
-           
+
             foreach (var groupList in clientListingForUser.ClientGroups)
             {
                 var client = new Models.Client();

@@ -17,92 +17,160 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
         {
             _groupData = groupData;
             Settings = new Settings();
-            Settings.Layout = LayoutType.Custom;
-            Settings.Container = ContainerType.Page;
+            Settings.Layout = LayoutType.TwoColumn;
+            Settings.Container = ContainerType.Modal;
             Settings.Columns = 2;
-            Settings.ContainerName = "cadModal";
-            Settings.Title = "CAD Demographics";
+            Settings.DefaultClass = "small";
+            Settings.ContainerName = "apsModal";
+            Settings.Title = "APS Demographics";
             Settings.FormSubmitText = "Submit";
             Settings.Labels = true;
-            Settings.FormController = "Assess";
-            Settings.FormAction = "Index";
+            Settings.FormController = "";
+            Settings.FormAction = "";
+            Settings.ShowValidation = false;
 
 
-           // Settings.Layout = LayoutType.Stacked;
+            // Settings.Layout = LayoutType.Stacked;
             //Settings.Container = ContainerType.Page;
             Inputs = new List<Input>
             {
-                new Input {
-                    Id = "firstName",
-                    Label = "First Name:",
+                 new Input {
+                    Id = InputIDType.primaryEmail.ToString(),
+                    Label = "Email",
                     Column = 1,
-                    Type ="text",
-                    Placeholder ="Jerry",
-                    Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The First Name field is required!"
+                    Type = InputType.email.ToString(),
+                    Class = "form-control-sm",
+                    BatchValidation = true,
+                    ValidationRequiredMessage = "Email is required!"
                 },
                 new Input {
-                    Id = "age",
-                    Label = "Age:",
+                    Id = InputIDType.raterName.ToString(),
+                    Label = "Examiner",
+                    Column = 1,
+                    Type = InputType.text.ToString(),
+                    Class = "form-control-sm",
+                    BatchValidation = false,
+                },
+                new Input {
+                    Id = InputIDType.clientId.ToString(),
+                    Label = "Client Id",
+                    Type = InputType.text.ToString(),
+                    Column = 1,
+                    Class = "form-control-sm",
+                    BatchValidation = true,
+                    ValidationRequiredMessage = "Client ID is required!"
+                },
+                new Input {
+                    Id = InputIDType.firstName.ToString(),
+                    Label = "First Name",
+                    Column = 1,
+                    Type = InputType.text.ToString(),
+                    Class = "form-control-sm",
+                    BatchValidation = true,
+                    ValidationRequiredMessage = "First Name is required!"
+                },
+                 new Input {
+                    Id = InputIDType.lastName.ToString(),
+                    Label = "Last Name",
+                    Type = InputType.text.ToString(),
+                    Column = 1,
+                    Class = "form-control-sm",
+                    BatchValidation = true,
+                    ValidationRequiredMessage = "Last Name is required!"
+                },
+                new Input {
+                    Id = InputIDType.testDate.ToString(),
+                    Label = "Test Date",
+                    Type = InputType.date.ToString(),
+                    Column = 1,
+                    Class = "form-control-sm hide-item",
+                },
+                new Input {
+                    Id = InputIDType.gender.ToString(),
+                    Label = "Gender",
+                    Type = InputType.radio.ToString(),
+                    Column = 1,
+                    Options = Utility.GetGenderOptions(),
+                    Class = "form-control-sm",
+                    BatchValidation = true,
+                    ValidationRequiredMessage = "Gender is required!"
+                },
+                new Input {
+                    Id = InputIDType.grade.ToString(),
+                    Label = "Grade in School",
+                    Type = InputType.select.ToString(),
+                    Column = 1,
+                    Options = Utility.GetAPSGradeOptions(),
+                    Class = "form-control-sm",
+                    BatchValidation = false,
+                },
+                new Input {
+                    Id = InputIDType.dateOfBirth.ToString(),
+                    Label = "Birth Date",
+                    Type = InputType.date.ToString(),
+                    Column = 1,
+                    Class = "form-control-sm",
+                    BatchValidation = true,
+                    ValidationRequiredMessage = "Birthdate is required!"
+                },
+                new Input {
+                    Id = InputIDType.heightFeet.ToString(),
+                    Label = "Height(feet)",
                     Column = 2,
-                    Type ="text",
-                    Placeholder ="",
-                    Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The Age field is required!"
+                    Type = InputType.text.ToString(),
+                    Class = "form-control-sm",
+                    BatchValidation = false
                 },
                 new Input {
-                    Id = "lastName",
-                    Label = "Last Name:",
-                    Type ="text",
-                    Column = 1,
-                    Placeholder ="Nolan",
-                    Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The Last Name field is required!"
-                },
-                new Input {
-                    Id = "dob",
-                    Label = "Birthdate:",
-                    Type ="date",
+                    Id = InputIDType.heightInches.ToString(),
+                    Label = "Height(inches)",
                     Column = 2,
-                    Placeholder ="",
-                    Class = "",
+                    Type = InputType.text.ToString(),
+                    Class = "form-control-sm",
+                    BatchValidation = false
                 },
                 new Input {
-                    Id = "clientID",
-                    Label = "Client Id:",
-                    Type ="text",
-                    Column = 1,
-                    Placeholder ="123abc",
-                    Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The Client ID field is required!"
-                },
-                new Input {
-                    Id = "testDate",
-                    Label = "Test Date:",
-                    Type ="date",
+                    Id = InputIDType.weight.ToString(),
+                    Label = "Weight",
                     Column = 2,
-                    Placeholder ="",
-                    Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The Test Date field is required!",
-                    ValidationDateMessage = "A valid date must be entered"
+                    Type = InputType.text.ToString(),
+                    Class = "form-control-sm",
+                    BatchValidation = false
                 },
                 new Input {
-                    Id = "gender",
-                    Label = "Gender:",
-                    Type ="radio",
-                    Column = 1,
-                    Options = new[] {new Option(1,"Female",false), new Option(2, "Male", false)},
-                    Placeholder ="",
-                    Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The gender field is required!"
+                    Id = InputIDType.age.ToString(),
+                    Label = "Age",
+                    Column = 2,
+                    Type = InputType.text.ToString(),
+                    Class = "form-control-sm",
+                    BatchValidation = false
+                },
+                new Input {
+                    Id = InputIDType.ethnicity.ToString(),
+                    Label = "Ethnicity",
+                    Type = InputType.select.ToString(),
+                    Column = 2,
+                    Options = Utility.GetEthnicityOptions(),
+                    Class = "form-control-sm",
+                    BatchValidation = false
+                },
+                new Input {
+                    Id = InputIDType.school.ToString(),
+                    Label = "School/Agency",
+                    Type = InputType.text.ToString(),
+                    Column = 2,
+                    Class = "form-control-sm",
+                    BatchValidation = false
+                },
+                new Input {
+                    Id = InputIDType.schoolStatus.ToString(),
+                    Label = "School Status",
+                    Type = InputType.select.ToString(),
+                    Column = 2,
+                    Options = Utility.GetSchoolStatusOptions(),
+                    Class = "form-control-sm",
+                    BatchValidation = false
                 }
-
             };
         }
         public string GetName()

@@ -11,6 +11,10 @@ body {
     padding-right: 15px;
 }
 
+textarea {
+    resize: none;
+}
+
 /*Sizing*/
 .full-height-75 {
     height: calc(100% - 75px);
@@ -392,7 +396,7 @@ th.header {
 
 .header-fixed > tbody {
     overflow-y: auto;
-    height: 520px;
+    height: 300px;
 }
 
 .header-fixed > tbody > tr > td,
@@ -425,4 +429,42 @@ th.header {
 .width-75 {
     width: 75%;
 }
+.table-row-hover:hover{
+    background-color:lightblue;
+}
 
+
+.modal-xl {
+
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    display:table;    
+    width: 90% !important;
+    max-width: 1200px !important;
+}
+.modal-xl > .modal-content{
+    display:table-cell;
+}
+.modal-h-xl {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: table;
+    height: 90% !important;
+    max-height: 900px !important;
+}
+.modal-h-xl > .modal-content {
+    display: table-cell;
+}
+.date-unstyled::-webkit-inner-spin-button,
+.date-unstyled::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}

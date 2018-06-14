@@ -14,881 +14,6 @@ namespace CoreServiceDevReference
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportForm : object
-    {
-        
-        private CoreServiceDevReference.CompositeReportForm CompositeReportFormField;
-        
-        private CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinationsField;
-        
-        private string ConversionField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string CustomGeneratorAssemblyField;
-        
-        private string CustomGeneratorTypeField;
-        
-        private string DataStreamFormatField;
-        
-        private string DescriptionField;
-        
-        private string ExtensionField;
-        
-        private string GeneratorAddressField;
-        
-        private string GeneratorVersionField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private string NameField;
-        
-        private string PartNumberField;
-        
-        private int PortField;
-        
-        private string PurchaseLinkField;
-        
-        private int ReportCategoryKeyField;
-        
-        private int ReportFormKeyField;
-        
-        private CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentFormsField;
-        
-        private string ReportOptionsControlField;
-        
-        private string ReportServerKeyField;
-        
-        private CoreServiceDevReference.Report[] ReportsField;
-        
-        private System.Guid RowGUIDField;
-        
-        private CoreServiceDevReference.Status StatusField;
-        
-        private System.Nullable<int> StatusKeyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.CompositeReportForm CompositeReportForm
-        {
-            get
-            {
-                return this.CompositeReportFormField;
-            }
-            set
-            {
-                this.CompositeReportFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinations
-        {
-            get
-            {
-                return this.CompositeReportFormCombinationsField;
-            }
-            set
-            {
-                this.CompositeReportFormCombinationsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Conversion
-        {
-            get
-            {
-                return this.ConversionField;
-            }
-            set
-            {
-                this.ConversionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustomGeneratorAssembly
-        {
-            get
-            {
-                return this.CustomGeneratorAssemblyField;
-            }
-            set
-            {
-                this.CustomGeneratorAssemblyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CustomGeneratorType
-        {
-            get
-            {
-                return this.CustomGeneratorTypeField;
-            }
-            set
-            {
-                this.CustomGeneratorTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DataStreamFormat
-        {
-            get
-            {
-                return this.DataStreamFormatField;
-            }
-            set
-            {
-                this.DataStreamFormatField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description
-        {
-            get
-            {
-                return this.DescriptionField;
-            }
-            set
-            {
-                this.DescriptionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Extension
-        {
-            get
-            {
-                return this.ExtensionField;
-            }
-            set
-            {
-                this.ExtensionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string GeneratorAddress
-        {
-            get
-            {
-                return this.GeneratorAddressField;
-            }
-            set
-            {
-                this.GeneratorAddressField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string GeneratorVersion
-        {
-            get
-            {
-                return this.GeneratorVersionField;
-            }
-            set
-            {
-                this.GeneratorVersionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartNumber
-        {
-            get
-            {
-                return this.PartNumberField;
-            }
-            set
-            {
-                this.PartNumberField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Port
-        {
-            get
-            {
-                return this.PortField;
-            }
-            set
-            {
-                this.PortField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurchaseLink
-        {
-            get
-            {
-                return this.PurchaseLinkField;
-            }
-            set
-            {
-                this.PurchaseLinkField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportCategoryKey
-        {
-            get
-            {
-                return this.ReportCategoryKeyField;
-            }
-            set
-            {
-                this.ReportCategoryKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormKey
-        {
-            get
-            {
-                return this.ReportFormKeyField;
-            }
-            set
-            {
-                this.ReportFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentForms
-        {
-            get
-            {
-                return this.ReportFormToAssessmentFormsField;
-            }
-            set
-            {
-                this.ReportFormToAssessmentFormsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportOptionsControl
-        {
-            get
-            {
-                return this.ReportOptionsControlField;
-            }
-            set
-            {
-                this.ReportOptionsControlField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportServerKey
-        {
-            get
-            {
-                return this.ReportServerKeyField;
-            }
-            set
-            {
-                this.ReportServerKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.Report[] Reports
-        {
-            get
-            {
-                return this.ReportsField;
-            }
-            set
-            {
-                this.ReportsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.Status Status
-        {
-            get
-            {
-                return this.StatusField;
-            }
-            set
-            {
-                this.StatusField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> StatusKey
-        {
-            get
-            {
-                return this.StatusKeyField;
-            }
-            set
-            {
-                this.StatusKeyField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeReportForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class CompositeReportForm : object
-    {
-        
-        private CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinationsField;
-        
-        private int CompositeReportFormKeyField;
-        
-        private int MaxCombinedReportCountField;
-        
-        private int MinCombinedReportCountField;
-        
-        private CoreServiceDevReference.ReportForm ReportFormField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinations
-        {
-            get
-            {
-                return this.CompositeReportFormCombinationsField;
-            }
-            set
-            {
-                this.CompositeReportFormCombinationsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CompositeReportFormKey
-        {
-            get
-            {
-                return this.CompositeReportFormKeyField;
-            }
-            set
-            {
-                this.CompositeReportFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MaxCombinedReportCount
-        {
-            get
-            {
-                return this.MaxCombinedReportCountField;
-            }
-            set
-            {
-                this.MaxCombinedReportCountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MinCombinedReportCount
-        {
-            get
-            {
-                return this.MinCombinedReportCountField;
-            }
-            set
-            {
-                this.MinCombinedReportCountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm ReportForm
-        {
-            get
-            {
-                return this.ReportFormField;
-            }
-            set
-            {
-                this.ReportFormField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class Status : object
-    {
-        
-        private CoreServiceDevReference.AssessmentForm[] AssessmentFormsField;
-        
-        private CoreServiceDevReference.ClientAssessment[] ClientAssessmentsField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string DescriptionField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private CoreServiceDevReference.ReportForm[] ReportFormsField;
-        
-        private System.Guid RowGUIDField;
-        
-        private int SortOrderField;
-        
-        private int StatusKeyField;
-        
-        private string StatusTypeField;
-        
-        private CoreServiceDevReference.User[] UsersField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentForm[] AssessmentForms
-        {
-            get
-            {
-                return this.AssessmentFormsField;
-            }
-            set
-            {
-                this.AssessmentFormsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessment[] ClientAssessments
-        {
-            get
-            {
-                return this.ClientAssessmentsField;
-            }
-            set
-            {
-                this.ClientAssessmentsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description
-        {
-            get
-            {
-                return this.DescriptionField;
-            }
-            set
-            {
-                this.DescriptionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm[] ReportForms
-        {
-            get
-            {
-                return this.ReportFormsField;
-            }
-            set
-            {
-                this.ReportFormsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SortOrder
-        {
-            get
-            {
-                return this.SortOrderField;
-            }
-            set
-            {
-                this.SortOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int StatusKey
-        {
-            get
-            {
-                return this.StatusKeyField;
-            }
-            set
-            {
-                this.StatusKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StatusType
-        {
-            get
-            {
-                return this.StatusTypeField;
-            }
-            set
-            {
-                this.StatusTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.User[] Users
-        {
-            get
-            {
-                return this.UsersField;
-            }
-            set
-            {
-                this.UsersField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeReportFormCombination", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class CompositeReportFormCombination : object
-    {
-        
-        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
-        
-        private int AssessmentFormKeyField;
-        
-        private CoreServiceDevReference.CompositeReportForm CompositeReportFormField;
-        
-        private int CompositeReportFormCombinationKeyField;
-        
-        private int CompositeReportFormKeyField;
-        
-        private CoreServiceDevReference.ReportForm ReportFormField;
-        
-        private int ReportFormKeyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentForm AssessmentForm
-        {
-            get
-            {
-                return this.AssessmentFormField;
-            }
-            set
-            {
-                this.AssessmentFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentFormKey
-        {
-            get
-            {
-                return this.AssessmentFormKeyField;
-            }
-            set
-            {
-                this.AssessmentFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.CompositeReportForm CompositeReportForm
-        {
-            get
-            {
-                return this.CompositeReportFormField;
-            }
-            set
-            {
-                this.CompositeReportFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CompositeReportFormCombinationKey
-        {
-            get
-            {
-                return this.CompositeReportFormCombinationKeyField;
-            }
-            set
-            {
-                this.CompositeReportFormCombinationKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CompositeReportFormKey
-        {
-            get
-            {
-                return this.CompositeReportFormKeyField;
-            }
-            set
-            {
-                this.CompositeReportFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm ReportForm
-        {
-            get
-            {
-                return this.ReportFormField;
-            }
-            set
-            {
-                this.ReportFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormKey
-        {
-            get
-            {
-                return this.ReportFormKeyField;
-            }
-            set
-            {
-                this.ReportFormKeyField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormToAssessmentForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ReportFormToAssessmentForm : object
-    {
-        
-        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
-        
-        private string HeaderField;
-        
-        private CoreServiceDevReference.ReportForm ReportFormField;
-        
-        private int ReportFormToAssessmentFormKeyField;
-        
-        private int ReportKeyField;
-        
-        private int SequenceField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentForm AssessmentForm
-        {
-            get
-            {
-                return this.AssessmentFormField;
-            }
-            set
-            {
-                this.AssessmentFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Header
-        {
-            get
-            {
-                return this.HeaderField;
-            }
-            set
-            {
-                this.HeaderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportForm ReportForm
-        {
-            get
-            {
-                return this.ReportFormField;
-            }
-            set
-            {
-                this.ReportFormField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportFormToAssessmentFormKey
-        {
-            get
-            {
-                return this.ReportFormToAssessmentFormKeyField;
-            }
-            set
-            {
-                this.ReportFormToAssessmentFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ReportKey
-        {
-            get
-            {
-                return this.ReportKeyField;
-            }
-            set
-            {
-                this.ReportKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Sequence
-        {
-            get
-            {
-                return this.SequenceField;
-            }
-            set
-            {
-                this.SequenceField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class Report : object
     {
@@ -1130,635 +255,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.UserField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class AssessmentForm : object
-    {
-        
-        private string AdminConfigField;
-        
-        private string AdminURLField;
-        
-        private CoreServiceDevReference.Assessment AssessmentField;
-        
-        private int AssessmentFormKeyField;
-        
-        private string AssessmentKeyField;
-        
-        private CoreServiceDevReference.ClientAssessment[] ClientAssessmentsField;
-        
-        private CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinationsField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string DemoInputFormControlField;
-        
-        private string DescriptionField;
-        
-        private string DesktopClassIDField;
-        
-        private bool DisableEmailInvitationsField;
-        
-        private bool DisableManualEntryField;
-        
-        private bool DisableOnSiteAdministrationField;
-        
-        private System.Nullable<int> EstimatedTimeField;
-        
-        private string InstructionsField;
-        
-        private bool IsSelfRatedField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private string NameField;
-        
-        private string PartNumberField;
-        
-        private string ProductFamilyField;
-        
-        private string QualificationLevelField;
-        
-        private CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentFormsField;
-        
-        private string ReviewFooterControlField;
-        
-        private string ReviewHeaderControlField;
-        
-        private System.Guid RowGUIDField;
-        
-        private CoreServiceDevReference.Status StatusField;
-        
-        private int StatusKeyField;
-        
-        private CoreServiceDevReference.UserFavorite[] UserFavoritesField;
-        
-        private bool ValidateCOPPAField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AdminConfig
-        {
-            get
-            {
-                return this.AdminConfigField;
-            }
-            set
-            {
-                this.AdminConfigField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AdminURL
-        {
-            get
-            {
-                return this.AdminURLField;
-            }
-            set
-            {
-                this.AdminURLField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.Assessment Assessment
-        {
-            get
-            {
-                return this.AssessmentField;
-            }
-            set
-            {
-                this.AssessmentField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentFormKey
-        {
-            get
-            {
-                return this.AssessmentFormKeyField;
-            }
-            set
-            {
-                this.AssessmentFormKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AssessmentKey
-        {
-            get
-            {
-                return this.AssessmentKeyField;
-            }
-            set
-            {
-                this.AssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientAssessment[] ClientAssessments
-        {
-            get
-            {
-                return this.ClientAssessmentsField;
-            }
-            set
-            {
-                this.ClientAssessmentsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinations
-        {
-            get
-            {
-                return this.CompositeReportFormCombinationsField;
-            }
-            set
-            {
-                this.CompositeReportFormCombinationsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DemoInputFormControl
-        {
-            get
-            {
-                return this.DemoInputFormControlField;
-            }
-            set
-            {
-                this.DemoInputFormControlField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description
-        {
-            get
-            {
-                return this.DescriptionField;
-            }
-            set
-            {
-                this.DescriptionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DesktopClassID
-        {
-            get
-            {
-                return this.DesktopClassIDField;
-            }
-            set
-            {
-                this.DesktopClassIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DisableEmailInvitations
-        {
-            get
-            {
-                return this.DisableEmailInvitationsField;
-            }
-            set
-            {
-                this.DisableEmailInvitationsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DisableManualEntry
-        {
-            get
-            {
-                return this.DisableManualEntryField;
-            }
-            set
-            {
-                this.DisableManualEntryField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DisableOnSiteAdministration
-        {
-            get
-            {
-                return this.DisableOnSiteAdministrationField;
-            }
-            set
-            {
-                this.DisableOnSiteAdministrationField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> EstimatedTime
-        {
-            get
-            {
-                return this.EstimatedTimeField;
-            }
-            set
-            {
-                this.EstimatedTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Instructions
-        {
-            get
-            {
-                return this.InstructionsField;
-            }
-            set
-            {
-                this.InstructionsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsSelfRated
-        {
-            get
-            {
-                return this.IsSelfRatedField;
-            }
-            set
-            {
-                this.IsSelfRatedField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartNumber
-        {
-            get
-            {
-                return this.PartNumberField;
-            }
-            set
-            {
-                this.PartNumberField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductFamily
-        {
-            get
-            {
-                return this.ProductFamilyField;
-            }
-            set
-            {
-                this.ProductFamilyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string QualificationLevel
-        {
-            get
-            {
-                return this.QualificationLevelField;
-            }
-            set
-            {
-                this.QualificationLevelField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentForms
-        {
-            get
-            {
-                return this.ReportFormToAssessmentFormsField;
-            }
-            set
-            {
-                this.ReportFormToAssessmentFormsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReviewFooterControl
-        {
-            get
-            {
-                return this.ReviewFooterControlField;
-            }
-            set
-            {
-                this.ReviewFooterControlField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReviewHeaderControl
-        {
-            get
-            {
-                return this.ReviewHeaderControlField;
-            }
-            set
-            {
-                this.ReviewHeaderControlField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.Status Status
-        {
-            get
-            {
-                return this.StatusField;
-            }
-            set
-            {
-                this.StatusField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int StatusKey
-        {
-            get
-            {
-                return this.StatusKeyField;
-            }
-            set
-            {
-                this.StatusKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.UserFavorite[] UserFavorites
-        {
-            get
-            {
-                return this.UserFavoritesField;
-            }
-            set
-            {
-                this.UserFavoritesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool ValidateCOPPA
-        {
-            get
-            {
-                return this.ValidateCOPPAField;
-            }
-            set
-            {
-                this.ValidateCOPPAField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Assessment", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class Assessment : object
-    {
-        
-        private CoreServiceDevReference.AssessmentForm[] AssessmentFormsField;
-        
-        private string AssessmentKeyField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private string DescriptionField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private string NameField;
-        
-        private string PurchaseLinkField;
-        
-        private bool RenderableField;
-        
-        private System.Guid RowGUIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentForm[] AssessmentForms
-        {
-            get
-            {
-                return this.AssessmentFormsField;
-            }
-            set
-            {
-                this.AssessmentFormsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AssessmentKey
-        {
-            get
-            {
-                return this.AssessmentKeyField;
-            }
-            set
-            {
-                this.AssessmentKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description
-        {
-            get
-            {
-                return this.DescriptionField;
-            }
-            set
-            {
-                this.DescriptionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurchaseLink
-        {
-            get
-            {
-                return this.PurchaseLinkField;
-            }
-            set
-            {
-                this.PurchaseLinkField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Renderable
-        {
-            get
-            {
-                return this.RenderableField;
-            }
-            set
-            {
-                this.RenderableField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
             }
         }
     }
@@ -2297,73 +793,358 @@ namespace CoreServiceDevReference
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserFavorite", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class UserFavorite : object
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class ReportForm : object
     {
         
-        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
+        private CoreServiceDevReference.CompositeReportForm CompositeReportFormField;
         
-        private int AssessmentFormKeyField;
+        private CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinationsField;
         
-        private bool FavoritedField;
+        private string ConversionField;
         
-        private int OrgUserMappingKeyField;
+        private System.DateTime CreatedDateTimeField;
+        
+        private string CustomGeneratorAssemblyField;
+        
+        private string CustomGeneratorTypeField;
+        
+        private string DataStreamFormatField;
+        
+        private string DescriptionField;
+        
+        private string ExtensionField;
+        
+        private string GeneratorAddressField;
+        
+        private string GeneratorVersionField;
+        
+        private string LastModifiedByField;
+        
+        private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private string NameField;
+        
+        private string PartNumberField;
+        
+        private int PortField;
+        
+        private string PurchaseLinkField;
+        
+        private int ReportCategoryKeyField;
+        
+        private int ReportFormKeyField;
+        
+        private CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentFormsField;
+        
+        private string ReportOptionsControlField;
+        
+        private string ReportServerKeyField;
+        
+        private CoreServiceDevReference.Report[] ReportsField;
         
         private System.Guid RowGUIDField;
         
-        private CoreServiceDevReference.User UserField;
+        private CoreServiceDevReference.Status StatusField;
         
-        private int UserFavoriteIdField;
+        private System.Nullable<int> StatusKeyField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.AssessmentForm AssessmentForm
+        public CoreServiceDevReference.CompositeReportForm CompositeReportForm
         {
             get
             {
-                return this.AssessmentFormField;
+                return this.CompositeReportFormField;
             }
             set
             {
-                this.AssessmentFormField = value;
+                this.CompositeReportFormField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int AssessmentFormKey
+        public CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinations
         {
             get
             {
-                return this.AssessmentFormKeyField;
+                return this.CompositeReportFormCombinationsField;
             }
             set
             {
-                this.AssessmentFormKeyField = value;
+                this.CompositeReportFormCombinationsField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Favorited
+        public string Conversion
         {
             get
             {
-                return this.FavoritedField;
+                return this.ConversionField;
             }
             set
             {
-                this.FavoritedField = value;
+                this.ConversionField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrgUserMappingKey
+        public System.DateTime CreatedDateTime
         {
             get
             {
-                return this.OrgUserMappingKeyField;
+                return this.CreatedDateTimeField;
             }
             set
             {
-                this.OrgUserMappingKeyField = value;
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomGeneratorAssembly
+        {
+            get
+            {
+                return this.CustomGeneratorAssemblyField;
+            }
+            set
+            {
+                this.CustomGeneratorAssemblyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomGeneratorType
+        {
+            get
+            {
+                return this.CustomGeneratorTypeField;
+            }
+            set
+            {
+                this.CustomGeneratorTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DataStreamFormat
+        {
+            get
+            {
+                return this.DataStreamFormatField;
+            }
+            set
+            {
+                this.DataStreamFormatField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Extension
+        {
+            get
+            {
+                return this.ExtensionField;
+            }
+            set
+            {
+                this.ExtensionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GeneratorAddress
+        {
+            get
+            {
+                return this.GeneratorAddressField;
+            }
+            set
+            {
+                this.GeneratorAddressField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GeneratorVersion
+        {
+            get
+            {
+                return this.GeneratorVersionField;
+            }
+            set
+            {
+                this.GeneratorVersionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastModifiedBy
+        {
+            get
+            {
+                return this.LastModifiedByField;
+            }
+            set
+            {
+                this.LastModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber
+        {
+            get
+            {
+                return this.PartNumberField;
+            }
+            set
+            {
+                this.PartNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Port
+        {
+            get
+            {
+                return this.PortField;
+            }
+            set
+            {
+                this.PortField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurchaseLink
+        {
+            get
+            {
+                return this.PurchaseLinkField;
+            }
+            set
+            {
+                this.PurchaseLinkField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReportCategoryKey
+        {
+            get
+            {
+                return this.ReportCategoryKeyField;
+            }
+            set
+            {
+                this.ReportCategoryKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReportFormKey
+        {
+            get
+            {
+                return this.ReportFormKeyField;
+            }
+            set
+            {
+                this.ReportFormKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentForms
+        {
+            get
+            {
+                return this.ReportFormToAssessmentFormsField;
+            }
+            set
+            {
+                this.ReportFormToAssessmentFormsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReportOptionsControl
+        {
+            get
+            {
+                return this.ReportOptionsControlField;
+            }
+            set
+            {
+                this.ReportOptionsControlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReportServerKey
+        {
+            get
+            {
+                return this.ReportServerKeyField;
+            }
+            set
+            {
+                this.ReportServerKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.Report[] Reports
+        {
+            get
+            {
+                return this.ReportsField;
+            }
+            set
+            {
+                this.ReportsField = value;
             }
         }
         
@@ -2381,28 +1162,837 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.User User
+        public CoreServiceDevReference.Status Status
         {
             get
             {
-                return this.UserField;
+                return this.StatusField;
             }
             set
             {
-                this.UserField = value;
+                this.StatusField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserFavoriteId
+        public System.Nullable<int> StatusKey
         {
             get
             {
-                return this.UserFavoriteIdField;
+                return this.StatusKeyField;
             }
             set
             {
-                this.UserFavoriteIdField = value;
+                this.StatusKeyField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class User : object
+    {
+        
+        private CoreServiceDevReference.ClientAssessment[] ClientAssessmentsField;
+        
+        private CoreServiceDevReference.ClientGroup[] ClientGroupsField;
+        
+        private System.DateTime CreatedDateTimeField;
+        
+        private bool DefaultTemplateIsDefField;
+        
+        private int DefaultTemplateKeyField;
+        
+        private bool DisplayTestNamesField;
+        
+        private CoreServiceDevReference.EncryptedClient[] EncryptedClientsField;
+        
+        private bool FirstLoginField;
+        
+        private string LastModifiedByField;
+        
+        private string LocationField;
+        
+        private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private bool NotifiyOnAdminDoneField;
+        
+        private string NotifyEmailField;
+        
+        private int OrgUserMappingKeyField;
+        
+        private CoreServiceDevReference.Report[] ReportsField;
+        
+        private System.Guid RowGUIDField;
+        
+        private CoreServiceDevReference.Status StatusField;
+        
+        private System.Nullable<int> StatusKeyField;
+        
+        private CoreServiceDevReference.UserEmailTemplate[] UserEmailTemplatesField;
+        
+        private CoreServiceDevReference.UserFavorite[] UserFavoritesField;
+        
+        private string UserIDField;
+        
+        private CoreServiceDevReference.UserInventory[] UserInventoriesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ClientAssessment[] ClientAssessments
+        {
+            get
+            {
+                return this.ClientAssessmentsField;
+            }
+            set
+            {
+                this.ClientAssessmentsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ClientGroup[] ClientGroups
+        {
+            get
+            {
+                return this.ClientGroupsField;
+            }
+            set
+            {
+                this.ClientGroupsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool DefaultTemplateIsDef
+        {
+            get
+            {
+                return this.DefaultTemplateIsDefField;
+            }
+            set
+            {
+                this.DefaultTemplateIsDefField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DefaultTemplateKey
+        {
+            get
+            {
+                return this.DefaultTemplateKeyField;
+            }
+            set
+            {
+                this.DefaultTemplateKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool DisplayTestNames
+        {
+            get
+            {
+                return this.DisplayTestNamesField;
+            }
+            set
+            {
+                this.DisplayTestNamesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.EncryptedClient[] EncryptedClients
+        {
+            get
+            {
+                return this.EncryptedClientsField;
+            }
+            set
+            {
+                this.EncryptedClientsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool FirstLogin
+        {
+            get
+            {
+                return this.FirstLoginField;
+            }
+            set
+            {
+                this.FirstLoginField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastModifiedBy
+        {
+            get
+            {
+                return this.LastModifiedByField;
+            }
+            set
+            {
+                this.LastModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Location
+        {
+            get
+            {
+                return this.LocationField;
+            }
+            set
+            {
+                this.LocationField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool NotifiyOnAdminDone
+        {
+            get
+            {
+                return this.NotifiyOnAdminDoneField;
+            }
+            set
+            {
+                this.NotifiyOnAdminDoneField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NotifyEmail
+        {
+            get
+            {
+                return this.NotifyEmailField;
+            }
+            set
+            {
+                this.NotifyEmailField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrgUserMappingKey
+        {
+            get
+            {
+                return this.OrgUserMappingKeyField;
+            }
+            set
+            {
+                this.OrgUserMappingKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.Report[] Reports
+        {
+            get
+            {
+                return this.ReportsField;
+            }
+            set
+            {
+                this.ReportsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.Status Status
+        {
+            get
+            {
+                return this.StatusField;
+            }
+            set
+            {
+                this.StatusField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> StatusKey
+        {
+            get
+            {
+                return this.StatusKeyField;
+            }
+            set
+            {
+                this.StatusKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.UserEmailTemplate[] UserEmailTemplates
+        {
+            get
+            {
+                return this.UserEmailTemplatesField;
+            }
+            set
+            {
+                this.UserEmailTemplatesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.UserFavorite[] UserFavorites
+        {
+            get
+            {
+                return this.UserFavoritesField;
+            }
+            set
+            {
+                this.UserFavoritesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserID
+        {
+            get
+            {
+                return this.UserIDField;
+            }
+            set
+            {
+                this.UserIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.UserInventory[] UserInventories
+        {
+            get
+            {
+                return this.UserInventoriesField;
+            }
+            set
+            {
+                this.UserInventoriesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AssessmentForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class AssessmentForm : object
+    {
+        
+        private string AdminConfigField;
+        
+        private string AdminURLField;
+        
+        private CoreServiceDevReference.Assessment AssessmentField;
+        
+        private int AssessmentFormKeyField;
+        
+        private string AssessmentKeyField;
+        
+        private CoreServiceDevReference.ClientAssessment[] ClientAssessmentsField;
+        
+        private CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinationsField;
+        
+        private System.DateTime CreatedDateTimeField;
+        
+        private string DemoInputFormControlField;
+        
+        private string DescriptionField;
+        
+        private string DesktopClassIDField;
+        
+        private bool DisableEmailInvitationsField;
+        
+        private bool DisableManualEntryField;
+        
+        private bool DisableOnSiteAdministrationField;
+        
+        private System.Nullable<int> EstimatedTimeField;
+        
+        private string InstructionsField;
+        
+        private bool IsSelfRatedField;
+        
+        private string LastModifiedByField;
+        
+        private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private string NameField;
+        
+        private string PartNumberField;
+        
+        private string ProductFamilyField;
+        
+        private string QualificationLevelField;
+        
+        private CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentFormsField;
+        
+        private string ReviewFooterControlField;
+        
+        private string ReviewHeaderControlField;
+        
+        private System.Guid RowGUIDField;
+        
+        private CoreServiceDevReference.Status StatusField;
+        
+        private int StatusKeyField;
+        
+        private CoreServiceDevReference.UserFavorite[] UserFavoritesField;
+        
+        private bool ValidateCOPPAField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AdminConfig
+        {
+            get
+            {
+                return this.AdminConfigField;
+            }
+            set
+            {
+                this.AdminConfigField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AdminURL
+        {
+            get
+            {
+                return this.AdminURLField;
+            }
+            set
+            {
+                this.AdminURLField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.Assessment Assessment
+        {
+            get
+            {
+                return this.AssessmentField;
+            }
+            set
+            {
+                this.AssessmentField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AssessmentFormKey
+        {
+            get
+            {
+                return this.AssessmentFormKeyField;
+            }
+            set
+            {
+                this.AssessmentFormKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AssessmentKey
+        {
+            get
+            {
+                return this.AssessmentKeyField;
+            }
+            set
+            {
+                this.AssessmentKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ClientAssessment[] ClientAssessments
+        {
+            get
+            {
+                return this.ClientAssessmentsField;
+            }
+            set
+            {
+                this.ClientAssessmentsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinations
+        {
+            get
+            {
+                return this.CompositeReportFormCombinationsField;
+            }
+            set
+            {
+                this.CompositeReportFormCombinationsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DemoInputFormControl
+        {
+            get
+            {
+                return this.DemoInputFormControlField;
+            }
+            set
+            {
+                this.DemoInputFormControlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DesktopClassID
+        {
+            get
+            {
+                return this.DesktopClassIDField;
+            }
+            set
+            {
+                this.DesktopClassIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool DisableEmailInvitations
+        {
+            get
+            {
+                return this.DisableEmailInvitationsField;
+            }
+            set
+            {
+                this.DisableEmailInvitationsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool DisableManualEntry
+        {
+            get
+            {
+                return this.DisableManualEntryField;
+            }
+            set
+            {
+                this.DisableManualEntryField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool DisableOnSiteAdministration
+        {
+            get
+            {
+                return this.DisableOnSiteAdministrationField;
+            }
+            set
+            {
+                this.DisableOnSiteAdministrationField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> EstimatedTime
+        {
+            get
+            {
+                return this.EstimatedTimeField;
+            }
+            set
+            {
+                this.EstimatedTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Instructions
+        {
+            get
+            {
+                return this.InstructionsField;
+            }
+            set
+            {
+                this.InstructionsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSelfRated
+        {
+            get
+            {
+                return this.IsSelfRatedField;
+            }
+            set
+            {
+                this.IsSelfRatedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastModifiedBy
+        {
+            get
+            {
+                return this.LastModifiedByField;
+            }
+            set
+            {
+                this.LastModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber
+        {
+            get
+            {
+                return this.PartNumberField;
+            }
+            set
+            {
+                this.PartNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductFamily
+        {
+            get
+            {
+                return this.ProductFamilyField;
+            }
+            set
+            {
+                this.ProductFamilyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QualificationLevel
+        {
+            get
+            {
+                return this.QualificationLevelField;
+            }
+            set
+            {
+                this.QualificationLevelField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ReportFormToAssessmentForm[] ReportFormToAssessmentForms
+        {
+            get
+            {
+                return this.ReportFormToAssessmentFormsField;
+            }
+            set
+            {
+                this.ReportFormToAssessmentFormsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewFooterControl
+        {
+            get
+            {
+                return this.ReviewFooterControlField;
+            }
+            set
+            {
+                this.ReviewFooterControlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewHeaderControl
+        {
+            get
+            {
+                return this.ReviewHeaderControlField;
+            }
+            set
+            {
+                this.ReviewHeaderControlField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.Status Status
+        {
+            get
+            {
+                return this.StatusField;
+            }
+            set
+            {
+                this.StatusField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int StatusKey
+        {
+            get
+            {
+                return this.StatusKeyField;
+            }
+            set
+            {
+                this.StatusKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.UserFavorite[] UserFavorites
+        {
+            get
+            {
+                return this.UserFavoritesField;
+            }
+            set
+            {
+                this.UserFavoritesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ValidateCOPPA
+        {
+            get
+            {
+                return this.ValidateCOPPAField;
+            }
+            set
+            {
+                this.ValidateCOPPAField = value;
             }
         }
     }
@@ -2903,53 +2493,46 @@ namespace CoreServiceDevReference
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class User : object
+    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class Status : object
     {
+        
+        private CoreServiceDevReference.AssessmentForm[] AssessmentFormsField;
         
         private CoreServiceDevReference.ClientAssessment[] ClientAssessmentsField;
         
-        private CoreServiceDevReference.ClientGroup[] ClientGroupsField;
-        
         private System.DateTime CreatedDateTimeField;
         
-        private bool DefaultTemplateIsDefField;
-        
-        private int DefaultTemplateKeyField;
-        
-        private bool DisplayTestNamesField;
-        
-        private CoreServiceDevReference.EncryptedClient[] EncryptedClientsField;
-        
-        private bool FirstLoginField;
+        private string DescriptionField;
         
         private string LastModifiedByField;
         
-        private string LocationField;
-        
         private System.Nullable<System.DateTime> ModifiedDateTimeField;
         
-        private bool NotifiyOnAdminDoneField;
-        
-        private string NotifyEmailField;
-        
-        private int OrgUserMappingKeyField;
-        
-        private CoreServiceDevReference.Report[] ReportsField;
+        private CoreServiceDevReference.ReportForm[] ReportFormsField;
         
         private System.Guid RowGUIDField;
         
-        private CoreServiceDevReference.Status StatusField;
+        private int SortOrderField;
         
-        private System.Nullable<int> StatusKeyField;
+        private int StatusKeyField;
         
-        private CoreServiceDevReference.UserEmailTemplate[] UserEmailTemplatesField;
+        private string StatusTypeField;
         
-        private CoreServiceDevReference.UserFavorite[] UserFavoritesField;
+        private CoreServiceDevReference.User[] UsersField;
         
-        private string UserIDField;
-        
-        private CoreServiceDevReference.UserInventory[] UserInventoriesField;
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.AssessmentForm[] AssessmentForms
+        {
+            get
+            {
+                return this.AssessmentFormsField;
+            }
+            set
+            {
+                this.AssessmentFormsField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CoreServiceDevReference.ClientAssessment[] ClientAssessments
@@ -2961,19 +2544,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.ClientAssessmentsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.ClientGroup[] ClientGroups
-        {
-            get
-            {
-                return this.ClientGroupsField;
-            }
-            set
-            {
-                this.ClientGroupsField = value;
             }
         }
         
@@ -2991,67 +2561,15 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DefaultTemplateIsDef
+        public string Description
         {
             get
             {
-                return this.DefaultTemplateIsDefField;
+                return this.DescriptionField;
             }
             set
             {
-                this.DefaultTemplateIsDefField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DefaultTemplateKey
-        {
-            get
-            {
-                return this.DefaultTemplateKeyField;
-            }
-            set
-            {
-                this.DefaultTemplateKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DisplayTestNames
-        {
-            get
-            {
-                return this.DisplayTestNamesField;
-            }
-            set
-            {
-                this.DisplayTestNamesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.EncryptedClient[] EncryptedClients
-        {
-            get
-            {
-                return this.EncryptedClientsField;
-            }
-            set
-            {
-                this.EncryptedClientsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool FirstLogin
-        {
-            get
-            {
-                return this.FirstLoginField;
-            }
-            set
-            {
-                this.FirstLoginField = value;
+                this.DescriptionField = value;
             }
         }
         
@@ -3069,19 +2587,6 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Location
-        {
-            get
-            {
-                return this.LocationField;
-            }
-            set
-            {
-                this.LocationField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> ModifiedDateTime
         {
             get
@@ -3095,54 +2600,15 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool NotifiyOnAdminDone
+        public CoreServiceDevReference.ReportForm[] ReportForms
         {
             get
             {
-                return this.NotifiyOnAdminDoneField;
+                return this.ReportFormsField;
             }
             set
             {
-                this.NotifiyOnAdminDoneField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NotifyEmail
-        {
-            get
-            {
-                return this.NotifyEmailField;
-            }
-            set
-            {
-                this.NotifyEmailField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrgUserMappingKey
-        {
-            get
-            {
-                return this.OrgUserMappingKeyField;
-            }
-            set
-            {
-                this.OrgUserMappingKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.Report[] Reports
-        {
-            get
-            {
-                return this.ReportsField;
-            }
-            set
-            {
-                this.ReportsField = value;
+                this.ReportFormsField = value;
             }
         }
         
@@ -3160,20 +2626,20 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.Status Status
+        public int SortOrder
         {
             get
             {
-                return this.StatusField;
+                return this.SortOrderField;
             }
             set
             {
-                this.StatusField = value;
+                this.SortOrderField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> StatusKey
+        public int StatusKey
         {
             get
             {
@@ -3186,54 +2652,28 @@ namespace CoreServiceDevReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.UserEmailTemplate[] UserEmailTemplates
+        public string StatusType
         {
             get
             {
-                return this.UserEmailTemplatesField;
+                return this.StatusTypeField;
             }
             set
             {
-                this.UserEmailTemplatesField = value;
+                this.StatusTypeField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.UserFavorite[] UserFavorites
+        public CoreServiceDevReference.User[] Users
         {
             get
             {
-                return this.UserFavoritesField;
+                return this.UsersField;
             }
             set
             {
-                this.UserFavoritesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserID
-        {
-            get
-            {
-                return this.UserIDField;
-            }
-            set
-            {
-                this.UserIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.UserInventory[] UserInventories
-        {
-            get
-            {
-                return this.UserInventoriesField;
-            }
-            set
-            {
-                this.UserInventoriesField = value;
+                this.UsersField = value;
             }
         }
     }
@@ -3386,19 +2826,564 @@ namespace CoreServiceDevReference
         EmailNonBranded = 4,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Gender", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities/Enum")]
-    public enum Gender : int
+    [System.Runtime.Serialization.DataContractAttribute(Name="Assessment", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class Assessment : object
     {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NotSpecified = 0,
+        private CoreServiceDevReference.AssessmentForm[] AssessmentFormsField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Female = 1,
+        private string AssessmentKeyField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Male = 2,
+        private System.DateTime CreatedDateTimeField;
+        
+        private string DescriptionField;
+        
+        private string LastModifiedByField;
+        
+        private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private string NameField;
+        
+        private string PurchaseLinkField;
+        
+        private bool RenderableField;
+        
+        private System.Guid RowGUIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.AssessmentForm[] AssessmentForms
+        {
+            get
+            {
+                return this.AssessmentFormsField;
+            }
+            set
+            {
+                this.AssessmentFormsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AssessmentKey
+        {
+            get
+            {
+                return this.AssessmentKeyField;
+            }
+            set
+            {
+                this.AssessmentKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastModifiedBy
+        {
+            get
+            {
+                return this.LastModifiedByField;
+            }
+            set
+            {
+                this.LastModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurchaseLink
+        {
+            get
+            {
+                return this.PurchaseLinkField;
+            }
+            set
+            {
+                this.PurchaseLinkField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Renderable
+        {
+            get
+            {
+                return this.RenderableField;
+            }
+            set
+            {
+                this.RenderableField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeReportFormCombination", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class CompositeReportFormCombination : object
+    {
+        
+        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
+        
+        private int AssessmentFormKeyField;
+        
+        private CoreServiceDevReference.CompositeReportForm CompositeReportFormField;
+        
+        private int CompositeReportFormCombinationKeyField;
+        
+        private int CompositeReportFormKeyField;
+        
+        private CoreServiceDevReference.ReportForm ReportFormField;
+        
+        private int ReportFormKeyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.AssessmentForm AssessmentForm
+        {
+            get
+            {
+                return this.AssessmentFormField;
+            }
+            set
+            {
+                this.AssessmentFormField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AssessmentFormKey
+        {
+            get
+            {
+                return this.AssessmentFormKeyField;
+            }
+            set
+            {
+                this.AssessmentFormKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.CompositeReportForm CompositeReportForm
+        {
+            get
+            {
+                return this.CompositeReportFormField;
+            }
+            set
+            {
+                this.CompositeReportFormField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CompositeReportFormCombinationKey
+        {
+            get
+            {
+                return this.CompositeReportFormCombinationKeyField;
+            }
+            set
+            {
+                this.CompositeReportFormCombinationKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CompositeReportFormKey
+        {
+            get
+            {
+                return this.CompositeReportFormKeyField;
+            }
+            set
+            {
+                this.CompositeReportFormKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ReportForm ReportForm
+        {
+            get
+            {
+                return this.ReportFormField;
+            }
+            set
+            {
+                this.ReportFormField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReportFormKey
+        {
+            get
+            {
+                return this.ReportFormKeyField;
+            }
+            set
+            {
+                this.ReportFormKeyField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormToAssessmentForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class ReportFormToAssessmentForm : object
+    {
+        
+        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
+        
+        private string HeaderField;
+        
+        private CoreServiceDevReference.ReportForm ReportFormField;
+        
+        private int ReportFormToAssessmentFormKeyField;
+        
+        private int ReportKeyField;
+        
+        private int SequenceField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.AssessmentForm AssessmentForm
+        {
+            get
+            {
+                return this.AssessmentFormField;
+            }
+            set
+            {
+                this.AssessmentFormField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Header
+        {
+            get
+            {
+                return this.HeaderField;
+            }
+            set
+            {
+                this.HeaderField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ReportForm ReportForm
+        {
+            get
+            {
+                return this.ReportFormField;
+            }
+            set
+            {
+                this.ReportFormField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReportFormToAssessmentFormKey
+        {
+            get
+            {
+                return this.ReportFormToAssessmentFormKeyField;
+            }
+            set
+            {
+                this.ReportFormToAssessmentFormKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReportKey
+        {
+            get
+            {
+                return this.ReportKeyField;
+            }
+            set
+            {
+                this.ReportKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Sequence
+        {
+            get
+            {
+                return this.SequenceField;
+            }
+            set
+            {
+                this.SequenceField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserFavorite", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class UserFavorite : object
+    {
+        
+        private CoreServiceDevReference.AssessmentForm AssessmentFormField;
+        
+        private int AssessmentFormKeyField;
+        
+        private bool FavoritedField;
+        
+        private int OrgUserMappingKeyField;
+        
+        private System.Guid RowGUIDField;
+        
+        private CoreServiceDevReference.User UserField;
+        
+        private int UserFavoriteIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.AssessmentForm AssessmentForm
+        {
+            get
+            {
+                return this.AssessmentFormField;
+            }
+            set
+            {
+                this.AssessmentFormField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AssessmentFormKey
+        {
+            get
+            {
+                return this.AssessmentFormKeyField;
+            }
+            set
+            {
+                this.AssessmentFormKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Favorited
+        {
+            get
+            {
+                return this.FavoritedField;
+            }
+            set
+            {
+                this.FavoritedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrgUserMappingKey
+        {
+            get
+            {
+                return this.OrgUserMappingKeyField;
+            }
+            set
+            {
+                this.OrgUserMappingKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.User User
+        {
+            get
+            {
+                return this.UserField;
+            }
+            set
+            {
+                this.UserField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserFavoriteId
+        {
+            get
+            {
+                return this.UserFavoriteIdField;
+            }
+            set
+            {
+                this.UserFavoriteIdField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeReportForm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class CompositeReportForm : object
+    {
+        
+        private CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinationsField;
+        
+        private int CompositeReportFormKeyField;
+        
+        private int MaxCombinedReportCountField;
+        
+        private int MinCombinedReportCountField;
+        
+        private CoreServiceDevReference.ReportForm ReportFormField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.CompositeReportFormCombination[] CompositeReportFormCombinations
+        {
+            get
+            {
+                return this.CompositeReportFormCombinationsField;
+            }
+            set
+            {
+                this.CompositeReportFormCombinationsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CompositeReportFormKey
+        {
+            get
+            {
+                return this.CompositeReportFormKeyField;
+            }
+            set
+            {
+                this.CompositeReportFormKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MaxCombinedReportCount
+        {
+            get
+            {
+                return this.MaxCombinedReportCountField;
+            }
+            set
+            {
+                this.MaxCombinedReportCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MinCombinedReportCount
+        {
+            get
+            {
+                return this.MinCombinedReportCountField;
+            }
+            set
+            {
+                this.MinCombinedReportCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.ReportForm ReportForm
+        {
+            get
+            {
+                return this.ReportFormField;
+            }
+            set
+            {
+                this.ReportFormField = value;
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3554,133 +3539,6 @@ namespace CoreServiceDevReference
             set
             {
                 this.UserField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClientNote", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
-    public partial class ClientNote : object
-    {
-        
-        private int ClientKeyField;
-        
-        private int ClientNoteKeyField;
-        
-        private System.DateTime CreatedDateTimeField;
-        
-        private CoreServiceDevReference.EncryptedClient EncryptedClientField;
-        
-        private string LastModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedDateTimeField;
-        
-        private System.Guid RowGUIDField;
-        
-        private string TextField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientKey
-        {
-            get
-            {
-                return this.ClientKeyField;
-            }
-            set
-            {
-                this.ClientKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ClientNoteKey
-        {
-            get
-            {
-                return this.ClientNoteKeyField;
-            }
-            set
-            {
-                this.ClientNoteKeyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDateTime
-        {
-            get
-            {
-                return this.CreatedDateTimeField;
-            }
-            set
-            {
-                this.CreatedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CoreServiceDevReference.EncryptedClient EncryptedClient
-        {
-            get
-            {
-                return this.EncryptedClientField;
-            }
-            set
-            {
-                this.EncryptedClientField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastModifiedBy
-        {
-            get
-            {
-                return this.LastModifiedByField;
-            }
-            set
-            {
-                this.LastModifiedByField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ModifiedDateTime
-        {
-            get
-            {
-                return this.ModifiedDateTimeField;
-            }
-            set
-            {
-                this.ModifiedDateTimeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RowGUID
-        {
-            get
-            {
-                return this.RowGUIDField;
-            }
-            set
-            {
-                this.RowGUIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Text
-        {
-            get
-            {
-                return this.TextField;
-            }
-            set
-            {
-                this.TextField = value;
             }
         }
     }
@@ -3924,6 +3782,148 @@ namespace CoreServiceDevReference
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Gender", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities/Enum")]
+    public enum Gender : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotSpecified = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Female = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Male = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClientNote", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class ClientNote : object
+    {
+        
+        private int ClientKeyField;
+        
+        private int ClientNoteKeyField;
+        
+        private System.DateTime CreatedDateTimeField;
+        
+        private CoreServiceDevReference.EncryptedClient EncryptedClientField;
+        
+        private string LastModifiedByField;
+        
+        private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private System.Guid RowGUIDField;
+        
+        private string TextField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ClientKey
+        {
+            get
+            {
+                return this.ClientKeyField;
+            }
+            set
+            {
+                this.ClientKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ClientNoteKey
+        {
+            get
+            {
+                return this.ClientNoteKeyField;
+            }
+            set
+            {
+                this.ClientNoteKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoreServiceDevReference.EncryptedClient EncryptedClient
+        {
+            get
+            {
+                return this.EncryptedClientField;
+            }
+            set
+            {
+                this.EncryptedClientField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastModifiedBy
+        {
+            get
+            {
+                return this.LastModifiedByField;
+            }
+            set
+            {
+                this.LastModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text
+        {
+            get
+            {
+                return this.TextField;
+            }
+            set
+            {
+                this.TextField = value;
+            }
+        }
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmailTemplate", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
@@ -3941,6 +3941,8 @@ namespace CoreServiceDevReference
         private string LastModifiedByField;
         
         private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private System.Nullable<int> OrgUserMappingKeyField;
         
         private System.Guid RowGUIDField;
         
@@ -4025,6 +4027,19 @@ namespace CoreServiceDevReference
             set
             {
                 this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> OrgUserMappingKey
+        {
+            get
+            {
+                return this.OrgUserMappingKeyField;
+            }
+            set
+            {
+                this.OrgUserMappingKeyField = value;
             }
         }
         
@@ -6202,6 +6217,12 @@ namespace CoreServiceDevReference
     public interface ICoreService
     {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKeyResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReports", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportsResponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportForm", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/SaveOrUpdateReportFormRespons" +
             "e")]
         System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity);
@@ -6412,6 +6433,14 @@ namespace CoreServiceDevReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKeyResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Client> GetClientByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetEmailTemplatesByUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetEmailTemplatesByUserRespon" +
+            "se")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate[]> GetEmailTemplatesByUserAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetUserEmailTemplatesByUser", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetUserEmailTemplatesByUserRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate[]> GetUserEmailTemplatesByUserAsync(int key);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKeys", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetClientByKeysResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.Client[]> GetClientByKeysAsync(int[] keys);
@@ -6895,12 +6924,6 @@ namespace CoreServiceDevReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReport", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/ValidateReportResponse")]
         System.Threading.Tasks.Task<CoreServiceDevReference.ServiceValidationResult> ValidateReportAsync(CoreServiceDevReference.Report entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKey", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetReportByKeyResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReports", ReplyAction="http://parinc.com/PARiConnect/Services/ICoreService/GetAllReportsResponse")]
-        System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
@@ -6951,6 +6974,16 @@ namespace CoreServiceDevReference
         public CoreServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key)
+        {
+            return base.Channel.GetReportByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync()
+        {
+            return base.Channel.GetAllReportsAsync();
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.ReportForm> SaveOrUpdateReportFormAsync(CoreServiceDevReference.ReportForm entity)
@@ -7231,6 +7264,16 @@ namespace CoreServiceDevReference
         public System.Threading.Tasks.Task<CoreServiceDevReference.Client> GetClientByKeyAsync(int key)
         {
             return base.Channel.GetClientByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.EmailTemplate[]> GetEmailTemplatesByUserAsync(int key)
+        {
+            return base.Channel.GetEmailTemplatesByUserAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<CoreServiceDevReference.UserEmailTemplate[]> GetUserEmailTemplatesByUserAsync(int key)
+        {
+            return base.Channel.GetUserEmailTemplatesByUserAsync(key);
         }
         
         public System.Threading.Tasks.Task<CoreServiceDevReference.Client[]> GetClientByKeysAsync(int[] keys)
@@ -7823,16 +7866,6 @@ namespace CoreServiceDevReference
             return base.Channel.ValidateReportAsync(entity);
         }
         
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Report> GetReportByKeyAsync(int key)
-        {
-            return base.Channel.GetReportByKeyAsync(key);
-        }
-        
-        public System.Threading.Tasks.Task<CoreServiceDevReference.Report[]> GetAllReportsAsync()
-        {
-            return base.Channel.GetAllReportsAsync();
-        }
-        
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
@@ -7860,7 +7893,7 @@ namespace CoreServiceDevReference
         {
             if ((endpointConfiguration == EndpointConfiguration.NetTcpBinding_ICoreService))
             {
-                return new System.ServiceModel.EndpointAddress("net.tcp://localservices.pariconnect.com/CoreService.svc");
+                return new System.ServiceModel.EndpointAddress("net.tcp://devservices.pariconnect.com/CoreService.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

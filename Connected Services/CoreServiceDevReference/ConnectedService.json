@@ -5,7 +5,7 @@
     "Uri": "https://go.microsoft.com/fwlink/?linkid=858517"
   },
   "ExtendedData": {
-    "Uri": "net.tcp://localservices.pariconnect.com/CoreService.svc",
+    "Uri": "net.tcp://devservices.pariconnect.com/CoreService.svc",
     "Namespace": "CoreServiceDevReference",
     "SelectedAccessLevelForGeneratedClass": "Public",
     "GenerateMessageContract": false,

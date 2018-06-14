@@ -15,6 +15,7 @@ namespace PARiConnect.MVCApp.Models
         public string Age { get; set; }
         public string DateOfBirth { get; set; }
         public string DateCreated { get; set; }
+        public int GenderId { get; set; }
         public string Gender { get; set; }
         public string Email { get; set; }
         public string PrimaryEmail { get; set; }

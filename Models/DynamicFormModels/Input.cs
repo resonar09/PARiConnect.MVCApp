@@ -20,11 +20,87 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
         public string ValidationRequiredMessage { get; set; }
         public string ValidationEmailMessage { get; set; }
         public string ValidationNumberMessage { get; set; }
-        
+        public bool BatchValidation { get; set; }
+        public bool EmailedValidation { get; set; }
+        public bool ClientData { get; set; }
+        public int ClientDataOrdinal { get; set; }
+        public bool ClientDataValidation { get; set; }
+
+        public int TestDataOrdinal { get; set; }
+        public string[] Data { get; set; }
+
         public IEnumerable<Option> Options { get; set; }
 
         public IEnumerable<Input> List { get; set; }
         public string ValidationDateMessage { get; set; }
         public string OnChange { get; set; }
     }
+    public enum InputType { text, email, date, number, radio, password, select, list, checkbox, paragraph, radioVertical, hidden };
+    public enum InputIDType {
+        age,
+        childAge,
+        childDOB,
+        childFirstName,
+        childGender,
+        childLastName,
+        childName,
+        classTaught,
+        clientId,
+        companyName,
+        dateOfBirth,
+        dateOfIllness,
+        description,
+        diagnosis,
+        education,
+        educationServices,
+        educationYears,
+        examiner,  //only here for MEMRY.  all others, examiner/rater use raterName
+        ethnicity,
+        firstName,
+        gender,
+        grade,
+        heightFeet,
+        heightInches,
+        highestGrade,
+        hoursPerWeek,
+        howLongKnown,
+        howWellKnown,
+        inSchool,
+        isEmployed,
+        lastName,
+        livingSituation,
+        liveWithChild,
+        liveWithYears,
+        liveWithMonths,
+        maritalStatus,
+        normGroup,
+        numChildren,
+        occupation,
+        otherEthnicity,
+        otherSchool,
+        otherSchoolYear,
+        paragraph,
+        position,
+        primaryEmail,
+        purpose,
+        raterFirstName,
+        raterGender,
+        raterLastName,
+        raterName,
+        referredBy,
+        referralReason,
+        relationship,
+        relationshipDesc,
+        school,
+        schoolStatus,
+        schoolYear,
+        setting,
+        specialEducation,
+        symptoms,
+        testDate,
+        testForm,
+        testLocation,
+        weight,
+    };
+
 }

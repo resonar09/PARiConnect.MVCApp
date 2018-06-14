@@ -1,0 +1,108 @@
+
+@model PARiConnect.MVCApp.ViewModels.EmailSettingsViewModel
+<div id="emailSettingsSection">
+<form id="email-settings" asp-controller="" asp-action="">
+    <div class="float-right mb-2">
+        <div class="dropdown" id="emailTemplateMenu">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="emailTemplateMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                Select Email Template
+            </button>
+            <div class="dropdown-menu" aria-labelledby="emailTemplateMenuButton">
+                @foreach (var template in Model.EmailTemplates)
+                {
+                    <a class="dropdown-item" href="#"
+                       data-template-key="@(template.EmailTemplateKey)"
+                       data-template-name="@(template.Description)"
+                       data-template-subject="@(template.Subject)"
+                       data-template-body="@(template.Template)"
+                       
+                       >@template.Description</a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input class="form-control" type="text" name="subject" id="subject" value="" data-val="true" data-val-required="The email subject is required!" />
+    </div>
+    <div class="form-group">
+        <label for="body">Email Body:</label>
+        <textarea rows="5" class="form-control" type="text" name="body" id="body" value="" data-val="true" data-val-required="The email body is required!" ></textarea>
+    </div>
+    <div class="form-group border bg-light p-2">
+        <div class="row">
+            <div class="col-2">
+                <label class="mr-2" for="include">Include in email:</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="expirationCheckBox" value="1">
+                    <label class="form-check-label" for="expirationCheckBox">Expiration</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="productCheckBox" value="2">
+                    <label class="form-check-label" for="productCheckBox">Product</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="assessmentTimeCheckBox" value="3">
+                    <label class="form-check-label" for="assessmentTimeCheckBox">Assessment Time</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group border bg-light p-2">
+        <div class="row">
+            <div class="col-2">
+                <label class="mr-2" for="expiration">Expiration:</label>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <input class="form-control form-control-sm col" type="number" id="expirationDays" value="0" min="0" max="30" style="width:40px;">
+                    <label class="form-control-label col" for="expirationDays">Days</label>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="doesNotExpire" value="0">
+                    <label class="form-check-label" for="doesNotExpire">Does not expire</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="notifyCheckBox" value="0">
+                    <label class="form-check-label" for="notifyCheckBox">Notify when done</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="sendCopyCheckBox" value="0">
+                    <label class="form-check-label" for="sendCopyCheckBox">Send me a copy of the email</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group border bg-light p-2">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="saveTemplateCheckBox" value="option1">
+                    <label class="form-check-label" for="expirationCheckBox">Save these settings to use later</label>
+                </div>
+            </div>
+            <div class="col">
+                <input class="form-control form-control-sm" type="text" id="templateName" value="">
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between fixed-bottom m-4">
+
+        <button id="email-cancel" type="button" class="btn  btn-outline-primary btn-lg">Back</button>
+        <button id="email-submit" type="submit" class="btn  btn-outline-primary btn-lg">Send</button>
+    </div>
+</form>
+</div>
+
+@section scripts {
+    @{await Html.RenderPartialAsync("_CommonScriptsPartial"); }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

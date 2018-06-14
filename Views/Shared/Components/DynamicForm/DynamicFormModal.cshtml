@@ -12,7 +12,14 @@
         </button>
       </div>
       <div class="modal-body">
-            @Html.Partial("_DynFormInputs",Model)
+          @if (Model.Settings.Display == PARiConnect.MVCApp.Models.DynamicFormModels.DisplayType.Table)
+            {
+              @Html.Partial("_DynTableInputs", Model)
+            }
+            else
+            {
+              @Html.Partial("_DynFormInputs", Model)
+            }
       </div>
     </div>
   </div>

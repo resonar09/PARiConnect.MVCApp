@@ -1,6 +1,6 @@
 @model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel
 
-<form class="form-login" asp-controller="@(Model.Settings.FormController)" asp-action="@(Model.Settings.FormAction)">
+<form class="form-demo" asp-controller="@(Model.Settings.FormController)" asp-action="@(Model.Settings.FormAction)">
     <div class="container-fluid">
         <div class="form-row">
             @for (var i = 1; i <= Model.Settings.Columns; i++)
@@ -8,9 +8,8 @@
                 <div class="col">
                     @foreach (var input in Model.Inputs.Where(x => x.Column == i || (Model.Settings.Columns == 1 )))
                     {
-
                         <div class="form-group mb-2 @(!String.IsNullOrEmpty(input.Class) ? input.Class : "")">
-                            @if (Model.Settings.Labels)
+                            @if (Model.Settings.Labels && input.Type != "paragraph")
                             {
                                 <label asp-for="@input.Id">@input.Label</label>
                             }
@@ -31,7 +30,7 @@
                                            name="@input.Id"
                                            placeholder="@input.Placeholder"
                                            asp-for="@input.Id"
-                                           data-val="@(input.Validation ? "true" : "false")"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
                                            data-val-required="@input.ValidationRequiredMessage"
                                            value="" />
                                 }
@@ -43,7 +42,7 @@
                                            name="@input.Id"
                                            placeholder="@input.Placeholder"
                                            asp-for="@input.Id"
-                                           data-val="@(input.Validation ? "true" : "false")"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
                                            data-val-email="@input.ValidationEmailMessage"
                                            data-val-required="@input.ValidationRequiredMessage"
                                            value="" />
@@ -58,7 +57,7 @@
                                            placeholder="@input.Placeholder"
                                            pattern="@input.Pattern"
                                            asp-for="@input.Id"
-                                           data-val="@(input.Validation ? "true" : "false")"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
                                            data-val-date="@input.ValidationDateMessage"
                                            data-val-required="@input.ValidationRequiredMessage"
                                            value="" />
@@ -74,7 +73,7 @@
                                            max="@input.Max"
                                            placeholder="@input.Placeholder"
                                            asp-for="@input.Id"
-                                           data-val="@(input.Validation ? "true" : "false")"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
                                            data-val-number="@input.ValidationNumberMessage"
                                            value="" />
 
@@ -109,8 +108,22 @@
                                         @{int x = 0;}
                                         @foreach (var option in input.Options)
                                         {
-                                            <input type="radio" name="@input.Id" id="@(input.Id)@(x)" class="form-check-input ml-2" value="@option.Key" data-val="@(input.Validation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
+                                            <input type="radio" name="@input.Id" id="@(input.Id)@(x)" class="form-check-input ml-2" value="@option.Key" data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
                                             <label class="form-check-label" for="@(input.Id)@(x)">@option.Value</label>
+                                            x++;
+                                        }
+                                    </div>
+                                }
+                                else if (input.Type == "radioVert")
+                                {
+                                    <div class="form-check">
+
+                                        @{int x = 0;}
+                                        @foreach (var option in input.Options)
+                                        {   <div>
+                                            <input type="radio" name="@input.Id" id="@(input.Id)@(x)" class="form-check-input" value="@option.Key" data-val="@(input.Validation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
+                                            <label class="form-check-label" for="@(input.Id)@(x)">@option.Value</label>
+                                            </div>
                                             x++;
                                         }
                                     </div>
@@ -129,7 +142,7 @@
                                                         @{int x = 0;}
                                                         @foreach (var option in item.Options)
                                                         {
-                                                            <input type="radio" name="@item.Id" id="@(item.Id)@(x)" class="form-check-input ml-2" value="@option.Key" data-val="@(input.Validation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
+                                                            <input type="radio" name="@item.Id" id="@(item.Id)@(x)" class="form-check-input ml-2" value="@option.Key" data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
                                                             <label class="form-check-label" for="@(item.Id)@(x)">@option.Value</label>
                                                             x++;
                                                         }
@@ -138,6 +151,25 @@
                                             </tr>
                                         }
                                     </table>
+                                }
+                                else if (input.Type == "checkbox")
+                                {
+
+                                    <div class="form-check">
+                                        @{int x = 0;}
+                                        @foreach (var option in input.Options)
+                                        {   <div class="form-check">
+                                            <input type="checkbox" name="@input.Id" id="@(input.Id)@(x)" class="form-check-input" value="@option.Key" data-val="@(input.ClientDataValidation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
+                                            <label class="form-check-label" for="@(input.Id)@(x)">@option.Value</label>
+                                            </div>
+                                            x++;
+                                        }
+                                    </div>
+
+                                }
+                                else if (input.Type == "paragraph")
+                                {
+                                     <div class="form-check">@input.Placeholder</div>           
                                 }
                             </div>
                         </div>
@@ -151,7 +183,7 @@
                 <div asp-validation-summary="All" class="form-validation"></div>
             </div>
             <div class="col-12">
-                <button type="submit" class="btn  btn-outline-primary btn-block">@(Model.Settings.FormSubmitText)</button>
+                <button id="demo-submit" type="submit" class="btn  btn-outline-primary btn-block">@(Model.Settings.FormSubmitText)</button>
             </div>
 
         </div>

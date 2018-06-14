@@ -16,11 +16,12 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
         {
              _groupData = groupData;
             Settings = new Settings();
-            Settings.Layout = LayoutType.Stacked;
+            Settings.Layout = LayoutType.TwoColumn;
+            Settings.Columns = 2;
             Settings.Container = ContainerType.Modal;
             Settings.ContainerName = "cabModal";
-            Settings.Columns = 1;
-            Settings.Title = "CAB Demographics";
+            Settings.Columns = 2;
+            Settings.Title = "CAB Parent Form Demographics";
             Settings.FormSubmitText = "Submit";
             Settings.Labels = true;
             Settings.FormController = "Demographics";
@@ -28,10 +29,10 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             Inputs = new List<Input>
             {
                 new Input {
-                    Id = "testDate",
+                    Id = InputIDType.testDate.ToString(),
                     Label = "Test Date:",
-                    Type ="date",
-                    //Column = 1,
+                    Type = InputType.date.ToString(),
+                    Column = 1,
                     Placeholder ="",
                     Class = "",
                     Validation = true,
@@ -39,92 +40,103 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     ValidationDateMessage = "A valid date must be entered"
                 },
                 new Input {
-                    Id = "gender",
-                    Label = "Gender:",
-                    Type ="radio",
-                    //Column = 1,
-                    Options = new[] {new Option(1,"Female",false), new Option(2, "Male", false)},
-                    Placeholder ="",
-                    Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The gender field is required!"
-                },
-                new Input {
-                    Id = "firstName",
-                    Label = "First Name:",
-                    Type ="text",
-                    //Column = 1,
+                    Id = InputIDType.firstName.ToString(),
+                    Label = "Child's First Name:",
+                    Type = InputType.text.ToString(),
+                    Column = 1,
                     Placeholder ="Jerry",
                     Class = "",
+                    BatchValidation = true,
                     Validation = true,
                     ValidationRequiredMessage = "The First Name field is required!"
                 },
                 new Input {
-                    Id = "grade",
-                    Label = "Grade:",
-                    Type ="select",
-                    //Column = 1,
-                    Options = new[] {new Option(0,"Not Specified",true),new Option(1,"1st",false), new Option(2,"2nd",false), new Option(3,"3rd",false), new Option(4,"4th",false), new Option(5,"5th",false), new Option(6,"6th",false), new Option(7,"7th",false), new Option(8,"8th",false), new Option(9,"9th",false), new Option(10,"10th",false), new Option(11,"11th",false), new Option(12,"12th",false), new Option(13,"College",false)},
-                    Placeholder ="",
-                    Class = ""
-                },
-                new Input {
-                    Id = "lastName",
-                    Label = "Last Name:",
-                    Type ="text",
-                    //Column = 1,
+                    Id = InputIDType.lastName.ToString(),
+                    Label = "Child's Last Name:",
+                    Type = InputType.text.ToString(),
+                    Column = 1,
                     Placeholder ="Nolan",
                     Class = "",
+                    BatchValidation = true,
                     Validation = true,
                     ValidationRequiredMessage = "The Last Name field is required!"
                 },
                 new Input {
-                    Id = "raterName",
-                    Label = "Rater Name:",
-                    Type ="text",
-                    //Column = 1,
-                    Placeholder ="Nolan",
-                    Class = "",
-                    Validation = false
-                },
-                new Input {
-                    Id = "clientID",
-                    Label = "Client Id:",
-                    Type ="text",
-                    //Column = 1,
+                    Id = InputIDType.clientId.ToString(),
+                    Label = "ID Number:",
+                    Type = InputType.text.ToString(),
+                    Column = 1,
                     Placeholder ="123abc",
                     Class = "",
+                    BatchValidation = true,
                     Validation = true,
                     ValidationRequiredMessage = "The Client ID field is required!"
                 },
                 new Input {
-                    Id = "relationship",
-                    Label = "Relationship To Child:",
-                    Type ="select",
-                    //Column = 1,
-                    Options = new[] {new Option(0,"Not Specified",true),new Option(1,"Mother",false), new Option(2,"Father",false), new Option(3,"Other",false)},
+                    Id = InputIDType.dateOfBirth.ToString(),
+                    Label = "Child's Birthdate:",
+                    Type = InputType.date.ToString(),
+                    Column = 1,
+                    Placeholder ="",
+                    Class = "",
+                },
+                new Input {
+                    Id = InputIDType.age.ToString(),
+                    Label = "Child's Age:",
+                    Type = InputType.text.ToString(),
+                    Column = 1,
+                    Placeholder ="",
+                    Class = "",
+                    BatchValidation = true,
+                    Validation = true,
+                    ValidationRequiredMessage = "The Age field is required!"
+                },
+                new Input {
+                    Id = InputIDType.gender.ToString(),
+                    Label = "Child's Gender:",
+                    Type = InputType.radio.ToString(),
+                    Column = 2,
+                    Options = Utility.GetGenderOptions(),
+                    Placeholder ="",
+                    Class = "",
+                    BatchValidation = true,
+                    Validation = true,
+                    ValidationRequiredMessage = "The gender field is required!"
+                },
+                new Input {
+                    Id = InputIDType.grade.ToString(),
+                    Label = "Grade:",
+                    Type = InputType.select.ToString(),
+                    Column = 2,
+                    Options = Utility.GetGrade2Options(),
                     Placeholder ="",
                     Class = ""
                 },
-
                 new Input {
-                    Id = "dob",
-                    Label = "Birthdate:",
-                    Type ="date",
-                    //Column = 1,
+                    Id = InputIDType.raterName.ToString(),
+                    Label = "Rater Name:",
+                    Type = InputType.text.ToString(),
+                    Column = 2,
                     Placeholder ="",
                     Class = "",
                 },
                 new Input {
-                    Id = "age",
-                    Label = "Age:",
-                    Type ="text",
-                    //Column = 1,
+                    Id = InputIDType.relationship.ToString(),
+                    Label = "Relationship To Child:",
+                    Type = InputType.select.ToString(),
+                    Column = 2,
+                    Options = Utility.GetParent2RelationshipOptions(),
+                    Placeholder ="",
+                    Class = ""
+                },
+                new Input {
+                    Id = InputIDType.relationshipDesc.ToString(),
+                    Label = "Relationship Description:",
+                    Type = InputType.text.ToString(),
                     Placeholder ="",
                     Class = "",
-                    Validation = true,
-                    ValidationRequiredMessage = "The Age field is required!"
-                }
+                    Column = 2,
+                },
             };
         }
 

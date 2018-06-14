@@ -13,7 +13,7 @@ namespace OrgUserServiceDevReference
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgUserInventoryCount", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgUserInventoryCount : object
     {
@@ -95,7 +95,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceValidationResult", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Validation")]
     public partial class ServiceValidationResult : object
     {
@@ -132,7 +132,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceValidationFailure", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Validation")]
     public partial class ServiceValidationFailure : object
     {
@@ -169,7 +169,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EnterpriseProfile", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class EnterpriseProfile : object
     {
@@ -296,7 +296,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgUserMapping", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgUserMapping : object
     {
@@ -558,7 +558,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgProfile", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgProfile : object
     {
@@ -760,7 +760,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PermissionProfile", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class PermissionProfile : object
     {
@@ -947,7 +947,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserProfile", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class UserProfile : object
     {
@@ -1164,7 +1164,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Inventory", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class Inventory : object
     {
@@ -1336,7 +1336,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgUserInvitation", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgUserInvitation : object
     {
@@ -1508,7 +1508,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgUserMappingPerm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgUserMappingPerm : object
     {
@@ -1665,7 +1665,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InventoryTracking", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class InventoryTracking : object
     {
@@ -1852,7 +1852,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InventoryTrackingType", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class InventoryTrackingType : object
     {
@@ -1979,7 +1979,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgProfileCustomization", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgProfileCustomization : object
     {
@@ -2136,7 +2136,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgProfileCustomizationType", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgProfileCustomizationType : object
     {
@@ -2293,7 +2293,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Permission", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class Permission : object
     {
@@ -2450,7 +2450,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PermissionProfileDefaultPerm", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class PermissionProfileDefaultPerm : object
     {
@@ -2607,7 +2607,373 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InventoryEM", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class InventoryEM : object
+    {
+        
+        private System.DateTime CreatedDateTimeField;
+        
+        private int InventoryEMKeyField;
+        
+        private string LastModifiedByField;
+        
+        private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private int OrgUserMappingKeyField;
+        
+        private string PartNumberField;
+        
+        private System.Guid RowGUIDField;
+        
+        private int UsesField;
+        
+        private string UsesStatusField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InventoryEMKey
+        {
+            get
+            {
+                return this.InventoryEMKeyField;
+            }
+            set
+            {
+                this.InventoryEMKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastModifiedBy
+        {
+            get
+            {
+                return this.LastModifiedByField;
+            }
+            set
+            {
+                this.LastModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrgUserMappingKey
+        {
+            get
+            {
+                return this.OrgUserMappingKeyField;
+            }
+            set
+            {
+                this.OrgUserMappingKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber
+        {
+            get
+            {
+                return this.PartNumberField;
+            }
+            set
+            {
+                this.PartNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Uses
+        {
+            get
+            {
+                return this.UsesField;
+            }
+            set
+            {
+                this.UsesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsesStatus
+        {
+            get
+            {
+                return this.UsesStatusField;
+            }
+            set
+            {
+                this.UsesStatusField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InventoryEMTracking", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class InventoryEMTracking : object
+    {
+        
+        private System.DateTime CreatedDateTimeField;
+        
+        private string EnteredByField;
+        
+        private System.Nullable<int> IncrementField;
+        
+        private System.Nullable<int> InventoryEMKeyField;
+        
+        private int InventoryEMTrackingKeyField;
+        
+        private System.Nullable<int> InventoryTrackingTypeKeyField;
+        
+        private string LastModifiedByField;
+        
+        private System.Nullable<System.DateTime> ModifiedDateTimeField;
+        
+        private System.Guid RowGUIDField;
+        
+        private string SourceField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EnteredBy
+        {
+            get
+            {
+                return this.EnteredByField;
+            }
+            set
+            {
+                this.EnteredByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Increment
+        {
+            get
+            {
+                return this.IncrementField;
+            }
+            set
+            {
+                this.IncrementField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> InventoryEMKey
+        {
+            get
+            {
+                return this.InventoryEMKeyField;
+            }
+            set
+            {
+                this.InventoryEMKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InventoryEMTrackingKey
+        {
+            get
+            {
+                return this.InventoryEMTrackingKeyField;
+            }
+            set
+            {
+                this.InventoryEMTrackingKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> InventoryTrackingTypeKey
+        {
+            get
+            {
+                return this.InventoryTrackingTypeKeyField;
+            }
+            set
+            {
+                this.InventoryTrackingTypeKeyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastModifiedBy
+        {
+            get
+            {
+                return this.LastModifiedByField;
+            }
+            set
+            {
+                this.LastModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Source
+        {
+            get
+            {
+                return this.SourceField;
+            }
+            set
+            {
+                this.SourceField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InventoryItemsList", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
+    public partial class InventoryItemsList : object
+    {
+        
+        private string DescriptionField;
+        
+        private string PartNumberField;
+        
+        private System.Guid RowGUIDField;
+        
+        private int idField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber
+        {
+            get
+            {
+                return this.PartNumberField;
+            }
+            set
+            {
+                this.PartNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RowGUID
+        {
+            get
+            {
+                return this.RowGUIDField;
+            }
+            set
+            {
+                this.RowGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AuthenticationToken", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Security")]
     public partial class AuthenticationToken : object
     {
@@ -2644,7 +3010,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserIdentity", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Security")]
     public partial class UserIdentity : object
     {
@@ -2696,7 +3062,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerInfoShort", Namespace="http://schemas.datacontract.org/2004/07/CorpSvcs.Contracts.Contracts")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(OrgUserServiceDevReference.CustomerInfoFull))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(OrgUserServiceDevReference.CustomerInfo))]
@@ -2945,7 +3311,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserData", Namespace="http://schemas.datacontract.org/2004/07/wcfERPService")]
     public partial class UserData : object
     {
@@ -3162,7 +3528,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerInfoFull", Namespace="http://schemas.datacontract.org/2004/07/CorpSvcs.Contracts.Contracts")]
     public partial class CustomerInfoFull : OrgUserServiceDevReference.CustomerInfoShort
     {
@@ -3364,7 +3730,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerInfo", Namespace="http://schemas.datacontract.org/2004/07/CorpSvcs.Contracts.Contracts")]
     public partial class CustomerInfo : OrgUserServiceDevReference.CustomerInfoShort
     {
@@ -3400,7 +3766,7 @@ namespace OrgUserServiceDevReference
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseCode", Namespace="http://schemas.datacontract.org/2004/07/wcfERPService")]
     public enum ResponseCode : int
     {
@@ -3422,7 +3788,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgUserSuperUserListing", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Listing")]
     public partial class OrgUserSuperUserListing : object
     {
@@ -3459,7 +3825,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PermissionToken", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Security")]
     public partial class PermissionToken : object
     {
@@ -3496,7 +3862,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AccountRecoveryToken", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Security")]
     public partial class AccountRecoveryToken : object
     {
@@ -3533,7 +3899,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrgUserInventory", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class OrgUserInventory : object
     {
@@ -3840,7 +4206,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InventoryCount", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Inventory")]
     public partial class InventoryCount : object
     {
@@ -3877,7 +4243,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EnterpriseOrganizationListing", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Listing")]
     public partial class EnterpriseOrganizationListing : object
     {
@@ -3929,7 +4295,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrganizationListing", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Custom/Listing")]
     public partial class OrganizationListing : object
     {
@@ -3966,7 +4332,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerEmail", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class CustomerEmail : object
     {
@@ -4138,7 +4504,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PermissionParameter", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class PermissionParameter : object
     {
@@ -4265,7 +4631,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InventoryAssignmentLevel", Namespace="http://parinc.com/PARiConnect/Services/DataContracts/Entities", IsReference=true)]
     public partial class InventoryAssignmentLevel : object
     {
@@ -4391,7 +4757,7 @@ namespace OrgUserServiceDevReference
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://parinc.com/PARiConnect/Services", ConfigurationName="OrgUserServiceDevReference.IOrgUserService")]
     public interface IOrgUserService
     {
@@ -4426,6 +4792,67 @@ namespace OrgUserServiceDevReference
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllEnterpriseProfiles", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllEnterpriseProfilesRe" +
             "sponse")]
         System.Threading.Tasks.Task<OrgUserServiceDevReference.EnterpriseProfile[]> GetAllEnterpriseProfilesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/SaveOrUpdateInventoryEM", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/SaveOrUpdateInventoryEMRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEM> SaveOrUpdateInventoryEMAsync(OrgUserServiceDevReference.InventoryEM entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/DeleteInventoryEM", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/DeleteInventoryEMResponse")]
+        System.Threading.Tasks.Task DeleteInventoryEMAsync(OrgUserServiceDevReference.InventoryEM entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/ValidateInventoryEM", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/ValidateInventoryEMRespons" +
+            "e")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.ServiceValidationResult> ValidateInventoryEMAsync(OrgUserServiceDevReference.InventoryEM entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/GetInventoryEMByKey", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/GetInventoryEMByKeyRespons" +
+            "e")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEM> GetInventoryEMByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllInventoryEMs", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllInventoryEMsResponse" +
+            "")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEM[]> GetAllInventoryEMsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/SaveOrUpdateInventoryEMTra" +
+            "cking", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/SaveOrUpdateInventoryEMTra" +
+            "ckingResponse")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEMTracking> SaveOrUpdateInventoryEMTrackingAsync(OrgUserServiceDevReference.InventoryEMTracking entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/DeleteInventoryEMTracking", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/DeleteInventoryEMTrackingR" +
+            "esponse")]
+        System.Threading.Tasks.Task DeleteInventoryEMTrackingAsync(OrgUserServiceDevReference.InventoryEMTracking entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/ValidateInventoryEMTrackin" +
+            "g", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/ValidateInventoryEMTrackin" +
+            "gResponse")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.ServiceValidationResult> ValidateInventoryEMTrackingAsync(OrgUserServiceDevReference.InventoryEMTracking entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/GetInventoryEMTrackingByKe" +
+            "y", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/GetInventoryEMTrackingByKe" +
+            "yResponse")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEMTracking> GetInventoryEMTrackingByKeyAsync(int key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllInventoryEMTrackings" +
+            "", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllInventoryEMTrackings" +
+            "Response")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEMTracking[]> GetAllInventoryEMTrackingsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/SaveOrUpdateInventoryItems" +
+            "List", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/SaveOrUpdateInventoryItems" +
+            "ListResponse")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryItemsList> SaveOrUpdateInventoryItemsListAsync(OrgUserServiceDevReference.InventoryItemsList entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/DeleteInventoryItemsList", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/DeleteInventoryItemsListRe" +
+            "sponse")]
+        System.Threading.Tasks.Task DeleteInventoryItemsListAsync(OrgUserServiceDevReference.InventoryItemsList entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/ValidateInventoryItemsList" +
+            "", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/ValidateInventoryItemsList" +
+            "Response")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.ServiceValidationResult> ValidateInventoryItemsListAsync(OrgUserServiceDevReference.InventoryItemsList entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllInventoryItemsLists", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/GetAllInventoryItemsListsR" +
+            "esponse")]
+        System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryItemsList[]> GetAllInventoryItemsListsAsync();
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://parinc.com/PARiConnect/Services/IOrgUserService/Authenticate", ReplyAction="http://parinc.com/PARiConnect/Services/IOrgUserService/AuthenticateResponse")]
@@ -4990,7 +5417,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Authenticate", WrapperNamespace="http://parinc.com/PARiConnect/Services", IsWrapped=true)]
     public partial class AuthenticateRequest
     {
@@ -5009,7 +5436,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="AuthenticateResponse", WrapperNamespace="http://parinc.com/PARiConnect/Services", IsWrapped=true)]
     public partial class AuthenticateResponse
     {
@@ -5036,7 +5463,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="AuthenticateCorpSvcs", WrapperNamespace="http://parinc.com/PARiConnect/Services", IsWrapped=true)]
     public partial class AuthenticateCorpSvcsRequest
     {
@@ -5055,7 +5482,7 @@ namespace OrgUserServiceDevReference
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="AuthenticateCorpSvcsResponse", WrapperNamespace="http://parinc.com/PARiConnect/Services", IsWrapped=true)]
     public partial class AuthenticateCorpSvcsResponse
     {
@@ -5081,13 +5508,13 @@ namespace OrgUserServiceDevReference
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     public interface IOrgUserServiceChannel : OrgUserServiceDevReference.IOrgUserService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.0")]
     public partial class OrgUserServiceClient : System.ServiceModel.ClientBase<OrgUserServiceDevReference.IOrgUserService>, OrgUserServiceDevReference.IOrgUserService
     {
         
@@ -5164,6 +5591,76 @@ namespace OrgUserServiceDevReference
         public System.Threading.Tasks.Task<OrgUserServiceDevReference.EnterpriseProfile[]> GetAllEnterpriseProfilesAsync()
         {
             return base.Channel.GetAllEnterpriseProfilesAsync();
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEM> SaveOrUpdateInventoryEMAsync(OrgUserServiceDevReference.InventoryEM entity)
+        {
+            return base.Channel.SaveOrUpdateInventoryEMAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteInventoryEMAsync(OrgUserServiceDevReference.InventoryEM entity)
+        {
+            return base.Channel.DeleteInventoryEMAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.ServiceValidationResult> ValidateInventoryEMAsync(OrgUserServiceDevReference.InventoryEM entity)
+        {
+            return base.Channel.ValidateInventoryEMAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEM> GetInventoryEMByKeyAsync(int key)
+        {
+            return base.Channel.GetInventoryEMByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEM[]> GetAllInventoryEMsAsync()
+        {
+            return base.Channel.GetAllInventoryEMsAsync();
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEMTracking> SaveOrUpdateInventoryEMTrackingAsync(OrgUserServiceDevReference.InventoryEMTracking entity)
+        {
+            return base.Channel.SaveOrUpdateInventoryEMTrackingAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteInventoryEMTrackingAsync(OrgUserServiceDevReference.InventoryEMTracking entity)
+        {
+            return base.Channel.DeleteInventoryEMTrackingAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.ServiceValidationResult> ValidateInventoryEMTrackingAsync(OrgUserServiceDevReference.InventoryEMTracking entity)
+        {
+            return base.Channel.ValidateInventoryEMTrackingAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEMTracking> GetInventoryEMTrackingByKeyAsync(int key)
+        {
+            return base.Channel.GetInventoryEMTrackingByKeyAsync(key);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryEMTracking[]> GetAllInventoryEMTrackingsAsync()
+        {
+            return base.Channel.GetAllInventoryEMTrackingsAsync();
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryItemsList> SaveOrUpdateInventoryItemsListAsync(OrgUserServiceDevReference.InventoryItemsList entity)
+        {
+            return base.Channel.SaveOrUpdateInventoryItemsListAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task DeleteInventoryItemsListAsync(OrgUserServiceDevReference.InventoryItemsList entity)
+        {
+            return base.Channel.DeleteInventoryItemsListAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.ServiceValidationResult> ValidateInventoryItemsListAsync(OrgUserServiceDevReference.InventoryItemsList entity)
+        {
+            return base.Channel.ValidateInventoryItemsListAsync(entity);
+        }
+        
+        public System.Threading.Tasks.Task<OrgUserServiceDevReference.InventoryItemsList[]> GetAllInventoryItemsListsAsync()
+        {
+            return base.Channel.GetAllInventoryItemsListsAsync();
         }
         
         public System.Threading.Tasks.Task<OrgUserServiceDevReference.AuthenticateResponse> AuthenticateAsync(OrgUserServiceDevReference.AuthenticateRequest request)
@@ -5833,7 +6330,7 @@ namespace OrgUserServiceDevReference
         {
             if ((endpointConfiguration == EndpointConfiguration.NetTcpBinding_IOrgUserService))
             {
-                return new System.ServiceModel.EndpointAddress("net.tcp://localservices.pariconnect.com/OrgUserService.svc");
+                return new System.ServiceModel.EndpointAddress("net.tcp://devservices.pariconnect.com/OrgUserService.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

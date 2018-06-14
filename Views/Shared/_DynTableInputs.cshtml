@@ -1,0 +1,366 @@
+
+@model PARiConnect.MVCApp.ViewModels.DynamicFormViewModel
+
+@{
+    var dataColumns = Model.DataColumns;
+    var dataRows = Model.DataRows;
+}
+<div id="dynFormTableSection">
+
+    <div class="row bg-dark text-white small mt-2">
+
+        <div class="" style="width:25px;">
+        </div>
+        @foreach (var input in Model.Inputs.Where(x => x.ClientData))
+        {
+            if (@input.Type == "email")
+            {
+                <div class="col-3">@input.Label</div>
+            }
+            else if (@input.Type == "date")
+            {
+                <div class="col-2">@input.Label</div>
+            }
+            else
+            {
+                <div class="col">@input.Label</div>
+            }
+        }
+        <div class="col-1">
+            Remove
+        </div>
+    </div>
+
+    <form class="form-demo" asp-controller="@(Model.Settings.FormController)" asp-action="@(Model.Settings.FormAction)">
+        @for (var i = 0; i < dataRows.Count(); i++)
+        {
+            <div class="row border" data-client-key="@dataRows[@i]" style="padding:5px;">
+
+                <div class="data-column ml-1">
+                    <a href="" class="">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <input type="hidden" class="form-control" name="clientKey" value="@dataRows[@i]">
+                    <input type="hidden" class="form-control" data-test-data-ordinal="1" name="testDate" value="">
+                </div>
+                @foreach (var input in Model.Inputs) //.Where(x => x.ClientData))
+                {
+                    @if (input.ClientData == true)
+                    {
+                        @if (input.Type == "text")
+                        {
+                            <div class="col data-column">
+                                <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
+                                <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
+                                    <input type="@input.Type"
+                                           class="form-control @(input.Class)"
+                                           name="@input.Id"
+                                           placeholder="@input.Placeholder"
+                                           asp-for="@input.Id"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                           data-val-required="@input.ValidationRequiredMessage"
+                                           data-client-data-ordinal="@input.ClientDataOrdinal"
+                                           data-test-data-ordinal="@input.TestDataOrdinal"
+                                           value="@input.Data[i]" />
+                                </div>
+                            </div>
+                        }
+                        else if (input.Type == "email")
+                        {
+                            <div class="col-3 data-column">
+                                <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
+                                <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
+                                    <input type="@input.Type"
+                                           class="form-control"
+                                           name="@input.Id"
+                                           placeholder="@input.Placeholder"
+                                           asp-for="@input.Id"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                           data-val-email="@input.ValidationEmailMessage"
+                                           data-val-required="@input.ValidationRequiredMessage"
+                                           data-client-data-ordinal="@input.ClientDataOrdinal"
+                                           data-test-data-ordinal="@input.TestDataOrdinal"
+                                           value="@(input.Data[i] == "---" ? "" : input.Data[i])" />
+                                </div>
+                            </div>
+                        }
+                        else if (input.Type == "date")
+                        {
+                            <div class="col-2 data-column data-column-date">
+                                <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
+                                <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
+                                    <input type="@input.Type"
+                                           class="form-control date-unstyled @(input.Class)"
+                                           name="@input.Id"
+                                           placeholder="@input.Placeholder"
+                                           asp-for="@input.Id"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                           data-val-date="@input.ValidationDateMessage"
+                                           data-val-required="@input.ValidationRequiredMessage"
+                                           data-client-data-ordinal="@input.ClientDataOrdinal"
+                                           data-test-data-ordinal="@input.TestDataOrdinal"
+                                           value="" />
+                                </div>
+                            </div>
+                        }
+                        else if (input.Type == "radio")
+                        {
+                            <div class="col data-column-radio">
+                                <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
+                                <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
+                                    <select class="form-control select @(input.Class)"
+                                            name="@input.Id"
+                                            onchange="@input.OnChange"
+                                            data-client-data-ordinal="@input.ClientDataOrdinal"
+                                            data-test-data-ordinal="@input.TestDataOrdinal"
+                                            data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                            data-val-required="@input.ValidationRequiredMessage"
+                                            data-value="@(input.Data[i].ToUpper() == "FEMALE" ? "1" : input.Data[i].ToUpper() == "MALE" ? "2" : "0")"
+                                            value="@(input.Data[i].ToUpper() == "FEMALE" ? "1" : input.Data[i].ToUpper() == "MALE" ? "2" : "0")">
+
+                                        @foreach (var option in input.Options)
+                                        {
+                                            <option value="@option.Key" selected="@(option.Value == input.Data[i] ? true:false)">@option.Value</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        }
+                        else if (input.Type == PARiConnect.MVCApp.Models.DynamicFormModels.InputType.number.ToString())
+                        {
+                            <div class="col data-column">
+                                <div class="data-label @(input.Data[i] == "---" ? "hide-item":"")">@input.Data[i]</div>
+                                <div class="data-edit @(input.Data[i] == "---" ? "":"hide-item")">
+                                    <input type="@input.Type"
+                                           class="form-control @(input.Class)"
+                                           name="@input.Id"
+                                           min="@input.Min"
+                                           max="@input.Max"
+                                           asp-for="@input.Id"
+                                           data-client-data-ordinal="@input.ClientDataOrdinal"
+                                           data-test-data-ordinal="@input.TestDataOrdinal"
+                                           data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                           data-val-required="@input.ValidationRequiredMessage"
+                                           value="@(input.Data[i] == "---" ? null : input.Data[i])" />
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col data-column">
+                                <div class="data-label">@input.Data[i]</div>
+                                <div class="data-edit" style="display:none;">
+                                </div>
+                            </div>
+
+                        }
+
+                    }
+                    else
+                    {
+
+                        
+                        <span>
+                            <input type="hidden" class="form-control hide-item"
+                                   data-client-data-ordinal="@input.ClientDataOrdinal"
+                                   data-test-data-ordinal="@input.TestDataOrdinal"
+                                   name="@input.Id"
+                                   value="@input.Value" />
+                        </span>
+
+                    }
+
+
+                }
+                <div class="col-1 ">
+                    <div class="form-check text-center">
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-12 @(Model.Settings.ShowValidation ? "" : "hide-item")">
+            <div asp-validation-summary="All" class="form-validation"></div>
+        </div>
+        <div class="d-flex justify-content-between fixed-bottom m-4">
+
+            <button id="demo-cancel" type="button" class="btn  btn-outline-primary btn-lg">Cancel</button>
+            <button id="demo-submit" type="submit" class="btn  btn-outline-primary btn-lg">Next Step</button>
+        </div>
+
+
+    </form>
+
+</div>
+
+<div id="dynFormSection" style="display:none;" class="@(Model.Settings.DefaultClass)">
+    <form class="form-demo" asp-controller="@(Model.Settings.FormController)" asp-action="@(Model.Settings.FormAction)">
+        <div class="container-fluid">
+            <div class="form-row">
+                @for (var i = 1; i <= Model.Settings.Columns; i++)
+                {
+                    <div class="col">
+                        @foreach (var input in Model.Inputs.Where(x => ((x.Column == i) || (Model.Settings.Columns == 1))))
+                        {
+                            <div class="form-group mb-2 @(!String.IsNullOrEmpty(input.Class) ? input.Class : "")">
+                                @if (Model.Settings.Labels && input.Type != "hidden")
+                                {
+                                    <label asp-for="@input.Id">@input.Label</label>
+                                }
+                                <div class="input-group">
+                                    @if (!String.IsNullOrEmpty(input.PrePendIcon))
+                                    {
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-@(input.PrePendIcon)" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    }
+                                    @if (input.Type == "text")
+                                    {
+                                        <input id="@input.Id"
+                                               type="@input.Type"
+                                               class="form-control @(input.Class)"
+                                               name="@input.Id"
+                                               placeholder="@input.Placeholder"
+                                               asp-for="@input.Id"
+                                               data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                               data-val-required="@input.ValidationRequiredMessage"
+                                               value="" />
+                                    }
+                                    else if (input.Type == "email")
+                                    {
+                                        <input id="@input.Id"
+                                               type="@input.Type"
+                                               class="form-control @(input.Class)"
+                                               name="@input.Id"
+                                               placeholder="@input.Placeholder"
+                                               asp-for="@input.Id"
+                                               data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                               data-val-email="@input.ValidationEmailMessage"
+                                               data-val-required="@input.ValidationRequiredMessage"
+                                               value="" />
+
+                                    }
+                                    else if (input.Type == "date")
+                                    {
+                                        <input id="@input.Id"
+                                               type="@input.Type"
+                                               class="form-control @(input.Class)"
+                                               name="@input.Id"
+                                               placeholder="@input.Placeholder"
+                                               pattern="@input.Pattern"
+                                               asp-for="@input.Id"
+                                               data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                               data-val-date="@input.ValidationDateMessage"
+                                               data-val-required="@input.ValidationRequiredMessage"
+                                               value="" />
+
+                                    }
+                                    else if (input.Type == "number")
+                                    {
+                                        <input id="@input.Id"
+                                               type="@input.Type"
+                                               class="form-control @(input.Class)"
+                                               name="@input.Id"
+                                               min="@input.Min"
+                                               max="@input.Max"
+                                               placeholder="@input.Placeholder"
+                                               asp-for="@input.Id"
+                                               data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")"
+                                               data-val-number="@input.ValidationNumberMessage"
+                                               data-val-required="@input.ValidationRequiredMessage"
+                                               value="" />
+
+                                    }
+                                    else if (input.Type == "password")
+                                    {
+
+                                        <input id="@input.Id"
+                                               type="@input.Type"
+                                               class="form-control @(input.Class)"
+                                               name="@input.Id"
+                                               asp-for="@input.Id" />
+
+                                    }
+                                    else if (input.Type == "hidden")
+                                    {
+
+                                        <input id="@input.Id"
+                                               type="@input.Type"
+                                               name="@input.Id"
+                                               class="form-control @(input.Class)"
+                                               value="@input.Value"/>
+
+                                    }
+                                    else if (input.Type == "select")
+                                    {
+                                        <select id="@input.Id"
+                                                asp-for="@input.Id"
+                                                class="form-control @(input.Class)"
+                                                name="@input.Id"
+                                                data-val="@input.Value"
+                                                onchange="@input.OnChange">
+                                            @foreach (var option in input.Options)
+                                            {
+                                                <option value="@option.Key" selected="@(option.Selected ? true:false)">@option.Value</option>
+                                            }
+                                        </select>
+                                    }
+                                    else if (input.Type == "radio")
+                                    {
+                                        <div class="form-check form-check-inline @(input.Class)">
+
+                                            @{int x = 0;}
+                                            @foreach (var option in input.Options)
+                                            {
+                                                <input type="radio" name="@input.Id" id="@(input.Id)@(x)" class="form-check-input ml-2 @(input.Class)" value="@option.Key" data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
+                                                <label class="form-check-label" for="@(input.Id)@(x)">@option.Value</label>
+                                                x++;
+                                            }
+                                        </div>
+                                    }
+                                    else if (input.Type == "list")
+                                    {
+                                        <table>
+                                            @foreach (var item in input.List)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <label class="form-check-label">@item.Label</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check form-check-inline @(input.Class)">
+                                                            @{int x = 0;}
+                                                            @foreach (var option in item.Options)
+                                                            {
+                                                                <input type="radio" name="@item.Id" id="@(item.Id)@(x)" class="form-check-input ml-2 @(input.Class)" value="@option.Key" data-val="@(input.ClientDataValidation || input.EmailedValidation ? "true" : "false")" data-val-required="@input.ValidationRequiredMessage" />
+                                                                <label class="form-check-label" for="@(item.Id)@(x)">@option.Value</label>
+                                                                x++;
+                                                            }
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </table>
+                                    }
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                }
+            </div>
+            <div class="row">
+                <div class="col-12 @(Model.Settings.ShowValidation ? "" : "hide-item")">
+                    <div asp-validation-summary="All" class="form-validation"></div>
+                </div>
+                <div class="col-12">
+                    <button id="demo-submit" type="submit" class="btn  btn-outline-primary btn-block">@(Model.Settings.FormSubmitText)</button>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</div>

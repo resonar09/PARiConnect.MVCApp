@@ -5,11 +5,6 @@
     </div>
     <div class="row mt-1">
         <div>To issue assessments to clients, select clients, then select the assessments you'd like them to take.</div>
-        <input id="usesNeeded" type="hidden" name="clientCount" value="0">
-        <input id="usesAvailable" type="hidden" name="assessmentCount" value="0">
-        <input id="disableEmailInvitations" type="hidden" name="disableEmailInvitations" value="0">
-        <input id="disableOnSiteAdministration" type="hidden" name="disableOnSiteAdministration" value="0">
-        <input id="disableManualEntry" type="hidden" name="disableManualEntry" value="0">
 
     </div>
     <div class="row mt-3">
@@ -154,7 +149,7 @@
                 </button>
                 <button id="manual-button" type="button" class="btn btn-outline-secondary admin-option">
                     <i class="fa fa-file-text-o fa-3x mb-3"></i>
-                    <h6>Enter Form</h6>
+                    <h6>Enter From</h6>
                     <h6>Paper</h6>
                 </button>
             </div>
@@ -164,83 +159,49 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="emailAssessmentModal" tabindex="-1" role="dialog" aria-labelledby="emailAssessmentModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade " id="emailAssessmentModal" tabindex="-1" role="dialog" aria-labelledby="emailAssessmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content ">
             <div class="modal-body d-flex justify-content-around pt-3">
-                <div class="col-3 bg-light d-none d-lg-block d-xl-block small">
-                    <div class=" font-weight-bold  mt-3">Send Assessment By Email</div>
-                    <div>The Form</div>
-                    <ul class="list-unstyled mt-3">
-                        <li class="mt-3">
-                            <span class="fa-stack mr-2">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <strong class="fa-stack-1x text-white">1</strong>
-                            </span>Client Demographics
-                        </li>
-                        <li class="mt-3">
-                            <span class="fa-stack mr-2 text-muted">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <strong class="fa-stack-1x text-white">2</strong>
-                            </span>Email Settings
-                        </li>
-                    </ul>
-                </div>
-                <div class="col d-block col">
+
+                <div id="main-column" class="col d-block">
                     <div class="main-section">
-                        <div class="d-flex justify-content-between ">
-                            <span>Please review the information below:</span>
+                        <div class="main-title-bar d-flex justify-content-between ">
+
+                            <span id="main-title">Send Assessment Form By Email</span>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        
-                        <div id="client-assess-table"></div>
-                        @*<table id="client-demo-table" class="table table-hover sortable w-100 tablesorter header-fixed">
-                                <thead class="table-header">
-                                    <tr class="table-row">
-                                        <th class="table-row-start">
-                                            <div class="header-text">
-                                                Client
-                                            </div>
-                                        </th>
-                                        <th class="report">
-                                            <div class="header-text">Report</div>
-                                        </th>
-                                        <th class="assigned">
-                                            <div class="header-text">Assigned</div>
-                                        </th>
-                                        <th class="completed">
-                                            <div class="header-text">Completed</div>
-                                        </th>
-                                        <th class="table-row-end">
-                                            <div class="header-text">Completed</div>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="searchable">
+                        <div class=" small">
+                            <div class=" font-weight-bold"></div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb bg-white mb-0">
+                                    <li id="demo-breadcrumb" class="breadcrumb-item active">
+                                        <span class="fa-stack mr-2">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <strong class="fa-stack-1x text-light">1</strong>
+                                        </span>Client Demographics
+                                    </li>
+                                    <li id="email-breadcrumb" class="breadcrumb-item">
+                                        <span class="fa-stack mr-2">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <strong class="fa-stack-1x text-light">2</strong>
+                                        </span>Email Settings
+                                    </li>
+                                </ol>
+                            </nav>
 
-                                    @foreach (var report in Model.Assessments)
-                                    {
-                                        <tr class="table-row">
-                                            <td class="table-row-start table-row-header">
-                                                <span class="">@report.AssessmentKey</span>
-                                            </td>
-
-                                            <td>@report.AssessmentKey</td>
-                                            <td>
-                                                @report.AssessmentKey
-                                            </td>
-                                            <td>
-                                                @report.AssessmentKey
-                                            </td>
-                                            <td class="table-row-end">
-                                                @report.AssessmentKey
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>*@
+                        </div>
+                        <div id="main-content-title" class="d-flex justify-content-between">
+                            <div>
+                                Please review the information below:
+                            </div>
+                            <div>
+                                <button id="removeClientsButton" type="button" class="btn btn-outline-primary btn-sm" >Remove Clients</button>
+                            </div>
+                        </div>
+                        <div id="main-content"></div>
                     </div>
                     <div class="modal-footer d-flex justify-content-between">
                         <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Cancel</button>
@@ -252,6 +213,8 @@
         </div>
     </div>
 </div>
+
+
 @section Footer {
     <div class="text-right p-2">
         <button id="next-step1" type="button" class="btn btn-primary btn-lg mr-3 disabled" data-toggle="modal" data-target="#adminOptionModal">Next Step</button>
@@ -270,10 +233,30 @@
             clientCount: 0,
             assessmentCount: 0,
             assessmentUses: 0,
+            clientDemoTable: [],
+            clientDataTable: [],
+            testDataTable: [],
+            raterDataTable: [],
             clients: [],
             assessments: [],
+            //emailTemplates: {},
+            templates: [],
+            emailTemplate: {
+                emailTemplateKey: 0,
+                description: '',
+                subject: '',
+                template: '',
+                expiration: false,
+                product: false,
+                assessmentTime: false,
+                expirationDays: 0,
+                doesNotExpire: false,
+                notify: false,
+                sendCopy: false
+            },
+
             setDisableEmailInvitations: function (disableEmailInvitations) {
-                console.log(disableEmailInvitations);
+                //console.log(disableEmailInvitations);
                 if (disableEmailInvitations > 0)
                     this.disableEmailInvitations = true;
                 else
@@ -295,21 +278,26 @@
                 return this.disableOnSiteAdministration;
             },
             addClientCount: function () {
+                console.log('addClientCount');
                 this.clientCount++;
                 return this.clientCount;
             },
             addClient: function (key) {
+                console.log('addClient');
                 this.clientCount++;
                 this.clients.push(key);
                 return this.clientCount;
             },
             addClientKey: function (key) {
+                console.log('addClientKey');
                 this.clients.push(key);
                 return this.clients;
             },
             removeClient: function (key) {
+                
                 this.clientCount--;
                 this.clients.pop(key);
+                console.log('removeClient clientCount:' + this.clientCount);
                 return this.clientCount;
             },
             addAssessment: function (key, uses) {
@@ -323,6 +311,31 @@
                 this.assessmentUses = 0;
                 this.assessments.pop(key);
                 return this.assessmentCount;
+            },
+            getDemoContent: function () {
+                $.ajax({
+                    url: 'Demographics/GetDemo',
+                    type: 'GET',
+                    traditional: true,
+                    data: { key: PAR.Assess.data.assessments[0], dataKeys: PAR.Assess.data.clients, displayType: 1 },
+                    success: function (result) {
+
+                        $('#main-content').html(result);
+                        $('#main-content-title').show();
+                        $("#main-content .data-column-date").each(function () {
+                            var text = $(this).find(".data-label").text();
+                            var mydate = formatDate(text);
+                            $(this).find(".form-control").val(mydate);
+                        });
+                        $("#main-content .data-column-radio").each(function () {
+                            var text = $(this).find(".data-label").text();
+                            $(this).find(".form-control").val(text);
+                        });
+                        var form = $('#main-content .form-demo');
+                        form.removeData("validator").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse(form);
+                    }
+                });
             }
         }
 
@@ -391,14 +404,12 @@
             $(".active").prop("disabled", false);
         }
         function RemoveClientFromAssess(obj) {
-
-            var clientCount = PAR.Assess.data.clientCount;
             var key = $(obj).data("client-key");
             var assessmentUses = PAR.Assess.data.assessmentUses;
-            PAR.Assess.data.removeClient(key);
+            var clientCount = PAR.Assess.data.removeClient(key);
             $(".ass-badge").text(clientCount + " of " + assessmentUses);
             $(obj).closest("li").eq(0).remove();
-  
+
             ShowClient(key);
             ValidateNext(clientCount, assessmentUses);
         }
@@ -420,7 +431,39 @@
                 $("#next-step1").attr("disabled", true);
             }
         }
+        function formatDate(date) {
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+
+            return [year, month, day].join('-');
+        }
         $(document).ready(function () {
+
+            $("#removeClientsButton").click(function () {
+
+                console.log('removeClientsButton');
+
+                $.each()
+            });
+            $.extend({
+                toDictionary: function (query) {
+                    var parms = {};
+                    var items = query.split("&"); // split
+                    for (var i = 0; i < items.length; i++) {
+                        var values = items[i].split("=");
+                        var key = decodeURIComponent(values.shift());
+                        var value = values.join("=")
+                        parms[key] = decodeURIComponent(value);
+                    }
+                    return (parms);
+                }
+            });
+
             $("#email-button").click(function () {
                 $('#adminOptionModal').modal('hide');
             });
@@ -527,27 +570,20 @@
                     favorited = false;
                 if (favorited === 'True')
                     favorited = true;
-                console.log('data-fav: ' + favorited);
                 $.ajax({
                     url: '/Inventory/SetFavoriteStatus/' + id,
                     type: "get",
                     data: { favorited: !favorited },
                     success: function (response) {
-                        console.log('new data-fav: ' + !favorited);
                         favLink.data("assessment-favorite", !favorited);
                         favLink.find('.fa').toggleClass("fa-star-o fa-star");
                         favLink.closest(".assessment-body").eq(0).toggleClass("favorite", !favorited);
                         favLink.closest(".assessment-body").eq(0).toggleClass("not-favorite", favorited)
                     }
                 });
-
-
             });
             $('#adminOptionModal').on('show.bs.modal', function (event) {
-                //console.log('disableEmailInvitations : ' + $("#disableEmailInvitations").val());
-                //console.log('disableManualEntry: ' + $("#disableManualEntry").val());
-                //console.log('disableOnSiteAdministration: ' + $("#disableOnSiteAdministration").val());
-                if ($("#disableEmailInvitations").val() > 0) {
+                if (PAR.Assess.data.disableEmailInvitations > 0) {
                     $("#email-button").addClass("disabled");
                     $("#email-button").attr("disabled", true);
                 }
@@ -555,7 +591,7 @@
                     $("#email-button").removeClass("disabled");
                     $("#email-button").attr("disabled", false);
                 }
-                if ($("#disableManualEntry").val() > 0) {
+                if (PAR.Assess.data.disableManualEntry > 0) {
                     $("#manual-button").addClass("disabled");
                     $("#manual-button").attr("disabled", true);
                 }
@@ -563,7 +599,7 @@
                     $("#manual-button").removeClass("disabled");
                     $("#manual-button").attr("disabled", false);
                 }
-                if ($("#disableOnSiteAdministration").val() > 0) {
+                if (PAR.Assess.data.disableOnSiteAdministration > 0) {
                     $("#onsite-button").addClass("disabled");
                     $("#onsite-button").attr("disabled", true);
                 }
@@ -571,28 +607,273 @@
                     $("#onsite-button").removeClass("disabled");
                     $("#onsite-button").attr("disabled", false);
                 }
+                if (PAR.Assess.data.clients.length > 1 && PAR.Assess.data.disableEmailInvitations < 1) {
+
+                    $("#email-button").removeClass("disabled");
+                    $("#email-button").attr("disabled", false);
+                    $("#manual-button").addClass("disabled");
+                    $("#manual-button").attr("disabled", true);
+                    $("#onsite-button").addClass("disabled");
+                    $("#onsite-button").attr("disabled", true);
+                }
             });
             $('#emailAssessmentModal').on('show.bs.modal', function (event) {
-                console.log("emailAssessmentModal");
-                //$.ajax({
-                //    url: 'Clients/GetClients',
-                //    type: 'GET',
-                //    traditional: true,
-                //    data: { keys: PAR.Assess.data.clients },
-                //    success: function (result) {
-                //        $('#client-assess-table').html(result);
-                //    }
-                //});
-                $.ajax({
-                    url: 'Demographics/GetDemo',
-                    type: 'GET',
-                    traditional: true,
-                    data: { key: PAR.Assess.data.assessments[0] },
-                    success: function (result) {
-                        $('#client-assess-table').html(result);
+                $('.modal-footer').addClass('hide-item');
+                $(this).removeClass("modal-lg").addClass("modal-xl");
+
+                PAR.Assess.data.getDemoContent();
+
+            });
+            $("#emailAssessmentModal").on("submit", "#dynFormSection .form-demo", function (e) {
+                e.preventDefault();
+                console.log("dynFormSection-form-demo");
+                
+                $('#dynFormSection').hide();
+                $('#dynFormTableSection').show();
+
+                var serialized = $(this).serialize();
+                var item = $.toDictionary(serialized);
+                console.log(item);
+                $.each(item, function (key, value) {
+                    console.log('key=' + key + ' value=' + value);
+                    $('[name=' + key + ']', '#dynFormTableSection').val(value);
+                });
+                
+            });
+            $("#emailAssessmentModal").on("submit", "#dynFormTableSection .form-demo", function (e) {
+                var that = this;
+                console.log("#dynFormTableSection .form-demo");
+                e.preventDefault();  // prevent standard form submission
+                var form = $('#main-content .form-demo');
+                form.removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse(form);
+                var data = [];
+                $(this).find('.row').each(function () {
+                    var $this = $(this);
+                    var $elements = $this.find('.form-control');
+                    if ($elements.length > 0) {
+                        var serialized = $elements.serialize();
+                        console.log('serialized:' + serialized);
+                        var item = $.toDictionary(serialized);
+                        data.push(item);
                     }
                 });
+                PAR.Assess.data.clientDemoTable = data;
+                //console.log(PAR.Assess.data.clientDemoTable);
+                PAR.Assess.data.clientDataTable = [];
+                PAR.Assess.data.testDataTable = [];
+                $(this).find('.row').each(function () {
+                    var $this = $(this);
+                    var $elements = $this.find('.form-control');
+                    var clientData = [];
+                    var testData = [];
+                    var raterEmailData = [];
+                    $elements.each(function (index) {
+                        var that = $(this);
+                        var value = that.val();
+                        if (that.attr('type') == 'date') {
+                            var date = new Date(that.val());
+                            if (!isNaN(date.getTime())) {
+                                date.setDate(date.getDate() + 1);
+                                value = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+                            }
+                        }
+                        if (that.data("client-data-ordinal") > 0) {
+                            clientData[that.data("client-data-ordinal") - 1] = (that.is("select")) ? that.data("value").toString() : value.toString();
+                        }
+                        if (that.data("test-data-ordinal") > 0) {
+                            testData[that.data("test-data-ordinal") - 1] = (that.is("select")) ? that.data("value").toString() : value.toString();
+                        }
+                    });
+                    PAR.Assess.data.clientDataTable.push(clientData); //.join(","));
+                    PAR.Assess.data.testDataTable.push(testData); //.join(","));
+                });
+                console.log(PAR.Assess.data.clientDataTable);
+                console.log(PAR.Assess.data.testDataTable);
+              $.ajax({
+                    url: '@Url.Action("GetEmailSettings", "Demographics")',
+                    type: "GET",
+                    success: function (result) {
+                        $('#main-content').html(result);
+                        $('#main-content-title').hide();
+                        $(that).removeClass("modal-xl").addClass("modal-lg");
+                        $('#demo-breadcrumb').removeClass("active")
+                        $('#email-breadcrumb').addClass("active");
+                        $('#dynFormTableSection').addClass('hide-item');
+                    },
+                    error: function (result) {
+                    }
+                });
+
             });
+            $("#emailAssessmentModal").on("click", "#main-content .data-column", function (e) {
+                e.preventDefault();
+                var editBlock = $(this).find(".data-edit");
+                editBlock.removeClass("hide-item");
+                var formControl = editBlock.find(".form-control");
+                formControl.focus();
+
+                if ($(this).find(".form-control").valid()) {
+                    $(this).find(".data-edit").removeClass("hide-item");
+                    $(this).find(".data-label").addClass("hide-item");
+                }
+            });
+            $("#emailAssessmentModal").on("click", "#main-content .data-column-radio .data-label", function (e) {
+                e.preventDefault();
+                console.log('emailAssessmentModal-click-datalabel');
+                var editBlock = $(this).parent().find(".data-edit");
+                //console.log(editBlock);
+                editBlock.removeClass("hide-item");
+                var labelBlock = $(this);//.find(".data-label");
+                labelBlock.addClass("hide-item");
+                var formControl = editBlock.find(".form-control");
+                formControl.focus();
+            });
+
+            $("#emailAssessmentModal").on("focusout", "#main-content .data-column", function (e) {
+                if ($(this).find(".form-control").valid()) {
+                    $(this).find(".data-label").text($(this).find(".form-control").val());
+                    $(this).find(".data-edit").addClass("hide-item");
+                    $(this).find(".data-label").removeClass("hide-item");
+                }
+
+            });
+            $("#emailAssessmentModal").on("change", "#main-content .data-column-radio", function (e) {
+                e.preventDefault();
+                if ($(this).find(".form-control").valid()) {
+                    console.log('emailAssessmentModal-change-datacolumnradio');
+                    $(this).find(".data-label").text($(this).find(".form-control option:selected").text());
+                    $(this).find(".data-edit").addClass("hide-item");
+                    $(this).find(".data-label").removeClass("hide-item");
+                }
+            });
+
+            $("#emailAssessmentModal").on("click", ".dropdown-item", function (e) {
+
+                PAR.Assess.data.emailTemplate.emailTemplateKey = $(this).data("template-key");
+                PAR.Assess.data.emailTemplate.subject = $(this).data("template-subject");
+                PAR.Assess.data.emailTemplate.template = $(this).data("template-body");
+                PAR.Assess.data.emailTemplate.description = $(this).data("template-name");
+                $("#templateName").val(PAR.Assess.data.emailTemplate.description);
+                $("#subject").val(PAR.Assess.data.emailTemplate.subject);
+                $("#body").val(PAR.Assess.data.emailTemplate.template);
+            });
+            $("#emailAssessmentModal").on("click", "#email-cancel", function (e) {
+                ///TODO: Clean up               
+                console.log("email-cancel");
+                PAR.Assess.data.getDemoContent();
+
+                //$("#emailSettingsSection").hide();
+                //$('#dynFormTableSection').show();
+                //$('#dynFormSection').hide();
+                //$('#dynFormTableSection').removeClass('hide-item');
+            });
+            $("#emailAssessmentModal").on("click", "#demo-cancel", function (e) {
+
+                console.log("demo-cancel");
+                $('#emailAssessmentModal').modal('hide');
+            });
+            $("#emailAssessmentModal").on("click", ".fa-eye", function (e) {
+
+
+                $('#dynFormTableSection').hide();
+                $('#dynFormSection').show();
+                var data = [];
+                var $row = $(this).closest('.row');
+                console.log('row:' + $row);
+                var $elements = $row.find('.form-control');
+                if ($elements.length > 0) {
+                    var serialized = $elements.serialize();
+                    console.log('serialized:' + serialized);
+                    var item = $.toDictionary(serialized);
+                    console.log(item);
+                    data.push(item);
+                }
+                console.log(data);
+                $.each(item, function (key, value) {
+                    $('[name=' + key + ']', '#dynFormSection').val(value);
+                });
+
+            });
+            $("#emailAssessmentModal").on("change", "#saveTemplateCheckBox", function (e) {
+                if (this.checked)
+                    $('#templateName').prop('required', true);
+                else
+                    $('#templateName').prop('required', false);
+            });
+            $("#emailAssessmentModal").on("hidden.bs.modal", function () {
+                $("#emailSettingsSection").hide();
+                $("#dynFormSection").hide();
+            });
+
+            $("#emailAssessmentModal").on("submit", "#email-settings", function (e) {
+                e.preventDefault();
+                var form = $("#email-settings");
+                form.removeData("validator").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse(form);
+                if (form.valid()) {
+                    //PAR.Assess.data.emailTemplate.key = 0;
+                    PAR.Assess.data.emailTemplate.subject = $("#subject").val();
+                    PAR.Assess.data.emailTemplate.template = $("#body").val();
+
+                    PAR.Assess.data.emailTemplate.expiration = (($("#expirationCheckBox").prop('checked') == true) ? true : false);
+                    PAR.Assess.data.emailTemplate.product = (($("#productCheckBox").prop('checked') == true) ? true : false);
+                    PAR.Assess.data.emailTemplate.assessmentTime = (($("#assessmentTimeCheckBox").prop('checked') == true) ? true : false);
+
+                    if ($("#doesNotExpire").prop('checked') == true) {
+                        PAR.Assess.data.emailTemplate.doesNotExpire = true;
+                        PAR.Assess.data.emailTemplate.expirationDays = 0;
+                    }
+                    else {
+                        PAR.Assess.data.emailTemplate.doesNotExpire = false;
+                        PAR.Assess.data.emailTemplate.expirationDays = parseInt($("#expirationDays").val());
+                    }
+
+                    PAR.Assess.data.emailTemplate.notify = (($("#notifyCheckBox").prop('checked') == true) ? true : false);
+                    PAR.Assess.data.emailTemplate.sendCopy = (($("#sendCopyCheckBox").prop('checked') == true) ? true : false);               
+
+                    if ($('#saveTemplateCheckBox').prop('checked')) {
+
+                        if ($('#templateName').val().trim() != PAR.Assess.data.emailTemplate.description.trim()) {
+                            PAR.Assess.data.emailTemplate.emailTemplateKey = 0;
+                            PAR.Assess.data.emailTemplate.description = $('#templateName').val();
+                        }
+                        console.log(PAR.Assess.data.emailTemplate);
+                        $.ajax({
+                            url: 'Email/SaveEmailTemplate',
+                            type: 'POST',
+                            contentType: "application/json",
+                            data: JSON.stringify(PAR.Assess.data.emailTemplate),
+                            success: function (result) {
+                                console.log(result);
+                            }
+                        });
+                    }
+                    var model = {
+                        assessments: PAR.Assess.data.assessments,
+                        clients: PAR.Assess.data.clients
+                        , clientDataTable: PAR.Assess.data.clientDataTable
+                        , testDataTable: PAR.Assess.data.testDataTable
+                        , emailTemplateData: PAR.Assess.data.emailTemplate
+                        , clientDemoTable: PAR.Assess.data.clientDemoTable
+                        //,raterDataTable: PAR.Assess.data.raterDataTable
+                    };
+
+                    $.ajax({
+                        url: 'Demographics/SaveDemoInput',
+                        type: 'POST',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify(model),
+                        success: function (result) {
+                            $("#emailSettingsSection").hide();
+                            $("#emailAssessmentModal").modal("hide");
+                            location.reload();
+                            //console.log(result);
+                        }
+                    });
+                }
+             });
+
         });
     </script>
 }
