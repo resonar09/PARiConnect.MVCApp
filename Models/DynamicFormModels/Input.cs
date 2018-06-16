@@ -94,6 +94,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
         school,
         schoolStatus,
         schoolYear,
+        secondaryEmail,
         setting,
         specialEducation,
         symptoms,

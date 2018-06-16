@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 
 namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
-    public class CAD : IDynamicFormModel
+    public class CAD_2077 : IDynamicFormModel
     {
         public List<Input> Inputs { get; set; }
 
         public Settings Settings { get; set; }
         private IGroupData _groupData;
 
-        public CAD(IGroupData groupData)
+        public CAD_2077(IGroupData groupData)
         {
             _groupData = groupData;
             Settings = new Settings();

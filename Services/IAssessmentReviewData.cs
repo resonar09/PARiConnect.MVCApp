@@ -11,5 +11,7 @@ namespace PARiConnect.MVCApp.Services
        Task<IEnumerable<AssessmentReview>> GetAllAsync(int? clientKey);
 
        IEnumerable<AssessmentReview> GetAll();
+
+       Task<AssessmentReview> AddAssessmentReview(AssessmentReview assessmentReview);
     }
 }

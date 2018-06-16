@@ -108,7 +108,7 @@ namespace PARiConnect.MVCApp.Services
             var loggedInUserID = _userService.GetCurrentUserId();
             CoreServiceDevReference.CoreServiceClient coreServiceClient = new CoreServiceDevReference.CoreServiceClient();
             var assessments = await coreServiceClient.GetCurrentInventoryForUserAsync(int.Parse(loggedInUserID));
-            var favorites = await coreServiceClient.GetFavoriteInventoryForCurrentUserAsync(int.Parse(loggedInUserID));
+            //var favorites = await coreServiceClient.GetFavoriteInventoryForCurrentUserAsync(int.Parse(loggedInUserID));
 
             //var fav = favorites.Where(x=>x.)
             var assessment = new Models.Assessment();

@@ -18,95 +18,104 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             _userService = userService;
             _groupData = groupData;
             Settings = new Settings();
-            Settings.Layout = LayoutType.Custom;
-            Settings.Title = "Add/Edit Client";
+            Settings.Layout = LayoutType.TwoColumn;
             Settings.Container = ContainerType.Modal;
+            Settings.Columns = 2;
+            Settings.Title = "Add/Edit Client";
             Settings.ContainerName = "clientEditModal";
             Settings.Labels = true;
             Settings.FormController = "Clients";
             Settings.FormAction = "Create";
             Settings.FormSubmitText = "Add Client";
+
             Inputs = new List<Input>
             {
                 new Input {
-                    Id = "clientID",
+                    Id = InputIDType.clientId.ToString(),
                     Label = "Client Id:",
-                    Type ="text",
+                    Type = InputType.text.ToString(),
                     Placeholder ="123abc",
-                    Class = "col-12",
-                    PrePendIcon = "address-card",
+                    Column = 1,
+                    Class = "",
+                    //PrePendIcon = "address-card",
                     Validation = true,
                     ValidationRequiredMessage = "The Client ID field is required!"
                 },
                 new Input {
-                    Id = "firstName",
+                    Id = InputIDType.firstName.ToString(),
                     Label = "First Name:",
-                    Type ="text",
+                    Type = InputType.text.ToString(),
                     Placeholder ="Jerry",
-                    Class = "col-6",
+                    Column = 1,
+                    Class = "",
                     Validation = true,
                     ValidationRequiredMessage = "The First Name field is required!"
                 },
                 new Input {
-                    Id = "lastName",
+                    Id = InputIDType.lastName.ToString(),
                     Label = "Last Name:",
-                    Type ="text",
+                    Type = InputType.text.ToString(),
                     Placeholder ="Nolan",
-                    Class = "col-6",
+                    Column = 1,
+                    Class = "",
                     Validation = true,
                     ValidationRequiredMessage = "The Last Name field is required!"
                 },
                 new Input {
-                    Id = "birthday",
+                    Id = InputIDType.dateOfBirth.ToString(),
                     Label = "Birthday:",
-                    Type ="date",
+                    Type = InputType.date.ToString(),
                     Placeholder ="",
-                    Class = "col-6",
+                    Column = 1,
+                    Class = "",
                     Validation = false,
                     ValidationDateMessage = "A valid date is required!"
                 },
                 new Input {
-                    Id = "age",
-                    Label = "Age:",
-                    Type ="number",
+                    Id = InputIDType.age.ToString(),
+                    Label = "Age",
+                    Type = InputType.number.ToString(),
                     Min = 0,
                     Max = 120,
                     Placeholder ="",
-                    Class = "col-6",
+                    Column = 1,
+                    Class = "",
                     Validation = true,
                     ValidationNumberMessage = "A valid age is required!"
                 },
                 new Input {
-                    Id = "gender",
-                    Label = "Gender:",
-                    Type ="select",
+                    Id = InputIDType.gender.ToString(),
+                    Label = "Gender",
+                    Type = InputType.select.ToString(),
                     Options = Utility.GetGender2Options(),
-                    Placeholder ="",
-                    Class = "col-6"
+                    Column = 2,
+                    Class = ""
                 },
                 new Input {
-                    Id = "group",
+                    Id = InputIDType.normGroup.ToString(),
                     Label = "Group:",
-                    Type ="select",
+                    Type = InputType.select.ToString(),
                     Options = GetGroups(),
-                    Placeholder ="",
-                    Class = "col-6"
+                    Column = 2,
+                    Class = ""
                 },
                 new Input {
-                    Id = "primaryEmail",
+                    Id = InputIDType.primaryEmail.ToString(),
                     Label = "Primary Email:",
-                    Type ="email",
+                    Type = InputType.email.ToString(),
                     Placeholder ="",
-                    Class = "col-6",
+                    Class = "",
+                    Column = 2,
                     Validation = false,
                     ValidationEmailMessage = "A valid email is required!"
                 },
                 new Input {
-                    Id = "secondaryEmail",
+                    Id = InputIDType.secondaryEmail.ToString(),
                     Label = "Secondary Email:",
-                    Type ="email",
+                    Type = InputType.email.ToString(),
                     Placeholder ="",
-                    Class = "col-6",
+                    Column = 2,
+                    Class = "",
                     Validation = false,
                     ValidationEmailMessage = "A valid email is required!"
                 }

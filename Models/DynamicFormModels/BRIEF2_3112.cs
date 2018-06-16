@@ -1,16 +1,18 @@
-﻿using PARiConnect.MVCApp.Services;
+﻿using PARiConnect.MVCApp.Models;
+using PARiConnect.MVCApp.Models.DynamicFormModels;
+using PARiConnect.MVCApp.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace PARiConnect.MVCApp.Models.DynamicFormModels
 {
-    public class BRIEF2 : IDynamicFormModel
+    public class BRIEF2_3112 : IDynamicFormModel
     {
         public List<Input> Inputs { get; set; }
         public Settings Settings { get; set; }
         private IGroupData _groupData;
         
-        public BRIEF2(IGroupData groupData) 
+        public BRIEF2_3112(IGroupData groupData) 
         {
              _groupData = groupData;
             Settings = new Settings();
@@ -18,7 +20,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             Settings.Container = ContainerType.Page;
             Settings.ContainerName = "brief2Modal";
             Settings.Columns = 2;
-            Settings.Title = "BRIEF2 Demographics";
+            Settings.Title = "BRIEF2 Teacher Form Demographics";
             Settings.FormSubmitText = "Submit";
             Settings.Labels = true;
             Settings.FormController = "";
@@ -27,6 +29,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
             Settings.Display = DisplayType.Table;
             Inputs = new List<Input>
             {
+            
                 new Input {
                     Id = InputIDType.primaryEmail.ToString(),
                     Label = "Email",
@@ -39,7 +42,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = InputIDType.firstName.ToString(),
-                    Label = "First Name:",
+                    Label = "Student's First Name:",
                     Column = 1,
                     Type = InputType.text.ToString(),
                     Class = "form-control-sm",
@@ -50,7 +53,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = InputIDType.lastName.ToString(),
-                    Label = "Last Name:",
+                    Label = "Student's Last Name:",
                     Type = InputType.text.ToString(),
                     Column = 1,
                     Class = "form-control-sm ",
@@ -61,7 +64,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = InputIDType.clientId.ToString(),
-                    Label = "Client Id:",
+                    Label = "Id Number:",
                     Type = InputType.text.ToString(),
                     Column = 1,
                     Placeholder ="123abc",
@@ -84,7 +87,7 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 new Input {
                     Id = InputIDType.age.ToString(),
                     Label = "Age:",
-                    Type = InputType.number.ToString(),
+                    Type = InputType.text.ToString(),
                     Placeholder ="",
                     Class = "form-control-sm",
                     Max=18,
@@ -131,9 +134,9 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 },
                 new Input {
                     Id = InputIDType.relationship.ToString(),
-                    Label = "Relationship To Child:",
+                    Label = "Relationship To Student:",
                     Type = InputType.select.ToString(),
-                    Options = Utility.GetParentRelationshipOptions(),
+                    Options = Utility.GetTeacherRelationshipOptions(),
                     Placeholder ="",
                     Class = "form-control-sm",
                     Value = "0", //Default to Not Specified
@@ -142,8 +145,8 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     TestDataOrdinal = 8
                 },
                 new Input {
-                    Id = InputIDType.relationshipDesc.ToString(),
-                    Label = "Relationship Description:",
+                    Id = InputIDType.classTaught.ToString(),
+                    Label = "Class Taught:",
                     Type = InputType.text.ToString(),
                     Placeholder ="",
                     Class = "form-control-sm",
@@ -172,6 +175,35 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     TestDataOrdinal = 5
                 },
                 new Input {
+                    Id = InputIDType.howWellKnown.ToString(),
+                    Label = "How well do you know the student:",
+                    Type = InputType.select.ToString(),
+                    Options = Utility.GetKnownOptions(),
+					Class = "form-control-sm",
+                    Value = "0", //Default to Not Specified
+                    Column = 2,
+                    ClientData = false,
+                    TestDataOrdinal = 10
+                },
+                new Input {
+                    Id = InputIDType.howLongKnown.ToString(),
+                    Label = "How long known (Months):",
+                    Type = InputType.text.ToString(),
+                    Class = "form-control-sm",
+                    Column = 2,
+                    ClientData = false,
+                    TestDataOrdinal = 11
+                },
+                new Input {
+                    Id = InputIDType.specialEducation.ToString(),
+                    Label = "Student receiving special educational services?:",
+                    Type = InputType.checkbox.ToString(),
+                    Options = Utility.GetYesNoOptions(),
+                    Placeholder ="",
+                    Class = "",
+                    Column = 2
+                },
+                new Input {
                     Id = InputIDType.raterName.ToString(),
                     Label = "Examiner:",
                     Type = InputType.text.ToString(),
@@ -181,30 +213,6 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                     ClientData = false,
                     TestDataOrdinal = 4
                 },
-                new Input {
-                    Id = InputIDType.testForm.ToString(),
-                    Type = InputType.hidden.ToString(),
-                    Column = 2,
-                    ClientData = false,
-                    TestDataOrdinal = 1,
-                    Value = "Parent"
-                },
-                new Input {
-                    Id = InputIDType.howWellKnown.ToString(),
-                    Type = InputType.hidden.ToString(),
-                    Column = 2,
-                    ClientData = false,
-                    TestDataOrdinal = 10,
-                    Value = ""
-                },
-                new Input {
-                    Id = InputIDType.educationServices.ToString(),
-                    Type = InputType.hidden.ToString(),
-                    Column = 2,
-                    ClientData = false,
-                    TestDataOrdinal = 11,
-                    Value = ""
-                }
             };
         }
 

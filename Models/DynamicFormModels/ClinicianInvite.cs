@@ -13,47 +13,52 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
 
         private readonly IUserService _userService;
         private readonly IPermissionData _permissionData;
-
+        
         public ClinicianInvite(IUserService userService, IPermissionData permissionData)
         {
             _userService = userService;
             _permissionData = permissionData;
             Settings = new Settings();
-            Settings.Layout = LayoutType.Custom;
-            Settings.Title = "Add Clinician";
+            Settings.Layout = LayoutType.Stacked;
             Settings.Container = ContainerType.Modal;
+            //Settings.Columns = 2;
+            Settings.Title = "Add Clinician";
             Settings.ContainerName = "clinicianAddModal";
             Settings.Labels = true;
             Settings.FormController = "Clinician";
             Settings.FormAction = "Invite";
             Settings.FormSubmitText = "Add Clinician";
+
             Inputs = new List<Input>
             {
 
                 new Input {
-                    Id = "firstName",
+                    Id = InputIDType.firstName.ToString(),
                     Label = "First Name:",
-                    Type ="text",
+                    Type = InputType.text.ToString(),
                     Placeholder ="Jerry",
-                    Class = "col-6",
+                    //Column = 1,
+                    Class = "",
                     Validation = true,
                     ValidationRequiredMessage = "The First Name field is required!"
                 },
                 new Input {
-                    Id = "lastName",
+                    Id = InputIDType.lastName.ToString(),
                     Label = "Last Name:",
-                    Type ="text",
+                    Type = InputType.text.ToString(),
                     Placeholder ="Nolan",
-                    Class = "col-6",
+                    //Column = 1,
+                    Class = "",
                     Validation = true,
                     ValidationRequiredMessage = "The Last Name field is required!"
                 },
                 new Input {
-                    Id = "emailAddress",
+                    Id = InputIDType.primaryEmail.ToString(),
                     Label = "Primary Email:",
-                    Type ="email",
+                    Type = InputType.email.ToString(),
                     Placeholder ="",
-                    Class = "col-12",
+                    Class = "",
+                    //Column = 1,
                     Validation = true,
                     ValidationRequiredMessage = "The Email field is required!",
                     ValidationEmailMessage = "A valid Email is required!"
@@ -61,18 +66,18 @@ namespace PARiConnect.MVCApp.Models.DynamicFormModels
                 new Input {
                     Id = "permissionProfile",
                     Label = "User Roles:",
-                    Type ="select",
+                    Type =InputType.select.ToString(),
                     Options = GetUserRoles(),
                     OnChange = "getPermissions(this.value, 'Permission', 'GetPermissions')",
                     Placeholder ="",
-                    Class = "col-8"
+                    Class = ""
                 },
                 new Input {
                     Id = "permissions",
                     Label = "Permissions:",
-                    Type ="list",
+                    Type =InputType.list.ToString(),
                     List = GetPermissions(),
-                    Class = "col-12",
+                    Class = "",
                     Validation = true,
                     ValidationRequiredMessage = "The permission list is required!"
                 }

@@ -51,7 +51,7 @@ namespace PARiConnect.MVCApp.Services
 
         public Task<IEnumerable<Models.Client>> GetClientGroupListAsync()
         {
-            throw new NotImplementedException();
+            return Task.Run(() => _clients.Select(x=>x));
         }
 
         public Task<IEnumerable<Models.Report>> GetClientReportsAsync(int clientKey, int clientAssessmentKey)

@@ -13,6 +13,7 @@ namespace PARiConnect.MVCApp.Services
     public class InventoryDataMock : IInventoryData
     {
         List<InventoryUseList> _inventoryUseList;
+        List<AssessmentInventoryItem> _assessmentInventoryItems;
         public InventoryDataMock()
         {
              _inventoryUseList = new List<InventoryUseList>
@@ -26,11 +27,31 @@ namespace PARiConnect.MVCApp.Services
 
                 }
             };
+            _assessmentInventoryItems = new List<AssessmentInventoryItem>()
+            {
+                new AssessmentInventoryItem {
+                AssessmentKey = "CAD",
+                ProductFamily = "CAD",
+                Count = 12,
+                AssessmentForms =  new AssessmentFormInventoryItem[] {
+                    new AssessmentFormInventoryItem
+                    {
+                        AssessmentKey = "CAD",
+                        PartNumber = "12345",
+                        ProductFamily = "CAD",
+                        Name = "Rating Form",
+
+                    }
+
+
+                }
+                }
+            };
         }
 
-        public Task<IEnumerable<AssessmentInventoryItem>> GetAssessmentListAsync()
+        public async Task<IEnumerable<AssessmentInventoryItem>> GetAssessmentListAsync()
         {
-            throw new NotImplementedException();
+            return await Task.Run(() => _assessmentInventoryItems);
         }
 
         public async Task<IEnumerable<InventoryUseList>> GetInventoryUseListAsync()

@@ -16,6 +16,7 @@ namespace PARiConnect.MVCApp.Models
         public int AssessmentFormKey { get; set; }
         public string Assessment { get; set; }
         public DateTime Updated { get; set; }
+        public DateTime Created { get; set; }
 
         public string Status
         {

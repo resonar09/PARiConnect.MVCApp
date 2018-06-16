@@ -1,0 +1,17 @@
+﻿<div class="card small ">
+    <div class="card-header font-weight-bold">
+            Recently Created Clients
+    </div>
+    <div class="card-body">
+        <div class="d-flex flex-column">
+            @foreach (var recentlyCreated in Model.RecentlyCreated)
+            {
+            <div class="m-1 border-bottom">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <a href="" class="ml-2">@recentlyCreated.ClientName</a>
+                <small class="more-muted-text font-italic float-right ">@recentlyCreated.Created</small>
+            </div>
+            }
+        </div>
+    </div>
+</div>

@@ -16,6 +16,12 @@ namespace PARiConnect.MVCApp.Services
         {
              _userService = userService;
         }
+
+        public Task<AssessmentReview> AddAssessmentReview(AssessmentReview assessmentReview)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<AssessmentReview>> GetAllAsync(int? clientKey)
         {
             var loggedInUserID = _userService.GetCurrentUserId();

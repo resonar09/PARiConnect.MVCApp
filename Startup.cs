@@ -43,12 +43,14 @@ namespace PARiConnect.MVCApp
                 
                 services.AddScoped<IDynamicFormData, DynamicFormDataMock>();
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewDataMock>();
-                services.AddScoped<IRecentlyAccessedData, RecentlyAccessedDataMock>();
-                services.AddScoped<IInventoryData, InventoryDataMock>();
                 services.AddScoped<IClientData, ClientDataMock>();
+                services.AddScoped<IClientAssessmentData, ClientAssessmentDataMock>();
                 services.AddScoped<IClinicianData, ClinicianDataMock>();
                 services.AddScoped<IGroupData, GroupDataMock>();
+                services.AddScoped<IInventoryData, InventoryDataMock>();
                 services.AddScoped<IPermissionData, PermissionDataMock>();
+                services.AddScoped<IRecentlyAccessedData, RecentlyAccessedDataMock>();
+                services.AddScoped<IRecentlyCreatedData, RecentlyCreatedDataMock>();
                 services.AddSingleton<IUserService>(new UserServiceMock(users));
             }
             else
@@ -57,6 +59,7 @@ namespace PARiConnect.MVCApp
                 services.AddScoped<IAssessmentFormData, AssessmentFormData>();
                 services.AddScoped<IAssessmentReviewData, AssessmentReviewData>();
                 services.AddScoped<IRecentlyAccessedData, RecentlyAccessedData>();
+                services.AddScoped<IRecentlyCreatedData, RecentlyCreatedData>();
                 services.AddScoped<IInventoryData, InventoryData>();
                 services.AddScoped<IClientData, ClientData>();
                 services.AddScoped<IClientAssessmentData, ClientAssessmentData>();
@@ -76,9 +79,10 @@ namespace PARiConnect.MVCApp
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.AAB>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.APS>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.BRIEF>();
-            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.BRIEF2>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.BRIEF2_3111>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.BRIEF2_3112>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAB>();
-            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAD>();
+            services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAD_2077>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CAPI>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CHAMP>();
             services.AddScoped<Models.DynamicFormModels.IDynamicFormModel, Models.DynamicFormModels.CPCI>();

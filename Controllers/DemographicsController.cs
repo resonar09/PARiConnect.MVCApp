@@ -73,8 +73,9 @@ namespace PARiConnect.MVCApp.Controllers
         public IActionResult GetDemo(int key, int[] dataKeys, DisplayType? displayType)
         {
             var assessmentForm = _assessmentFormData.GetByKeyAsync(key).Result;
+            var modelName = string.Format("{0}_{1}", assessmentForm.AssessmentKey, assessmentForm.AssessmentFormKey);
 
-            return ViewComponent("DynamicForm", new { model = assessmentForm.AssessmentKey, dataKeys, displayType });
+            return ViewComponent("DynamicForm", new { model = modelName, dataKeys, displayType });
         }
         [HttpPost]
         public IActionResult SaveDemoInput([FromBody]dynamic model) ///int[] assessments, int[] clients, string[] clientDataTable, string[] testDataTable)

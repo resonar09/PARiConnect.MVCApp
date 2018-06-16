@@ -53,7 +53,7 @@
                                 <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
                                 <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
                                     <input type="@input.Type"
-                                           class="form-control @(input.Class)"
+                                           class="form-control form-control-sm"
                                            name="@input.Id"
                                            placeholder="@input.Placeholder"
                                            asp-for="@input.Id"
@@ -71,7 +71,7 @@
                                 <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
                                 <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
                                     <input type="@input.Type"
-                                           class="form-control"
+                                           class="form-control form-control-sm"
                                            name="@input.Id"
                                            placeholder="@input.Placeholder"
                                            asp-for="@input.Id"
@@ -90,7 +90,7 @@
                                 <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
                                 <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
                                     <input type="@input.Type"
-                                           class="form-control date-unstyled @(input.Class)"
+                                           class="form-control form-control-sm date-unstyled"
                                            name="@input.Id"
                                            placeholder="@input.Placeholder"
                                            asp-for="@input.Id"
@@ -108,7 +108,8 @@
                             <div class="col data-column-radio">
                                 <div class="data-label @(input.Data[i] == "---" ? "hide-item" : "")">@input.Data[i]</div>
                                 <div class="data-edit @(input.Data[i] == "---" ? "" : "hide-item")">
-                                    <select class="form-control select @(input.Class)"
+                                    <select 
+                                            class="form-control select form-control-sm"
                                             name="@input.Id"
                                             onchange="@input.OnChange"
                                             data-client-data-ordinal="@input.ClientDataOrdinal"
@@ -132,7 +133,7 @@
                                 <div class="data-label @(input.Data[i] == "---" ? "hide-item":"")">@input.Data[i]</div>
                                 <div class="data-edit @(input.Data[i] == "---" ? "":"hide-item")">
                                     <input type="@input.Type"
-                                           class="form-control @(input.Class)"
+                                           class="form-control form-control-sm"
                                            name="@input.Id"
                                            min="@input.Min"
                                            max="@input.Max"
